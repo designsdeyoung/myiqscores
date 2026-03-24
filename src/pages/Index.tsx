@@ -35,8 +35,8 @@ const Index = () => {
 
   const handleProcessingDone = useCallback(() => {
     setScreen("results");
-    // Show nurture bar after a delay
-    setTimeout(() => setShowNurture(true), 5000);
+    // Show nurture bar after 10 seconds on results page
+    setTimeout(() => setShowNurture(true), 10000);
   }, []);
 
   return (

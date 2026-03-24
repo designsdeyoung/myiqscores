@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          age_range: string | null
+          correct_answers: number | null
+          created_at: string | null
+          email: string
+          id: string
+          iq_score: number | null
+          name: string
+          paid_status: string | null
+          stripe_session_id: string | null
+        }
+        Insert: {
+          age_range?: string | null
+          correct_answers?: number | null
+          created_at?: string | null
+          email: string
+          id?: string
+          iq_score?: number | null
+          name: string
+          paid_status?: string | null
+          stripe_session_id?: string | null
+        }
+        Update: {
+          age_range?: string | null
+          correct_answers?: number | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          iq_score?: number | null
+          name?: string
+          paid_status?: string | null
+          stripe_session_id?: string | null
+        }
+        Relationships: []
+      }
+      referrals: {
+        Row: {
+          created_at: string | null
+          id: string
+          platform: string | null
+          referrer_email: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          platform?: string | null
+          referrer_email?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          platform?: string | null
+          referrer_email?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
