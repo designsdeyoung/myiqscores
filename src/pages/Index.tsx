@@ -8,6 +8,7 @@ import Quiz from "@/components/Quiz";
 import Processing from "@/components/Processing";
 import Results from "@/components/Results";
 import EmailNurture from "@/components/EmailNurture";
+import SEOHead from "@/components/SEOHead";
 
 type Screen = "landing" | "leadCapture" | "quiz" | "processing" | "results";
 
@@ -41,6 +42,11 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      <SEOHead
+        title="Free IQ Test — Get Your Score Instantly | MyIQScores"
+        description="Take the most accurate free IQ test online. 30 questions, 15 minutes, instant results. No sign-up, no paywall. Discover your cognitive edge."
+        canonicalUrl="https://myiqscores.com"
+      />
       <BackgroundEffect />
       <Navbar />
 
