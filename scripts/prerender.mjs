@@ -6,8 +6,31 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
 const serverEntry = path.resolve(distDir, "server/entry-server.js");
 
+// IQ score pages
+const iqScores = [70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150];
+
+// Country pages
+const countrySlugs = [
+  "japan", "south-korea", "china", "taiwan", "singapore", "hong-kong",
+  "netherlands", "switzerland", "finland", "germany", "united-kingdom",
+  "ireland", "austria", "belgium", "sweden", "norway", "poland", "france",
+  "czech-republic", "hungary", "italy", "spain", "russia", "portugal", "greece",
+  "canada", "united-states", "mexico", "australia", "new-zealand",
+  "argentina", "colombia", "brazil", "israel", "turkey", "uae", "iran",
+  "saudi-arabia", "vietnam", "thailand", "philippines", "indonesia", "pakistan",
+  "india", "egypt", "kenya", "south-africa", "nigeria", "ghana", "ethiopia",
+];
+
 // Routes to pre-render
-const routes = ["/"];
+const routes = [
+  "/",
+  "/test",
+  "/what-is-iq",
+  "/iq-score-ranges",
+  "/average-iq-by-country",
+  ...iqScores.map((s) => `/is-${s}-iq-good`),
+  ...countrySlugs.map((s) => `/average-iq/${s}`),
+];
 
 async function prerender() {
   const template = fs.readFileSync(path.resolve(distDir, "index.html"), "utf-8");

@@ -6,6 +6,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import WhatIsIQ from "./pages/WhatIsIQ.tsx";
+import IQScoreRanges from "./pages/IQScoreRanges.tsx";
+import IsXIQGood from "./pages/IsXIQGood.tsx";
+import CountryIQ from "./pages/CountryIQ.tsx";
+import AverageIQByCountry from "./pages/AverageIQByCountry.tsx";
+import { iqScores } from "./data/iqScoreData";
+import { countrySlugs } from "./data/countryIQData";
 
 const queryClient = new QueryClient();
 
@@ -13,6 +20,16 @@ const queryClient = new QueryClient();
 export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
+    <Route path="/test" element={<Index />} />
+    <Route path="/what-is-iq" element={<WhatIsIQ />} />
+    <Route path="/iq-score-ranges" element={<IQScoreRanges />} />
+    {iqScores.map((score) => (
+      <Route key={score} path={`/is-${score}-iq-good`} element={<IsXIQGood />} />
+    ))}
+    <Route path="/average-iq-by-country" element={<AverageIQByCountry />} />
+    {countrySlugs.map((slug) => (
+      <Route key={slug} path={`/average-iq/${slug}`} element={<CountryIQ />} />
+    ))}
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>

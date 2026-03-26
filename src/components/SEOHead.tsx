@@ -7,6 +7,7 @@ interface SEOHeadProps {
   ogImage?: string;
   ogType?: string;
   twitterCard?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const SITE_URL = "https://myiqscores.com";
@@ -20,6 +21,7 @@ const SEOHead = ({
   ogImage = DEFAULT_IMAGE,
   ogType = "website",
   twitterCard = "summary_large_image",
+  jsonLd,
 }: SEOHeadProps) => {
   const fullCanonicalUrl = canonicalUrl.startsWith("http")
     ? canonicalUrl
@@ -42,6 +44,11 @@ const SEOHead = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:site" content="@MyIQScores" />
+      {jsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+      )}
     </Helmet>
   );
 };
