@@ -11,7 +11,9 @@ import IQScoreRanges from "./pages/IQScoreRanges.tsx";
 import IsXIQGood from "./pages/IsXIQGood.tsx";
 import CountryIQ from "./pages/CountryIQ.tsx";
 import AverageIQByCountry from "./pages/AverageIQByCountry.tsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import { iqScores } from "./data/iqScoreData";
+import { countrySlugs } from "./data/countryIQData";
 import { countrySlugs } from "./data/countryIQData";
 
 const queryClient = new QueryClient();
