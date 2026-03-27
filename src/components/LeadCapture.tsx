@@ -21,8 +21,9 @@ const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [ageRange, setAgeRange] = useState("");
+  const [consent, setConsent] = useState(false);
 
-  const isValid = name.trim() && email.includes("@") && ageRange;
+  const isValid = name.trim() && email.includes("@") && ageRange && consent;
 
   return (
     <motion.div
