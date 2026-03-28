@@ -128,6 +128,66 @@ export const iqMythData: IQMythInfo[] = [
       { question: "Do only children have any disadvantages?", answer: "Only children may have less practice with social skills, conflict resolution, and sharing that naturally develop through sibling interactions. While they score marginally higher on IQ tests, they may score lower on measures of social competence and emotional resilience." },
     ],
   },
+  {
+    title: "Does IQ Decrease with Age?",
+    slug: "does-iq-decrease-with-age",
+    myth: "Your IQ steadily declines as you get older, meaning you become less intelligent with age.",
+    reality: "Fluid intelligence (processing speed) declines gradually, but crystallized intelligence (knowledge, vocabulary) continues growing into your 60s. Overall cognitive ability remains relatively stable for most people until quite late in life.",
+    explanation: "The relationship between age and intelligence is more nuanced than 'you get dumber as you age.' The key distinction is between fluid and crystallized intelligence. Fluid intelligence — raw processing speed, working memory, and novel problem-solving — does begin a gradual decline in the late 20s, losing about 1-2 points per decade. However, crystallized intelligence — accumulated knowledge, vocabulary, expertise, and wisdom — continues growing well into the 60s and sometimes beyond. Since most IQ tests measure both types, the net effect on total IQ score is relatively small until late in life. A 60-year-old may process information slightly more slowly than they did at 25, but their vastly greater knowledge base and judgment often more than compensate. Many professionals do their most impactful work in their 50s and 60s, leveraging decades of accumulated expertise. The takeaway: you don't become less intelligent with age; you become differently intelligent.",
+    faqItems: [
+      { question: "Does IQ decrease with age?", answer: "Partially. Fluid intelligence (processing speed, working memory) declines gradually starting in the late 20s. But crystallized intelligence (knowledge, vocabulary, expertise) continues growing into the 60s. Overall IQ remains relatively stable for most people until very old age." },
+      { question: "At what age does IQ peak?", answer: "Different abilities peak at different ages. Processing speed peaks around 18-25. Working memory peaks around 25-30. Vocabulary and knowledge peak around 60-70. There is no single age when 'IQ' peaks because it's a composite of abilities that develop on different timelines." },
+      { question: "How can I prevent cognitive decline?", answer: "Regular aerobic exercise (strongest evidence), continuous learning, social engagement, quality sleep, Mediterranean diet, and managing health conditions (hypertension, diabetes) all help maintain cognitive function. The brain retains neuroplasticity throughout life." },
+    ],
+  },
+  {
+    title: "Does Alcohol Kill Brain Cells?",
+    slug: "does-alcohol-kill-brain-cells",
+    myth: "Drinking alcohol kills brain cells and permanently lowers your IQ.",
+    reality: "Moderate drinking doesn't kill brain cells directly, but heavy chronic drinking damages neural connections and can cause lasting cognitive impairment. The effect on IQ depends on the amount and duration of drinking.",
+    explanation: "The popular claim that 'alcohol kills brain cells' is an oversimplification. Moderate alcohol consumption does not kill neurons directly. However, heavy and chronic drinking does cause significant damage: it disrupts neural connections (white matter), shrinks brain volume (particularly the hippocampus and prefrontal cortex), impairs neurogenesis (growth of new brain cells), and can cause Wernicke-Korsakoff syndrome — a devastating form of brain damage caused by alcohol-related thiamine deficiency. Research shows that heavy drinkers (4+ drinks per day) show measurable cognitive decline and reduced IQ over time. A 2022 study in Nature Communications found that even moderate drinking (1-2 drinks per day) was associated with reduced brain volume. Binge drinking is particularly harmful because it causes acute neurotoxicity. The good news: for people who stop drinking, significant cognitive recovery is possible. Brain imaging studies show measurable improvement in brain structure and function within months of sobriety, though some damage from years of heavy drinking may be permanent.",
+    faqItems: [
+      { question: "Does alcohol kill brain cells?", answer: "Not directly in moderate amounts. However, heavy chronic drinking damages neural connections, shrinks brain volume, and impairs cognitive function. Binge drinking causes acute neurotoxicity. The popular 'kills brain cells' claim is oversimplified but points to a real phenomenon." },
+      { question: "Can drinking lower your IQ?", answer: "Heavy, chronic drinking can reduce effective cognitive function by several IQ points over time. A recent study found even moderate drinking (1-2 drinks/day) is associated with reduced brain volume. The effect is dose-dependent — more drinking means more cognitive impact." },
+      { question: "Can the brain recover from alcohol damage?", answer: "Partially, yes. Brain imaging shows measurable recovery in structure and function within months of stopping heavy drinking. Cognitive performance improves significantly. However, some damage from years of heavy drinking may be permanent, particularly in older adults." },
+    ],
+  },
+  {
+    title: "Is IQ the Same as Intelligence?",
+    slug: "is-iq-the-same-as-intelligence",
+    myth: "IQ and intelligence are the same thing — your IQ score tells you exactly how intelligent you are.",
+    reality: "IQ measures specific cognitive abilities (logical reasoning, pattern recognition, processing speed) but misses many important forms of intelligence including creativity, emotional intelligence, practical wisdom, and social skills.",
+    explanation: "IQ tests measure a specific set of cognitive abilities: logical reasoning, pattern recognition, working memory, processing speed, and verbal comprehension. These are important cognitive skills, and IQ scores do predict academic and some career outcomes. However, human intelligence is far broader than what any test measures. Howard Gardner identified eight types of intelligence (linguistic, logical-mathematical, spatial, musical, bodily-kinesthetic, interpersonal, intrapersonal, and naturalistic), of which IQ tests primarily assess only two or three. Robert Sternberg's triarchic theory adds practical intelligence (street smarts) and creative intelligence to the analytical intelligence that IQ tests measure. Emotional intelligence (EQ) — the ability to understand and manage emotions — is not captured by IQ but strongly predicts leadership effectiveness and relationship quality. Many of history's most impactful people had modest IQ scores but exceptional other forms of intelligence. Richard Feynman (125 IQ) won a Nobel Prize in physics. Many successful entrepreneurs have average IQs but extraordinary practical and social intelligence. The takeaway: IQ is one important dimension of a multidimensional phenomenon.",
+    faqItems: [
+      { question: "Is IQ the same as intelligence?", answer: "No. IQ measures specific cognitive abilities (reasoning, pattern recognition, processing speed) but doesn't capture creativity, emotional intelligence, practical wisdom, social skills, or many other forms of human capability. IQ is one dimension of a much broader phenomenon." },
+      { question: "What types of intelligence do IQ tests miss?", answer: "IQ tests miss emotional intelligence (EQ), creative intelligence, practical intelligence (street smarts), musical intelligence, bodily-kinesthetic intelligence, interpersonal skills, and naturalistic intelligence. These are all legitimate cognitive abilities that matter for real-world success." },
+      { question: "Can someone be intelligent but have a low IQ?", answer: "Yes. A person can have extraordinary musical talent, social intelligence, practical problem-solving ability, or creative genius while scoring average or below on an IQ test. IQ captures a specific type of analytical intelligence, not the full range of human cognitive ability." },
+    ],
+  },
+  {
+    title: "Does Marijuana Lower IQ?",
+    slug: "does-marijuana-lower-iq",
+    myth: "Using marijuana permanently lowers your IQ and makes you stupid.",
+    reality: "Teen marijuana use may reduce IQ by 5-8 points, particularly with heavy use. Adult-onset use has minimal lasting effects on IQ. The key factor is age of first use — the developing adolescent brain is much more vulnerable.",
+    explanation: "The landmark Dunedin study (2012) followed 1,000 New Zealanders from birth to age 38 and found that participants who began heavy marijuana use as teenagers showed an average IQ decline of 5-8 points by age 38, even after quitting. Critically, this effect was only observed in those who started using before age 18 — adult-onset users showed no significant IQ decline. This makes biological sense: the adolescent brain is still developing, particularly the prefrontal cortex (responsible for executive function), and cannabinoids can disrupt this development. However, subsequent studies have complicated the picture. A 2016 study of twin pairs found that shared family factors (genetics, environment) may explain much of the apparent IQ decline attributed to marijuana. The current scientific consensus is: heavy teen use probably does impair cognitive development, particularly executive function and processing speed; occasional adult use has minimal lasting cognitive effects; and any effects in adults are largely reversible after cessation.",
+    faqItems: [
+      { question: "Does marijuana lower IQ?", answer: "Heavy teen marijuana use (before age 18) may reduce IQ by 5-8 points. Adult-onset use has minimal lasting effects. The developing adolescent brain is particularly vulnerable to cannabinoid disruption. Occasional adult use does not appear to permanently affect IQ." },
+      { question: "At what age is marijuana most harmful to the brain?", answer: "Before age 18, when the prefrontal cortex is still developing. Heavy use during adolescence is associated with reduced IQ, impaired executive function, and changes in brain structure. After age 25 (when brain development is complete), the risks are significantly lower." },
+      { question: "Is marijuana IQ loss permanent?", answer: "For teens who used heavily and quit, some recovery is observed but may not be complete. For adults, cognitive effects of marijuana are largely reversible within weeks to months of cessation. The key variable is age of onset and duration of heavy use." },
+    ],
+  },
+  {
+    title: "Are Left-Handed People Smarter?",
+    slug: "are-left-handed-people-smarter",
+    myth: "Left-handed people are more intelligent and creative than right-handed people.",
+    reality: "Left-handedness is weakly associated with slightly different cognitive profiles but not with higher overall IQ. The 'creative lefty' stereotype is largely a myth based on anecdotal examples.",
+    explanation: "The idea that left-handed people are smarter is one of the most persistent IQ myths, partly because several famous geniuses (Einstein, da Vinci, Newton — though Einstein's handedness is debated) were reportedly left-handed. However, large-scale studies show the reality is more nuanced. A 2019 meta-analysis found no significant difference in overall IQ between left-handers and right-handers. Left-handers do show slightly different cognitive profiles: they may have a small advantage in spatial tasks and divergent thinking (generating multiple solutions to open-ended problems), but they also show slightly higher rates of certain learning difficulties like dyslexia. The 'creative lefty' stereotype likely persists because of confirmation bias — we remember the left-handed geniuses and forget the far larger number of left-handed people with average abilities. About 10% of the population is left-handed, which means that with 8 billion people on earth, there are about 800 million left-handers spanning the full range of cognitive ability.",
+    faqItems: [
+      { question: "Are left-handed people smarter?", answer: "No. Large studies show no significant difference in overall IQ between left-handers and right-handers. Left-handers may have slightly different cognitive profiles (small advantages in spatial tasks) but not higher general intelligence." },
+      { question: "Why do people think lefties are smarter?", answer: "Confirmation bias — several famous geniuses (Einstein, da Vinci) are said to have been left-handed, creating the perception. But with 10% of the population being left-handed, there are hundreds of millions of left-handers across the full IQ range." },
+      { question: "Do left-handers have different brains?", answer: "Slightly. Left-handers show different patterns of brain lateralization — their right hemisphere is often more involved in language processing. This may contribute to slightly different cognitive profiles but does not result in higher overall intelligence." },
+    ],
+  },
 ];
 
 export function getMythBySlug(slug: string): IQMythInfo | undefined {
