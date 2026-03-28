@@ -12,6 +12,7 @@ import IsXIQGood from "./pages/IsXIQGood.tsx";
 import CountryIQ from "./pages/CountryIQ.tsx";
 import AverageIQByCountry from "./pages/AverageIQByCountry.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 import { iqScores } from "./data/iqScoreData";
 import { countrySlugs } from "./data/countryIQData";
 
