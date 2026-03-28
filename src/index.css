@@ -131,7 +131,7 @@
     @apply text-foreground font-semibold;
   }
   .prose-content table {
-    @apply w-full mb-6 text-sm;
+    @apply w-full mb-6 text-sm overflow-x-auto block sm:table;
   }
   .prose-content thead th {
     @apply text-left text-foreground font-semibold px-3 py-2 border-b border-[rgba(255,255,255,0.1)];

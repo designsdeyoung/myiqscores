@@ -54,18 +54,18 @@ const IsXIQGood = () => {
       </h1>
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-3 gap-4 my-8">
-        <div className="glass-card p-4 text-center rounded-xl">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Classification</p>
-          <p className="font-heading font-bold text-lg text-foreground">{data.classification}</p>
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 my-8">
+        <div className="glass-card p-3 sm:p-4 text-center rounded-xl">
+          <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mb-1">Classification</p>
+          <p className="font-heading font-bold text-sm sm:text-lg text-foreground">{data.classification}</p>
         </div>
-        <div className="glass-card p-4 text-center rounded-xl">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Percentile</p>
-          <p className="font-heading font-bold text-lg text-primary">{data.percentile}</p>
+        <div className="glass-card p-3 sm:p-4 text-center rounded-xl">
+          <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mb-1">Percentile</p>
+          <p className="font-heading font-bold text-sm sm:text-lg text-primary">{data.percentile}</p>
         </div>
-        <div className="glass-card p-4 text-center rounded-xl">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Rarity</p>
-          <p className="font-heading font-bold text-lg text-foreground">{data.rarity}</p>
+        <div className="glass-card p-3 sm:p-4 text-center rounded-xl">
+          <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider mb-1">Rarity</p>
+          <p className="font-heading font-bold text-sm sm:text-lg text-foreground">{data.rarity}</p>
         </div>
       </div>
 
