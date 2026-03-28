@@ -7,7 +7,7 @@ const distDir = path.resolve(__dirname, "../dist");
 const serverEntry = path.resolve(distDir, "server/entry-server.js");
 
 // IQ score pages
-const iqScores = [70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150];
+const iqScores = [65, 70, 75, 78, 80, 82, 85, 88, 90, 92, 95, 98, 100, 102, 105, 108, 110, 115, 120, 125, 130, 135, 140, 145, 150];
 
 // Country pages
 const countrySlugs = [
