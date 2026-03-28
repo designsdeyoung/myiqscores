@@ -38,6 +38,8 @@ const careerSlugs = [
   "clinical-pharmacist", "actuary", "economist", "nurse-practitioner",
   "speech-language-pathologist", "personal-trainer", "anesthesiologist",
   "content-creator", "retail-pharmacist", "veterinary-technician",
+  "blockchain-developer", "pharmacologist", "air-traffic-controller",
+  "optometrist", "hvac-technician",
 ];
 
 // Routes to pre-render
