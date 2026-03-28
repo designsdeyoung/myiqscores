@@ -12,6 +12,9 @@ import IsXIQGood from "./pages/IsXIQGood.tsx";
 import CountryIQ from "./pages/CountryIQ.tsx";
 import AverageIQByCountry from "./pages/AverageIQByCountry.tsx";
 import CareerIQ from "./pages/CareerIQ.tsx";
+import IQvsEQ from "./pages/IQvsEQ.tsx";
+import SATtoIQ from "./pages/SATtoIQ.tsx";
+import HowToImproveIQ from "./pages/HowToImproveIQ.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
 import { iqScores } from "./data/iqScoreData";
@@ -37,6 +40,9 @@ export const AppRoutes = () => (
     {careerSlugs.map((slug) => (
       <Route key={slug} path={`/iq-needed-for/${slug}`} element={<CareerIQ />} />
     ))}
+    <Route path="/iq-vs-eq" element={<IQvsEQ />} />
+    <Route path="/sat-to-iq" element={<SATtoIQ />} />
+    <Route path="/how-to-improve-iq" element={<HowToImproveIQ />} />
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/unsubscribe" element={<Unsubscribe />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

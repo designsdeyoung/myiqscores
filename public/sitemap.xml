@@ -552,4 +552,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.myiqscores.com/iq-vs-eq</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.myiqscores.com/sat-to-iq</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.myiqscores.com/how-to-improve-iq</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

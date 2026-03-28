@@ -39,6 +39,9 @@ const routes = [
   ...iqScores.map((s) => `/is-${s}-iq-good`),
   ...countrySlugs.map((s) => `/average-iq/${s}`),
   ...careerSlugs.map((s) => `/iq-needed-for/${s}`),
+  "/iq-vs-eq",
+  "/sat-to-iq",
+  "/how-to-improve-iq",
 ];
 
 async function prerender() {
