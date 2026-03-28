@@ -412,6 +412,71 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "How many languages does Natalie Portman speak?", answer: "Portman speaks six languages: Hebrew (native), English, French, Japanese, German, and Arabic. This exceptional multilingualism is strongly correlated with high cognitive ability and is consistent with her estimated gifted-range IQ." },
     ],
   },
+  {
+    name: "Stephen Curry",
+    slug: "stephen-curry",
+    estimatedIQ: "105–120",
+    knownFor: "NBA champion, greatest shooter in basketball history",
+    description: "Stephen Curry's IQ is estimated between 105 and 120. While not widely discussed, Curry's basketball intelligence is considered among the highest in NBA history. His ability to read defenses, create space through complex off-ball movement, and make split-second shooting decisions under pressure requires extraordinary spatial processing. Off the court, Curry graduated from Davidson College and runs a production company and multiple business ventures.",
+    iqContext: "Curry's game-specific intelligence — spatial awareness, anticipatory decision-making, and geometric calculation of shooting angles — represents cognitive ability that traditional IQ tests measure only partially. His consistent excellence over a 15+ year career, combined with business success and college completion, suggests solid general cognitive ability complemented by exceptional domain-specific intelligence.",
+    faqItems: [
+      { question: "What is Stephen Curry's IQ?", answer: "Curry's IQ is estimated at 105-120. His basketball IQ — spatial awareness, shooting geometry, and defensive reads — is considered among the highest in NBA history. He graduated from Davidson College and runs multiple businesses." },
+      { question: "Is Stephen Curry smart?", answer: "His basketball decision-making is genius-level. Off the court, his college degree, business ventures, and media production company suggest above-average general intelligence. The combination of athletic and business success requires real cognitive ability." },
+      { question: "How does Curry's IQ compare to LeBron's?", answer: "Both are estimated in the above-average range (Curry 105-120, LeBron 110-120). LeBron may have a slight edge in business IQ, while Curry's spatial-mathematical shooting intelligence may be unmatched in basketball history." },
+    ],
+  },
+  {
+    name: "Keanu Reeves",
+    slug: "keanu-reeves",
+    estimatedIQ: "110–120",
+    knownFor: "Actor (The Matrix, John Wick), philanthropist",
+    description: "Keanu Reeves' IQ is estimated between 110 and 120. While often stereotyped as a 'surfer dude' actor, Reeves has demonstrated quiet intelligence throughout his career. He spent years studying martial arts philosophy for The Matrix, has deep knowledge of motorcycle engineering (he co-founded Arch Motorcycle Company), and is a thoughtful interviewer who engages deeply with philosophical questions about consciousness, technology, and mortality.",
+    iqContext: "Reeves represents a type of intelligence that doesn't seek attention — contemplative, philosophical, and practical. His motorcycle company requires genuine engineering understanding. His choice of film roles often explores deep philosophical themes (The Matrix, A Scanner Darkly). Colleagues consistently describe him as one of the most thoughtful and intellectually curious actors in Hollywood.",
+    faqItems: [
+      { question: "What is Keanu Reeves' IQ?", answer: "Reeves' IQ is estimated at 110-120. He demonstrates above-average intelligence through his philosophical interests, motorcycle engineering company, and thoughtful engagement with complex themes in his film work." },
+      { question: "Is Keanu Reeves smart?", answer: "Yes, in a quiet, contemplative way. He co-founded an engineering company (Arch Motorcycle), engages deeply with philosophy, and colleagues describe him as unusually thoughtful and curious. His intelligence manifests as depth rather than flashiness." },
+      { question: "What makes Keanu different from other actors?", answer: "Reeves combines above-average intelligence with extraordinary humility and philosophical depth. His engineering company, martial arts mastery, and choice of intellectually challenging roles suggest a mind that constantly seeks understanding rather than just entertainment." },
+    ],
+  },
+  {
+    name: "Lady Gaga",
+    slug: "lady-gaga",
+    estimatedIQ: "120–130",
+    knownFor: "Singer, songwriter, actress, fashion icon",
+    description: "Lady Gaga's IQ is estimated between 120 and 130 based on her demonstrated abilities in music composition, performance art conceptualization, and business strategy. Gaga was admitted to NYU's Tisch School of the Arts at age 17 (one of the youngest ever) and can play piano by ear. Her ability to conceptualize elaborate performance art pieces, direct visual narratives, and build one of the most successful personal brands in music history requires genuine creative and strategic intelligence.",
+    iqContext: "Gaga's intelligence manifests primarily in creative and strategic domains. Her early admission to Tisch, classical piano training, and ability to write hit songs across multiple genres suggest strong verbal-musical intelligence. Her brand management — from meat dress to Oscar-winning actress — demonstrates strategic thinking that rivals any MBA case study. She represents the intersection of high creative and business intelligence.",
+    faqItems: [
+      { question: "What is Lady Gaga's IQ?", answer: "Gaga's IQ is estimated at 120-130. She was admitted to NYU Tisch at 17, plays piano by ear, writes her own songs, and has built one of the most successful personal brands in entertainment — all requiring genuine cognitive ability." },
+      { question: "Is Lady Gaga a musical genius?", answer: "Her musical abilities are exceptional — she plays multiple instruments, writes complex compositions, and performs across genres from pop to jazz to film scores. Whether this qualifies as 'genius' depends on the definition, but her musical intelligence is undeniably elite." },
+      { question: "How smart is Lady Gaga?", answer: "Very. Her NYU early admission, classical training, songwriting versatility, Oscar-winning acting, and strategic brand management all independently suggest above-average to superior intelligence applied across creative and business domains." },
+    ],
+  },
+  {
+    name: "Neil deGrasse Tyson",
+    slug: "neil-degrasse-tyson",
+    estimatedIQ: "125–135",
+    knownFor: "Astrophysicist, science communicator, author",
+    description: "Neil deGrasse Tyson's IQ is estimated between 125 and 135. Tyson earned a PhD in astrophysics from Columbia University and directs the Hayden Planetarium. His particular genius is science communication — the ability to explain complex astrophysical concepts in engaging, accessible language that reaches millions. This translation ability requires both deep scientific understanding and exceptional verbal intelligence.",
+    iqContext: "Tyson's IQ estimate may seem modest for a prominent scientist, but it reflects the reality that science communication is a different skill than pure research. His Columbia PhD proves strong analytical ability, and his communication skills suggest high verbal intelligence. Tyson has arguably done more to popularize science than any individual since Carl Sagan, demonstrating that effective knowledge sharing is its own form of intellectual achievement.",
+    faqItems: [
+      { question: "What is Neil deGrasse Tyson's IQ?", answer: "Tyson's IQ is estimated at 125-135. His Columbia astrophysics PhD demonstrates strong analytical ability, and his exceptional science communication skills suggest high verbal intelligence." },
+      { question: "Is Neil deGrasse Tyson a genius?", answer: "In the formal IQ sense (140+), probably not. But his combination of scientific expertise and communication brilliance represents a type of genius — the ability to make complex science accessible to millions is rare and enormously valuable." },
+      { question: "How does Tyson compare to other scientists?", answer: "Tyson's estimated IQ (125-135) is lower than some theoretical physicists (140+) but reflects his focus on communication rather than pure research. His impact through popularizing science may exceed many higher-IQ researchers who remain unknown outside their fields." },
+    ],
+  },
+  {
+    name: "Lionel Messi",
+    slug: "lionel-messi",
+    estimatedIQ: "105–115",
+    knownFor: "Football/soccer GOAT, 8 Ballon d'Or awards",
+    description: "Lionel Messi's IQ is estimated between 105 and 115 based on general cognitive indicators, though his football-specific intelligence is often described as the highest the sport has ever seen. Messi's ability to process the positions and movements of 21 other players simultaneously, predict trajectories, and find impossible passing angles in milliseconds represents extraordinary spatial-temporal processing that standard IQ tests barely measure.",
+    iqContext: "Messi demonstrates that domain-specific intelligence can reach 'genius' levels even when general IQ is above-average but not exceptional. His spatial processing, pattern recognition, and decision-making speed on the field are unmatched in football history. Studies of elite footballers show they score significantly above average on executive function tests measuring anticipation and decision speed — cognitive abilities directly relevant to IQ but applied in a physical domain.",
+    faqItems: [
+      { question: "What is Lionel Messi's IQ?", answer: "Messi's general IQ is estimated at 105-115 (above average). However, his football-specific cognitive abilities — spatial processing, anticipation, decision-making speed — are considered the highest in the sport's history." },
+      { question: "Is Messi smarter than Ronaldo?", answer: "In football IQ, Messi is widely considered superior — his vision, passing, and spatial awareness are described as almost supernatural. In general cognitive ability, both are likely above average. They represent different types of football intelligence: Messi's is creative-spatial, Ronaldo's is athletic-tactical." },
+      { question: "How does Messi process the game so fast?", answer: "Research on elite athletes shows they develop superior pattern recognition and anticipation through thousands of hours of practice. Messi's brain likely processes game situations using deeply encoded templates that allow near-instantaneous decision-making — a form of expert intuition built on extraordinary practice and natural spatial ability." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
