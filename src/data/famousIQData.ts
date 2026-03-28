@@ -477,6 +477,58 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "How does Messi process the game so fast?", answer: "Research on elite athletes shows they develop superior pattern recognition and anticipation through thousands of hours of practice. Messi's brain likely processes game situations using deeply encoded templates that allow near-instantaneous decision-making — a form of expert intuition built on extraordinary practice and natural spatial ability." },
     ],
   },
+  {
+    name: "Ashton Kutcher",
+    slug: "ashton-kutcher",
+    estimatedIQ: "160",
+    knownFor: "Actor, tech investor, anti-trafficking activist",
+    description: "Ashton Kutcher reportedly has an IQ of 160 — matching Einstein's estimate. Before acting, Kutcher studied biochemical engineering at the University of Iowa on a scholarship. He became one of Hollywood's most successful tech investors, with early investments in Uber, Airbnb, Spotify, and Skype through his fund A-Grade Investments, which returned over $250 million. His anti-trafficking organization, Thorn, has helped identify thousands of child exploitation victims using AI technology.",
+    iqContext: "Kutcher's reported 160 IQ is consistent with his biochemical engineering background and extraordinarily successful tech investment track record. Picking winners like Uber and Airbnb before they were mainstream requires genuine pattern recognition and analytical ability. His Thorn organization applies technological intelligence to humanitarian purposes, demonstrating cognitive ability applied to social impact.",
+    faqItems: [
+      { question: "What is Ashton Kutcher's IQ?", answer: "Kutcher reportedly has an IQ of 160. He studied biochemical engineering on a scholarship and became one of Hollywood's most successful tech investors with early stakes in Uber, Airbnb, and Spotify." },
+      { question: "Is Ashton Kutcher actually smart?", answer: "His track record strongly suggests yes. A biochemical engineering scholarship, $250M+ tech investment returns, and building an AI-powered anti-trafficking organization all require genuine analytical and strategic intelligence." },
+      { question: "How did Kutcher become a successful tech investor?", answer: "Kutcher leveraged his celebrity access to meet founders, combined with genuine technical understanding from his engineering background and reportedly high IQ. His fund A-Grade Investments identified transformative companies early — a skill requiring strong pattern recognition." },
+    ],
+  },
+  {
+    name: "Quentin Tarantino",
+    slug: "quentin-tarantino",
+    estimatedIQ: "160",
+    knownFor: "Director, screenwriter, film historian",
+    description: "Quentin Tarantino reportedly has an IQ of 160. Despite never attending film school — he dropped out of high school at 15 — Tarantino educated himself by working in a video rental store where he watched and analyzed thousands of films. His screenplays demonstrate extraordinary verbal intelligence, complex non-linear narrative construction, and an encyclopedic knowledge of cinema history that rivals any film professor.",
+    iqContext: "Tarantino's case challenges assumptions about intelligence and formal education. His reported 160 IQ manifests as exceptional verbal ability (his dialogue is among the most distinctive in cinema), complex structural thinking (non-linear storytelling), and an almost superhuman memory for film details. He demonstrates that formal schooling and IQ are not the same thing — he achieved genius-level expertise through passionate self-education.",
+    faqItems: [
+      { question: "What is Quentin Tarantino's IQ?", answer: "Tarantino reportedly has an IQ of 160. Despite dropping out of high school, his screenwriting genius, encyclopedic film knowledge, and complex narrative construction all reflect extraordinary cognitive ability." },
+      { question: "How is Tarantino so smart without formal education?", answer: "Tarantino is self-educated through voracious film watching, reading, and analysis. His video store years were essentially a self-directed film school. This demonstrates that IQ and formal education are separate — high cognitive ability can drive exceptional self-education." },
+      { question: "What makes Tarantino's writing so distinctive?", answer: "His dialogue combines exceptional verbal intelligence with deep cultural knowledge. Tarantino's ability to construct complex non-linear narratives, write distinctive voices for dozens of characters, and weave intertextual references requires genuine intellectual sophistication." },
+    ],
+  },
+  {
+    name: "Serena Williams",
+    slug: "serena-williams",
+    estimatedIQ: "105–118",
+    knownFor: "Tennis GOAT, 23 Grand Slam titles, entrepreneur",
+    description: "Serena Williams' IQ is estimated between 105 and 118. Beyond her unmatched tennis achievements, Williams has demonstrated strong business intelligence through her venture capital firm (Serena Ventures, which has invested in 60+ companies), fashion brand, and media appearances. Her ability to dominate tennis for over two decades requires extraordinary cognitive skills — spatial processing, anticipation, tactical adaptation, and mental resilience.",
+    iqContext: "Williams represents the combination of above-average general intelligence with elite domain-specific cognitive abilities. Her tennis IQ — reading opponents, adjusting strategy mid-match, and performing under extreme pressure — is unmatched in the sport's history. Her post-tennis business success, particularly in venture capital, demonstrates analytical and strategic thinking that extends well beyond athletics.",
+    faqItems: [
+      { question: "What is Serena Williams' IQ?", answer: "Williams' IQ is estimated at 105-118. Her tennis tactical intelligence, business investments through Serena Ventures, and ability to dominate her sport for 20+ years all suggest above-average cognitive ability." },
+      { question: "Is Serena Williams smart off the court?", answer: "Her business track record suggests yes. Serena Ventures has invested in 60+ companies with strong returns. She manages a fashion brand, media appearances, and philanthropic work — requiring genuine strategic and organizational intelligence." },
+      { question: "How does athletic intelligence relate to IQ?", answer: "Athletic intelligence (spatial processing, rapid decision-making, anticipation) overlaps with but is distinct from traditional IQ. Elite athletes like Serena score above average on executive function tests that measure skills related to IQ." },
+    ],
+  },
+  {
+    name: "Rihanna",
+    slug: "rihanna",
+    estimatedIQ: "115–125",
+    knownFor: "Singer, Fenty Beauty founder, billionaire entrepreneur",
+    description: "Rihanna's IQ is estimated between 115 and 125 based on her demonstrated business acumen. Beyond her music career, Rihanna built Fenty Beauty into a $2.8 billion brand by identifying an underserved market (inclusive shade ranges for all skin tones) — a strategic insight that established brands had missed for decades. She became the wealthiest female musician primarily through business, not music, demonstrating genuine entrepreneurial intelligence.",
+    iqContext: "Rihanna's business achievement — building a multi-billion dollar beauty empire — requires cognitive abilities that IQ tests only partially capture. Identifying the gap in beauty industry inclusivity, executing a global brand launch, and managing a complex product portfolio all demand strategic thinking, pattern recognition, and creative problem-solving. Her estimated IQ of 115-125 reflects genuine above-average cognitive ability applied to entrepreneurial domains.",
+    faqItems: [
+      { question: "What is Rihanna's IQ?", answer: "Rihanna's IQ is estimated at 115-125. She built Fenty Beauty into a $2.8 billion brand by identifying a market gap that established companies missed, demonstrating genuine strategic intelligence." },
+      { question: "How did Rihanna become a billionaire?", answer: "Primarily through Fenty Beauty, which she built by identifying that the beauty industry lacked inclusive shade ranges. This strategic insight — seeing what giants like L'Oréal and Estée Lauder missed — required genuine market analysis and creative problem-solving." },
+      { question: "Is Rihanna smarter than other musicians?", answer: "In business intelligence, Rihanna stands out exceptionally. While many musicians have similar or higher IQs, few have demonstrated the strategic thinking required to build a multi-billion dollar brand from scratch. Her entrepreneurial intelligence appears particularly strong." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
