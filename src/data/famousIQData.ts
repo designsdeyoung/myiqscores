@@ -178,6 +178,71 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "Is athletic intelligence the same as IQ?", answer: "No. Athletic or bodily-kinesthetic intelligence involves spatial processing, motor control, and rapid decision-making under physical stress. While it correlates modestly with traditional IQ, it represents a distinct cognitive domain. Someone can have average IQ but extraordinary athletic intelligence, or vice versa." },
     ],
   },
+  {
+    name: "Jeff Bezos",
+    slug: "jeff-bezos",
+    estimatedIQ: "145–155",
+    knownFor: "Amazon founder, Blue Origin, richest person",
+    description: "Jeff Bezos' IQ is estimated at 145-155 based on his academic record (valedictorian, Princeton summa cum laude in electrical engineering and computer science) and his ability to build Amazon from an online bookstore into the world's most valuable company. Bezos is known for his rigorous analytical thinking, long-term strategic vision, and data-driven decision-making approach.",
+    iqContext: "Bezos graduated summa cum laude from Princeton in two demanding majors, suggesting cognitive ability well above the gifted threshold. His success demonstrates the combination of high IQ with exceptional strategic thinking and extreme long-term orientation. His famous 'regret minimization framework' for decision-making reflects the kind of systematic, analytical approach characteristic of very high cognitive ability.",
+    faqItems: [
+      { question: "What is Jeff Bezos' IQ?", answer: "Bezos' IQ is estimated at 145-155 based on his academic achievements (Princeton valedictorian, summa cum laude in two majors) and demonstrated strategic thinking ability. No verified IQ test score has been publicly disclosed." },
+      { question: "How smart is Jeff Bezos compared to Elon Musk?", answer: "Bezos (estimated 145-155) and Musk (estimated 150-155) likely have comparable cognitive ability. Both demonstrate exceptional analytical thinking, though Bezos leans more toward strategic/business intelligence while Musk emphasizes technical/engineering intelligence." },
+      { question: "What makes Bezos successful beyond IQ?", answer: "Bezos combines high IQ with extreme long-term thinking (he plans in decades), obsessive customer focus, willingness to accept failure, and the ability to attract and retain exceptional talent. His 'Day 1' philosophy reflects a mindset that IQ alone cannot create." },
+    ],
+  },
+  {
+    name: "Oprah Winfrey",
+    slug: "oprah-winfrey",
+    estimatedIQ: "120–130",
+    knownFor: "Media mogul, talk show host, philanthropist",
+    description: "Oprah Winfrey's IQ is estimated between 120 and 130, placing her in the superior range. Winfrey built a media empire from humble beginnings through exceptional emotional intelligence, verbal ability, and business acumen. She was reading by age three and skipped grades in school. Her ability to connect with audiences, interview world leaders, and build a multi-billion dollar brand demonstrates cognitive abilities that extend well beyond what IQ tests measure.",
+    iqContext: "Winfrey's story powerfully illustrates that success comes from the intersection of cognitive ability, emotional intelligence, drive, and opportunity. Her estimated IQ of 120-130 is well above average but not at the extreme levels sometimes associated with billionaire success. Her particular genius is interpersonal — the ability to create authentic emotional connections at scale. This form of intelligence, sometimes called interpersonal or social intelligence, is poorly measured by traditional IQ tests.",
+    faqItems: [
+      { question: "What is Oprah Winfrey's IQ?", answer: "Oprah's IQ is estimated at 120-130, in the superior range. She demonstrated early academic giftedness (reading at age 3, skipping grades) and has built a multi-billion dollar media empire through exceptional verbal, emotional, and business intelligence." },
+      { question: "Is Oprah a genius?", answer: "By strict IQ definitions (140+), probably not. But Oprah's combination of verbal brilliance, emotional intelligence, business acumen, and cultural impact suggests a form of genius that transcends IQ scores. Her influence on media and culture is unmatched." },
+      { question: "How did Oprah succeed despite her background?", answer: "Oprah overcame poverty, abuse, and racial discrimination through a combination of above-average intelligence, extraordinary emotional resilience, exceptional communication skills, and relentless work ethic. Her story demonstrates that cognitive ability combined with determination can overcome severe disadvantage." },
+    ],
+  },
+  {
+    name: "Richard Feynman",
+    slug: "richard-feynman",
+    estimatedIQ: "125",
+    knownFor: "Nobel Prize physicist, quantum electrodynamics",
+    description: "Richard Feynman is one of the most fascinating cases in IQ history — a Nobel Prize-winning physicist whose recorded IQ was 'only' 125. This score, while superior, is unremarkable by theoretical physics standards. Yet Feynman made foundational contributions to quantum electrodynamics, developed the Feynman diagrams used by all particle physicists, and was widely considered one of the most brilliant minds of the 20th century by his peers.",
+    iqContext: "Feynman's case is perhaps the strongest evidence that IQ doesn't tell the whole story. His recorded score of 125 — likely from a childhood test emphasizing verbal skills, which was not his strongest area — dramatically underestimates his mathematical and physical intuition. Feynman demonstrates that specific cognitive gifts (in his case, extraordinary physical and mathematical intuition) can be more important than general cognitive ability as measured by IQ tests. His story is often cited to caution against over-reliance on IQ scores.",
+    faqItems: [
+      { question: "What was Richard Feynman's IQ?", answer: "Feynman's recorded IQ was 125 — superior but not exceptional by physicist standards. This surprising result is often cited as evidence that IQ tests don't fully capture scientific genius. Feynman's extraordinary physical and mathematical intuition was poorly measured by the standard IQ test he took." },
+      { question: "How did Feynman win a Nobel Prize with a 125 IQ?", answer: "Feynman's IQ score likely underrepresented his mathematical and spatial reasoning abilities. The test he took may have emphasized verbal skills, which wasn't his strength. His specific gifts — extraordinary physical intuition and mathematical creativity — were precisely what theoretical physics demands." },
+      { question: "Does Feynman's IQ disprove IQ testing?", answer: "Not entirely, but it strongly cautions against treating IQ as a complete measure of intelligence. Feynman shows that specific cognitive gifts can matter more than general ability, and that a single IQ score may miss the particular type of intelligence that makes someone exceptional in their field." },
+    ],
+  },
+  {
+    name: "Taylor Swift",
+    slug: "taylor-swift",
+    estimatedIQ: "115–125",
+    knownFor: "Singer-songwriter, music industry mogul",
+    description: "Taylor Swift's IQ is estimated between 115 and 125 based on her demonstrated abilities in strategic thinking, business negotiation, and complex songwriting. Swift began writing songs at age 12, negotiated record deals as a teenager, and later made the unprecedented decision to re-record her entire catalog to regain ownership — a strategic masterstroke that required sophisticated understanding of music law, fan psychology, and market timing.",
+    iqContext: "Swift demonstrates that creative intelligence combined with strategic business thinking can produce extraordinary results. Her ability to craft emotionally resonant lyrics, manage a complex brand across multiple eras, and navigate the music industry's legal and financial landscape suggests above-average cognitive ability applied across creative and analytical domains. Her re-recording strategy was praised by Harvard Business School as a case study in strategic thinking.",
+    faqItems: [
+      { question: "What is Taylor Swift's IQ?", answer: "Swift's IQ is estimated at 115-125. No verified score exists, but her demonstrated abilities in songwriting, business strategy, and brand management suggest high average to superior intelligence. Her re-recording strategy was studied at Harvard Business School." },
+      { question: "Is Taylor Swift intelligent?", answer: "Yes. Beyond her musical talent, Swift has demonstrated sophisticated business acumen (re-recording her catalog), strategic brand management (the 'eras' concept), and emotional intelligence (maintaining fan loyalty across two decades). These skills require genuine cognitive ability." },
+      { question: "How does Swift compare to other musicians intellectually?", answer: "Among pop musicians, Swift is notable for her business sophistication and lyrical complexity. While many musicians have similar or higher raw IQs, Swift's application of intelligence to both creative and strategic domains is unusual in the industry." },
+    ],
+  },
+  {
+    name: "Warren Buffett",
+    slug: "warren-buffett",
+    estimatedIQ: "130–145",
+    knownFor: "Investor, Berkshire Hathaway, Oracle of Omaha",
+    description: "Warren Buffett's IQ is estimated between 130 and 145, placing him in the gifted range. Buffett demonstrated exceptional numerical and analytical ability from childhood — he was doing complex math calculations by age 6 and filing his first tax return at age 13. His investment philosophy requires deep analytical reasoning, pattern recognition across decades of financial data, and the ability to resist emotional decision-making under market pressure.",
+    iqContext: "Buffett himself has said that investing success requires 'not extraordinary intelligence but extraordinary discipline.' This insight is consistent with research showing that above a threshold of about 120, investment returns depend more on emotional control and patience than additional IQ points. Buffett's particular genius is the combination of quantitative analysis with emotional independence — the ability to think clearly when everyone else is panicking.",
+    faqItems: [
+      { question: "What is Warren Buffett's IQ?", answer: "Buffett's IQ is estimated at 130-145. He demonstrated prodigious mathematical ability as a child and has maintained exceptional analytical performance for over 60 years of investing. His IQ combined with extreme patience and emotional discipline explains his investment success." },
+      { question: "Do you need a high IQ to invest successfully?", answer: "Buffett says no — 'You don't need to be a rocket scientist. Investing is not a game where the 120-IQ guy beats the 150-IQ guy.' Above-average intelligence helps, but emotional discipline, patience, and independent thinking matter more for investment returns." },
+      { question: "How does Buffett's IQ compare to other billionaires?", answer: "Buffett's estimated 130-145 is lower than some tech billionaires (Bezos ~145-155, Gates ~150-160) but well into the gifted range. His particular strength is sustained analytical discipline over decades rather than rapid innovation." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
