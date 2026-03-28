@@ -113,6 +113,71 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "Did Newton really discover gravity from a falling apple?", answer: "The apple story is likely embellished but has some basis in fact. Newton himself told the story to friends, saying that seeing an apple fall prompted him to wonder whether the same force that pulled the apple extended to the Moon. The key insight wasn't that things fall — everyone knew that — but that gravity is universal and follows a precise mathematical law." },
     ],
   },
+  {
+    name: "Steve Jobs",
+    slug: "steve-jobs",
+    estimatedIQ: "130–145",
+    knownFor: "Apple co-founder, iPhone, Macintosh",
+    description: "Steve Jobs had an estimated IQ of 130–145, placing him in the gifted range. Jobs was not a programmer or engineer — his genius was in design thinking, product vision, and understanding what consumers wanted before they knew it themselves. He combined high cognitive ability with extraordinary aesthetic sense, persuasion skills, and relentless perfectionism to create products that transformed entire industries.",
+    iqContext: "Jobs demonstrates that the type of intelligence matters as much as the amount. His particular gifts — spatial design sense, ability to simplify complexity, and talent for connecting technology with human experience — don't map neatly onto traditional IQ subtests. Jobs dropped out of Reed College after one semester, yet his calligraphy class there inspired the Mac's beautiful typography. His story shows how unconventional intelligence can reshape the world.",
+    faqItems: [
+      { question: "What was Steve Jobs' IQ?", answer: "Steve Jobs' IQ is estimated at 130–145. He never publicly disclosed a score. His intelligence was more evident in design vision, product strategy, and persuasion than in traditional academic measures." },
+      { question: "Was Steve Jobs smarter than Bill Gates?", answer: "Gates likely has a higher traditional IQ (150-160 vs 130-145 for Jobs). However, Jobs had superior design intuition and product vision. They represent different types of intelligence — Gates excels at analytical and technical thinking, while Jobs excelled at creative and experiential thinking." },
+      { question: "Did Jobs succeed because of his IQ?", answer: "Partly, but Jobs' success owed as much to his design obsession, reality distortion field (persuasion ability), perfectionism, and timing. Many people with higher IQs never achieve comparable success. Jobs combined good-enough intelligence with extraordinary vision and drive." },
+    ],
+  },
+  {
+    name: "Mark Zuckerberg",
+    slug: "mark-zuckerberg",
+    estimatedIQ: "140–150",
+    knownFor: "Facebook/Meta founder, social media pioneer",
+    description: "Mark Zuckerberg's IQ is estimated at 140–150 based on his academic achievements and technical abilities. Zuckerberg was a programming prodigy who built a music recommendation system in high school that Microsoft offered to buy. At Harvard, he built Facebook in his dorm room while also excelling in his computer science and psychology courses. His ability to code complex systems and simultaneously understand social dynamics reflects both technical and social intelligence.",
+    iqContext: "Zuckerberg scored 1590 on his SAT, suggesting an IQ in the 140+ range. His combination of programming skill and social insight — understanding how people connect and share online — enabled Facebook's explosive growth. However, his career also shows that high IQ doesn't guarantee wisdom: Facebook has faced persistent criticism for privacy violations and societal impacts that a more emotionally intelligent leader might have foreseen.",
+    faqItems: [
+      { question: "What is Mark Zuckerberg's IQ?", answer: "Zuckerberg's IQ is estimated at 140-150. He scored 1590 on the SAT and was a programming prodigy from a young age. His ability to build complex systems while understanding social dynamics suggests both high analytical and social intelligence." },
+      { question: "Is Zuckerberg a genius?", answer: "By IQ standards, likely yes — an estimated 140-150 exceeds the commonly cited 140 genius threshold. His achievement of building the world's largest social network while still a teenager is consistent with exceptional cognitive ability." },
+      { question: "How does Zuckerberg compare to other tech founders?", answer: "Zuckerberg's estimated IQ (140-150) is comparable to Gates (150-160) and Musk (150-155). All three combined exceptional technical ability with business vision, though their specific cognitive strengths differ." },
+    ],
+  },
+  {
+    name: "Barack Obama",
+    slug: "barack-obama",
+    estimatedIQ: "130–145",
+    knownFor: "44th US President, Harvard Law Review",
+    description: "Barack Obama's IQ is estimated between 130 and 145, placing him in the gifted range. Obama graduated magna cum laude from Harvard Law School and was the first African American president of the Harvard Law Review — achievements that require exceptional verbal reasoning and analytical ability. His ability to deliver complex, nuanced speeches without teleprompter failures and to synthesize policy information across diverse domains suggests strong cognitive flexibility.",
+    iqContext: "Obama's intelligence is particularly evident in his verbal and interpersonal domains. His memoir writing, constitutional law teaching at University of Chicago, and ability to communicate complex ideas accessibly all reflect high verbal IQ. Political leadership at the presidential level requires managing vast amounts of information, making decisions under uncertainty, and communicating with diverse audiences — all cognitively demanding tasks that go beyond what IQ tests measure.",
+    faqItems: [
+      { question: "What is Barack Obama's IQ?", answer: "Obama's IQ is estimated at 130-145. He graduated magna cum laude from Harvard Law School and led the Harvard Law Review, achievements that suggest superior verbal and analytical intelligence. No verified IQ score has been publicly disclosed." },
+      { question: "Do presidents have high IQs?", answer: "Research estimates most US presidents had IQs between 120 and 145. The demands of the presidency — policy analysis, strategic thinking, communication, crisis management — select for high cognitive ability. However, emotional intelligence and political instinct matter equally." },
+      { question: "Is Obama one of the smartest presidents?", answer: "Most rankings place Obama among the more intellectually gifted presidents, alongside Jefferson, Lincoln, and Clinton. His legal scholarship and rhetorical ability suggest particularly strong verbal intelligence. However, presidential intelligence is difficult to compare across different eras." },
+    ],
+  },
+  {
+    name: "Kim Kardashian",
+    slug: "kim-kardashian",
+    estimatedIQ: "115–125",
+    knownFor: "Media mogul, entrepreneur, law student",
+    description: "Kim Kardashian's IQ is estimated at 115–125 — above average and possibly in the superior range. While often dismissed as merely famous, Kardashian has built a multi-billion dollar business empire spanning beauty, fashion, media, and technology. She is studying to become a lawyer through California's alternative path (the Law Office Study Program), passing the 'baby bar' exam after multiple attempts. Her business achievements require strategic thinking, brand management, and negotiation skills.",
+    iqContext: "Kardashian's story challenges assumptions about the relationship between IQ and public perception. Her estimated IQ places her above roughly 85-95% of the population, yet she is rarely perceived as highly intelligent. This disconnect highlights cultural biases about who 'looks smart' and the reality that business empire-building requires substantial cognitive ability regardless of how a person is perceived by the public.",
+    faqItems: [
+      { question: "What is Kim Kardashian's IQ?", answer: "Kim Kardashian's IQ is estimated at 115-125, placing her in the high average to superior range. No verified test score exists. This estimate reflects her demonstrated business acumen, media strategy skills, and pursuit of a legal career." },
+      { question: "Is Kim Kardashian actually smart?", answer: "By objective measures, yes. Building a multi-billion dollar brand empire requires strategic thinking, negotiation skill, and business intelligence. Her pursuit of a law career demonstrates analytical ability. Her IQ is likely above 85-95% of the population." },
+      { question: "How did Kim Kardashian pass the bar exam?", answer: "Kardashian is pursuing law through California's Law Office Study Program (an apprenticeship alternative to law school). She passed the First-Year Law Students' Examination ('baby bar') in 2021 after multiple attempts. This exam has a pass rate of only 20%, requiring genuine legal analytical ability." },
+    ],
+  },
+  {
+    name: "Cristiano Ronaldo",
+    slug: "cristiano-ronaldo",
+    estimatedIQ: "105–115",
+    knownFor: "Football/soccer legend, 5 Ballon d'Or awards",
+    description: "Cristiano Ronaldo's IQ is estimated at 105–115, in the average to high average range. While Ronaldo's intelligence is rarely discussed, elite athletic performance requires substantial cognitive ability — rapid decision-making, spatial processing, pattern recognition, and the ability to anticipate opponents' movements. Studies show elite athletes score above average on cognitive tests measuring reaction time, spatial awareness, and executive function.",
+    iqContext: "Ronaldo's story illustrates that bodily-kinesthetic intelligence — the ability to control movement with precision and grace — is a genuine form of cognitive ability that IQ tests largely ignore. His ability to process visual information, calculate trajectories, and execute complex motor sequences in milliseconds during matches represents extraordinary neural processing. Elite sports require 'game intelligence' that combines pattern recognition, decision-making speed, and spatial awareness.",
+    faqItems: [
+      { question: "What is Cristiano Ronaldo's IQ?", answer: "Ronaldo's IQ is estimated at 105-115, above average. However, his athletic intelligence — spatial processing, decision-making speed, and pattern recognition on the field — represents cognitive abilities that standard IQ tests don't fully capture." },
+      { question: "Are professional athletes smart?", answer: "Research shows elite athletes score above average on cognitive tests measuring executive function, reaction time, and spatial processing. The cognitive demands of elite sports — rapid decision-making under pressure, reading opponents, executing complex strategies — require genuine intelligence." },
+      { question: "Is athletic intelligence the same as IQ?", answer: "No. Athletic or bodily-kinesthetic intelligence involves spatial processing, motor control, and rapid decision-making under physical stress. While it correlates modestly with traditional IQ, it represents a distinct cognitive domain. Someone can have average IQ but extraordinary athletic intelligence, or vice versa." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {

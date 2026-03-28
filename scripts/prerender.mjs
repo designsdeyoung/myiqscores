@@ -56,6 +56,11 @@ const routes = [
   "/famous-iq/bill-gates",
   "/famous-iq/marie-curie",
   "/famous-iq/isaac-newton",
+  "/famous-iq/steve-jobs",
+  "/famous-iq/mark-zuckerberg",
+  "/famous-iq/barack-obama",
+  "/famous-iq/kim-kardashian",
+  "/famous-iq/cristiano-ronaldo",
 ];
 
 async function prerender() {
