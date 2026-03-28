@@ -11,10 +11,12 @@ import IQScoreRanges from "./pages/IQScoreRanges.tsx";
 import IsXIQGood from "./pages/IsXIQGood.tsx";
 import CountryIQ from "./pages/CountryIQ.tsx";
 import AverageIQByCountry from "./pages/AverageIQByCountry.tsx";
+import CareerIQ from "./pages/CareerIQ.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
 import { iqScores } from "./data/iqScoreData";
 import { countrySlugs } from "./data/countryIQData";
+import { careerSlugs } from "./data/careerIQData";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,9 @@ export const AppRoutes = () => (
     <Route path="/average-iq-by-country" element={<AverageIQByCountry />} />
     {countrySlugs.map((slug) => (
       <Route key={slug} path={`/average-iq/${slug}`} element={<CountryIQ />} />
+    ))}
+    {careerSlugs.map((slug) => (
+      <Route key={slug} path={`/iq-needed-for/${slug}`} element={<CareerIQ />} />
     ))}
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/unsubscribe" element={<Unsubscribe />} />

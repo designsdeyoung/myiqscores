@@ -21,6 +21,12 @@ const countrySlugs = [
   "india", "egypt", "kenya", "south-africa", "nigeria", "ghana", "ethiopia",
 ];
 
+// Career pages
+const careerSlugs = [
+  "doctor", "lawyer", "engineer", "software-developer", "teacher",
+  "nurse", "accountant", "police-officer", "electrician", "plumber",
+];
+
 // Routes to pre-render
 const routes = [
   "/",
@@ -30,6 +36,7 @@ const routes = [
   "/average-iq-by-country",
   ...iqScores.map((s) => `/is-${s}-iq-good`),
   ...countrySlugs.map((s) => `/average-iq/${s}`),
+  ...careerSlugs.map((s) => `/iq-needed-for/${s}`),
 ];
 
 async function prerender() {
