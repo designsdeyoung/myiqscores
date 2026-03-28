@@ -31,6 +31,8 @@ const careerSlugs = [
   "chef", "real-estate-agent", "paramedic", "truck-driver", "journalist",
   "mathematician", "professional-athlete", "welder", "ceo", "mechanic",
   "physical-therapist", "pharmacy-technician", "carpenter",
+  "investment-banker", "airline-pilot", "marketing-manager",
+  "registered-dietitian", "cybersecurity-analyst",
 ];
 
 // Routes to pre-render
