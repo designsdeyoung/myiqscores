@@ -1,5 +1,5 @@
 // AdSense configuration — replace with real values after approval
-export const ADSENSE_PUB_ID = "ca-pub-XXXXXXXXXXXXXXXX";
+export const ADSENSE_PUB_ID = "ca-pub-5051305701488211";
 
 export const AD_SLOTS = {
   leaderboard: "slot-XXXXXXXXX1",
