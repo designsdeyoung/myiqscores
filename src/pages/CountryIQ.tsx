@@ -10,6 +10,17 @@ const CountryIQ = () => {
 
   if (!country) return <Navigate to="/average-iq-by-country" replace />;
 
+  const relatedPages = [
+    { title: "Average IQ by Country (Full Ranking)", href: "/average-iq-by-country" },
+    { title: "What Is IQ? Complete Guide", href: "/what-is-iq" },
+    { title: `Is ${country.avgIQ} IQ Good?`, href: `/is-${country.avgIQ}-iq-good` },
+    ...country.relatedCountries.slice(0, 3).map((s) => {
+      const c = countryIQData.find((x) => x.slug === s);
+      return c ? { title: `Average IQ in ${c.name}`, href: `/average-iq/${c.slug}` } : null;
+    }).filter(Boolean) as { title: string; href: string }[],
+    { title: "IQ Score Ranges Chart", href: "/iq-score-ranges" },
+  ];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -53,7 +64,7 @@ const CountryIQ = () => {
     .slice(0, 5);
 
   return (
-    <ContentPage ctaText="Test your IQ and see how you compare">
+    <ContentPage ctaText="Test your IQ and see how you compare" relatedPages={relatedPages}>
       <SEOHead
         title={`Average IQ in ${country.name}: ${country.avgIQ}, Ranked #${country.rank} Globally | MyIQScores`}
         description={country.metaDescription}

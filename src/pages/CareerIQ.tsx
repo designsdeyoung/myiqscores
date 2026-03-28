@@ -10,6 +10,18 @@ const CareerIQ = () => {
 
   if (!career) return <Navigate to="/what-is-iq" replace />;
 
+  const midIQ = Math.round((career.minIQ + career.maxIQ) / 2 / 5) * 5;
+  const relatedPages = [
+    { title: "IQ by Career (Full List)", href: "/iq-by-career" },
+    { title: `Is ${midIQ} IQ Good?`, href: `/is-${midIQ}-iq-good` },
+    { title: "IQ Score Ranges Chart", href: "/iq-score-ranges" },
+    ...career.relatedCareers.slice(0, 3).map((s) => {
+      const c = careerIQData.find((x) => x.slug === s);
+      return c ? { title: `IQ for ${c.career}`, href: `/iq-needed-for/${c.slug}` } : null;
+    }).filter(Boolean) as { title: string; href: string }[],
+    { title: "SAT to IQ Conversion", href: "/sat-to-iq" },
+  ];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -25,7 +37,7 @@ const CareerIQ = () => {
     .filter(Boolean);
 
   return (
-    <ContentPage ctaText={`Think you have what it takes? Test your IQ now`}>
+    <ContentPage ctaText={`Think you have what it takes? Test your IQ now`} relatedPages={relatedPages}>
       <SEOHead
         title={`IQ Needed to Be a ${career.career}: Average Score & Requirements | MyIQScores`}
         description={`What IQ do you need to be a ${career.career.toLowerCase()}? The average IQ for ${career.career.toLowerCase()}s is ${career.avgIQRange}. Learn the cognitive requirements and how to qualify.`}

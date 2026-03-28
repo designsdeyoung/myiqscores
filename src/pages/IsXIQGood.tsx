@@ -14,6 +14,15 @@ const IsXIQGood = () => {
 
   const adjacent = getAdjacentScores(score);
 
+  const relatedPages = [
+    { title: "What Is IQ? Complete Guide", href: "/what-is-iq" },
+    { title: "IQ Score Ranges Chart", href: "/iq-score-ranges" },
+    { title: "IQ Percentile Chart", href: "/iq-percentile-chart" },
+    { title: "What Is a Good IQ Score?", href: "/good-iq-score" },
+    ...adjacent.map((s) => ({ title: `Is ${s} IQ Good?`, href: `/is-${s}-iq-good` })),
+    score >= 130 ? { title: "Genius IQ Guide", href: "/genius-iq" } : { title: "How to Improve Your IQ", href: "/how-to-improve-iq" },
+  ];
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -40,7 +49,7 @@ const IsXIQGood = () => {
   };
 
   return (
-    <ContentPage ctaText="Think you can score higher? Take the free IQ test">
+    <ContentPage ctaText="Think you can score higher? Take the free IQ test" relatedPages={relatedPages}>
       <SEOHead
         title={`Is an IQ of ${score} Good? What It Means & Where You Stand | MyIQScores`}
         description={`Is ${score} a good IQ score? Learn what an IQ of ${score} means, what percentile it falls in, and what it says about your cognitive abilities.`}

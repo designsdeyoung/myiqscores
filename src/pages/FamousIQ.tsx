@@ -22,8 +22,16 @@ const FamousIQ = () => {
 
   const otherPeople = famousIQData.filter((p) => p.slug !== person.slug);
 
+  const relatedPages = [
+    { title: "Famous People IQ Scores (Full List)", href: "/famous-iq" },
+    { title: "Highest IQ Ever Recorded", href: "/highest-iq-ever" },
+    { title: "Genius IQ Guide", href: "/genius-iq" },
+    ...otherPeople.slice(0, 3).map((p) => ({ title: `${p.name}'s IQ (${p.estimatedIQ})`, href: `/famous-iq/${p.slug}` })),
+    { title: "What Is a Good IQ Score?", href: "/good-iq-score" },
+  ];
+
   return (
-    <ContentPage ctaText="How does your IQ compare? Take the free test">
+    <ContentPage ctaText="How does your IQ compare? Take the free test" relatedPages={relatedPages}>
       <SEOHead
         title={`${person.name}'s IQ: ${person.estimatedIQ} — What It Means | MyIQScores`}
         description={`${person.name}'s IQ is estimated at ${person.estimatedIQ}. Learn what this means, how it compares, and what made ${person.name} a genius.`}

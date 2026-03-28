@@ -22,8 +22,16 @@ const IQMyth = () => {
 
   const otherMyths = iqMythData.filter((m) => m.slug !== myth.slug);
 
+  const relatedPages = [
+    { title: "What Is IQ? Complete Guide", href: "/what-is-iq" },
+    { title: "How to Improve Your IQ", href: "/how-to-improve-iq" },
+    ...otherMyths.slice(0, 3).map((m) => ({ title: m.title, href: `/iq-myths/${m.slug}` })),
+    { title: "IQ Score Ranges", href: "/iq-score-ranges" },
+    { title: "Does IQ Determine Success?", href: "/iq-myths/does-iq-determine-success" },
+  ];
+
   return (
-    <ContentPage>
+    <ContentPage relatedPages={relatedPages}>
       <SEOHead
         title={`${myth.title} | IQ Myths Debunked | MyIQScores`}
         description={`${myth.myth} Find out what science actually says about this common IQ myth.`}

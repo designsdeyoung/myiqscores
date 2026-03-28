@@ -22,8 +22,16 @@ const AgeIQ = () => {
 
   const otherAgeGroups = ageIQData.filter((a) => a.slug !== ageGroup.slug);
 
+  const relatedPages = [
+    { title: "What Is IQ? Complete Guide", href: "/what-is-iq" },
+    { title: "How to Improve Your IQ", href: "/how-to-improve-iq" },
+    { title: "Does IQ Decrease with Age?", href: "/iq-myths/does-iq-decrease-with-age" },
+    ...otherAgeGroups.slice(0, 3).map((a) => ({ title: `IQ for ${a.ageGroup}`, href: `/iq-by-age/${a.slug}` })),
+    { title: "IQ Score Ranges", href: "/iq-score-ranges" },
+  ];
+
   return (
-    <ContentPage ctaText="Curious about your IQ? Take the free test">
+    <ContentPage ctaText="Curious about your IQ? Take the free test" relatedPages={relatedPages}>
       <SEOHead
         title={`Average IQ for ${ageGroup.ageGroup}: What's Normal? | MyIQScores`}
         description={`What is a normal IQ for ${ageGroup.ageGroup.toLowerCase()}? Average IQ range is ${ageGroup.avgIQRange}. Learn how age affects intelligence and what to expect.`}
