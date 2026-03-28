@@ -594,6 +594,45 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "How smart is Emma Watson compared to other actors?", answer: "Watson's Ivy League degree and substantive policy work place her among the most academically accomplished actors of her generation. Her estimated IQ of 125-135 is superior range, consistent with successful Ivy League graduates." },
     ],
   },
+  {
+    name: "Michael Jordan",
+    slug: "michael-jordan",
+    estimatedIQ: "110–120",
+    knownFor: "NBA GOAT, 6 championships, billionaire businessman",
+    description: "Michael Jordan's IQ is estimated at 110-120 based on his demonstrated cognitive abilities on and off the court. Jordan's basketball intelligence was legendary — his ability to read defenses, exploit mismatches, and deliver in clutch moments reflected extraordinary spatial and strategic processing. Post-retirement, Jordan became the first former athlete to reach billionaire status through his Nike partnership, Charlotte Hornets ownership, and brand management.",
+    iqContext: "Jordan's estimated IQ places him in the high average to superior range. His particular genius combined exceptional bodily-kinesthetic intelligence with fierce competitive drive and strategic business thinking. His Nike deal, negotiated when he was a rookie, became the most lucrative athlete endorsement in history — a decision requiring genuine strategic foresight.",
+    faqItems: [
+      { question: "What is Michael Jordan's IQ?", answer: "Jordan's IQ is estimated at 110-120. His basketball intelligence, competitive strategy, and billion-dollar business achievements all suggest above-average cognitive ability applied across athletic and business domains." },
+      { question: "Is Michael Jordan smart?", answer: "In competitive strategy and business, exceptionally so. Jordan became the first athlete billionaire through brand deals, team ownership, and investments. His ability to dominate both basketball and business requires genuine cognitive ability." },
+      { question: "How does Jordan compare to LeBron intellectually?", answer: "Both are estimated at 110-120. Jordan's particular strengths may be in competitive strategy and brand management, while LeBron demonstrates broader business portfolio thinking. Both represent exceptional athletic intelligence combined with strong business acumen." },
+    ],
+  },
+  {
+    name: "Nikola Jokic",
+    slug: "nikola-jokic",
+    estimatedIQ: "115–125",
+    knownFor: "NBA MVP, basketball savant, passing genius",
+    description: "Nikola Jokic's IQ is estimated at 115-125, making him one of the most cognitively gifted athletes in professional sports. Jokic's basketball intelligence is considered unprecedented for a center — his ability to see passing angles that no other player perceives, manipulate defenses with fakes, and orchestrate complex offensive sequences suggests extraordinary spatial processing and anticipation. He processes the game several steps ahead of everyone else on the court.",
+    iqContext: "Jokic represents the purest example of cognitive superiority in modern basketball. His physical gifts are modest by NBA standards, but his game intelligence compensates completely. Advanced metrics show he processes court information and makes decisions faster than any player measured. His chess-like approach to basketball — controlling the game through anticipation rather than athleticism — mirrors high-IQ problem-solving strategies.",
+    faqItems: [
+      { question: "What is Nikola Jokic's IQ?", answer: "Jokic's IQ is estimated at 115-125. His unprecedented basketball intelligence — seeing passes nobody else sees, manipulating defenses through deception — suggests genuinely superior spatial and strategic reasoning ability." },
+      { question: "Is Jokic the smartest basketball player ever?", answer: "In terms of pure basketball IQ — processing speed, spatial awareness, and anticipation — many analysts consider Jokic the most intelligent player in NBA history. His ability to dominate despite modest athleticism is the strongest evidence." },
+      { question: "How does Jokic see passes others can't?", answer: "Research on elite passers shows they process visual information differently — seeing the whole court simultaneously rather than scanning sequentially. Jokic likely has exceptional spatial processing speed and pattern recognition, allowing him to anticipate defensive movements before they happen." },
+    ],
+  },
+  {
+    name: "Kendrick Lamar",
+    slug: "kendrick-lamar",
+    estimatedIQ: "115–130",
+    knownFor: "Pulitzer Prize rapper, lyrical genius",
+    description: "Kendrick Lamar's IQ is estimated at 115-130 based on the extraordinary complexity of his lyrical work. Lamar became the first non-classical, non-jazz musician to win the Pulitzer Prize for Music for his album DAMN. His lyrics weave complex narratives, employ sophisticated literary devices, and address systemic social issues with a depth that rivals published literature. His conceptual albums are studied in university courses.",
+    iqContext: "Lamar's verbal intelligence is among the highest in popular music. His ability to construct multi-layered narratives, use complex rhyme schemes, and embed social commentary within catchy hooks requires exceptional verbal-linguistic ability. The Pulitzer Prize committee recognized what linguists already knew: Lamar's writing demonstrates cognitive sophistication comparable to celebrated literary authors.",
+    faqItems: [
+      { question: "What is Kendrick Lamar's IQ?", answer: "Lamar's IQ is estimated at 115-130. His Pulitzer Prize-winning lyricism, complex conceptual albums, and sophisticated social commentary suggest superior verbal-linguistic intelligence." },
+      { question: "Is Kendrick Lamar a literary genius?", answer: "The Pulitzer Prize committee thought so. His lyrics employ complex narrative structures, literary allusions, and rhetorical devices that rival published literature. University courses now study his work as serious literary art." },
+      { question: "How does Kendrick compare to other rappers intellectually?", answer: "Among rappers, Lamar's lyrical complexity and conceptual depth are at the highest level. His Pulitzer win places him in unique intellectual territory. His verbal intelligence appears to be in the superior range, similar to Jay-Z's estimated business intelligence." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {

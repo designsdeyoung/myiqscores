@@ -34,7 +34,7 @@ const careerSlugs = [
   "investment-banker", "airline-pilot", "marketing-manager",
   "registered-dietitian", "cybersecurity-analyst", "dental-hygienist",
   "project-manager", "occupational-therapist", "master-electrician",
-  "physician-assistant",
+  "physician-assistant", "ux-designer", "financial-analyst", "radiologist",
 ];
 
 // Routes to pre-render
@@ -101,6 +101,9 @@ const routes = [
   "/famous-iq/mayim-bialik",
   "/famous-iq/travis-kelce",
   "/famous-iq/emma-watson",
+  "/famous-iq/michael-jordan",
+  "/famous-iq/nikola-jokic",
+  "/famous-iq/kendrick-lamar",
   "/iq-myths/do-video-games-make-you-smarter",
   "/iq-myths/mozart-effect-iq",
   "/iq-myths/birth-order-and-iq",
@@ -116,6 +119,10 @@ const routes = [
   "/iq-myths/is-iq-the-same-as-intelligence",
   "/iq-myths/does-marijuana-lower-iq",
   "/iq-myths/are-left-handed-people-smarter",
+  "/iq-myths/does-coffee-make-you-smarter",
+  "/iq-myths/height-and-iq",
+  "/iq-myths/does-tv-lower-iq",
+  "/iq-myths/iq-and-race",
   "/average-iq-by-state/massachusetts",
   "/average-iq-by-state/new-hampshire",
   "/average-iq-by-state/vermont",

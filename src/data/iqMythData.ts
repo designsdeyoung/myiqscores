@@ -188,6 +188,54 @@ export const iqMythData: IQMythInfo[] = [
       { question: "Do left-handers have different brains?", answer: "Slightly. Left-handers show different patterns of brain lateralization — their right hemisphere is often more involved in language processing. This may contribute to slightly different cognitive profiles but does not result in higher overall intelligence." },
     ],
   },
+  {
+    title: "Does Coffee Make You Smarter?",
+    slug: "does-coffee-make-you-smarter",
+    myth: "Drinking coffee increases your IQ and makes you permanently smarter.",
+    reality: "Caffeine temporarily boosts alertness, attention, and reaction time, but does not increase IQ. The cognitive benefits disappear when the caffeine wears off.",
+    explanation: "Caffeine is the world's most popular cognitive enhancer, and it does work — temporarily. Research consistently shows that caffeine improves alertness, sustained attention, reaction time, and working memory for 3-5 hours after consumption. A study in Psychopharmacology found that 200mg of caffeine (roughly two cups of coffee) improved performance on cognitive tasks equivalent to about 2-3 IQ points temporarily. However, these gains are entirely acute — they disappear as caffeine is metabolized. There is no evidence that long-term coffee consumption permanently increases IQ. Regular caffeine users also develop tolerance, meaning they need caffeine just to reach their baseline cognitive performance rather than exceeding it. The practical advice: coffee is a useful short-term cognitive tool, but it's not a substitute for sleep, exercise, or genuine cognitive development.",
+    faqItems: [
+      { question: "Does coffee increase IQ?", answer: "Coffee temporarily boosts cognitive performance (equivalent to about 2-3 IQ points) through improved alertness and attention. But this effect wears off in 3-5 hours and does not represent a permanent IQ increase." },
+      { question: "What is the best amount of coffee for brain performance?", answer: "Research suggests 200-400mg of caffeine (2-4 cups) per day is optimal for cognitive benefits without excessive side effects. More than this provides diminishing returns and can cause anxiety and sleep disruption, which impair cognition." },
+      { question: "Is coffee good for your brain long-term?", answer: "Moderate coffee consumption (3-4 cups/day) is associated with reduced risk of Alzheimer's and Parkinson's disease in epidemiological studies. However, this may reflect coffee's antioxidant properties rather than caffeine's cognitive effects." },
+    ],
+  },
+  {
+    title: "Do Taller People Have Higher IQs?",
+    slug: "height-and-iq",
+    myth: "Taller people are smarter — there's a direct link between height and intelligence.",
+    reality: "There is a small but real correlation (~0.2) between height and IQ. However, this is driven by shared environmental factors (nutrition, healthcare) rather than height causing intelligence.",
+    explanation: "Research does show a small positive correlation between height and IQ — approximately 0.2, meaning height accounts for about 4% of IQ variation. A large Scottish study of over 6,000 people confirmed this relationship. However, correlation is not causation. The link is primarily explained by shared developmental factors: good nutrition, healthcare, and low childhood stress promote both physical growth and cognitive development. Children who are well-fed and healthy tend to be both taller and higher-scoring on cognitive tests — not because height causes intelligence, but because both reflect the quality of the developmental environment. Additionally, some shared genetic factors may influence both height and brain development. The practical takeaway: being tall doesn't make you smart, and being short doesn't make you less smart. Both height and IQ partially reflect the quality of childhood nutrition and healthcare.",
+    faqItems: [
+      { question: "Are taller people smarter?", answer: "There's a small correlation (0.2) between height and IQ, but it's not causal. Both height and IQ are influenced by childhood nutrition, healthcare, and socioeconomic status. Being tall doesn't make you smarter." },
+      { question: "Why do height and IQ correlate?", answer: "Good nutrition, healthcare, and low childhood stress promote both physical growth and cognitive development. The correlation reflects shared environmental causes, not a direct height-to-intelligence pathway." },
+      { question: "How strong is the height-IQ connection?", answer: "Weak. The correlation of ~0.2 means height explains only about 4% of IQ variation. For any individual, height is essentially useless for predicting intelligence. The relationship only appears in large population studies." },
+    ],
+  },
+  {
+    title: "Does Watching TV Lower IQ?",
+    slug: "does-tv-lower-iq",
+    myth: "Watching television makes you dumber and permanently lowers your IQ.",
+    reality: "Passive TV watching doesn't directly lower IQ, but it displaces activities that build cognitive skills (reading, socializing, physical activity). Educational content can be beneficial, especially for young children.",
+    explanation: "The relationship between TV and intelligence is about opportunity cost rather than direct harm. Every hour spent watching passive entertainment is an hour not spent reading, exercising, socializing, or learning — activities with stronger cognitive benefits. A study published in JAMA Pediatrics found that children who watched more than 2 hours of TV daily scored lower on cognitive tests at age 5, but the effect was modest and largely explained by reduced time spent on developmental activities. Importantly, content matters enormously. Educational programming (Sesame Street, nature documentaries, science shows) can provide genuine learning benefits, especially for children from disadvantaged backgrounds. Sesame Street viewers showed IQ gains of 1-3 points in early research. The real concern is not TV itself but the displacement of more cognitively demanding activities. The practical advice: moderate TV watching is fine, especially educational content. But prioritize reading, exercise, and active learning over passive screen time.",
+    faqItems: [
+      { question: "Does watching TV lower IQ?", answer: "TV doesn't directly lower IQ, but excessive passive viewing displaces activities that build cognitive skills (reading, exercise, socializing). The issue is opportunity cost rather than direct neurological harm." },
+      { question: "How much TV is too much?", answer: "The American Academy of Pediatrics recommends no screen time under 2 years, 1 hour/day for ages 2-5, and consistent limits for older children. For adults, the key is ensuring TV doesn't displace exercise, reading, and social interaction." },
+      { question: "Can educational TV increase IQ?", answer: "Early research on Sesame Street found 1-3 IQ point gains for regular viewers. Educational content can provide real learning benefits, especially for children with limited access to other educational resources. Quality matters more than quantity." },
+    ],
+  },
+  {
+    title: "Is IQ Determined by Race?",
+    slug: "iq-and-race",
+    myth: "IQ differences between racial groups are primarily genetic and reflect innate intellectual ability.",
+    reality: "Observed group IQ differences are overwhelmingly explained by environmental factors — socioeconomic status, education access, nutrition, healthcare, and test bias. There is no scientific evidence that racial groups differ in innate cognitive potential.",
+    explanation: "This is one of the most sensitive and misused topics in IQ research. Here are the scientific facts: Average IQ scores do differ between racial groups in many countries. In the US, Asian Americans average about 106, White Americans about 103, Hispanic Americans about 89, and Black Americans about 85. However, these gaps have been narrowing significantly over time — the Black-White gap has shrunk by about 5-7 points since the 1970s. This narrowing proves the gaps are primarily environmental, not genetic. If the differences were genetic, they would be stable over generations, not shrinking in decades. The environmental explanations are well-documented: differences in school funding, neighborhood quality, nutrition, healthcare access, lead exposure, childhood stress from discrimination, and socioeconomic status all impact cognitive development. When researchers control for socioeconomic factors, the gaps shrink dramatically. The Flynn Effect — the 3-point-per-decade rise in IQ scores across all populations — further demonstrates that environmental improvements raise cognitive scores at the population level. Using IQ data to support racial hierarchies is a misuse of science that ignores the overwhelming evidence for environmental causation.",
+    faqItems: [
+      { question: "Does IQ differ by race?", answer: "Average scores differ between racial groups, but these differences are narrowing over time and are overwhelmingly explained by environmental factors — education, nutrition, healthcare, socioeconomic status. There is no evidence of innate genetic differences in cognitive potential between races." },
+      { question: "Why are IQ gaps narrowing?", answer: "The narrowing of racial IQ gaps (5-7 points since the 1970s) proves the differences are environmental. As access to education, healthcare, and nutrition has become more equitable, cognitive test performance has converged. Genetic differences wouldn't change this quickly." },
+      { question: "Is it racist to discuss IQ and race?", answer: "Discussing the data honestly is not racist. What is racist is misusing the data to claim innate genetic inferiority — a claim the evidence does not support. Responsible discussion acknowledges environmental causes and opposes the use of IQ data to justify discrimination." },
+    ],
+  },
 ];
 
 export function getMythBySlug(slug: string): IQMythInfo | undefined {

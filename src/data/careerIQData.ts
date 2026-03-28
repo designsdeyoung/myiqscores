@@ -731,6 +731,51 @@ export const careerIQData: CareerIQInfo[] = [
       { question: "How does a PA's IQ compare to a doctor's?", answer: "PAs (112-125) and doctors (120-130) have overlapping ranges. The main difference is the depth and duration of training. Many PAs have the cognitive ability for medical school but chose the PA path for its shorter training, flexibility, and work-life balance." },
     ],
   },
+  {
+    career: "UX Designer",
+    slug: "ux-designer",
+    avgIQRange: "108–120",
+    minIQ: 108,
+    maxIQ: 120,
+    description: "UX designers combine analytical research skills with creative design thinking to create intuitive digital experiences. The role demands understanding user psychology, conducting research, analyzing data from usability tests, and translating insights into visual interfaces. Modern UX requires both left-brain (data analysis, information architecture) and right-brain (visual design, empathy) thinking.",
+    educationPath: "UX designers typically have a bachelor's degree in design, psychology, HCI, or a related field. Many enter through bootcamps or self-study with a strong portfolio. Google's UX Design Certificate has made the field more accessible. Senior UX roles may require 5+ years of experience.",
+    relatedCareers: ["graphic-designer", "software-developer", "psychologist"],
+    faqItems: [
+      { question: "What IQ do UX designers have?", answer: "Most UX designers have IQs between 108 and 120. The role requires both analytical thinking (user research, data analysis) and creative problem-solving (interface design, prototyping)." },
+      { question: "Is UX design intellectually demanding?", answer: "Yes. UX designers must understand psychology, conduct research, analyze quantitative and qualitative data, create information architectures, and design interfaces that serve diverse user needs. It combines analytical rigor with creative output." },
+      { question: "How does UX design compare to software development?", answer: "UX design (108-120) and software development (110-125) have overlapping IQ ranges. UX emphasizes empathy, visual thinking, and research skills, while development emphasizes logical and algorithmic thinking. Both are intellectually demanding in different ways." },
+    ],
+  },
+  {
+    career: "Financial Analyst",
+    slug: "financial-analyst",
+    avgIQRange: "112–128",
+    minIQ: 112,
+    maxIQ: 128,
+    description: "Financial analysts evaluate investment opportunities, build financial models, and advise on business decisions using quantitative analysis. The role requires strong mathematical reasoning, ability to work with complex spreadsheets, understanding of economic principles, and the capacity to make probabilistic judgments under uncertainty. Top analysts at hedge funds and investment banks are among the most cognitively demanding non-academic roles.",
+    educationPath: "Financial analysts typically need a bachelor's degree in finance, economics, accounting, or mathematics. The CFA (Chartered Financial Analyst) designation requires passing three progressively difficult exams over 2-5 years and is considered the gold standard credential. MBA degrees are common for senior roles.",
+    relatedCareers: ["accountant", "investment-banker", "data-scientist"],
+    faqItems: [
+      { question: "What IQ do financial analysts have?", answer: "Most financial analysts have IQs between 112 and 128. The role demands strong quantitative reasoning, financial modeling skills, and the ability to make judgments under uncertainty. CFA charter holders likely average higher." },
+      { question: "Is the CFA exam hard?", answer: "Very. CFA pass rates average 40-50% for each of three levels. The exam requires deep knowledge of portfolio management, financial analysis, and ethics. Most candidates study 300+ hours per level. The full credential typically takes 3-5 years." },
+      { question: "How does a financial analyst compare to an accountant?", answer: "Financial analysts (112-128) typically score higher than accountants (110-125) due to the more abstract, predictive nature of their work. Analysts forecast the future; accountants record the past. Both require strong quantitative skills." },
+    ],
+  },
+  {
+    career: "Radiologist",
+    slug: "radiologist",
+    avgIQRange: "125–135",
+    minIQ: 125,
+    maxIQ: 135,
+    description: "Radiologists are physicians who specialize in interpreting medical images — X-rays, CT scans, MRIs, and ultrasounds. The specialty requires exceptional visual-spatial processing, pattern recognition, and the ability to detect subtle abnormalities among thousands of normal images. Radiology residency is among the most competitive medical specialties, attracting some of the highest-scoring medical students.",
+    educationPath: "Radiologists need a bachelor's degree (4 years), medical school (4 years), preliminary internship (1 year), and radiology residency (4 years). Many pursue additional fellowship training (1-2 years) in subspecialties like neuroradiology or interventional radiology. Total training: 13-15 years.",
+    relatedCareers: ["surgeon", "doctor", "scientist"],
+    faqItems: [
+      { question: "What IQ do radiologists have?", answer: "Radiologists typically have IQs between 125 and 135. Radiology residency is one of the most competitive medical specialties, attracting high-scoring medical students. The work requires exceptional pattern recognition and visual-spatial processing." },
+      { question: "Is radiology the hardest medical specialty?", answer: "Radiology is among the most competitive to enter (based on residency match scores) and requires exceptional visual-spatial intelligence. However, 'hardest' depends on the metric — surgical specialties are more physically demanding, while radiology is more cognitively demanding in pattern recognition." },
+      { question: "Will AI replace radiologists?", answer: "Unlikely in the near term. AI assists radiologists by flagging potential findings, but the complexity of clinical integration, liability, and nuanced interpretation means AI augments rather than replaces radiologists. The field is adapting to use AI as a tool." },
+    ],
+  },
 ];
 
 export function getCareerBySlug(slug: string): CareerIQInfo | undefined {
