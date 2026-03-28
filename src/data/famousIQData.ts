@@ -529,6 +529,71 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "Is Rihanna smarter than other musicians?", answer: "In business intelligence, Rihanna stands out exceptionally. While many musicians have similar or higher IQs, few have demonstrated the strategic thinking required to build a multi-billion dollar brand from scratch. Her entrepreneurial intelligence appears particularly strong." },
     ],
   },
+  {
+    name: "Jay-Z",
+    slug: "jay-z",
+    estimatedIQ: "120–130",
+    knownFor: "Rapper, billionaire businessman, Roc Nation founder",
+    description: "Jay-Z's IQ is estimated at 120-130 based on his extraordinary business achievements. Beyond his 23 Grammy Awards, Jay-Z built a business empire including Roc Nation (entertainment), Tidal (streaming), Armand de Brignac champagne, and D'Usse cognac. He became hip-hop's first billionaire through strategic brand building, investment, and deal-making that rivals any MBA graduate.",
+    iqContext: "Jay-Z grew up in the Marcy Projects in Brooklyn and never attended college, yet his business achievements exceed those of most Ivy League graduates. His ability to identify market opportunities, negotiate complex deals, and build multiple billion-dollar brands demonstrates the type of strategic intelligence that IQ tests partially but not fully capture. Jay-Z represents the power of practical intelligence combined with relentless ambition.",
+    faqItems: [
+      { question: "What is Jay-Z's IQ?", answer: "Jay-Z's IQ is estimated at 120-130. His business empire — Roc Nation, Tidal, champagne and cognac brands — demonstrates exceptional strategic intelligence that made him hip-hop's first billionaire." },
+      { question: "How did Jay-Z become a billionaire without college?", answer: "Jay-Z combined above-average intelligence with extraordinary business instinct, negotiation skills, and brand-building ability. He identified opportunities in entertainment, streaming, and luxury goods that others missed. His practical intelligence exceeds what formal education typically provides." },
+      { question: "Is Jay-Z smarter than other rappers?", answer: "In business intelligence, Jay-Z is arguably the most accomplished rapper-businessman ever. His investment and brand-building track record suggests cognitive ability in the superior range, applied to entrepreneurial domains that reward strategic thinking." },
+    ],
+  },
+  {
+    name: "Tom Brady",
+    slug: "tom-brady",
+    estimatedIQ: "110–120",
+    knownFor: "NFL GOAT, 7 Super Bowl championships",
+    description: "Tom Brady's IQ is estimated at 110-120 based on his Wonderlic score of 33 (above the QB average of 26) and his demonstrated cognitive abilities on and off the field. Brady's legendary preparation, film study, and ability to read defenses in milliseconds represent extraordinary domain-specific intelligence. His TB12 brand and media company demonstrate business acumen beyond athletics.",
+    iqContext: "Brady scored 33 on the Wonderlic — above average for QBs but not exceptional. However, his on-field intelligence far exceeds what any test captures. His ability to process complex defensive schemes, adjust play calls at the line of scrimmage, and perform optimally under pressure for 23 NFL seasons represents cognitive excellence in a high-stakes domain. The Wonderlic famously underestimates football intelligence.",
+    faqItems: [
+      { question: "What is Tom Brady's IQ?", answer: "Brady's IQ is estimated at 110-120 based on his Wonderlic score of 33. His football intelligence — reading defenses, adjusting plays, performing under pressure for 23 seasons — represents cognitive ability that standardized tests don't fully capture." },
+      { question: "What was Tom Brady's Wonderlic score?", answer: "Brady scored 33 out of 50 on the Wonderlic, above the quarterback average of 26. This translates to roughly a 115 IQ equivalent. Some top QBs score higher (Ryan Fitzpatrick scored 48), but Brady's on-field performance far exceeds his test score." },
+      { question: "Is football intelligence the same as IQ?", answer: "No, but they overlap. Football intelligence involves spatial processing, pattern recognition, decision speed, and memory — skills related to IQ. However, the context-specific nature of football intelligence means IQ tests capture only part of what makes a great QB." },
+    ],
+  },
+  {
+    name: "Mayim Bialik",
+    slug: "mayim-bialik",
+    estimatedIQ: "150–163",
+    knownFor: "Actress (Big Bang Theory), neuroscientist",
+    description: "Mayim Bialik has a real-life PhD in neuroscience from UCLA, making her the rare actor who is actually qualified in the field her character studies. She played Amy Farrah Fowler on The Big Bang Theory and later hosted Jeopardy!. Her IQ is estimated at 150-163 based on her doctoral-level neuroscience research and academic achievements. Bialik is one of the most academically accomplished actors in Hollywood.",
+    iqContext: "Bialik's PhD in neuroscience from UCLA is a genuine scientific achievement requiring years of advanced research. Her dissertation on hypothalamic activity in patients with Prader-Willi syndrome demonstrates the kind of analytical thinking that characterizes the gifted range. Unlike many celebrity IQ claims, Bialik's academic credentials provide concrete evidence of exceptional cognitive ability.",
+    faqItems: [
+      { question: "What is Mayim Bialik's IQ?", answer: "Bialik's IQ is estimated at 150-163. She has a real PhD in neuroscience from UCLA, making her one of the most academically accomplished actors in Hollywood. Her academic credentials provide concrete evidence of gifted-range intelligence." },
+      { question: "Does Mayim Bialik have a real PhD?", answer: "Yes. Bialik earned a PhD in neuroscience from UCLA in 2007. Her doctoral research focused on hypothalamic activity in patients with Prader-Willi syndrome. She is a genuine scientist who happens to also be an actress." },
+      { question: "Is Bialik smarter than her Big Bang Theory character?", answer: "Possibly comparable. Her character Amy Farrah Fowler is a neurobiologist, and Bialik is a real neuroscientist. She was even able to contribute scientific accuracy to the show's scripts, making it one of TV's most authentic portrayals of a scientist." },
+    ],
+  },
+  {
+    name: "Travis Kelce",
+    slug: "travis-kelce",
+    estimatedIQ: "100–112",
+    knownFor: "NFL tight end, 3x Super Bowl champion, media personality",
+    description: "Travis Kelce's IQ is estimated at 100-112 based on his Wonderlic score and demonstrated abilities. Kelce scored 18 on the Wonderlic (below average for NFL players), but his on-field intelligence, route-running creativity, and ability to find open space in complex defensive coverages suggest much stronger domain-specific cognitive abilities. Off the field, his successful podcast, media career, and brand deals demonstrate solid practical intelligence.",
+    iqContext: "Kelce is an interesting case where standardized test scores dramatically underestimate real-world cognitive ability. His Wonderlic of 18 would suggest below-average intelligence, yet he is widely regarded as one of the smartest route-runners in NFL history and has built a successful media career. This disconnect highlights the limitations of short, standardized tests for measuring domain-specific intelligence.",
+    faqItems: [
+      { question: "What is Travis Kelce's IQ?", answer: "Kelce's IQ is estimated at 100-112. His Wonderlic score of 18 was below average, but his on-field intelligence, route creativity, and media/business success suggest stronger cognitive ability than the test captured." },
+      { question: "What was Travis Kelce's Wonderlic score?", answer: "Kelce scored 18 out of 50, below the NFL average of about 20. However, the Wonderlic is a poor predictor of football success. Kelce's on-field intelligence — reading coverages, finding space, adjusting routes — far exceeds what the 12-minute test measures." },
+      { question: "Is Travis Kelce smart?", answer: "In football intelligence and practical/social domains, very much so. His ability to read complex coverages, build a media brand, and navigate celebrity relationships suggests solid cognitive ability that the Wonderlic underestimated." },
+    ],
+  },
+  {
+    name: "Emma Watson",
+    slug: "emma-watson",
+    estimatedIQ: "125–135",
+    knownFor: "Actress (Harry Potter), Brown graduate, UN ambassador",
+    description: "Emma Watson's IQ is estimated at 125-135 based on her academic achievements and demonstrated intellectual engagement. Watson graduated from Brown University with a degree in English literature while maintaining her acting career. She is a UN Women Goodwill Ambassador who has delivered speeches on gender equality at the UN General Assembly, and she founded the feminist book club Our Shared Shelf with over 250,000 members.",
+    iqContext: "Watson's Brown degree, obtained while starring in one of the highest-grossing film franchises in history, demonstrates exceptional cognitive ability and time management. Her UN work requires synthesizing complex policy issues into compelling advocacy — a skill combining analytical and verbal intelligence. She represents the type of intellectually engaged celebrity whose cognitive abilities extend well beyond entertainment.",
+    faqItems: [
+      { question: "What is Emma Watson's IQ?", answer: "Watson's IQ is estimated at 125-135 based on her Brown University degree, UN advocacy work, and demonstrated intellectual engagement. She balances acting with genuine academic and policy work." },
+      { question: "Did Emma Watson really go to Brown?", answer: "Yes. Watson earned a bachelor's degree in English literature from Brown University in 2014. She initially attended for one year, transferred briefly to Oxford, then returned to complete her degree at Brown." },
+      { question: "How smart is Emma Watson compared to other actors?", answer: "Watson's Ivy League degree and substantive policy work place her among the most academically accomplished actors of her generation. Her estimated IQ of 125-135 is superior range, consistent with successful Ivy League graduates." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
