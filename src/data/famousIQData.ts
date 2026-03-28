@@ -750,6 +750,71 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "How does podcast hosting relate to intelligence?", answer: "Hosting long-form expert interviews requires rapid comprehension, active listening, synthesis of complex information, and the verbal ability to ask meaningful questions. These skills correlate strongly with verbal IQ and intellectual curiosity." },
     ],
   },
+  {
+    name: "MrBeast",
+    slug: "mrbeast",
+    estimatedIQ: "115–125",
+    knownFor: "World's biggest YouTuber, philanthropist, entrepreneur",
+    description: "MrBeast (Jimmy Donaldson) has an estimated IQ of 115-125 based on his extraordinary analytical approach to content creation. Starting YouTube at age 13, Donaldson spent years systematically studying what made videos go viral before breaking out. His ability to analyze YouTube's algorithm, design viral content formats, and scale a media empire worth over $1 billion demonstrates genuine strategic intelligence applied to a new medium.",
+    iqContext: "MrBeast represents a new type of intelligence — algorithmic and audience-centric thinking. His systematic, data-driven approach to content creation mirrors the analytical methods of successful entrepreneurs. He reinvests nearly all revenue into bigger productions, demonstrating long-term strategic thinking. His expansion into Feastables, Beast Burger, and philanthropy shows the kind of business portfolio management that traditionally requires strong cognitive ability.",
+    faqItems: [
+      { question: "What is MrBeast's IQ?", answer: "MrBeast's IQ is estimated at 115-125. His systematic, data-driven approach to YouTube domination, billion-dollar business empire, and ability to crack the content algorithm demonstrate genuine strategic intelligence." },
+      { question: "Is MrBeast actually smart?", answer: "Very. He spent years analytically studying viral content before succeeding, then built a billion-dollar empire spanning media, food, and philanthropy. His strategic thinking rivals traditional business leaders, just applied to a new medium." },
+      { question: "How did MrBeast crack YouTube?", answer: "Through systematic analysis — he studied thousands of videos to understand what drives views, tested variables methodically, and reinvested all revenue into bigger productions. This data-driven, iterative approach mirrors how successful tech companies operate." },
+    ],
+  },
+  {
+    name: "Greta Thunberg",
+    slug: "greta-thunberg",
+    estimatedIQ: "120–135",
+    knownFor: "Climate activist, Nobel Peace Prize nominee",
+    description: "Greta Thunberg's IQ is estimated at 120-135 based on her demonstrated abilities in synthesizing complex climate science, delivering persuasive speeches, and engaging with world leaders at age 16. Thunberg has Asperger's syndrome, which she has described as her 'superpower' — enabling intense focus and an unwillingness to accept cognitive dissonance about climate change that others tolerate.",
+    iqContext: "Thunberg's ability to master climate science as a teenager, construct compelling moral arguments, and address the UN General Assembly with analytical precision suggests strong verbal and analytical intelligence. Her Asperger's diagnosis is relevant because autism spectrum conditions are associated with both enhanced systematic thinking and challenges in social processing — potentially contributing to her unique combination of scientific clarity and moral directness.",
+    faqItems: [
+      { question: "What is Greta Thunberg's IQ?", answer: "Thunberg's IQ is estimated at 120-135 based on her demonstrated ability to synthesize complex climate science and deliver analytically rigorous arguments to world leaders as a teenager." },
+      { question: "Does Asperger's affect IQ?", answer: "People with Asperger's/autism show wide IQ variation. Many score above average, with particular strengths in systematic thinking and pattern recognition. Thunberg describes her Asperger's as enabling the intense focus and logical clarity that powers her activism." },
+      { question: "Is Greta Thunberg smart?", answer: "Her ability to master complex climate science, construct persuasive arguments, and engage with global leaders as a teenager suggests genuine intellectual ability in the superior range. Her analytical clarity exceeds many adults with more formal education." },
+    ],
+  },
+  {
+    name: "Patrick Mahomes",
+    slug: "patrick-mahomes",
+    estimatedIQ: "110–120",
+    knownFor: "NFL quarterback, 3x Super Bowl MVP",
+    description: "Patrick Mahomes' IQ is estimated at 110-120. He scored 24 on the Wonderlic — average for an NFL player but below the quarterback average of 26. However, his on-field intelligence is considered among the highest in NFL history. Mahomes processes defensive coverages and makes decisions at extraordinary speed, often creating plays out of broken situations that no other quarterback can replicate.",
+    iqContext: "Mahomes is the perfect example of why standardized tests can underestimate domain-specific intelligence. His Wonderlic score of 24 suggests average cognitive ability, yet his on-field processing speed, spatial awareness, and improvisational decision-making are unmatched. The disconnect between his test score and on-field genius illustrates that different domains of intelligence don't always correlate closely.",
+    faqItems: [
+      { question: "What is Patrick Mahomes' IQ?", answer: "Mahomes' IQ is estimated at 110-120. His Wonderlic score was 24 (average), but his on-field intelligence — processing speed, spatial awareness, improvisational decision-making — is considered among the highest in NFL history." },
+      { question: "What was Mahomes' Wonderlic score?", answer: "Mahomes scored 24, below the QB average of 26. But the Wonderlic is a poor predictor of quarterback success. Mahomes' game intelligence far exceeds what any 12-minute paper test can measure." },
+      { question: "Is Mahomes smarter than Brady?", answer: "Brady scored higher on the Wonderlic (33 vs 24), but Mahomes may have superior improvisation intelligence — the ability to create plays from chaos. They represent different types of football IQ: Brady's is systematic, Mahomes' is creative." },
+    ],
+  },
+  {
+    name: "Wolfgang Amadeus Mozart",
+    slug: "wolfgang-mozart",
+    estimatedIQ: "150–170",
+    knownFor: "Classical composer, child prodigy, musical genius",
+    description: "Mozart's IQ is estimated at 150-170, reflecting his extraordinary musical genius. He began composing at age 5, wrote his first symphony at 8, and produced over 600 works including some of the most revered pieces in Western music. Mozart's ability to compose entire symphonies in his head before writing them down, reportedly producing near-perfect manuscripts with few corrections, suggests extraordinary working memory and auditory processing.",
+    iqContext: "Mozart's genius was primarily musical — a domain that standard IQ tests measure poorly. His working memory capacity (holding an entire symphony in his mind), processing speed (composing at an extraordinary rate), and pattern recognition (creating novel harmonic structures) all relate to cognitive abilities that IQ tests assess, but in a modality (auditory/musical) that tests don't cover well. His estimated IQ reflects the assumption that his musical genius required exceptional underlying cognitive architecture.",
+    faqItems: [
+      { question: "What was Mozart's IQ?", answer: "Mozart's IQ is estimated at 150-170. He never took an IQ test (born in 1756), so this estimate is based on his extraordinary musical achievements — composing from age 5, producing 600+ works, and his legendary ability to compose entire pieces in his head." },
+      { question: "Was Mozart the smartest musician ever?", answer: "In terms of raw musical processing ability, possibly. His ability to compose full symphonies mentally, produce near-perfect manuscripts, and master every musical form of his era suggests cognitive abilities at the extreme end of human capacity for music." },
+      { question: "How did Mozart compose so fast?", answer: "Mozart reportedly heard complete compositions in his mind before writing them down, producing manuscripts with remarkably few corrections. This suggests extraordinary auditory working memory — the ability to hold and manipulate complex musical information mentally." },
+    ],
+  },
+  {
+    name: "Mark Cuban",
+    slug: "mark-cuban",
+    estimatedIQ: "125–140",
+    knownFor: "Billionaire entrepreneur, Shark Tank, Dallas Mavericks owner",
+    description: "Mark Cuban's IQ is estimated at 125-140 based on his academic record (Indiana University, business school), serial entrepreneurship, and demonstrated analytical ability. Cuban taught himself programming, built and sold multiple companies including Broadcast.com for $5.7 billion, and has successfully invested across technology, entertainment, and healthcare (Cost Plus Drugs). His ability to rapidly assess business opportunities on Shark Tank demonstrates genuine analytical speed.",
+    iqContext: "Cuban represents the entrepreneur archetype — combining above-average to gifted cognitive ability with extreme work ethic and risk tolerance. His self-taught programming, rapid business analysis, and ability to operate across diverse industries (tech, sports, pharma, media) suggest strong cognitive flexibility. His Cost Plus Drugs venture, disrupting pharmaceutical pricing through data analysis, shows analytical intelligence applied to social impact.",
+    faqItems: [
+      { question: "What is Mark Cuban's IQ?", answer: "Cuban's IQ is estimated at 125-140. His Indiana University education, self-taught programming, serial entrepreneurship, and rapid business analysis ability (visible on Shark Tank) suggest gifted-range analytical intelligence." },
+      { question: "Is Mark Cuban a genius?", answer: "His estimated IQ (125-140) approaches the 140 genius threshold. His ability to succeed across multiple industries — tech, sports, pharmaceuticals, media — suggests exceptional cognitive flexibility that characterizes the highest-functioning minds." },
+      { question: "How does Cuban compare to other billionaires?", answer: "Cuban's estimated IQ (125-140) is somewhat below tech billionaires like Gates (150-160) or Bezos (145-155) but comparable to many successful entrepreneurs. His particular strength is rapid opportunity assessment and cross-domain business building." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
