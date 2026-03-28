@@ -27,6 +27,8 @@ const careerSlugs = [
   "nurse", "accountant", "police-officer", "electrician", "plumber",
   "data-scientist", "architect", "pharmacist", "dentist", "firefighter",
   "military-officer", "professor", "social-worker", "pilot", "judge",
+  "psychologist", "veterinarian", "surgeon", "scientist", "graphic-designer",
+  "chef", "real-estate-agent", "paramedic",
 ];
 
 // Routes to pre-render
