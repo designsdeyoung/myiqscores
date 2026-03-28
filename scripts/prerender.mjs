@@ -25,6 +25,8 @@ const countrySlugs = [
 const careerSlugs = [
   "doctor", "lawyer", "engineer", "software-developer", "teacher",
   "nurse", "accountant", "police-officer", "electrician", "plumber",
+  "data-scientist", "architect", "pharmacist", "dentist", "firefighter",
+  "military-officer", "professor", "social-worker", "pilot", "judge",
 ];
 
 // Routes to pre-render
