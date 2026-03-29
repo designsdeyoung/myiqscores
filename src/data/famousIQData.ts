@@ -919,6 +919,45 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "Was Einstein bad at math?", answer: "No — this is a myth. Einstein excelled in mathematics from childhood. However, his mathematical skills were not his strongest attribute compared to his physical intuition. He relied on mathematicians like Marcel Grossmann to formalize some of his theories in rigorous mathematical language." },
     ],
   },
+  {
+    name: "Billie Eilish",
+    slug: "billie-eilish",
+    estimatedIQ: "110–120",
+    knownFor: "Grammy-winning singer-songwriter, youngest album of year winner",
+    description: "Billie Eilish's IQ is estimated at 110-120 based on her creative intelligence and musical precocity. Eilish wrote and produced Grammy-winning music as a teenager with her brother Finneas, demonstrating exceptional creative and auditory intelligence. Her ability to conceptualize and execute a distinctive artistic vision across music, visuals, and fashion at such a young age suggests genuine cognitive creativity.",
+    iqContext: "Eilish represents creative intelligence that manifests early and intensely. Her synesthesia (she sees colors when hearing music) may contribute to her distinctive sound design. The ability to write 'bad guy' at 16 and win Album of the Year at 17 reflects cognitive precocity in creative domains that IQ tests only partially capture.",
+    faqItems: [
+      { question: "What is Billie Eilish's IQ?", answer: "Eilish's IQ is estimated at 110-120. Her Grammy-winning songwriting as a teenager and distinctive artistic vision suggest above-average creative intelligence." },
+      { question: "Is Billie Eilish musically gifted?", answer: "Undeniably. Writing Grammy-winning music at 16, winning Album of the Year at 17, and creating a completely distinctive sonic and visual identity demonstrate exceptional musical and creative intelligence." },
+      { question: "Does synesthesia affect intelligence?", answer: "Synesthesia (seeing colors when hearing sounds) doesn't increase IQ but may enhance creative ability by providing richer sensory experiences. Eilish's synesthesia may contribute to her distinctive sound design and artistic vision." },
+    ],
+  },
+  {
+    name: "Lionel Richie",
+    slug: "lionel-richie",
+    estimatedIQ: "115–125",
+    knownFor: "Grammy-winning singer, songwriter, American Idol judge",
+    description: "Lionel Richie's IQ is estimated at 115-125. Richie graduated from Tuskegee University with a degree in economics before pursuing music. His songwriting — crafting timeless hits like 'Hello,' 'All Night Long,' and 'We Are the World' — demonstrates exceptional verbal and emotional intelligence. His 40+ year career longevity and successful transition to TV judge reflect strong adaptability.",
+    iqContext: "Richie's economics degree from Tuskegee provides concrete evidence of above-average academic ability. His songwriting genius lies in combining simple, universal emotional themes with memorable melodies — a deceptively difficult skill that requires understanding audience psychology at a deep level.",
+    faqItems: [
+      { question: "What is Lionel Richie's IQ?", answer: "Richie's IQ is estimated at 115-125 based on his Tuskegee economics degree and extraordinary songwriting career spanning 40+ years." },
+      { question: "Did Lionel Richie go to college?", answer: "Yes, Richie graduated from Tuskegee University with a degree in economics. He initially planned a career in business before music took over." },
+      { question: "How does Richie's intelligence show in songwriting?", answer: "His songs combine universal emotional themes with memorable melodies — a skill requiring deep understanding of human psychology. 'We Are the World' alone demonstrates the ability to create music that resonates across cultures and generations." },
+    ],
+  },
+  {
+    name: "Ruth Bader Ginsburg",
+    slug: "ruth-bader-ginsburg",
+    estimatedIQ: "135–150",
+    knownFor: "Supreme Court Justice, women's rights pioneer",
+    description: "Ruth Bader Ginsburg's IQ is estimated at 135-150 based on her extraordinary legal career. She graduated first in her class at Columbia Law School, served on the US Court of Appeals, and spent 27 years on the Supreme Court. Her legal reasoning in landmark gender equality cases demonstrated exceptional analytical precision and the ability to construct arguments that changed constitutional interpretation.",
+    iqContext: "Graduating first in your class at Columbia Law School — one of the top law schools in the world — places Ginsburg among the most academically gifted legal minds of her generation. Her constitutional arguments required the highest levels of abstract legal reasoning, and her ability to build incremental legal strategies over decades demonstrated extraordinary long-term strategic thinking.",
+    faqItems: [
+      { question: "What was RBG's IQ?", answer: "Ginsburg's IQ is estimated at 135-150. Graduating first at Columbia Law and serving 27 years on the Supreme Court reflect exceptional legal and analytical intelligence." },
+      { question: "Was RBG one of the smartest justices?", answer: "Her academic record (first in class at Columbia Law) and legal reasoning place her among the most intellectually gifted Supreme Court justices. Her strategic approach to building gender equality precedent was particularly brilliant." },
+      { question: "How did RBG succeed despite discrimination?", answer: "Despite facing severe gender discrimination in law (she was rejected from law firms despite graduating first at Columbia), her extraordinary intellectual ability eventually overcame barriers. Her story demonstrates that exceptional intelligence can partially — though not easily — overcome systemic discrimination." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
