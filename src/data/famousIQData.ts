@@ -1218,6 +1218,71 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "How smart is Hamilton off the track?", answer: "His fashion ventures, music interests, environmental activism, and business investments show cognitive breadth beyond racing. He's multilingual and engages with complex social issues, suggesting above-average general intelligence." },
     ],
   },
+  {
+    name: "Drake",
+    slug: "drake",
+    estimatedIQ: "112–122",
+    knownFor: "Most streamed artist ever, rapper, actor, OVO founder",
+    description: "Drake's IQ is estimated at 112-122 based on his strategic dominance of the music industry. Drake has more Billboard Hot 100 entries than any artist in history. His ability to adapt his style to changing trends, build the OVO brand, and maintain commercial dominance for 15+ years demonstrates genuine strategic and creative intelligence. His background in acting (Degrassi) shows verbal ability, and his business ventures span music, liquor, and sports.",
+    iqContext: "Drake's particular intelligence is in trend reading and adaptation. Where most artists have a defined style, Drake continuously evolves to match cultural shifts — from emotional rap to dancehall to drill to pop. This adaptive ability requires reading audience psychology in real-time across global markets.",
+    faqItems: [
+      { question: "What is Drake's IQ?", answer: "Drake's IQ is estimated at 112-122. His record-breaking streaming numbers, adaptive style evolution, and business empire (OVO Sound, Virginia Black whiskey) suggest above-average strategic and creative intelligence." },
+      { question: "Is Drake smart?", answer: "In commercial music strategy, arguably the most successful of his generation. His ability to read and adapt to cultural trends, maintain 15+ years of dominance, and build diversified businesses requires genuine strategic intelligence." },
+      { question: "How has Drake stayed relevant so long?", answer: "Constant stylistic adaptation — he reads cultural shifts and adjusts faster than any major artist. This trend-reading ability is a form of social and cultural intelligence that translates to consistent commercial success." },
+    ],
+  },
+  {
+    name: "Serena van der Woodsen",
+    slug: "jensen-huang",
+    estimatedIQ: "145–160",
+    knownFor: "NVIDIA CEO, AI chip pioneer, world's most valuable company architect",
+    description: "Jensen Huang's IQ is estimated at 145-160 based on his extraordinary technical and business achievements. Huang co-founded NVIDIA in 1993 and transformed it from a graphics card company into the most valuable company in the world by pivoting to AI computing. His ability to anticipate AI's computational needs years before the boom — investing billions in GPU architecture for machine learning — demonstrates exceptional strategic foresight.",
+    iqContext: "Huang holds a master's in electrical engineering from Stanford and has maintained a technical CEO role for over 30 years — rare in tech. His strategic bet on CUDA (parallel computing platform) in 2006 positioned NVIDIA perfectly for the AI revolution 15 years later. This kind of decade-spanning strategic foresight, combined with deep technical understanding, suggests cognitive ability at the very highest levels of business leadership.",
+    faqItems: [
+      { question: "What is Jensen Huang's IQ?", answer: "Huang's IQ is estimated at 145-160. His Stanford EE degree, 30+ year technical CEO career, and the strategic foresight that made NVIDIA the world's most valuable company suggest gifted-to-genius range intelligence." },
+      { question: "Is Jensen Huang the most successful CEO ever?", answer: "By market cap creation, he's among the most successful. Taking NVIDIA from a GPU company to a $3T+ AI computing leader required both deep technical understanding and extraordinary strategic vision — a rare combination." },
+      { question: "How did Huang predict the AI revolution?", answer: "He invested in CUDA (2006) and GPU computing for machine learning years before AI's mainstream breakthrough. This decade-long strategic bet required understanding both the technical trajectory of computing and the potential of neural networks — extraordinary foresight." },
+    ],
+  },
+  {
+    name: "Rihanna",
+    slug: "rihanna-detailed",
+    estimatedIQ: "115–125",
+    knownFor: "Fenty Beauty billionaire, Savage X Fenty, music icon",
+    description: "Additional analysis: Rihanna's business intelligence deserves deeper examination. She identified that the beauty industry's $500B market had a massive gap in shade inclusivity — 40+ shades when competitors offered 10-20. This wasn't just social awareness; it was market analysis that billion-dollar beauty companies had missed for decades. Fenty Beauty generated $100M in its first 40 days — faster than any beauty launch in history.",
+    iqContext: "Rihanna's Fenty case is studied at Harvard Business School as a masterclass in market disruption through inclusion. Her ability to see a gap that L'Oréal, Estée Lauder, and LVMH all missed requires genuine analytical insight. The subsequent Savage X Fenty lingerie brand ($1B+ valuation) proved it wasn't a one-time insight but a repeatable strategic framework.",
+    faqItems: [
+      { question: "How did Rihanna see what beauty giants missed?", answer: "She identified that 40% of women couldn't find foundation shades matching their skin. Major beauty companies had ignored this $200B+ opportunity. Seeing what billion-dollar competitors missed requires genuine market analytical ability." },
+      { question: "Is Fenty Beauty's success evidence of intelligence?", answer: "Yes — $100M in 40 days, studied at Harvard Business School. Building a product that exposed a massive market blind spot requires both analytical insight and execution ability. Most celebrities' beauty lines fail; Rihanna's dominates." },
+      { question: "Can Rihanna repeat her business success?", answer: "She already has. Savage X Fenty ($1B+ valuation) and Fenty Skin both applied the same inclusive-market strategy. Repeating disruption across different industries confirms it's a genuine strategic framework, not luck." },
+    ],
+  },
+  {
+    name: "Will Smith",
+    slug: "will-smith",
+    estimatedIQ: "115–125",
+    knownFor: "Academy Award actor, rapper, author, entrepreneur",
+    description: "Will Smith's IQ is estimated at 115-125 based on his demonstrated verbal ability and career management. Smith was reportedly offered a scholarship to MIT (which he declined for music) and has described himself as an obsessive student of success and human psychology. His ability to dominate both music and film, build a production company, and write a bestselling memoir demonstrates genuine cognitive versatility.",
+    iqContext: "Smith's reported MIT scholarship offer suggests strong academic aptitude. His career demonstrates exceptional social intelligence and strategic thinking — he systematically studied what made movies commercially successful, then applied those patterns to his film choices. His memoir 'Will' reveals sophisticated psychological self-analysis beyond what most celebrities demonstrate.",
+    faqItems: [
+      { question: "What is Will Smith's IQ?", answer: "Smith's IQ is estimated at 115-125. His reported MIT scholarship offer, systematic approach to career strategy, and bestselling memoir suggest above-average analytical and verbal intelligence." },
+      { question: "Did Will Smith get into MIT?", answer: "Smith has said he was offered a scholarship to MIT but chose music instead. While this claim hasn't been independently verified, his demonstrated intelligence across music, film, writing, and business is consistent with strong academic aptitude." },
+      { question: "Is Will Smith smart?", answer: "His career strategy suggests genuine analytical intelligence. He systematically studied box office patterns, applied them to film choices, and dominated multiple entertainment fields. His memoir shows sophisticated psychological insight." },
+    ],
+  },
+  {
+    name: "Alexandria Ocasio-Cortez",
+    slug: "aoc-detailed",
+    estimatedIQ: "120–130",
+    knownFor: "US Congresswoman, political communicator, BU economics graduate",
+    description: "Additional analysis: AOC's communication intelligence deserves deeper examination. Her ability to distill complex policy (Green New Deal, tax policy, healthcare economics) into viral social media content that reaches millions demonstrates both analytical understanding of the policy AND exceptional verbal intelligence in translating it. She consistently outperforms colleagues with decades more experience in engagement metrics.",
+    iqContext: "AOC's Boston University cum laude economics degree provides concrete evidence of above-average analytical ability. Her real distinguishing trait is communication intelligence — she connects policy analysis with emotional resonance more effectively than virtually any modern American politician. Her ability to use Congressional hearing time to construct viral moments demonstrates sophisticated understanding of media dynamics.",
+    faqItems: [
+      { question: "What makes AOC an effective communicator?", answer: "She combines genuine policy understanding (economics degree) with exceptional verbal ability and social media intuition. Her congressional hearing questions are strategically constructed to create shareable moments — a sophisticated media strategy." },
+      { question: "Is AOC's economics degree relevant?", answer: "Very. Her cum laude graduation from BU in economics means she genuinely understands the policy she discusses — tax structures, healthcare economics, environmental policy. This analytical foundation supports her communication effectiveness." },
+      { question: "How does AOC compare to other communicators?", answer: "Her engagement metrics consistently exceed colleagues with decades more experience. This suggests a natural communication intelligence — the ability to make complex ideas accessible and emotionally resonant — that few politicians possess regardless of their IQ." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
