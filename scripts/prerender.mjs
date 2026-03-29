@@ -39,7 +39,9 @@ const careerSlugs = [
   "speech-language-pathologist", "personal-trainer", "anesthesiologist",
   "content-creator", "retail-pharmacist", "veterinary-technician",
   "blockchain-developer", "pharmacologist", "air-traffic-controller",
-  "optometrist", "hvac-technician", "chiropractor", "biomedical-engineer",
+  "optometrist", "hvac-technician",
+  "forensic-scientist", "librarian", "mechanical-engineer",
+  "insurance-actuary", "social-media-manager", "chiropractor", "biomedical-engineer",
   "real-estate-appraiser", "primary-care-physician", "video-game-developer",
 ];
 
@@ -129,6 +131,9 @@ const routes = [
   "/famous-iq/tim-cook",
   "/famous-iq/terence-tao",
   "/famous-iq/kobe-bryant",
+  "/famous-iq/sundar-pichai",
+  "/famous-iq/kylie-jenner",
+  "/famous-iq/einstein-iq-detailed",
   "/iq-myths/do-video-games-make-you-smarter",
   "/iq-myths/mozart-effect-iq",
   "/iq-myths/birth-order-and-iq",

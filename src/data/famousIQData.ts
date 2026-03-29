@@ -880,6 +880,45 @@ export const famousIQData: FamousIQInfo[] = [
       { question: "What was Kobe's basketball IQ?", answer: "Among the highest in NBA history. Kobe's film study habits were legendary — he would analyze opponents for hundreds of hours. His ability to deconstruct and replicate any move he saw demonstrated extraordinary observational learning and motor intelligence." },
     ],
   },
+  {
+    name: "Sundar Pichai",
+    slug: "sundar-pichai",
+    estimatedIQ: "135–150",
+    knownFor: "Google/Alphabet CEO",
+    description: "Sundar Pichai's IQ is estimated at 135-150 based on his extraordinary academic record — IIT Kharagpur (top of class), Stanford MS, Wharton MBA. Pichai rose from product manager to CEO of one of the world's most valuable companies, overseeing Chrome, Android, and Google's AI strategy. His ability to navigate complex technical and business decisions while managing 180,000+ employees demonstrates exceptional analytical and leadership intelligence.",
+    iqContext: "Pichai's path from IIT to Stanford to Wharton to Google CEO is one of the most academically impressive trajectories in tech leadership. IIT admission alone places him in roughly the top 0.5% of Indian test-takers — a pool of exceptionally competitive students. His subsequent success at Stanford and Wharton, plus his rise through Google's engineering ranks, confirms sustained intellectual excellence.",
+    faqItems: [
+      { question: "What is Sundar Pichai's IQ?", answer: "Pichai's IQ is estimated at 135-150. His IIT Kharagpur top-of-class finish, Stanford MS, and Wharton MBA — plus leading Google/Alphabet — suggest gifted-range intelligence." },
+      { question: "Is Sundar Pichai one of the smartest CEOs?", answer: "His academic credentials (IIT + Stanford + Wharton) are among the most impressive of any Fortune 500 CEO. Combined with his technical background and successful leadership of Google's AI strategy, he ranks among the most cognitively gifted tech leaders." },
+      { question: "How hard is it to get into IIT?", answer: "IIT admission is among the world's most competitive, with acceptance rates of about 1-2%. The JEE Advanced exam tests mathematics, physics, and chemistry at an extremely high level. Pichai finishing top of his class there is exceptional." },
+    ],
+  },
+  {
+    name: "Kylie Jenner",
+    slug: "kylie-jenner",
+    estimatedIQ: "105–115",
+    knownFor: "Kylie Cosmetics founder, media personality, billionaire",
+    description: "Kylie Jenner's IQ is estimated at 105-115 based on her demonstrated business acumen. Despite being dismissed as merely famous, Jenner built Kylie Cosmetics into a billion-dollar brand by age 21 — leveraging social media, understanding cosmetics market gaps, and executing direct-to-consumer strategies before they were mainstream. Her business decisions demonstrate practical intelligence that exceeds casual perception.",
+    iqContext: "Jenner illustrates how practical and social intelligence can create enormous business value. While her family fame provided a platform, converting that platform into a billion-dollar cosmetics brand required genuine strategic decisions: product selection, pricing, distribution, and brand positioning. Many famous people attempt businesses and fail; Jenner's success suggests above-average strategic and market intelligence.",
+    faqItems: [
+      { question: "What is Kylie Jenner's IQ?", answer: "Jenner's IQ is estimated at 105-115. Her billion-dollar cosmetics brand, built through strategic social media marketing and direct-to-consumer innovation, suggests above-average practical and business intelligence." },
+      { question: "Is Kylie Jenner smart?", answer: "In business and brand strategy, yes. Building a billion-dollar brand by age 21 — even with a famous platform — requires genuine strategic thinking about products, marketing, and market positioning. Many celebrities attempt businesses and fail." },
+      { question: "How did Jenner build a billion-dollar brand?", answer: "She identified a gap in affordable prestige lip products, leveraged her massive social media following for zero-cost marketing, and used direct-to-consumer sales to maximize margins. These strategic decisions demonstrate real business intelligence." },
+    ],
+  },
+  {
+    name: "Albert Einstein (Detailed)",
+    slug: "einstein-iq-detailed",
+    estimatedIQ: "160",
+    knownFor: "Theory of Relativity, Nobel Prize, cultural icon of genius",
+    description: "Einstein's detailed IQ analysis reveals a complex cognitive profile. His estimated IQ of 160 reflects extraordinary spatial-mathematical reasoning, but his verbal and processing speed abilities may have been more modest. Einstein was a late talker, struggled with rote memorization in school, and reportedly had difficulty with certain types of social interaction — a pattern some modern researchers associate with autism spectrum traits.",
+    iqContext: "Einstein's cognitive profile was likely uneven — exceptionally high in spatial-mathematical reasoning and physical intuition, but perhaps less exceptional in verbal processing and social cognition. This 'spiky' profile is common among the most gifted scientists and mathematicians. His famous thought experiments (imagining riding a light beam) relied on extraordinary spatial visualization, while his mathematics was often refined by collaborators. This suggests his particular genius was in physical intuition rather than pure mathematical formalism.",
+    faqItems: [
+      { question: "What was Einstein's exact IQ?", answer: "Einstein never took a modern IQ test. The commonly cited 160 is an estimate based on his achievements. Some researchers estimate 170-180 based on the difficulty of his theoretical work. The exact number is unknowable." },
+      { question: "Was Einstein on the autism spectrum?", answer: "Some researchers believe Einstein showed traits consistent with autism spectrum conditions — late speech development, intense focus on specific topics, social difficulties, and preference for visual-spatial thinking. This is speculative but consistent with his described behavior." },
+      { question: "Was Einstein bad at math?", answer: "No — this is a myth. Einstein excelled in mathematics from childhood. However, his mathematical skills were not his strongest attribute compared to his physical intuition. He relied on mathematicians like Marcel Grossmann to formalize some of his theories in rigorous mathematical language." },
+    ],
+  },
 ];
 
 export function getFamousPersonBySlug(slug: string): FamousIQInfo | undefined {
