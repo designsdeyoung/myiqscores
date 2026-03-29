@@ -8,7 +8,7 @@ const Navbar = () => (
         <Brain className="w-7 h-7 text-primary" />
         <div>
           <span className="font-heading font-bold text-lg tracking-tight text-foreground">
-            My<span className="text-primary">IQ</span>Scores
+            My<span className="text-primary">IQ</span>Scores<sup className="text-[8px] text-muted-foreground/50 ml-0.5">™</sup>
           </span>
           <span className="hidden sm:block text-[10px] text-muted-foreground/70 -mt-0.5 tracking-wide">
             The Most Accurate Free IQ Test Online
