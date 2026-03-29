@@ -5,12 +5,12 @@ interface PercentileBarProps {
 }
 
 const PercentileBar = ({ percentile, label, className = "" }: PercentileBarProps) => {
-  const getColor = () => {
-    if (percentile >= 98) return "from-violet-500 to-purple-600";
-    if (percentile >= 84) return "from-cyan-400 to-blue-500";
-    if (percentile >= 50) return "from-green-400 to-emerald-500";
-    if (percentile >= 16) return "from-yellow-400 to-amber-500";
-    return "from-orange-400 to-red-500";
+  const getGradient = () => {
+    if (percentile >= 98) return "linear-gradient(to right, #8B5CF6, #7C3AED)";
+    if (percentile >= 84) return "linear-gradient(to right, #22D3EE, #3B82F6)";
+    if (percentile >= 50) return "linear-gradient(to right, #4ADE80, #10B981)";
+    if (percentile >= 16) return "linear-gradient(to right, #FACC15, #F59E0B)";
+    return "linear-gradient(to right, #FB923C, #EF4444)";
   };
 
   return (
@@ -21,13 +21,12 @@ const PercentileBar = ({ percentile, label, className = "" }: PercentileBarProps
       </div>
       <div className="relative h-4 rounded-full bg-[rgba(255,255,255,0.05)] overflow-hidden">
         <div
-          className={`h-full rounded-full bg-gradient-to-r ${getColor()} transition-all duration-700`}
-          style={{ width: `${percentile}%` }}
+          className="h-full rounded-full"
+          style={{ width: `${Math.max(percentile, 2)}%`, background: getGradient() }}
         />
-        {/* Marker */}
         <div
-          className="absolute top-0 h-full w-0.5 bg-white/60"
-          style={{ left: `${percentile}%` }}
+          className="absolute top-0 h-full w-0.5"
+          style={{ left: `${percentile}%`, backgroundColor: "rgba(255,255,255,0.6)" }}
         />
       </div>
       <div className="flex justify-between mt-1">

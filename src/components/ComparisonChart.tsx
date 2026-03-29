@@ -18,7 +18,7 @@ const ComparisonChart = ({ items, maxValue, className = "", title }: ComparisonC
   const max = maxValue || Math.max(...items.map((i) => i.value)) * 1.1;
 
   const getColor = (value: number, highlight?: boolean) => {
-    if (highlight) return "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))";
+    if (highlight) return "linear-gradient(135deg, #00E5FF, #8B5CF6)";
     if (value >= 130) return "rgba(139, 92, 246, 0.7)";
     if (value >= 110) return "rgba(0, 229, 255, 0.5)";
     if (value >= 90) return "rgba(34, 197, 94, 0.4)";
