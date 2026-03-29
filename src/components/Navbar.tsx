@@ -6,11 +6,15 @@ const Navbar = () => (
     <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
       <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
         <Brain className="w-7 h-7 text-primary" />
-        <span className="font-heading font-bold text-lg tracking-tight text-foreground">
-          My<span className="text-primary">IQ</span>Scores
-        </span>
+        <div>
+          <span className="font-heading font-bold text-lg tracking-tight text-foreground">
+            My<span className="text-primary">IQ</span>Scores
+          </span>
+          <span className="hidden sm:block text-[10px] text-muted-foreground/70 -mt-0.5 tracking-wide">
+            The Most Accurate Free IQ Test Online
+          </span>
+        </div>
       </Link>
-      <span className="text-xs text-muted-foreground hidden sm:block">The Most Accurate Free IQ Test Online</span>
     </div>
   </nav>
 );

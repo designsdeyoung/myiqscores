@@ -38,9 +38,14 @@ const ContentPage = ({
       <div className="max-w-6xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
           <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-          <span className="font-heading font-bold text-base sm:text-lg tracking-tight text-foreground">
-            My<span className="text-primary">IQ</span>Scores
-          </span>
+          <div>
+            <span className="font-heading font-bold text-base sm:text-lg tracking-tight text-foreground">
+              My<span className="text-primary">IQ</span>Scores
+            </span>
+            <span className="hidden sm:block text-[10px] text-muted-foreground/70 -mt-0.5 tracking-wide">
+              The Most Accurate Free IQ Test Online
+            </span>
+          </div>
         </Link>
         <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
           <Link to="/what-is-iq" className="hover:text-foreground transition-colors hidden sm:block">What Is IQ?</Link>

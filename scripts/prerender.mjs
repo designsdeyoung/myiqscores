@@ -43,7 +43,8 @@ const careerSlugs = [
   "forensic-scientist", "librarian", "mechanical-engineer",
   "insurance-actuary", "social-media-manager", "dermatologist",
   "athletic-trainer", "clinical-psychologist", "film-director",
-  "psychiatric-nurse", "chiropractor", "biomedical-engineer",
+  "psychiatric-nurse", "dental-assistant", "emt", "orthodontist",
+  "epidemiologist", "landscape-architect", "chiropractor", "biomedical-engineer",
   "real-estate-appraiser", "primary-care-physician", "video-game-developer",
 ];
 
