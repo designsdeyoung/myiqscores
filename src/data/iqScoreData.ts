@@ -386,19 +386,6 @@ export const iqScoreData: Record<number, IQScoreInfo> = {
       { question: "What percentile is 123 IQ?", answer: "94th percentile — you score higher than approximately 94% of the general population. Only about 1 in 16 people score this high." },
     ],
   },
-  126: {
-    score: 126,
-    classification: "Superior",
-    percentile: "96th",
-    rarity: "1 in 25",
-    detailedExplanation: "An IQ of 126 is in the upper superior range at the 96th percentile. Only about 4% of people score higher. You are approaching the gifted threshold and have strong analytical abilities that are noticeable in any intellectual context. Complex abstract reasoning is a genuine strength.",
-    careerContext: "At 126, virtually any career is intellectually accessible. Research, advanced law, specialized medicine, and technology innovation are natural paths. The cognitive foundation supports the most demanding intellectual work.",
-    faqItems: [
-      { question: "Is 126 a good IQ score?", answer: "126 is outstanding at the 96th percentile — only 4% of people score higher. You're in the upper superior range approaching gifted territory." },
-      { question: "Is 126 close to Mensa?", answer: "Getting close — Mensa requires 130 (98th percentile). At 126 (96th percentile), you're 4 points away. Given testing variability, some testing sessions might produce a qualifying score." },
-      { question: "What can I achieve with 126 IQ?", answer: "Essentially anything intellectually. At 126, cognitive ability is never the bottleneck. Success depends on your interests, passion, effort, and opportunity rather than cognitive limitation." },
-    ],
-  },
   127: {
     score: 127,
     classification: "Superior",
