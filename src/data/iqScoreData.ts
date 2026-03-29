@@ -1348,19 +1348,6 @@ export const iqScoreData: Record<number, IQScoreInfo> = {
       { question: "How does 144 compare to famous geniuses?", answer: "144 is below estimates for Einstein (~160) and Newton (~190) but above many successful scientists, inventors, and leaders. At 144, you have genuine genius-level ability applied to whatever domain you choose." },
     ],
   },
-  145: {
-    score: 145,
-    classification: "Genius-level",
-    percentile: "99.7th",
-    rarity: "1 in 333",
-    detailedExplanation: "An IQ of 142 is above the genius threshold, placing you at the 99.7th percentile. Only about 1 in 333 people reach this level. At 142, cognitive ability is markedly exceptional — you can process complex information with unusual speed, identify patterns at deep structural levels, and learn new domains rapidly. People at this level often describe a qualitatively different experience of thinking compared to the general population.",
-    careerContext: "People with a 142 IQ are found in the most demanding intellectual roles: theoretical research, advanced mathematics, cutting-edge technology, and creative innovation. Many make original contributions to their fields. Finding adequately challenging work is often the primary career concern.",
-    faqItems: [
-      { question: "Is 142 a good IQ score?", answer: "A 142 is extraordinary — genius-level at the 99.7th percentile. Only about 1 in 333 people score this high. It reflects cognitive ability that surpasses nearly the entire population." },
-      { question: "What can you do with a 142 IQ?", answer: "Essentially anything that requires cognitive ability. At 142, no career is intellectually out of reach. The question becomes what sustains your interest and engagement rather than what you're capable of." },
-      { question: "How does 142 compare to famous geniuses?", answer: "A 142 IQ is above the genius threshold but below estimates for history's most celebrated minds (Einstein ~160, Newton ~190). You share the genius classification but at a more 'accessible' level — still extraordinarily rare and capable." },
-    ],
-  },
   146: {
     score: 146,
     classification: "Very Gifted",
