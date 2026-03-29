@@ -4,66 +4,13 @@ import SEOHead from "@/components/SEOHead";
 import IQMeter from "@/components/IQMeter";
 import ComparisonChart from "@/components/ComparisonChart";
 import WikiImage from "@/components/WikiImage";
+import FamousPersonIcon from "@/components/FamousPersonIcon";
 import { getFamousPersonBySlug, famousIQData } from "@/data/famousIQData";
 
 // Public domain / CC images from Wikimedia Commons for historical figures
-const wikiImages: Record<string, { src: string; alt: string; caption: string }> = {
-  "albert-einstein": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/440px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
-    alt: "Albert Einstein portrait photograph, 1921",
-    caption: "Albert Einstein in 1921. Photo by Ferdinand Schmutzer. Public domain.",
-  },
-  "isaac-newton": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Portrait_of_Sir_Isaac_Newton%2C_1689.jpg/440px-Portrait_of_Sir_Isaac_Newton%2C_1689.jpg",
-    alt: "Portrait of Sir Isaac Newton, 1689, by Godfrey Kneller",
-    caption: "Isaac Newton, 1689. Portrait by Godfrey Kneller. Public domain.",
-  },
-  "leonardo-da-vinci": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Leonardo_self.jpg/440px-Leonardo_self.jpg",
-    alt: "Leonardo da Vinci self-portrait drawing",
-    caption: "Leonardo da Vinci, self-portrait c. 1512. Public domain.",
-  },
-  "marie-curie": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/440px-Marie_Curie_c._1920s.jpg",
-    alt: "Marie Curie photograph, circa 1920s",
-    caption: "Marie Curie, c. 1920s. Public domain.",
-  },
-  "nikola-tesla": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Tesla_circa_1890.jpeg/440px-Tesla_circa_1890.jpeg",
-    alt: "Nikola Tesla photograph, circa 1890",
-    caption: "Nikola Tesla, c. 1890. Photo by Napoleon Sarony. Public domain.",
-  },
-  "benjamin-franklin": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg/440px-Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg",
-    alt: "Benjamin Franklin portrait by Joseph Duplessis",
-    caption: "Benjamin Franklin. Portrait by Joseph Duplessis, c. 1785. Public domain.",
-  },
-  "wolfgang-mozart": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Wolfgang-amadeus-mozart_1.jpg/440px-Wolfgang-amadeus-mozart_1.jpg",
-    alt: "Wolfgang Amadeus Mozart portrait, 1819 copy",
-    caption: "Wolfgang Amadeus Mozart. Posthumous portrait by Barbara Krafft, 1819. Public domain.",
-  },
-  "pablo-picasso": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/440px-Pablo_picasso_1.jpg",
-    alt: "Pablo Picasso photograph, 1908",
-    caption: "Pablo Picasso, 1908. Anonymous photographer. Public domain.",
-  },
-  "marilyn-monroe": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Monroecirca1953.jpg/440px-Monroecirca1953.jpg",
-    alt: "Marilyn Monroe publicity photograph, 1953",
-    caption: "Marilyn Monroe, c. 1953. Public domain.",
-  },
-  "ruth-bader-ginsburg": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Ruth_Bader_Ginsburg_official_SCOTUS_portrait_%28cropped%29.jpg/440px-Ruth_Bader_Ginsburg_official_SCOTUS_portrait_%28cropped%29.jpg",
-    alt: "Ruth Bader Ginsburg official Supreme Court portrait",
-    caption: "Ruth Bader Ginsburg, official SCOTUS portrait. Public domain (US Government work).",
-  },
-  "barack-obama": {
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/President_Barack_Obama.jpg/440px-President_Barack_Obama.jpg",
-    alt: "Barack Obama official presidential portrait",
-    caption: "Barack Obama, official presidential portrait by Pete Souza. Public domain (US Government work).",
-  },
-};
+// Note: Wikimedia images may not load due to hotlinking restrictions.
+// For production, download these images and serve them from /public/images/famous/
+const wikiImages: Record<string, { src: string; alt: string; caption: string }> = {};
 
 const FamousIQ = () => {
   const { pathname } = useLocation();
@@ -106,13 +53,15 @@ const FamousIQ = () => {
         <span className="gradient-text">{person.name}'s IQ</span>: {person.estimatedIQ}
       </h1>
 
-      {/* Wiki image for historical figures */}
-      {wikiImages[person.slug] && (
+      {/* Person visual */}
+      {wikiImages[person.slug] ? (
         <WikiImage
           src={wikiImages[person.slug].src}
           alt={wikiImages[person.slug].alt}
           caption={wikiImages[person.slug].caption}
         />
+      ) : (
+        <FamousPersonIcon name={person.name} />
       )}
 
       {/* IQ Meter */}

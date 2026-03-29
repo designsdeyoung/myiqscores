@@ -18,21 +18,21 @@ const ComparisonChart = ({ items, maxValue, className = "", title }: ComparisonC
   const max = maxValue || Math.max(...items.map((i) => i.value)) * 1.1;
 
   const getColor = (value: number, highlight?: boolean) => {
-    if (highlight) return "bg-gradient-to-r from-primary to-secondary";
-    if (value >= 130) return "bg-violet-500/70";
-    if (value >= 110) return "bg-cyan-500/50";
-    if (value >= 90) return "bg-green-500/40";
-    return "bg-yellow-500/40";
+    if (highlight) return "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))";
+    if (value >= 130) return "rgba(139, 92, 246, 0.7)";
+    if (value >= 110) return "rgba(0, 229, 255, 0.5)";
+    if (value >= 90) return "rgba(34, 197, 94, 0.4)";
+    return "rgba(234, 179, 8, 0.4)";
   };
 
   return (
     <div className={`my-8 ${className}`} role="img" aria-label={title || "IQ comparison chart"}>
       {title && <p className="text-sm font-heading font-semibold text-foreground mb-4">{title}</p>}
       <div className="space-y-3">
-        {items.map((item) => {
+        {items.map((item, idx) => {
           const widthPct = Math.min((item.value / max) * 100, 100);
-          const content = (
-            <div key={item.label} className="group">
+          const bar = (
+            <div className="group">
               <div className="flex items-center justify-between mb-1">
                 <span className={`text-sm ${item.highlight ? "text-foreground font-semibold" : "text-muted-foreground"}`}>
                   {item.label}
@@ -43,19 +43,22 @@ const ComparisonChart = ({ items, maxValue, className = "", title }: ComparisonC
               </div>
               <div className="h-3 rounded-full bg-[rgba(255,255,255,0.05)] overflow-hidden">
                 <div
-                  className={`h-full rounded-full transition-all duration-500 ${getColor(item.value, item.highlight)}`}
-                  style={{ width: `${widthPct}%` }}
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${widthPct}%`,
+                    background: getColor(item.value, item.highlight),
+                  }}
                 />
               </div>
             </div>
           );
 
           return item.href ? (
-            <Link key={item.label} to={item.href} className="block no-underline hover:opacity-80 transition-opacity">
-              {content}
+            <Link key={idx} to={item.href} className="block no-underline hover:opacity-80 transition-opacity">
+              {bar}
             </Link>
           ) : (
-            <div key={item.label}>{content}</div>
+            <div key={idx}>{bar}</div>
           );
         })}
       </div>
