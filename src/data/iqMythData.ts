@@ -536,6 +536,66 @@ export const iqMythData: IQMythInfo[] = [
       { question: "Can hunger make you less smart?", answer: "Yes. Being genuinely hungry impairs working memory, attention, and decision-making. A Princeton study showed that scarcity mindset (from hunger or financial stress) reduces effective cognitive performance by up to 13 IQ-equivalent points." },
     ],
   },
+  {
+    title: "Does Being Rich Make You Smarter?",
+    slug: "does-money-increase-iq",
+    myth: "Having more money increases your intelligence and IQ score.",
+    reality: "Money doesn't increase IQ directly, but it provides access to better nutrition, education, healthcare, and reduced stress — all of which support cognitive development, especially in children.",
+    explanation: "The relationship runs primarily from money to better conditions to better cognitive outcomes, not from money directly to higher IQ. Wealthy environments provide better nutrition (crucial for brain development), quality education, healthcare, reduced environmental toxins (lead, pollution), and lower chronic stress — all proven to support cognitive development. The effect is strongest in childhood: children from wealthy families average 10-15 IQ points higher than children from poverty, but this gap is primarily environmental. When children from poor backgrounds are adopted into wealthy families, their IQ scores rise significantly. The practical implication: money doesn't make you smarter, but it creates conditions where cognitive potential can be fully realized.",
+    faqItems: [
+      { question: "Does money increase IQ?", answer: "Not directly. But money provides better nutrition, education, healthcare, and reduced stress — all of which support cognitive development. The effect is strongest in childhood, where the gap between wealthy and poor children averages 10-15 IQ points." },
+      { question: "Why do wealthy people score higher on IQ tests?", answer: "Better nutrition, education access, healthcare, reduced stress, and less exposure to cognitive toxins (lead, pollution). When children from poverty are placed in enriched environments, their IQ scores rise — proving the cause is environment, not inherent ability." },
+      { question: "Can reducing poverty increase IQ?", answer: "Yes. Cash transfer programs, improved nutrition, and educational interventions in low-income populations consistently produce IQ gains of 5-15 points. The Flynn Effect shows entire populations' IQs rising as economic conditions improve." },
+    ],
+  },
+  {
+    title: "Do Vegans Have Higher IQs?",
+    slug: "vegan-diet-and-iq",
+    myth: "Vegetarians and vegans have higher IQs than meat eaters.",
+    reality: "Studies show people with higher childhood IQs are more likely to become vegetarian as adults. The relationship is IQ→vegetarianism, not vegetarianism→higher IQ.",
+    explanation: "A large UK study (British Medical Journal, 2007) found that children who scored higher on IQ tests at age 10 were significantly more likely to become vegetarian by age 30. However, this doesn't mean vegetarianism increases IQ — it means higher-IQ people are more likely to choose vegetarianism, possibly due to greater openness to non-conventional ideas, health consciousness, or ethical reasoning. A vegan diet that is well-planned provides excellent nutrition. However, a poorly planned vegan diet lacking vitamin B12, iron, zinc, and omega-3s could actually impair cognitive function. The key takeaway: your diet choice reflects but doesn't determine your intelligence. Eat whatever diet you choose, but ensure adequate nutrition for brain health regardless.",
+    faqItems: [
+      { question: "Are vegans smarter?", answer: "Higher-IQ people are more likely to become vegetarian — but the direction is IQ causes diet choice, not diet causes higher IQ. A British study found higher childhood IQ predicted adult vegetarianism." },
+      { question: "Does diet affect IQ?", answer: "Nutrition affects cognitive development, especially in children. But specific diet types (vegan vs omnivore) don't increase or decrease IQ in well-nourished adults. The key is adequate nutrition regardless of diet philosophy." },
+      { question: "Can a vegan diet harm brain function?", answer: "Only if poorly planned. B12 deficiency (common in unsupplemented vegans) can impair cognitive function. With proper B12, iron, zinc, and omega-3 supplementation, a vegan diet supports brain health perfectly well." },
+    ],
+  },
+  {
+    title: "Does Handwriting Affect Intelligence?",
+    slug: "handwriting-and-intelligence",
+    myth: "Messy handwriting means you're smart — geniuses have terrible penmanship.",
+    reality: "There is no meaningful correlation between handwriting quality and IQ. The 'messy genius' stereotype is a myth based on anecdotes about specific famous people.",
+    explanation: "The myth that messy handwriting indicates genius stems from the (often exaggerated) handwriting of famous scientists and doctors. In reality, studies find no significant correlation between handwriting legibility and IQ scores. Handwriting quality is determined by fine motor control, practice, and the effort invested — factors largely independent of intelligence. What IS true: people who think very quickly may sometimes write messily because their hand can't keep up with their thoughts. But plenty of high-IQ people have excellent penmanship (careful, methodical thinking often produces neat writing), and plenty of average-IQ people have messy handwriting (due to poor motor control or simply not caring). Interestingly, research does show that handwriting (versus typing) improves memory and learning — but this has nothing to do with handwriting quality.",
+    faqItems: [
+      { question: "Does messy handwriting mean you're smart?", answer: "No. There's no meaningful correlation between handwriting quality and IQ. The 'messy genius' stereotype is anecdotal and not supported by research. Handwriting depends on motor control and practice, not intelligence." },
+      { question: "Do geniuses have bad handwriting?", answer: "Some do, some don't. Einstein's handwriting was actually quite legible. The myth persists because a few famous examples (some doctors, scientists) had messy writing, creating confirmation bias." },
+      { question: "Is handwriting related to brain function?", answer: "Handwriting activates different brain areas than typing and improves memory retention. But handwriting quality (neatness) is primarily a motor skill, not an intelligence indicator." },
+    ],
+  },
+  {
+    title: "Does Speaking Multiple Languages Increase IQ?",
+    slug: "multilingualism-increases-iq",
+    myth: "Speaking multiple languages directly increases your IQ score.",
+    reality: "Multilingualism enhances specific cognitive skills (executive function, working memory) but doesn't dramatically increase overall IQ. The relationship between language learning and IQ is bidirectional.",
+    explanation: "The cognitive benefits of multilingualism are real but often overstated. Bilingual and multilingual individuals show advantages in executive function (task switching, inhibitory control) and working memory — cognitive skills that IQ tests partially measure. However, these advantages are modest (typically 2-5 IQ-equivalent points on specific subtests) and may reflect both the cognitive demands of managing multiple languages AND the pre-existing cognitive ability needed to learn languages successfully. The strongest evidence is for bilingualism's neuroprotective effects: bilingual individuals develop dementia approximately 4-5 years later than monolinguals. This suggests managing multiple language systems builds cognitive reserve that protects brain function in aging. The practical takeaway: learning languages is excellent for cognitive health, but don't expect dramatic IQ gains.",
+    faqItems: [
+      { question: "Does speaking multiple languages increase IQ?", answer: "Modestly. Multilingualism enhances executive function and working memory (2-5 IQ-equivalent points on specific subtests). But the relationship is bidirectional — higher IQ also makes language learning easier." },
+      { question: "How many languages do you need for cognitive benefits?", answer: "Even basic bilingualism provides some cognitive benefits. The advantages increase with proficiency and the number of languages, but diminishing returns set in. Being functionally bilingual is enough for most of the cognitive benefits." },
+      { question: "Does learning a language as an adult help the brain?", answer: "Yes. Adult language learning exercises working memory, attention, and cognitive flexibility. While the benefits are strongest for childhood bilingualism, adult learners also show cognitive improvements and neuroprotective effects." },
+    ],
+  },
+  {
+    title: "Is IQ Testing Outdated?",
+    slug: "is-iq-testing-outdated",
+    myth: "IQ testing is an outdated, discredited practice that modern science has moved beyond.",
+    reality: "IQ testing remains the most reliable and well-validated psychometric tool ever developed. While imperfect and limited in scope, it is not outdated — it's constantly refined and remains the strongest single predictor of academic and occupational outcomes.",
+    explanation: "Claims that IQ testing is 'outdated' misrepresent the state of psychological science. The WAIS is now in its fourth edition, continuously updated with modern norming, reduced cultural bias, and improved subtests. IQ scores remain the single strongest predictor of academic performance (r ≈ 0.5) and job performance (r ≈ 0.3-0.5) — better than any other single psychometric measure. What IS true: IQ testing has limitations. It doesn't measure creativity, emotional intelligence, practical wisdom, or many other important cognitive abilities. It can be influenced by cultural bias, test anxiety, and socioeconomic factors. And it should never be the sole basis for major decisions about a person's potential. But 'limited' is not the same as 'outdated.' Modern IQ research is active and productive, with ongoing work on neural correlates, genetic influences, and test fairness. The tool is imperfect but far from obsolete.",
+    faqItems: [
+      { question: "Is IQ testing still valid?", answer: "Yes. IQ remains the most reliable psychometric tool in psychology and the strongest single predictor of academic and occupational outcomes. The tests are continuously updated (WAIS-IV, Stanford-Binet 5) with modern norms and reduced bias." },
+      { question: "What are the limitations of IQ testing?", answer: "IQ tests don't measure creativity, emotional intelligence, practical wisdom, or social skills. They can be influenced by cultural bias, test anxiety, and socioeconomic factors. They should be one input among many, not a definitive measure of a person's worth or potential." },
+      { question: "Will IQ tests be replaced?", answer: "Unlikely in the near future. No alternative measure comes close to IQ's predictive validity for academic and cognitive outcomes. However, IQ testing is increasingly supplemented with measures of executive function, emotional intelligence, and domain-specific abilities." },
+    ],
+  },
 ];
 
 export function getMythBySlug(slug: string): IQMythInfo | undefined {
