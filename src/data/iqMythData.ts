@@ -476,6 +476,66 @@ export const iqMythData: IQMythInfo[] = [
       { question: "Why are some geniuses poor?", answer: "Because IQ doesn't determine career choices, financial risk tolerance, or business skill. Many high-IQ individuals choose lower-paying intellectual careers (academia, research, arts) or lack the social/business skills that drive wealth accumulation." },
     ],
   },
+  {
+    title: "Does Your IQ Change Throughout the Day?",
+    slug: "iq-changes-throughout-day",
+    myth: "Your IQ is the same at all times of day — it's a fixed number.",
+    reality: "Cognitive performance fluctuates by 5-10 IQ-equivalent points throughout the day based on circadian rhythm, energy levels, stress, and attention. Most people peak in late morning.",
+    explanation: "Your IQ score represents your typical cognitive ability, but actual performance fluctuates throughout the day. Research shows that most people's cognitive abilities peak between 10am and 12pm, when alertness and working memory are highest. After lunch, there's a well-documented dip in cognitive performance (the 'post-lunch dip'). By late afternoon, some abilities recover while others continue to decline. The magnitude of this fluctuation is significant — studies suggest cognitive performance can vary by the equivalent of 5-10 IQ points between peak and trough times. Factors beyond circadian rhythm also matter: caffeine intake, blood sugar levels, hydration, stress, and how much sleep you got the previous night all influence moment-to-moment cognitive performance. This is why standardized IQ tests are typically administered in the morning under controlled conditions.",
+    faqItems: [
+      { question: "Does IQ change throughout the day?", answer: "Effective cognitive performance fluctuates by 5-10 IQ-equivalent points based on time of day, energy, and alertness. Most people peak between 10am-12pm. Your IQ score represents typical ability, not a constant state." },
+      { question: "When is the brain sharpest?", answer: "For most people, late morning (10am-12pm) is peak cognitive performance time. Analytical thinking and working memory are strongest then. Creative thinking may actually peak during less alert periods (late evening for morning people)." },
+      { question: "Should I take an IQ test in the morning?", answer: "Yes, ideally. Morning testing (after adequate sleep and breakfast) produces the most representative results. Testing when tired, hungry, or stressed can reduce effective performance by several IQ-equivalent points." },
+    ],
+  },
+  {
+    title: "Are Introverts Smarter Than Extroverts?",
+    slug: "introverts-vs-extroverts-iq",
+    myth: "Introverts are smarter than extroverts — quiet people are more intelligent.",
+    reality: "IQ does not correlate meaningfully with introversion/extroversion. Both personality types have equal average IQs. The 'smart introvert' stereotype reflects cultural biases, not data.",
+    explanation: "The stereotype of the brilliant introvert (Einstein, Newton) versus the gregarious but less intellectual extrovert has no basis in IQ data. Large-scale studies find no meaningful correlation between introversion/extroversion and IQ scores. Both personality types span the full IQ range equally. What differs is how intelligence manifests: introverts may prefer solo intellectual activities (reading, coding, research) that are culturally coded as 'smart,' while extroverts may apply equal intelligence to social problem-solving, leadership, and collaborative innovation — activities less stereotypically associated with intelligence. The 'smart introvert' myth likely stems from confirmation bias and cultural values that equate quietness with depth of thought. In reality, the most effective teams combine introverted analytical thinking with extroverted communication and collaboration.",
+    faqItems: [
+      { question: "Are introverts smarter?", answer: "No. IQ does not correlate with introversion/extroversion. Both personality types have equal average IQs. The 'smart introvert' stereotype reflects cultural biases about what intelligence 'looks like,' not actual cognitive data." },
+      { question: "Why do people think introverts are smarter?", answer: "Cultural bias. Activities associated with introversion (reading, studying alone, coding) are culturally coded as 'intellectual,' while equally intelligent extrovert activities (leadership, negotiation, collaboration) are coded differently." },
+      { question: "Does personality affect IQ test performance?", answer: "Slightly. Introverts may perform marginally better in quiet, controlled testing environments, while extroverts may perform better in interactive settings. But the effect is tiny and doesn't reflect actual intelligence differences." },
+    ],
+  },
+  {
+    title: "Does Screen Time Lower Children's IQ?",
+    slug: "screen-time-children-iq",
+    myth: "Any screen time is harmful to children's cognitive development and will lower their IQ.",
+    reality: "The relationship is nuanced. Passive screen time (watching TV) may slightly displace developmental activities, but interactive and educational screen time can be beneficial. Total screen time matters less than content quality.",
+    explanation: "The screen time debate is far more nuanced than 'screens bad.' A major study published in JAMA Pediatrics (2023) analyzing data from 30,000+ children found that the relationship between screen time and cognitive outcomes depends almost entirely on content type and context. Passive consumption (watching videos, scrolling social media) shows small negative associations with cognitive development — not because screens are inherently harmful, but because passive watching displaces more cognitively stimulating activities like reading, playing, and social interaction. Interactive, educational screen time (educational apps, coding games, creative tools) can be genuinely beneficial. Studies show well-designed educational apps can improve early literacy and numeracy. Video calls with family members support social development. The AAP recommendation of limiting screen time for young children is reasonable but oversimplified. The key variable is not minutes of screen time but quality of content and what activities screen time displaces.",
+    faqItems: [
+      { question: "Does screen time lower IQ?", answer: "Not directly. Passive screen consumption may slightly displace developmental activities, but educational and interactive screen time can be beneficial. Quality of content matters far more than total screen minutes." },
+      { question: "How much screen time is safe for kids?", answer: "The AAP recommends: no screen time under 18 months (except video calls), 1 hour/day of quality programming for ages 2-5, and consistent limits for older children. These are guidelines — the key is ensuring screen time doesn't displace physical activity, reading, and social interaction." },
+      { question: "Are educational apps good for brain development?", answer: "Well-designed educational apps can genuinely support literacy, numeracy, and problem-solving skills. The key is 'well-designed' — many apps marketed as educational have minimal learning value. Look for apps based on educational research, not just flashy graphics." },
+    ],
+  },
+  {
+    title: "Do Twins Have the Same IQ?",
+    slug: "twins-and-iq",
+    myth: "Identical twins have exactly the same IQ since they share 100% of their DNA.",
+    reality: "Identical twins' IQs correlate at about 0.85 — very high but not perfect. They typically differ by 5-7 IQ points, showing that environment accounts for about 15-20% of IQ variation even with identical genes.",
+    explanation: "Identical twins share 100% of their DNA, making them the ultimate natural experiment for separating genetic and environmental influences on IQ. Studies consistently find that identical twins' IQ scores correlate at approximately 0.85 — the highest correlation of any kinship type, confirming the strong genetic component. However, the correlation is not 1.0 — identical twins typically differ by 5-7 IQ points. This 15-20% non-genetic variation comes from several sources: different prenatal environments (position in the uterus, nutrient access), different experiences after birth (even twins raised together have some unique experiences), epigenetic differences (gene expression variations despite identical DNA), and measurement error in IQ tests. Fraternal twins (sharing ~50% of genes) correlate at about 0.60. Siblings raised together correlate at about 0.45. Adopted siblings (no genetic relation) correlate at about 0.25 in childhood, declining to near 0 in adulthood. This pattern clearly shows both genetic and environmental influences on IQ.",
+    faqItems: [
+      { question: "Do identical twins have the same IQ?", answer: "Very similar but not identical. Identical twins' IQs correlate at about 0.85, typically differing by 5-7 points. This shows genetics strongly influences IQ (85%) but environment still matters (~15%)." },
+      { question: "Why don't identical twins have identical IQs?", answer: "Despite sharing 100% of DNA, twins experience different prenatal environments, unique life experiences, epigenetic variations, and IQ test measurement error. These non-genetic factors account for the 5-7 point typical difference." },
+      { question: "What do twin studies tell us about IQ?", answer: "Twin studies are the strongest evidence that IQ is heavily genetic (50-85% depending on age). But the fact that identical twins still differ by 5-7 points proves environment matters too. Both nature and nurture influence intelligence." },
+    ],
+  },
+  {
+    title: "Does Fasting Improve Cognitive Function?",
+    slug: "fasting-and-iq",
+    myth: "Intermittent fasting dramatically improves brain function and can increase your IQ.",
+    reality: "Short-term fasting may provide modest cognitive benefits through increased BDNF and ketone production, but evidence for IQ improvement is weak. Chronic calorie restriction can actually impair cognition.",
+    explanation: "The fasting-brain connection has become popular in biohacking circles, but the evidence is more modest than claimed. Animal studies show intermittent fasting increases BDNF (brain-derived neurotrophic factor) — a protein that supports neuron growth and survival. In humans, the evidence is less clear. Some studies find that short-term fasting (16-24 hours) improves attention and reaction time, possibly through increased norepinephrine and the brain's use of ketones for fuel. However, these effects are temporary and modest — not the dramatic cognitive enhancement often claimed. Prolonged calorie restriction can actually impair cognitive function through reduced glucose availability, increased stress hormones, and nutrient deficiencies. The scarcity mindset created by hunger consumes cognitive bandwidth. For most people, the best brain fuel is consistent, adequate nutrition — not deprivation. The practical takeaway: if intermittent fasting works for your lifestyle, the modest cognitive benefits are a bonus. But don't fast specifically to 'boost your IQ' — the evidence doesn't support dramatic effects.",
+    faqItems: [
+      { question: "Does fasting improve IQ?", answer: "Evidence is weak. Short-term fasting may provide modest benefits to attention and reaction time through increased BDNF and ketone production. But there's no evidence of meaningful IQ improvement, and prolonged calorie restriction can impair cognition." },
+      { question: "Is intermittent fasting good for the brain?", answer: "Possibly modest benefits: increased BDNF, improved autophagy (cellular cleanup), and ketone production. But the effects are small and temporary. Adequate nutrition, exercise, and sleep remain far more impactful for brain health." },
+      { question: "Can hunger make you less smart?", answer: "Yes. Being genuinely hungry impairs working memory, attention, and decision-making. A Princeton study showed that scarcity mindset (from hunger or financial stress) reduces effective cognitive performance by up to 13 IQ-equivalent points." },
+    ],
+  },
 ];
 
 export function getMythBySlug(slug: string): IQMythInfo | undefined {
