@@ -12,6 +12,8 @@ export { careerSlugs } from "@/data/careerIQData";
 export { stateSlugs } from "@/data/stateIQData";
 export { mythSlugs } from "@/data/iqMythData";
 export { majorSlugs } from "@/data/majorIQData";
+export { compareSlugs } from "@/data/iqCompareData";
+export { citySlugs } from "@/data/cityIQData";
 
 export function render(url: string) {
   const helmetContext = {} as any;
