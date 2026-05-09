@@ -7,6 +7,7 @@ import WikiImage from "@/components/WikiImage";
 import FamousPersonIcon from "@/components/FamousPersonIcon";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getFamousPersonBySlug, famousIQData } from "@/data/famousIQData";
+import { careerIQData } from "@/data/careerIQData";
 
 // Public domain / CC images from Wikimedia Commons for historical figures
 // Note: Wikimedia images may not load due to hotlinking restrictions.
@@ -136,14 +137,20 @@ const FamousIQ = () => {
     url: `https://www.myiqscores.com/famous-iq/${person.slug}`,
   };
 
+  const personIQ = parseInt(person.estimatedIQ);
   const otherPeople = famousIQData.filter((p) => p.slug !== person.slug);
+  const similarIQPeople = otherPeople
+    .filter((p) => Math.abs(parseInt(p.estimatedIQ) - personIQ) <= 10)
+    .slice(0, 6);
+  const displayComparisons = similarIQPeople.length >= 3 ? similarIQPeople : otherPeople.slice(0, 6);
+  const relatedCareers = careerIQData.filter((c) => personIQ >= c.minIQ - 5 && personIQ <= c.maxIQ + 5).slice(0, 3);
 
   const relatedPages = [
     { title: "Famous People IQ Scores (Full List)", href: "/famous-iq" },
+    { title: `Is ${personIQ} IQ Good?`, href: `/is-${personIQ}-iq-good` },
     { title: "Highest IQ Ever Recorded", href: "/highest-iq-ever" },
-    { title: "Genius IQ Guide", href: "/genius-iq" },
-    ...otherPeople.slice(0, 3).map((p) => ({ title: `${p.name}'s IQ (${p.estimatedIQ})`, href: `/famous-iq/${p.slug}` })),
-    { title: "What Is a Good IQ Score?", href: "/good-iq-score" },
+    ...displayComparisons.slice(0, 2).map((p) => ({ title: `${p.name}'s IQ (${p.estimatedIQ})`, href: `/famous-iq/${p.slug}` })),
+    { title: "IQ by Career Chart", href: "/iq-by-career" },
   ];
 
   return (
@@ -228,7 +235,7 @@ const FamousIQ = () => {
             <td><strong>{person.estimatedIQ}</strong></td>
             <td>{person.knownFor}</td>
           </tr>
-          {otherPeople.map((p) => (
+          {displayComparisons.map((p) => (
             <tr key={p.slug}>
               <td><Link to={`/famous-iq/${p.slug}`}>{p.name}</Link></td>
               <td>{p.estimatedIQ}</td>
@@ -237,6 +244,25 @@ const FamousIQ = () => {
           ))}
         </tbody>
       </table>
+
+      <p className="text-sm text-muted-foreground">
+        See the <Link to="/famous-iq">complete famous IQ list</Link> or check{" "}
+        <Link to={`/is-${personIQ}-iq-good`}>what an IQ of {personIQ} means</Link>.
+      </p>
+
+      {relatedCareers.length > 0 && (
+        <>
+          <h2>Careers That Match an IQ of {personIQ}</h2>
+          <ul>
+            {relatedCareers.map((c) => (
+              <li key={c.slug}>
+                <Link to={`/iq-needed-for/${c.slug}`}>{c.career}</Link> — typical IQ range: {c.avgIQRange}
+              </li>
+            ))}
+          </ul>
+          <p>Explore the full <Link to="/iq-by-career">IQ by career chart</Link>.</p>
+        </>
+      )}
 
       <h2>Frequently Asked Questions</h2>
       {person.faqItems.map((item, i) => (
@@ -248,7 +274,7 @@ const FamousIQ = () => {
 
       <h2>Explore More Famous IQs</h2>
       <div className="flex flex-wrap gap-3 my-4">
-        {otherPeople.slice(0, 5).map((p) => (
+        {displayComparisons.map((p) => (
           <Link
             key={p.slug}
             to={`/famous-iq/${p.slug}`}
@@ -261,7 +287,7 @@ const FamousIQ = () => {
 
       <p className="mt-6">
         <Link to="/test">Take our free IQ test</Link> to discover your own score, or explore{" "}
-        <Link to="/is-130-iq-good">what a gifted IQ means</Link>.
+        <Link to={`/is-${personIQ}-iq-good`}>what an IQ of {personIQ} means</Link>.
       </p>
     </ContentPage>
   );

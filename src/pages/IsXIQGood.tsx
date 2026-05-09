@@ -7,6 +7,8 @@ import PercentileBar from "@/components/PercentileBar";
 import ComparisonChart from "@/components/ComparisonChart";
 import Breadcrumb from "@/components/Breadcrumb";
 import { iqScoreData, getAdjacentScores, iqScores } from "@/data/iqScoreData";
+import { famousIQData } from "@/data/famousIQData";
+import { careerIQData } from "@/data/careerIQData";
 
 const IsXIQGood = () => {
   const { pathname } = useLocation();
@@ -208,6 +210,48 @@ const IsXIQGood = () => {
           <p>{item.answer}</p>
         </div>
       ))}
+
+      {/* Famous People at this IQ */}
+      {(() => {
+        const famous = famousIQData.filter((p) => {
+          const iq = parseInt(p.estimatedIQ);
+          return !isNaN(iq) && Math.abs(iq - score) <= 5;
+        }).slice(0, 5);
+        if (famous.length === 0) return null;
+        return (
+          <>
+            <h2>Famous People with an IQ Around {score}</h2>
+            <p>The following well-known figures have estimated IQ scores close to {score}:</p>
+            <ul>
+              {famous.map((p) => (
+                <li key={p.slug}>
+                  <Link to={`/famous-iq/${p.slug}`}>{p.name}</Link> — {p.knownFor} (estimated IQ: {p.estimatedIQ})
+                </li>
+              ))}
+            </ul>
+          </>
+        );
+      })()}
+
+      {/* Careers for this IQ Range */}
+      {(() => {
+        const careers = careerIQData.filter((c) => score >= c.minIQ - 5 && score <= c.maxIQ + 5).slice(0, 5);
+        if (careers.length === 0) return null;
+        return (
+          <>
+            <h2>Careers That Suit an IQ of {score}</h2>
+            <p>People with an IQ around {score} are well-suited for the following career paths:</p>
+            <ul>
+              {careers.map((c) => (
+                <li key={c.slug}>
+                  <Link to={`/iq-needed-for/${c.slug}`}>{c.career}</Link> — average IQ range: {c.avgIQRange}
+                </li>
+              ))}
+            </ul>
+            <p>See the full <Link to="/iq-by-career">IQ by career chart</Link> for all professions.</p>
+          </>
+        );
+      })()}
 
       {/* Adjacent Score Links */}
       <h2>Explore Other IQ Scores</h2>
