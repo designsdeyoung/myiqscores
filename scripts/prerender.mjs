@@ -323,12 +323,15 @@ function writeSitemap() {
   const urls = uniqueRoutes
     .map((route) => {
       const loc = route === "/" ? "https://www.myiqscores.com" : `https://www.myiqscores.com${route}`;
-      const priority = route === "/" || route === "/test" ? "1.0" : route.includes("/blog") ? "0.8" : "0.7";
+      const isHome = route === "/" || route === "/test";
+      const isBlog = route.includes("/blog");
+      const priority = isHome ? "1.0" : isBlog ? "0.8" : "0.7";
+      const changefreq = isHome ? "weekly" : isBlog ? "weekly" : "monthly";
       return [
         "  <url>",
         `    <loc>${loc}</loc>`,
         `    <lastmod>${today}</lastmod>`,
-        "    <changefreq>monthly</changefreq>",
+        `    <changefreq>${changefreq}</changefreq>`,
         `    <priority>${priority}</priority>`,
         "  </url>",
       ].join("\n");

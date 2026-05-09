@@ -45,6 +45,45 @@ const categoryMap: Record<string, Category> = {
   "jungkook-bts": "Musicians",
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Who has the highest IQ in the world?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Terence Tao, a mathematician, is often cited with one of the highest verified IQ scores at around 225–230. Historical figures like William James Sidis are sometimes listed higher, though those estimates are largely speculative. Among living public figures, Elon Musk, Jeff Bezos, and other tech billionaires are frequently estimated in the 145–160 range.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the average celebrity IQ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most celebrity IQ estimates fall in the 110–130 range. Entertainers and athletes tend to cluster around 110–120, while tech entrepreneurs and scientists often score higher at 130–160. These are estimates — very few celebrities have taken verified, professionally administered IQ tests.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are celebrity IQ scores accurate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most are not verified. Celebrity IQ scores are typically estimates based on academic records, career achievements, problem-solving ability, and self-reported claims. Only a small fraction of public figures have taken standardized IQ tests under controlled conditions. Treat these numbers as rough approximations rather than precise measurements.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What IQ is considered genius level?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most psychologists define genius as an IQ of 140 or above (top 0.4% of the population). Some definitions set the threshold at 160+. However, genius is a fuzzy concept — many people with IQs below 140 have made extraordinary contributions, while high IQ alone does not guarantee exceptional achievement.",
+      },
+    },
+  ],
+};
+
 const FamousIQHub = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
@@ -65,6 +104,7 @@ const FamousIQHub = () => {
         description="See the estimated IQ scores of famous people — scientists, entrepreneurs, athletes, actors, and more. From Einstein (160) to everyday celebrities."
         canonicalUrl="/famous-iq"
         ogType="article"
+        jsonLd={faqSchema}
       />
 
       <h1><span className="gradient-text">Famous People IQ Scores:</span> Complete List</h1>

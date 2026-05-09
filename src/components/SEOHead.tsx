@@ -49,6 +49,16 @@ const SEOHead = ({
     name: "MyIQScores",
     url: SITE_URL,
     email: "support@myiqscores.com",
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/favicon.svg`,
+      width: 512,
+      height: 512,
+    },
+    sameAs: [
+      "https://x.com/MyIQScores",
+      "https://www.reddit.com/r/MyIQScores/",
+    ],
     description:
       "Free online IQ-style reasoning test with educational score explanations, cognitive testing guides, and score interpretation resources.",
     contactPoint: [
