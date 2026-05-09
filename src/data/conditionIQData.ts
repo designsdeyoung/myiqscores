@@ -431,6 +431,606 @@ export const conditionIQData: ConditionIQInfo[] = [
     ],
   },
   {
+    name: "OCD",
+    slug: "ocd",
+    headline: "OCD and IQ: How Obsessive-Compulsive Disorder Affects Cognitive Testing",
+    metaDescription:
+      "OCD does not lower intelligence, but obsessive thinking and compulsions can impair IQ test performance. Learn what research shows about cognitive profiles in OCD.",
+    overview:
+      "Obsessive-Compulsive Disorder (OCD) is a chronic mental health condition characterized by intrusive, unwanted thoughts (obsessions) and repetitive behaviors or mental acts (compulsions) performed to reduce distress. It affects approximately 2–3% of the global population and is classified by the World Health Organization as one of the top ten most disabling conditions worldwide. OCD is fundamentally different from other anxiety-related disorders in that it involves a specific dysfunction in orbitofrontal-striatal circuits — the brain networks responsible for error monitoring and habit formation — rather than generalized hyperreactivity. People with OCD span the full range of intelligence and are found at every IQ level; the condition is not associated with below-average intelligence and is in fact somewhat over-represented in high-IQ populations. The relationship between OCD and cognitive performance is complex: while underlying intelligence is unaffected, the disorder creates specific cognitive rigidities and demands on executive resources that can suppress IQ test performance.",
+    iqImpact:
+      "OCD can reduce performance on IQ tests through several mechanisms: obsessive doubt and checking can cause individuals to erase, second-guess, or restart responses mid-task, consuming time on timed subtests. Intrusive thoughts consume working memory capacity during cognitively demanding tasks, suppressing Working Memory Index scores. Executive function subtests requiring cognitive flexibility — switching between mental sets, inhibiting a prepotent response — are impacted by OCD's characteristic cognitive rigidity and difficulty shifting away from a thought or concern. Research finds that the most affected IQ subscales in OCD are Processing Speed (due to deliberate, checking-oriented responding) and Working Memory. Verbal reasoning and perceptual reasoning are typically at or near expected levels. A notable finding is that individuals with OCD often perform worse on timed than untimed versions of the same tasks, as time pressure exacerbates compulsive checking tendencies.",
+    researchFindings:
+      "A 2013 meta-analysis in Neuropsychology Review synthesizing 88 studies found that OCD is associated with moderate but consistent impairments in executive function, particularly inhibitory control (d = 0.5) and cognitive flexibility (d = 0.6), while verbal and perceptual intelligence were broadly preserved. A 2018 study in the Journal of Psychiatric Research found that the severity of obsessive doubt specifically predicted processing speed impairment, supporting the model that checking and re-checking behaviors — not general cognitive deficit — drive the IQ test performance reduction. Research by Abramowitz and colleagues demonstrated that OCD symptom dimensions predict differential cognitive profiles: contamination/washing subtypes show fewer cognitive impairments than symmetry/ordering and harm obsession subtypes, which show greater executive function deficits. A 2021 neuroimaging study in NeuroImage confirmed hyperactivation of the orbitofrontal cortex during error monitoring in OCD — the neural basis for the 'stuck' feeling and compulsive checking that impairs timed cognitive performance.",
+    faqItems: [
+      {
+        question: "Does OCD affect IQ?",
+        answer:
+          "OCD does not lower a person's underlying intelligence, but it can reduce IQ test scores — particularly on timed subtests requiring processing speed and working memory. The mechanism is obsessive doubt and checking: individuals with OCD may repeatedly verify their answers, second-guess correct responses, or experience intrusive thoughts that compete for cognitive resources. Verbal reasoning and perceptual reasoning scores are typically at or near expected levels, reflecting intact intellectual ability beneath the OCD-driven performance suppression.",
+      },
+      {
+        question: "Can highly intelligent people have OCD?",
+        answer:
+          "Yes, and research suggests OCD may be somewhat more common in high-IQ populations. The condition's characteristic pattern of seeking certainty, detecting errors, and generating hypothetical scenarios may involve the same neural systems that support analytical thinking. Several prominent scientists, musicians, and intellectuals have been diagnosed with OCD, including Nikola Tesla and Howard Hughes. Intelligence does not protect against OCD and may in some cases amplify its cognitive features.",
+      },
+      {
+        question: "Does treating OCD improve cognitive performance?",
+        answer:
+          "Research consistently shows that effective OCD treatment — particularly Exposure and Response Prevention (ERP) therapy and in some cases SSRIs — improves cognitive performance alongside symptom reduction. A 2020 study in Behaviour Research and Therapy found that patients who completed ERP showed meaningful gains in processing speed and cognitive flexibility, with improvements correlating to symptom reduction. The cognitive gains reflect reduced obsessional interference with working memory and decreased compulsive checking during cognitive tasks.",
+      },
+    ],
+  },
+  {
+    name: "ADHD Inattentive Type",
+    slug: "adhd-inattentive",
+    headline: "ADHD Inattentive Type and IQ: The Hidden Struggle",
+    metaDescription:
+      "ADHD Inattentive Type impairs working memory and processing speed without hyperactivity. Learn how this 'quiet' ADHD presentation affects IQ testing and cognitive profiles.",
+    overview:
+      "ADHD Predominantly Inattentive Presentation (formerly called ADD) is a subtype of ADHD characterized primarily by chronic difficulty sustaining attention, following through on tasks, organizing activities, and avoiding distractibility — without the prominent hyperactivity or impulsivity that characterizes other ADHD presentations. It affects an estimated 2–3% of children and is frequently under-diagnosed, particularly in girls and adults, because the absence of disruptive behavior makes the condition less visible to teachers and clinicians. People with the inattentive type are often described as 'daydreamers' or accused of laziness, when in fact they have a genuine neurobiological condition affecting executive function and attentional regulation. Like all ADHD presentations, inattentive ADHD does not lower underlying intelligence but does substantially affect the ability to demonstrate that intelligence on standardized cognitive tests.",
+    iqImpact:
+      "The cognitive signature of inattentive ADHD on IQ tests is similar to but often more pronounced than combined-type ADHD in the specific domain of sustained attention. Working Memory Index scores are typically the most affected, as the inattentive mind has particular difficulty holding information in active memory while performing mental operations. Processing Speed is also suppressed, as inattentive children and adults frequently drift off-task during the extended symbol-scanning and coding tasks of processing speed subtests. Perceptual Reasoning and Verbal Comprehension — which draw on reasoning and crystallized knowledge rather than active attention maintenance — are typically much higher, often creating a split profile of 15–25 points between cognitive potential (VCI/PRI) and current cognitive efficiency (WMI/PSI). Because the condition lacks overt behavioral markers, the IQ split profile is often the first clue that prompts evaluation.",
+    researchFindings:
+      "A 2017 study in the Journal of Attention Disorders found that children with inattentive ADHD showed significantly larger discrepancies between Verbal Comprehension and Processing Speed scores than children with combined ADHD — suggesting the inattentive subtype produces a particularly characteristic split profile. Research by Barkley and colleagues confirmed that inattentive ADHD is associated with greater impairment in sustained attention specifically, while inhibitory control deficits (more associated with hyperactive-impulsive ADHD) are less prominent. A 2020 meta-analysis in Neuropsychology Review found that the inattentive subtype showed the largest effect sizes for working memory impairment across all ADHD presentations (d = 0.8), reflecting the central role of attention in working memory function. Longitudinal research from the MTA study found that inattentive ADHD in childhood predicted academic underachievement and functional impairment into adulthood at rates comparable to combined ADHD, despite being less behaviorally disruptive — reinforcing the importance of identification and treatment.",
+    faqItems: [
+      {
+        question: "How is inattentive ADHD different from regular ADHD on IQ tests?",
+        answer:
+          "Both presentations show the characteristic ADHD split profile — high verbal and perceptual reasoning, lower working memory and processing speed. However, inattentive ADHD tends to show larger working memory deficits and may show the split more clearly, as sustained attention deficits directly impair the ability to hold information in mind during demanding subtests. The absence of hyperactivity also means that test administrators may not recognize that the child has ADHD, potentially leading to undiscovered misinterpretation of the IQ profile.",
+      },
+      {
+        question: "Why is inattentive ADHD often missed or diagnosed late?",
+        answer:
+          "Inattentive ADHD lacks the disruptive behavioral markers that prompt referral for evaluation. Children with inattentive ADHD don't interrupt, don't fight, and don't climb on furniture — they quietly drift, miss instructions, and fail to complete work. This makes them appear unmotivated or slow rather than neurodevelopmentally different. Girls are particularly under-diagnosed, as they tend to present with inattentive rather than hyperactive symptoms and are socialized to mask difficulties. Many inattentive individuals are not diagnosed until college or adulthood, when academic demands exceed their compensatory strategies.",
+      },
+      {
+        question: "Can inattentive ADHD be treated without medication?",
+        answer:
+          "Yes, though medication (typically stimulants or non-stimulant options like atomoxetine) is the most well-evidenced treatment for improving attention and working memory. Behavioral interventions — organizational skills training, external structure, body doubling, and environmental modification — show meaningful benefit, particularly in children. Mindfulness-based interventions have emerging evidence for improving sustained attention in adolescents and adults with inattentive ADHD. For academic and professional settings, accommodations such as extended time and reduced-distraction environments address the performance gap directly.",
+      },
+    ],
+  },
+  {
+    name: "ADHD Hyperactive-Impulsive Type",
+    slug: "adhd-hyperactive",
+    headline: "ADHD Hyperactive-Impulsive Type and IQ: Impulsivity's Effect on Cognitive Testing",
+    metaDescription:
+      "ADHD Hyperactive-Impulsive type affects IQ tests through impulsive responding and poor inhibitory control. Learn how this subtype differs cognitively from inattentive ADHD.",
+    overview:
+      "ADHD Predominantly Hyperactive-Impulsive Presentation is the ADHD subtype characterized primarily by excessive motor activity, talking excessively, interrupting others, difficulty waiting, and acting without adequate forethought — with less pronounced difficulty sustaining attention than the inattentive type. It is most commonly identified in early childhood (ages 3–6), when behavioral disruptiveness is at its peak, and is more commonly diagnosed in boys than girls. The hyperactive-impulsive subtype is associated with particular challenges in inhibitory control — the ability to pause before responding and suppress inappropriate actions — which has direct consequences for IQ test performance through impulsive responding, failure to check work, and rushing through tasks to escape the demand. Like all ADHD presentations, this subtype does not indicate below-average intelligence and is found across the full IQ range.",
+    iqImpact:
+      "The hyperactive-impulsive subtype produces a distinctive IQ test profile driven by inhibitory control deficits rather than pure attention failures. Impulsive responding causes errors of commission — selecting an answer before fully reading or processing the item — particularly on timed and multiple-choice type subtests. Digit Span (working memory) is impaired by difficulty suppressing irrelevant items. Processing Speed subtests are paradoxically affected in two opposing ways: impulsivity can drive rushing (producing rapid but error-prone responses), while the need to sit still and perform repetitive tasks may generate behavioral resistance. Executive function subtests requiring planning (Matrix Reasoning with multiple steps, some Verbal Reasoning items requiring inhibiting a first response) are affected by impulsive strategy selection. Unlike inattentive ADHD, verbal comprehension is typically robust in hyperactive-impulsive children, as the linguistic demands of those subtests are engaging and well-matched to their strength in rapid verbal output.",
+    researchFindings:
+      "Research by Russell Barkley — the most prolific ADHD researcher in the field — has consistently identified inhibitory control as the core neuropsychological deficit in hyperactive-impulsive ADHD, driving downstream impairments in working memory, planning, and self-regulation that affect IQ test performance. A 2016 study in the Journal of Child Psychology and Psychiatry found that hyperactive-impulsive children showed larger inhibitory control deficits than inattentive children (d = 0.9 vs. 0.6) but somewhat smaller working memory deficits, reflecting the differential neuropsychological profiles of the two subtypes. Neuroimaging research has found reduced volume and activity in the right prefrontal cortex and caudate nucleus in hyperactive-impulsive ADHD — regions specifically responsible for behavioral inhibition and motor suppression. Longitudinal research finds that hyperactive symptoms typically decrease across adolescence and early adulthood, while inattentive and executive function symptoms persist — meaning the IQ test impact profile of hyperactive ADHD often shifts toward the inattentive profile over time.",
+    faqItems: [
+      {
+        question: "Does hyperactive ADHD affect IQ tests differently than inattentive ADHD?",
+        answer:
+          "Yes, with important differences. Hyperactive-impulsive ADHD produces more errors of commission (impulsive, unchecked responding) while inattentive ADHD produces more errors of omission (missing items due to attention drift). Both subtypes show Working Memory and Processing Speed deficits, but inhibitory control impairment is more prominent in hyperactive presentations. Inattentive ADHD tends to show larger sustained attention deficits. In practice, the IQ profiles overlap substantially, and many individuals present with combined symptoms.",
+      },
+      {
+        question: "Why do hyperactive children sometimes underperform on IQ tests despite high intelligence?",
+        answer:
+          "The IQ testing environment is particularly challenging for children with hyperactive-impulsive ADHD: it requires sitting still, resisting the impulse to blurt out answers, working slowly and deliberately, and tolerating repetitive tasks without behavioral escape. All of these demands directly conflict with the neurobiology of hyperactive ADHD. The result is a performance that often underestimates the child's true intellectual capacity — particularly on processing speed subtests where the mandate to sit still and copy symbols deliberately is especially difficult.",
+      },
+      {
+        question: "Do hyperactive children outgrow ADHD's cognitive effects?",
+        answer:
+          "Hyperactivity symptoms do tend to decrease with age — the teenager who couldn't sit still at age 8 may be able to work at a desk by age 16. However, underlying executive function deficits — working memory impairment, inhibitory control challenges, and planning difficulties — persist into adulthood for approximately 60–70% of individuals with childhood ADHD. The cognitive profile on IQ tests typically evolves as motor hyperactivity recedes, but working memory and processing speed remain the most vulnerable domains throughout adulthood.",
+      },
+    ],
+  },
+  {
+    name: "Autism Level 1 (High-Functioning)",
+    slug: "autism-level-1",
+    headline: "Autism Level 1 and IQ: Intelligence in High-Functioning Autism",
+    metaDescription:
+      "Autism Level 1 (formerly Asperger's) is associated with average to above-average IQ. Learn about the cognitive profile, strengths, and IQ test considerations for Level 1 autism.",
+    overview:
+      "Autism Level 1 corresponds to what was previously diagnosed as Asperger Syndrome or High-Functioning Autism (HFA) under earlier diagnostic frameworks. It describes autistic individuals who do not have significant language delays or intellectual disability, but who experience meaningful social communication challenges, restricted interests, and sensory differences that require some support. Level 1 autism is characterized by average to above-average general intelligence, often with highly uneven cognitive profiles — exceptional abilities in certain domains coexisting with significant challenges in others. Many individuals with Level 1 autism work as engineers, mathematicians, scientists, and programmers, fields where the cognitive style of autism — attention to detail, systematic thinking, intense focus on areas of interest — aligns well with professional demands. Understanding the cognitive profile of Level 1 autism is important for accurate assessment and appropriate support.",
+    iqImpact:
+      "In Level 1 autism, IQ profiles are typically characterized by significant strength in perceptual reasoning (non-verbal pattern recognition, spatial analysis, logical matrices) and crystallized knowledge within areas of specialized interest, often contrasting with relatively lower (though still average or above) scores on processing speed and tasks requiring social inference or verbal abstraction outside familiar domains. The Block Design subtest — measuring spatial construction — often produces extremely high scores in Level 1 autism, sometimes approaching ceiling. Working memory is variable: some individuals show impressive digit span and verbal working memory, while others show working memory constraints that limit verbal fluency under pressure. Social cognition subtests (embedded in measures like the Comprehension subtest on the WISC, which asks about social norms and conventional wisdom) may underperform relative to the person's actual reasoning ability. The 'spiky' profile is more pronounced than in neurotypical individuals of equivalent IQ.",
+    researchFindings:
+      "A 2020 meta-analysis in Autism Research found that individuals with Level 1 autism (Asperger-equivalent diagnosis) had mean full-scale IQ scores approximately 5–8 points above the population mean, with the highest scores concentrated in perceptual reasoning and crystallized knowledge domains. Research by Simon Baron-Cohen's group at Cambridge found that students with Asperger syndrome were approximately 7–10 times more represented in STEM fields than in the general student population, consistent with the systematic cognitive style characteristic of Level 1 autism. The 'camouflaging' literature — documenting how many autistic women and girls mask their autism by mirroring social behaviors — has revealed that IQ testing can particularly underestimate social comprehension deficits in high-masking Level 1 individuals. A 2019 study in Molecular Autism found that genetic variants associated with autism spectrum traits also predicted higher mathematical and technical ability scores, supporting the view that autism-related cognitive differences represent a genuine cognitive profile rather than simply a deficit model.",
+    faqItems: [
+      {
+        question: "What is the average IQ for someone with Level 1 autism?",
+        answer:
+          "Level 1 autism (formerly Asperger syndrome) is characterized by average to above-average intelligence. Research finds mean IQ scores in this population approximately 5–10 points above the population average, with the distribution shifted toward the higher end. Individual profiles are highly variable — some individuals with Level 1 autism have IQ scores in the very superior range (130+), while others are in the average range. Critically, the uneven 'spiky' profile means that a full-scale IQ score can obscure dramatically higher abilities in specific domains.",
+      },
+      {
+        question: "Are people with Level 1 autism good at math and science?",
+        answer:
+          "Many, though certainly not all, individuals with Level 1 autism show particular strengths in systematic, rule-governed, and pattern-based domains — including mathematics, computing, engineering, and natural sciences. Research confirms significant over-representation of autistic individuals in STEM fields. The cognitive style of Level 1 autism — intense focus, attention to detail, preference for rule-governed systems over ambiguous social situations — aligns naturally with technical and scientific thinking. However, many autistic individuals also excel in humanities, music, art, and other fields where deep expertise and pattern recognition are valuable.",
+      },
+      {
+        question: "How should IQ tests be interpreted for Level 1 autism?",
+        answer:
+          "IQ tests should be interpreted with close attention to the subtest profile rather than the full-scale composite for individuals with Level 1 autism. The large discrepancies between high reasoning scores and lower processing speed or social comprehension scores require interpretation by an evaluator familiar with autistic cognitive profiles. Non-verbal IQ measures like Raven's Progressive Matrices often yield higher scores and may better capture the individual's intellectual potential. Accommodations such as reduced social demand in testing and extended time can also improve the accuracy of assessment.",
+      },
+    ],
+  },
+  {
+    name: "Autism Level 2 (Moderate Support Needs)",
+    slug: "autism-level-2",
+    headline: "Autism Level 2 and IQ: Cognitive Profiles With Moderate Support Needs",
+    metaDescription:
+      "Autism Level 2 involves moderate support needs and highly variable IQ. Learn how cognitive testing differs for Level 2 autism and what research shows about abilities and outcomes.",
+    overview:
+      "Autism Level 2 describes autistic individuals who require 'substantial support' in social communication and restricted, repetitive behaviors — meaning that deficits are noticeable even with accommodations and significantly limit independent functioning. Level 2 is a broader and more heterogeneous category than Level 1, encompassing individuals with a wide range of cognitive abilities. Some individuals with Level 2 autism have average or above-average IQ but require substantial behavioral or communicative support; others have co-occurring intellectual disability that contributes to their support needs. The critical insight is that the DSM-5 autism levels describe support needs, not intelligence — IQ and autism level are distinct and partially independent dimensions. Misunderstanding this distinction leads to systematic underestimation of the abilities of individuals with Level 2 autism.",
+    iqImpact:
+      "IQ assessment in Level 2 autism is significantly complicated by the communication and behavioral features of the condition. Standard verbal IQ tests may substantially underestimate intellectual ability when communication difficulties prevent accurate expression of reasoning. Non-verbal cognitive assessments — particularly the Leiter International Performance Scale, Universal Non-Verbal Intelligence Test (UNIT), and Raven's Progressive Matrices — are typically more valid measures for this population than verbally-loaded instruments. Research consistently finds that Level 2 autistic individuals score significantly higher on non-verbal than verbal IQ measures, with differences sometimes exceeding 30 points. Sensory sensitivities, anxiety, and behavioral features of Level 2 autism create additional assessment challenges that require flexible, relationship-building approaches to cognitive evaluation. IQ scores for Level 2 autism therefore carry larger measurement uncertainty than for any other population in this guide.",
+    researchFindings:
+      "A landmark 2007 study by Michelle Dawson et al. in Psychological Science — which included autistic participants with significant support needs — found that when tested on Raven's Progressive Matrices versus the Wechsler scales, autistic individuals' mean performance ranking rose from the 26th percentile to the 56th percentile — a gain of 30 percentile points — demonstrating that standard IQ tests dramatically underestimate intellectual ability in autism. A 2019 study in Autism Research found that approximately 30% of Level 2 autistic children who had been classified as having intellectual disability based on verbal IQ tests showed average or above-average non-verbal intelligence, suggesting significant rates of misclassification. Research by Boucher and colleagues documented that intellectual profiles in Level 2 autism are more heterogeneous than in either typical development or Level 1 autism, with a broader range of ability and a higher frequency of extreme subtest discrepancies. A 2022 study in the Journal of Autism and Developmental Disorders found that adaptive functioning skills — real-world ability — in Level 2 autism often exceed predictions based on full-scale IQ, particularly in individuals who have received intensive early behavioral intervention.",
+    faqItems: [
+      {
+        question: "Do all people with Level 2 autism have intellectual disability?",
+        answer:
+          "No. While co-occurring intellectual disability is more common in Level 2 than Level 1 autism, many individuals with Level 2 autism have average or above-average intelligence that is obscured by communication difficulties, behavioral features, or the use of inappropriate assessment tools. Research suggests that up to 30% of autistic children classified as having intellectual disability based on verbal IQ tests show average or above-average non-verbal intelligence. Determining the right assessment approach is critical for accurate evaluation.",
+      },
+      {
+        question: "How is IQ tested in people with Level 2 autism who have limited verbal communication?",
+        answer:
+          "For autistic individuals with limited verbal output, non-verbal IQ tests are preferred. The Leiter-3 (Leiter International Performance Scale), Universal Non-Verbal Intelligence Test (UNIT), and Raven's Progressive Matrices are validated, widely-used non-verbal measures that do not require verbal responses. Adaptive behavior scales (like the Vineland) complement IQ scores by capturing real-world functional ability. Experienced evaluators also use observation over multiple sessions, familiar examiners, and sensory accommodations to maximize the validity of assessment.",
+      },
+      {
+        question: "What outcomes can people with Level 2 autism achieve?",
+        answer:
+          "Outcomes in Level 2 autism vary enormously and are strongly influenced by the quality and intensity of early intervention, access to appropriate educational support, communication ability (augmentative and alternative communication devices significantly expand functional independence), and the presence or absence of co-occurring intellectual disability. Many individuals with Level 2 autism live in supported community settings, work in structured environments, form meaningful relationships, and report good quality of life. The most consistent predictor of better outcomes is early, intensive, communication-focused intervention starting before age 3.",
+      },
+    ],
+  },
+  {
+    name: "Borderline Personality Disorder",
+    slug: "borderline-personality",
+    headline: "BPD and IQ: How Borderline Personality Disorder Affects Cognitive Function",
+    metaDescription:
+      "BPD is associated with specific cognitive difficulties in emotional contexts. Learn how borderline personality disorder affects IQ testing and executive function.",
+    overview:
+      "Borderline Personality Disorder (BPD) is a complex mental health condition characterized by pervasive instability in interpersonal relationships, self-image, and emotions, alongside marked impulsivity. It affects approximately 1.6% of the general population but up to 20% of psychiatric inpatients. BPD is frequently misunderstood and misrepresented — it involves genuine neurobiological differences in the brain's emotion regulation systems, particularly the amygdala (heightened reactivity) and prefrontal cortex (reduced modulation), rather than simply a characterological 'flaw.' The relationship between BPD and IQ is nuanced: general intelligence is unaffected by BPD, but the condition creates specific cognitive vulnerabilities — particularly under emotional arousal — that can substantially impair performance on tasks requiring executive control, working memory, and inhibitory regulation.",
+    iqImpact:
+      "The impact of BPD on IQ test performance is highly state-dependent and context-sensitive. Under calm, supportive conditions, individuals with BPD typically perform at or near their cognitive potential, with scores reflecting their actual intellectual ability. However, emotional activation — which is easily triggered in BPD by interpersonal stress, perceived criticism, or abandonment cues — substantially impairs executive function, working memory, and cognitive flexibility. The one-on-one evaluative setting of IQ testing can itself trigger emotional activation in individuals with BPD, particularly if the examiner-examinee relationship feels uncertain or evaluative. Research finds that stress-induced cognitive impairment in BPD is particularly pronounced on tasks requiring impulse control and working memory — the same subtests most affected by ADHD, with which BPD frequently co-occurs. Decision-making tasks show characteristically impulsive patterns, and performance variability (scoring very well on some items, very poorly on similar ones) is often greater in BPD than in other clinical populations.",
+    researchFindings:
+      "A 2012 meta-analysis in Psychological Medicine synthesizing 34 studies found that BPD is associated with significant executive function impairments (d = 0.68), particularly inhibitory control and cognitive flexibility, while general intelligence and verbal memory were broadly intact. Research by Marsha Linehan — the developer of Dialectical Behavior Therapy (DBT) — established the 'biosocial model' of BPD, which posits that emotional dysregulation is the core deficit driving cognitive impairments through its effects on prefrontal function during arousal. A 2018 study in the Journal of Personality Disorders found that cognitive impairments in BPD were significantly greater in tasks performed under simulated social stress than in neutral conditions — confirming the state-dependent, emotion-triggered nature of cognitive difficulties. A 2020 study in Personality and Mental Health found that successful DBT treatment was associated with improvements in executive function and working memory, paralleling reductions in emotion dysregulation symptoms and suggesting a direct relationship between BPD symptom burden and cognitive performance.",
+    faqItems: [
+      {
+        question: "Does BPD affect intelligence or IQ?",
+        answer:
+          "BPD does not lower underlying intelligence or general IQ. Research shows that general cognitive abilities — verbal reasoning, perceptual reasoning, and crystallized knowledge — are intact in people with BPD. The condition does, however, impair executive function (particularly inhibitory control and cognitive flexibility) and working memory, especially under emotional stress. This means IQ test performance can be lower than a person's true intellectual ability, particularly if the testing environment triggers emotional activation.",
+      },
+      {
+        question: "Is there a link between BPD and high intelligence?",
+        answer:
+          "Some clinicians and researchers have noted anecdotally that BPD is more frequently diagnosed in individuals with high verbal intelligence, possibly because complex thinking can amplify rumination, emotional sensitivity, and the analysis of interpersonal dynamics. However, large-scale epidemiological data on this association is limited. BPD is diagnosed across the full range of intelligence. What is clear from research is that high verbal intelligence in BPD does not protect against emotional dysregulation — and may in some cases intensify it.",
+      },
+      {
+        question: "How does DBT help with cognitive function in BPD?",
+        answer:
+          "Dialectical Behavior Therapy (DBT) — the evidence-based treatment developed specifically for BPD — targets emotion dysregulation through mindfulness, distress tolerance, emotion regulation, and interpersonal effectiveness skills. As emotional dysregulation improves, the downstream cognitive effects also improve: working memory, inhibitory control, and decision-making all show measurable gains in individuals who complete DBT. A 2020 study found significant improvement in executive function measures following DBT, suggesting that treating the core emotional dysregulation of BPD has real cognitive benefits.",
+      },
+    ],
+  },
+  {
+    name: "Narcissistic Personality Disorder",
+    slug: "narcissistic-personality",
+    headline: "NPD and IQ: Narcissistic Personality Disorder and Intelligence",
+    metaDescription:
+      "NPD is associated with overestimation of IQ, not actual high intelligence. Learn what research really shows about narcissism, self-assessed IQ, and cognitive performance.",
+    overview:
+      "Narcissistic Personality Disorder (NPD) is a personality disorder characterized by a pervasive pattern of grandiosity (in fantasy or behavior), need for admiration, and lack of empathy. It affects an estimated 0.5–1% of the general population and is more commonly diagnosed in men. NPD should be distinguished from narcissistic personality traits — which exist on a continuum in the general population — from the full disorder, which involves significant impairment in functioning and relationships. The relationship between NPD and IQ is one of the most misunderstood in clinical psychology, partly because narcissism is strongly associated with high self-assessed intelligence — but research consistently shows a gap between narcissistic individuals' estimates of their own IQ and their actual measured performance. Understanding this distinction illuminates important aspects of how NPD affects self-knowledge and cognitive self-awareness.",
+    iqImpact:
+      "People with NPD or high narcissistic traits do not show consistent advantages or disadvantages on standard IQ tests relative to their actual intellectual ability. What research does show is a robust inflation of self-estimated IQ — narcissists consistently overestimate their cognitive abilities more than any other personality type studied. This overestimation is not random: it is specific to domains where the person's self-image is invested in superiority (typically verbal intelligence and analytical reasoning) and shows less inflation in areas the narcissist considers less important. On actual IQ testing, some narcissistic individuals perform well, reflecting genuinely high ability; others perform at or below average despite confident assertions of superiority. The cognitive feature most robustly associated with NPD that is directly measurable is reduced performance on tasks requiring mentalizing and theory of mind — correctly inferring the mental states of others — which parallels the empathy deficits central to the disorder.",
+    researchFindings:
+      "A landmark 2014 study in PLOS ONE by Gignac and Zajenkowski examined the relationship between narcissism and IQ, finding that narcissistic individuals systematically overestimated their IQ by an average of 20 points while showing no actual advantage on measured IQ scores — establishing the 'narcissism-IQ illusion.' A 2020 study in Intelligence by Zajenkowski and colleagues replicated this finding in multiple European samples and found that the overestimation was largest in subclinical narcissism with grandiose features, and smallest in vulnerable narcissism — suggesting that the illusion is specifically linked to the grandiosity component. Research on the 'dark triad' of personality (narcissism, Machiavellianism, psychopathy) and cognitive ability has found inconsistent results, with no reliable IQ advantage associated with any dark triad component. A 2019 study in Personality and Individual Differences found that narcissism was negatively associated with cognitive empathy (accurately inferring others' thoughts) while being unrelated to fluid reasoning — confirming that the primary cognitive signature of NPD is impaired social cognition rather than general intellectual deficit.",
+    faqItems: [
+      {
+        question: "Do narcissists actually have high IQs?",
+        answer:
+          "Research shows that narcissists believe they have very high IQs — but actual measured IQ does not confirm this. Studies find that individuals with high narcissistic traits overestimate their IQ by an average of 20 points while performing at average levels on objective cognitive tests. This gap between self-assessed and actual IQ is the largest studied in personality research. Some narcissists do have high IQs, but the correlation between narcissism and measured intelligence is essentially zero — meaning high narcissism predicts high self-rated IQ, not high actual IQ.",
+      },
+      {
+        question: "Are people with NPD good at understanding others cognitively?",
+        answer:
+          "Research consistently shows that NPD is associated with impaired cognitive empathy — the ability to accurately identify and understand others' mental states (theory of mind). This is a specific cognitive deficit, distinct from general reasoning ability. Studies find that individuals with high narcissistic traits perform below average on tasks requiring accurate mental state attribution, even when general intelligence is controlled. This impairment reflects the core interpersonal feature of NPD — difficulty genuinely considering others' perspectives — rather than a general intellectual weakness.",
+      },
+      {
+        question: "How does NPD affect performance in high-IQ environments?",
+        answer:
+          "In environments that require genuine intellectual collaboration — research, complex problem-solving, academic peer review — NPD creates functional disadvantages that offset any motivational advantages. The overestimation of one's own performance leads to under-preparation and poor calibration of effort. The impaired cognitive empathy limits effective teamwork, communication, and reception of critical feedback. Research on managerial performance finds that while narcissistic individuals often initially appear impressive and confident, their actual performance ratings decline over time as colleagues experience the consequences of their empathy and self-awareness deficits.",
+      },
+    ],
+  },
+  {
+    name: "Social Anxiety Disorder",
+    slug: "social-anxiety",
+    headline: "Social Anxiety Disorder and IQ: How Fear of Judgment Affects Cognitive Testing",
+    metaDescription:
+      "Social anxiety can significantly reduce IQ test scores in one-on-one settings. Learn how fear of evaluation suppresses cognitive performance and what research shows.",
+    overview:
+      "Social Anxiety Disorder (SAD) is the most common anxiety disorder, characterized by intense fear of social situations where one might be scrutinized, judged, or embarrassed. It affects approximately 7% of adults in any given year and is the third most common mental health condition worldwide. The defining feature of SAD is not shyness but rather the extent to which fear of negative evaluation disrupts normal functioning — avoiding work presentations, social gatherings, or even everyday interactions like making phone calls. The relevance of social anxiety to IQ testing is particularly direct: a one-on-one IQ test with an unfamiliar examiner, where every response is observed and recorded, represents one of the most socially evaluative situations imaginable — precisely the type of context that most severely impairs performance in individuals with social anxiety disorder.",
+    iqImpact:
+      "IQ testing represents a highly activating context for social anxiety, because it combines evaluative scrutiny (being watched and judged by an examiner), performance demands (being timed and scored), and social exposure (one-on-one with a stranger). In individuals with SAD, this combination can produce working memory suppression of 0.5–1.0 standard deviations — roughly 7–15 IQ points — relative to performance in non-evaluative conditions. Verbal subtests that require oral responses directly in front of the examiner (Vocabulary, Similarities, Information) are particularly affected, as the need to speak aloud is a primary fear trigger in SAD. Processing Speed subtests performed under the examiner's observation are also substantially suppressed. Subtests with less direct social demand — such as Matrix Reasoning, which involves pointing to a visual answer — show smaller social anxiety effects. This means full-scale IQ tests likely systematically underestimate the intellectual ability of individuals with moderate-to-severe SAD.",
+    researchFindings:
+      "A 2019 meta-analysis in Clinical Psychology Review found that social anxiety was associated with working memory impairment of d = 0.5–0.7 under evaluative conditions, with effects significantly smaller (d = 0.2–0.3) in non-evaluative testing contexts, confirming the situational amplification of cognitive deficits by social scrutiny. Research by Rapee and Heimberg established that a core mechanism of social anxiety's cognitive impact is self-focused attention — directing cognitive resources toward monitoring one's own performance rather than the task itself, which directly reduces capacity available for problem-solving. A 2017 study in Cognitive, Affective, and Behavioral Neuroscience found that individuals with high social anxiety showed greater amygdala activation and reduced prefrontal modulation during evaluated cognitive tasks, explaining the neurobiological basis for anxiety-induced performance suppression. Research by Clark and Wells demonstrated that safety behaviors used to manage social anxiety (such as avoiding eye contact with the examiner, rehearsing answers before speaking, or speaking very quickly to 'get it over with') paradoxically worsen cognitive performance by consuming additional working memory resources.",
+    faqItems: [
+      {
+        question: "How much can social anxiety reduce IQ test scores?",
+        answer:
+          "Studies show that social anxiety can reduce performance on IQ tests by 7–15 points (roughly 0.5–1.0 standard deviations) under evaluative conditions, with the largest effects on verbal subtests requiring oral responses in front of an examiner. The effect is proportional to social anxiety severity. For people with severe SAD, IQ testing in a standard one-on-one format may produce scores substantially below their actual cognitive ability. Accommodations such as establishing rapport, taking breaks, and using familiar examiners can meaningfully reduce this performance gap.",
+      },
+      {
+        question: "Does social anxiety affect intelligence itself?",
+        answer:
+          "No. Social anxiety does not reduce underlying intelligence or change cognitive capacity. The effect is purely one of performance suppression: under the social pressure of evaluation, anxiety hijacks working memory resources that would otherwise be available for reasoning. In low-stakes, non-evaluative settings — doing puzzles at home, thinking through a problem independently, or engaging in topics of personal interest — people with social anxiety typically perform at their true cognitive level. The distinction between ability and performance is critical for accurate assessment.",
+      },
+      {
+        question: "Can treatment for social anxiety improve IQ test performance?",
+        answer:
+          "Yes. Cognitive-Behavioral Therapy (CBT) — the gold-standard treatment for SAD — reduces self-focused attention and safety behaviors while building tolerance for evaluative situations. Studies show that successful SAD treatment improves performance on cognitive tasks performed in evaluative contexts, with gains proportional to anxiety reduction. Medication (particularly SSRIs and SNRIs) also reduces the anxiety-driven working memory suppression. For individuals with SAD undergoing cognitive assessment, informing the evaluator about the diagnosis so they can use appropriate rapport-building and low-pressure techniques is recommended.",
+      },
+    ],
+  },
+  {
+    name: "Panic Disorder",
+    slug: "panic-disorder",
+    headline: "Panic Disorder and IQ: How Panic Attacks Affect Cognitive Performance",
+    metaDescription:
+      "Panic disorder can impair cognitive performance through anticipatory anxiety and acute panic during testing. Learn what research shows about panic disorder and IQ.",
+    overview:
+      "Panic Disorder is characterized by recurrent, unexpected panic attacks — intense surges of fear accompanied by physical symptoms including palpitations, shortness of breath, dizziness, chest pain, and a sense of impending doom — followed by persistent concern about future attacks and behavioral changes aimed at avoiding them. It affects approximately 2–3% of adults and is among the most impairing anxiety conditions in terms of quality of life. The relevance to cognitive performance is twofold: first, anticipatory anxiety about having a panic attack in the testing setting can pre-activate anxiety that impairs performance throughout the evaluation. Second, if an actual panic attack occurs during testing, it produces acute cognitive impairment that may completely invalidate results for that portion of the assessment. The neurobiological overlap between panic and cognitive function is well-documented, with panic attacks hijacking the same prefrontal-limbic circuits that support working memory and executive control.",
+    iqImpact:
+      "Panic disorder's impact on IQ performance operates through chronic and acute mechanisms. Chronically, the anticipatory anxiety of panic disorder produces a background state of heightened physiological arousal — elevated heart rate, cortisol, and vigilance — that reduces the efficiency of working memory and processing speed during sustained cognitive tasks. Acutely, if a panic attack is triggered during testing, the complete flooding of cognitive resources by the panic response can halt performance entirely for 10–20 minutes. Research shows that the Processing Speed Index is the most affected by chronic anticipatory anxiety, while any subtest may be disrupted by acute panic. Importantly, panic disorder tends to spare perceptual reasoning and crystallized knowledge more than anxiety-driven working memory impairments, because these processes draw less on the real-time allocation of attentional resources that panic monopolizes.",
+    researchFindings:
+      "A 2016 study in the Journal of Anxiety Disorders found that individuals with panic disorder performed significantly below controls on measures of processing speed and sustained attention in laboratory settings — with performance worsening as the evaluative demand of the task increased, consistent with performance anxiety amplifying panic-related cognitive impairment. Research by Klein and colleagues documented that spontaneous panic attacks are preceded by subtle shifts in respiratory physiology and cognitive narrowing minutes before the subjective onset of panic, suggesting that cognitive performance may be measurably impaired even before a person recognizes they are having a panic attack. A 2020 meta-analysis in Psychological Medicine confirmed that panic disorder is associated with impairments in attentional processing and working memory comparable in magnitude to those seen in other anxiety disorders, with effect sizes of d = 0.4–0.6 relative to non-anxious controls. A 2019 study in Cognitive Behaviour Therapy found that successful panic-focused CBT improved both panic symptoms and cognitive performance, with treatment gains on attention and working memory tasks correlating with reduction in panic frequency.",
+    faqItems: [
+      {
+        question: "Can someone have a panic attack during an IQ test?",
+        answer:
+          "Yes, and it is more common than many evaluators recognize. The evaluative, time-pressured nature of IQ testing is a common panic trigger for individuals with panic disorder. An acute panic attack during testing completely invalidates results from that period — the cognitive flooding of panic is incompatible with reliable responding. Examiners should be trained to recognize panic symptoms, pause the assessment, and reschedule if a panic attack occurs during testing. Evaluation results obtained during or immediately after a panic attack should be interpreted with extreme caution.",
+      },
+      {
+        question: "Does panic disorder lower intelligence?",
+        answer:
+          "Panic disorder does not lower underlying intelligence. The condition produces performance suppression — particularly on working memory and processing speed measures — through anticipatory anxiety and physiological arousal, but this is fully reversible with effective treatment. Verbal reasoning and perceptual reasoning in calm conditions are typically at expected levels. The IQ impact of panic disorder is best understood as a performance limitation imposed by the disorder, not a reduction in cognitive capacity.",
+      },
+      {
+        question: "How should IQ testing be conducted for someone with panic disorder?",
+        answer:
+          "Best practice includes: establishing a strong therapeutic rapport before testing begins, explaining all procedures to reduce uncertainty, scheduling testing at times of day when anxiety is typically lowest, allowing breaks between subtests, having the individual's treating clinician communicate with the evaluator about the disorder severity and triggers, and considering whether medication (taken as prescribed) should be in effect during testing. If a panic attack occurs, the session should be paused and results from affected subtests should be flagged as potentially invalid.",
+      },
+    ],
+  },
+  {
+    name: "Eating Disorders",
+    slug: "eating-disorder",
+    headline: "Eating Disorders and IQ: How Anorexia and Bulimia Affect Cognitive Function",
+    metaDescription:
+      "Eating disorders — especially anorexia nervosa — impair IQ through malnutrition and cognitive preoccupation with food. Learn what research shows about cognition in eating disorders.",
+    overview:
+      "Eating disorders — including Anorexia Nervosa (AN), Bulimia Nervosa (BN), Binge Eating Disorder (BED), and related conditions — are serious mental health and medical conditions characterized by disturbances in eating behavior, body image, and weight regulation. Anorexia Nervosa has the highest mortality rate of any psychiatric condition. Eating disorders affect approximately 9% of the global population over a lifetime, with women affected at higher rates than men. The relationship between eating disorders and IQ is multifaceted: malnutrition in anorexia directly impairs brain function; cognitive preoccupation with food, weight, and body image consumes working memory and attentional resources; and the emotional state associated with eating disorders — depression, anxiety, and obsessionality — further suppresses cognitive performance. Importantly, many individuals with eating disorders, especially anorexia, have above-average premorbid IQ — making the cognitive impairments imposed by the disorder particularly stark and identifiable.",
+    iqImpact:
+      "Anorexia Nervosa produces the most severe cognitive impairment of the eating disorder spectrum, primarily through two mechanisms: the direct neurological effects of malnutrition (reduced brain volume, impaired myelin integrity, glucose deprivation affecting prefrontal function) and the cognitive preoccupation with food-related and body-related stimuli that consumes working memory. Studies find that active AN is associated with reductions of 7–15 IQ points on full-scale tests relative to premorbid estimates, with the largest effects on Processing Speed and Working Memory. Flexibility of thinking — cognitive set-shifting — is particularly impaired in AN, with research showing extreme difficulty shifting away from food-related or disorder-related thoughts, mirroring the rigid cognitive style of the disorder. Bulimia Nervosa shows smaller cognitive impacts in the active phase, largely affecting attention and impulse control. Binge Eating Disorder is associated with executive function and inhibitory control deficits. Recovery from eating disorders is associated with substantial cognitive improvement, though neuroimaging studies find brain changes can persist beyond behavioral recovery.",
+    researchFindings:
+      "A 2010 meta-analysis in the International Journal of Eating Disorders found that active anorexia nervosa is associated with significant impairments in attention (d = 0.62), working memory (d = 0.57), and set-shifting (d = 0.59) relative to healthy controls, with smaller but meaningful impairments in visuospatial function. Research by the Cambridge Eating Disorders Group found that set-shifting — the ability to move flexibly between different tasks or concepts — is impaired in active AN and persists even after weight restoration in some individuals, suggesting both state-dependent and possible trait components to AN's cognitive profile. A landmark longitudinal study by Lena Lauer and colleagues found that IQ scores in AN patients improved substantially with weight restoration, confirming the malnutrition-driven nature of most cognitive deficits. A 2022 study in Psychological Medicine found neuroimaging evidence of reduced gray matter volume in frontal and parietal regions in active AN, with partial recovery following weight restoration — providing a structural basis for both the cognitive impairments and their partial reversibility.",
+    faqItems: [
+      {
+        question: "Does anorexia lower IQ?",
+        answer:
+          "Active anorexia nervosa reduces IQ test performance, primarily through malnutrition's effects on brain function and cognitive preoccupation consuming working memory. Studies find average reductions of 7–15 points on full-scale IQ during active illness, with the largest effects on processing speed and set-shifting. Critically, most of these deficits are reversible with weight restoration and nutritional recovery — research shows significant cognitive gains following successful treatment. Many individuals with anorexia have above-average premorbid intelligence, making the illness-related cognitive suppression particularly noticeable.",
+      },
+      {
+        question: "Are people with eating disorders intelligent?",
+        answer:
+          "Research consistently finds that individuals with anorexia nervosa in particular tend to have above-average premorbid intelligence — with some studies finding mean premorbid IQ approximately 5–10 points above population norms. This may reflect the role of perfectionism, conscientiousness, and high achievement orientation in eating disorder vulnerability. Eating disorders affect people across the full IQ range, but their over-representation in high-achieving academic environments has been well-documented. The disorder's cognitive impairments are superimposed on — and often dramatically contrast with — the person's premorbid intellectual ability.",
+      },
+      {
+        question: "Do cognitive deficits from eating disorders recover with treatment?",
+        answer:
+          "For most individuals, yes. Research shows that cognitive performance improves substantially with weight restoration in anorexia and with reduced binge-purge cycles in bulimia. A landmark longitudinal study found that IQ scores improved significantly following weight restoration treatment, confirming that malnutrition-driven deficits are largely reversible. However, some research suggests that set-shifting deficits in anorexia may be partially trait-like — present before disorder onset and persisting after recovery — possibly representing a cognitive vulnerability factor rather than solely a consequence of malnutrition.",
+      },
+    ],
+  },
+  {
+    name: "Chronic Fatigue Syndrome",
+    slug: "chronic-fatigue",
+    headline: "Chronic Fatigue Syndrome and IQ: Cognitive Effects of CFS/ME",
+    metaDescription:
+      "Chronic Fatigue Syndrome (ME/CFS) causes measurable cognitive impairment including 'brain fog.' Learn how CFS affects IQ testing and what research shows about cognitive function.",
+    overview:
+      "Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS) is a serious, complex, and often debilitating illness characterized by profound fatigue that is not improved by rest, post-exertional malaise (worsening of symptoms following even modest physical or cognitive activity), cognitive impairment ('brain fog'), sleep disturbances, and other systemic symptoms. It affects an estimated 17–24 million people worldwide and is significantly more common in women than men. For decades, ME/CFS was dismissed as psychological or psychosomatic, but a growing body of research has identified neurological, immunological, and metabolic abnormalities that account for its symptoms. The cognitive impairments of ME/CFS — particularly processing speed reduction and working memory deficits — are among the most debilitating aspects of the illness and directly affect IQ test performance, employment ability, and quality of life.",
+    iqImpact:
+      "ME/CFS produces cognitive impairments that are consistently documented across studies and are particularly pronounced on tasks requiring processing speed, working memory, and sustained attention. On IQ assessments, the Processing Speed Index is typically the most severely affected, reflecting the slowed neural processing that characterizes the condition — sometimes called 'cognitive fatigue' or 'neurocognitive impairment.' Working Memory is also significantly impaired, with patients reporting difficulty holding information in mind, following multi-step instructions, or tracking the thread of a conversation. Importantly, crystallized knowledge (vocabulary, factual memory, semantic knowledge acquired before illness onset) is largely preserved, creating a stark discrepancy between what a patient knows and how quickly or fluently they can access and apply it. This pattern — dramatically impaired processing speed with intact stored knowledge — is virtually the mirror image of the normal IQ profile and is strongly characteristic of ME/CFS on cognitive testing.",
+    researchFindings:
+      "A 2020 meta-analysis in Neuropsychology Review synthesizing 50 studies found that ME/CFS is consistently associated with impairments in processing speed (d = 0.80), working memory (d = 0.55), attention (d = 0.56), and psychomotor function relative to healthy controls — all in the moderate-to-large effect size range. Research by Wyller and colleagues demonstrated that cognitive impairment in ME/CFS is exacerbated by post-exertional malaise — meaning that cognitive testing performed following even brief physical exertion can produce artificially suppressed results, while testing after adequate rest shows better performance. A 2021 study published in Nature Communications identified neurological evidence for central nervous system involvement in ME/CFS, including reduced brain perfusion in prefrontal areas that directly regulate processing speed and working memory. Research by Jason and colleagues confirmed that functional capacity — the ability to sustain cognitive output over time — declines more steeply across a testing session in ME/CFS than in any other clinical population, meaning IQ subtest scores completed late in a session may underestimate ability more than those completed early.",
+    faqItems: [
+      {
+        question: "Does CFS cause brain fog that shows up on IQ tests?",
+        answer:
+          "Yes. The 'brain fog' of ME/CFS reflects real, measurable neurological impairment that shows up clearly on cognitive testing. Processing speed — the most sensitive objective measure of brain fog — is impaired by an average of 0.8 standard deviations (roughly 12 IQ points) in ME/CFS relative to healthy controls. Working memory and sustained attention are also significantly impaired. These deficits are not subjective complaints but objectively verified deficits that affect IQ test performance in ways consistent with neurological slowing.",
+      },
+      {
+        question: "Can someone with CFS have a high IQ?",
+        answer:
+          "Yes. ME/CFS is an acquired illness that affects people across the full range of premorbid intelligence. Many highly intelligent individuals develop ME/CFS, and their crystallized knowledge and verbal reasoning (which draw on stored, pre-illness cognitive acquisition) remain largely intact. The contrast between a person's high vocabulary and knowledge scores versus their impaired processing speed on IQ testing is often a striking feature of the ME/CFS cognitive profile — reflecting the gap between what the person knows and how efficiently their brain can currently process information.",
+      },
+      {
+        question: "How should IQ testing be conducted for someone with ME/CFS?",
+        answer:
+          "Best practice includes: scheduling testing at the patient's peak time of day (typically late morning), spreading evaluation across multiple short sessions with breaks rather than a single long session, testing after a rest period and not following any physical exertion, documenting the patient's energy level and symptom state on the day of testing, and interpreting scores with awareness that late-session subtests may underrepresent ability due to cognitive fatigue. Results should note ME/CFS as a condition affecting assessment validity and emphasize discrepancies between preserved crystallized knowledge and impaired processing efficiency.",
+      },
+    ],
+  },
+  {
+    name: "Sleep Apnea",
+    slug: "sleep-apnea",
+    headline: "Sleep Apnea and IQ: How Sleep Disruption Affects Intelligence",
+    metaDescription:
+      "Sleep apnea reduces IQ through chronic sleep deprivation and oxygen desaturation. Learn how obstructive sleep apnea affects cognitive function and whether CPAP helps.",
+    overview:
+      "Obstructive Sleep Apnea (OSA) is a sleep disorder in which the upper airway repeatedly collapses during sleep, causing cessation of breathing (apneas) or reduced airflow (hypopneas) that fragment sleep and cause intermittent oxygen desaturation. It affects approximately 1 billion people worldwide, with estimates ranging from 10–30% of adults in developed countries — making it one of the most prevalent and under-diagnosed medical conditions. OSA is strongly associated with obesity, male sex, and advancing age, though it affects all demographics including children (often due to enlarged tonsils or adenoids). The cognitive consequences of OSA are substantial: chronic sleep fragmentation prevents adequate slow-wave and REM sleep required for memory consolidation and cognitive restoration, while intermittent hypoxia directly damages neuronal tissue in areas critical for cognitive function. OSA's cognitive impact is measurable on IQ tests and real-world functioning, and — critically — is largely reversible with effective treatment.",
+    iqImpact:
+      "OSA impairs cognitive performance through two primary mechanisms that directly affect IQ testing. First, chronic sleep deprivation and fragmentation reduce the efficiency of working memory, sustained attention, and executive function — mirroring the cognitive effects of acute sleep deprivation in experimental studies. Second, intermittent nocturnal hypoxia — oxygen levels dropping below 90% during apneas — directly damages the hippocampus and prefrontal cortex, the brain regions most critical for memory and executive function. On IQ assessments, Processing Speed is typically the most affected subtest, as it requires rapid, sustained vigilance that is specifically impaired by sleep-related cognitive fatigue. Working Memory is second most affected. In children with OSA (often presenting as behavioral problems, hyperactivity, and academic underperformance rather than sleepiness), IQ score reductions of 5–12 points have been documented, with the largest effects on Processing Speed and Working Memory indices.",
+    researchFindings:
+      "A 2017 meta-analysis in Sleep Medicine Reviews examining 47 studies found that OSA was associated with significant impairments in sustained attention (d = 0.64), working memory (d = 0.51), and processing speed (d = 0.47) — all in the moderate effect size range — and that cognitive impairment was proportional to apnea severity as measured by the Apnea-Hypopnea Index (AHI). A landmark CPAP randomized controlled trial (the ISAACC trial) published in NEJM Evidence found that CPAP treatment for OSA significantly improved cognitive performance, particularly processing speed and sustained attention, with gains equivalent to approximately 6–8 IQ points on affected subtests. Pediatric research has been particularly compelling: a study in the Journal of the American Medical Association found that children with OSA treated with adenotonsillectomy showed significant improvements in IQ, executive function, and academic achievement at 7-month follow-up compared to watchful-waiting controls. Neuroimaging research has documented white matter changes and hippocampal volume reduction in OSA that partially reverse with CPAP treatment, providing structural evidence for the cognitive impairments and their treatability.",
+    faqItems: [
+      {
+        question: "Can sleep apnea lower your IQ?",
+        answer:
+          "Moderate-to-severe sleep apnea is associated with measurable reductions in IQ test performance — particularly on Processing Speed and Working Memory subtests — through chronic sleep deprivation and intermittent oxygen desaturation. Studies find average cognitive impairments of 0.5–0.7 standard deviations (7–10 IQ points) on affected measures. Crucially, much of this impairment is reversible with effective CPAP treatment, making sleep apnea one of the most treatable causes of acquired cognitive decline. Untreated severe OSA may cause more lasting changes through hippocampal damage.",
+      },
+      {
+        question: "Does treating sleep apnea improve cognitive performance?",
+        answer:
+          "Yes, substantially. CPAP (Continuous Positive Airway Pressure) therapy — the gold-standard treatment for OSA — improves cognitive performance significantly when used consistently. Clinical trials show gains of 6–10 IQ points on processing speed and working memory subtests following CPAP treatment. The improvements are most pronounced in individuals with severe OSA and those who use CPAP for at least 6 hours per night. Some studies show continued improvement over 12 months of treatment as the brain recovers from chronic sleep deprivation and hypoxia.",
+      },
+      {
+        question: "Does sleep apnea affect children's IQ?",
+        answer:
+          "Yes, and pediatric OSA may be particularly concerning because it occurs during critical developmental windows for cognitive development. Children with untreated OSA show IQ scores 5–12 points below matched controls, with the largest effects on executive function, working memory, and attention. Importantly, a controlled trial published in JAMA found that surgical treatment (adenotonsillectomy) for childhood OSA produced significant improvements in IQ, executive function, and academic achievement — particularly in children from low-income backgrounds, where undiagnosed OSA may contribute to educational disparities.",
+      },
+    ],
+  },
+  {
+    name: "Hypothyroidism",
+    slug: "hypothyroidism",
+    headline: "Hypothyroidism and IQ: How Thyroid Deficiency Affects Brain Function",
+    metaDescription:
+      "Hypothyroidism can lower IQ through reduced brain metabolism and cognitive slowing. Learn what research shows about thyroid hormone, cognitive function, and treatment effects.",
+    overview:
+      "Hypothyroidism — deficiency of thyroid hormone — is one of the most common endocrine conditions worldwide, affecting approximately 4–10% of adults and up to 2% of children. Thyroid hormone is essential for normal brain metabolism, myelination, and neuronal signaling. When thyroid hormone levels are insufficient, brain function slows in measurable and sometimes dramatic ways. Congenital hypothyroidism (present at birth, formerly called cretinism) represents the most severe case: without thyroid hormone supplementation in the neonatal period, it causes irreversible intellectual disability. In adult-onset hypothyroidism, cognitive effects are more subtle but still clinically significant and fully reversible with thyroid hormone replacement therapy. The relationship between thyroid function and IQ is one of the best-documented endocrine-cognition connections in medicine.",
+    iqImpact:
+      "Hypothyroidism impairs cognitive performance primarily through two mechanisms: slowing of neural transmission (reducing processing speed and working memory efficiency) and impaired neuronal metabolism (reducing the energy available for sustained cognitive effort). On IQ assessments, the Processing Speed Index is typically the most severely affected subtest domain, as it requires rapid, efficient neural processing that is directly dependent on adequate thyroid hormone levels. Working Memory is secondarily impaired, as the attentional resources needed for working memory tasks are reduced. Verbal reasoning and crystallized knowledge are relatively preserved in adult-onset hypothyroidism (though access to stored knowledge may be slowed). In children, untreated or subclinical hypothyroidism can affect intellectual development more broadly during critical neurodevelopmental windows. Research in adult populations finds mean IQ test performance reductions of 5–10 points during active hypothyroidism, with complete or near-complete restoration following thyroid hormone replacement.",
+    researchFindings:
+      "A foundational study published in the New England Journal of Medicine in 1999 (Haddow et al.) found that untreated maternal hypothyroidism during pregnancy was associated with IQ scores averaging 7 points lower in offspring compared to children of mothers with normal thyroid function — establishing thyroid hormone's critical role in fetal neurodevelopment. A 2014 Cochrane meta-analysis on subclinical hypothyroidism found that levothyroxine treatment produced significant improvements in psychomotor speed and memory, confirming that even mild thyroid insufficiency has measurable cognitive effects. Research on congenital hypothyroidism treated with early neonatal supplementation shows that IQ scores are largely normal when treatment begins within the first two weeks of life — but delays in treatment are associated with proportionally larger IQ reductions, reflecting the thyroid-dependent nature of early brain development. A 2021 study in Thyroid found that treatment-resistant mild hypothyroid symptoms (including cognitive fog) occurred more commonly in individuals on levothyroxine monotherapy than those receiving combination T3/T4 therapy, raising questions about optimal thyroid replacement for cognitive outcomes.",
+    faqItems: [
+      {
+        question: "Can hypothyroidism cause low IQ?",
+        answer:
+          "In adults, hypothyroidism produces reversible cognitive impairment rather than permanent IQ reduction — typically 5–10 points on affected subtests — that restores with thyroid hormone treatment. In congenital hypothyroidism (present from birth), treatment must begin within the first two weeks of life to prevent permanent intellectual disability. In children with untreated or subclinical hypothyroidism, development during critical windows can be affected. The key distinction is that adult-onset hypothyroidism causes reversible cognitive suppression, while untreated congenital or developmental hypothyroidism can cause lasting IQ impact.",
+      },
+      {
+        question: "Does thyroid treatment restore cognitive function?",
+        answer:
+          "For most adults with hypothyroidism, thyroid hormone replacement with levothyroxine substantially restores cognitive function. Studies show normalization of processing speed, working memory, and attention following successful treatment. Some individuals experience persistent mild cognitive symptoms even with normalized TSH levels — a phenomenon that has led to research on combination T3/T4 therapy and optimal dosing. Overall, the cognitive effects of adult hypothyroidism are among the most reliably reversible of any medical condition, making early diagnosis and treatment particularly important.",
+      },
+      {
+        question: "How does subclinical hypothyroidism affect the brain?",
+        answer:
+          "Subclinical hypothyroidism — elevated TSH with normal thyroid hormone levels — has more modest but still detectable cognitive effects. Research finds subtle impairments in psychomotor speed and verbal memory, with effects proportional to TSH elevation. A meta-analysis of subclinical hypothyroidism found that treatment with levothyroxine produced measurable cognitive improvements even in this milder form of the condition. In older adults, subclinical hypothyroidism is a risk factor for cognitive decline and dementia — making thyroid screening an important part of cognitive health assessment in aging populations.",
+      },
+    ],
+  },
+  {
+    name: "Epilepsy",
+    slug: "epilepsy",
+    headline: "Epilepsy and IQ: How Seizure Disorders Affect Cognitive Function",
+    metaDescription:
+      "Epilepsy affects IQ through seizure activity, underlying brain pathology, and antiepileptic medications. Learn what research shows about cognitive profiles in epilepsy.",
+    overview:
+      "Epilepsy is a neurological disorder characterized by recurrent, unprovoked seizures — episodes of abnormal, excessive, or synchronous neuronal activity in the brain. It affects approximately 50 million people worldwide, making it one of the most common neurological conditions. Epilepsy is not a single condition but a family of disorders with varied causes, seizure types, and cognitive profiles: some epilepsy syndromes (e.g., temporal lobe epilepsy) have strong effects on memory; others (e.g., juvenile myoclonic epilepsy) have minimal cognitive impact with good seizure control. The relationship between epilepsy and intelligence is complex and multidirectional: the underlying brain pathology that causes epilepsy may independently affect cognition; seizures themselves can damage brain tissue; antiepileptic drugs (AEDs) affect cognitive function through their own mechanisms; and the psychosocial effects of chronic illness — reduced education, lower self-esteem, social isolation — further affect cognitive development and performance.",
+    iqImpact:
+      "The impact of epilepsy on IQ depends heavily on syndrome type, seizure frequency, age of onset, and medication burden. Childhood-onset epilepsy with frequent seizures is associated with the greatest cognitive impact, particularly when it disrupts critical neurodevelopmental periods. Adults with well-controlled epilepsy often show IQ profiles close to the expected range. Across epilepsy types, processing speed is the most consistently impaired cognitive domain, followed by working memory and attention. Memory — particularly verbal memory — is specifically impaired in temporal lobe epilepsy, where the hippocampus (essential for memory formation) is often the seizure focus. Antiepileptic medications contribute meaningfully to the cognitive profile: older AEDs (phenobarbital, phenytoin, carbamazepine) have more pronounced cognitive side effects, particularly on processing speed, than newer agents. Research finds mean full-scale IQ approximately 5–10 points below population norms in epilepsy samples overall, with much greater variation based on syndrome characteristics.",
+    researchFindings:
+      "A comprehensive 2012 meta-analysis in Epilepsia synthesizing studies across major epilepsy syndromes found that epilepsy is associated with significant impairments in processing speed (d = 0.70), working memory (d = 0.60), and attention (d = 0.58), while verbal comprehension showed smaller but still significant impairment (d = 0.32). Research by Helmstaedter and colleagues at the Bonn Epilepsy Center has extensively documented the differential cognitive profiles of temporal versus extratemporal epilepsy, finding that left temporal lobe epilepsy specifically impairs verbal memory while right temporal lobe epilepsy preferentially impairs visual-spatial memory. A landmark study in the New England Journal of Medicine found that early effective seizure control in childhood epilepsy was associated with significantly better cognitive outcomes at age 16 compared to poorly controlled epilepsy, underscoring the importance of aggressive treatment. A 2019 study in Neurology found that surgical resection for drug-resistant temporal lobe epilepsy produced not only seizure freedom but meaningful cognitive improvements in non-memory domains — particularly quality-of-life-relevant functions like attention and processing speed — in the majority of patients.",
+    faqItems: [
+      {
+        question: "Does epilepsy lower IQ?",
+        answer:
+          "The impact of epilepsy on IQ varies significantly by syndrome, seizure frequency, age of onset, and medication. On average, epilepsy populations score 5–10 IQ points below population norms, but this average conceals enormous variation: individuals with well-controlled epilepsy of adult onset may show no measurable IQ impact, while those with childhood-onset epilepsy with frequent seizures may show substantial impairment. The underlying brain pathology, seizures themselves, and antiepileptic medications each contribute to the cognitive profile.",
+      },
+      {
+        question: "Do seizure medications affect IQ?",
+        answer:
+          "Yes, antiepileptic drugs (AEDs) have real but variable cognitive side effects that contribute to IQ test performance. Older AEDs — particularly phenobarbital, phenytoin, and to a lesser extent carbamazepine — have more pronounced cognitive effects, especially on processing speed and working memory. Newer AEDs (lamotrigine, levetiracetam) have significantly better cognitive tolerability profiles. Topiramate is notable among newer AEDs for having substantial cognitive effects, particularly on verbal fluency. Optimizing medication regimens to minimize cognitive side effects is an important part of epilepsy management.",
+      },
+      {
+        question: "Can people with epilepsy have high IQs?",
+        answer:
+          "Absolutely. Epilepsy occurs across the full range of IQ, and many highly intelligent people have epilepsy. Julius Caesar, Fyodor Dostoevsky, and Sir Isaac Newton are among the historical figures believed to have had epilepsy. In well-controlled epilepsy with good seizure management, cognitive function is often normal or near-normal. The key factors are early and effective seizure control, careful medication management to minimize cognitive side effects, and appropriate educational support during critical developmental periods.",
+      },
+    ],
+  },
+  {
+    name: "Cerebral Palsy",
+    slug: "cerebral-palsy",
+    headline: "Cerebral Palsy and IQ: Understanding Cognitive Ability Across the Spectrum",
+    metaDescription:
+      "Cerebral palsy affects motor function but does not define intelligence. Learn how CP affects IQ testing, the wide range of abilities, and what research shows.",
+    overview:
+      "Cerebral Palsy (CP) is a group of permanent movement disorders caused by damage to the developing brain before, during, or shortly after birth. It is the most common physical disability in childhood, affecting approximately 1 in 500 live births worldwide. CP primarily affects motor function — muscle tone, posture, movement, coordination, and reflexes — but the brain injury that causes CP may also affect other neurological functions, including cognition, communication, and sensory processing. The relationship between CP and IQ is fundamentally different from most conditions discussed in this guide: the motor impairments of CP create profound assessment challenges that have historically caused systematic underestimation of intellectual ability in people with CP. The key insight from decades of research is that motor disability and cognitive disability are distinct and partially independent — many people with severe motor CP have average or above-average intelligence that has been obscured by inappropriate assessment methods.",
+    iqImpact:
+      "Standard IQ tests were designed for people who can speak, point, write, and perform manual tasks — all of which may be significantly impaired in CP. For individuals with CP, the use of standard IQ testing can dramatically underestimate intellectual ability when motor or speech impairments prevent accurate expression of reasoning. A non-speaking person with CP may have an IQ of 130 but be unable to demonstrate it on a standard test. Non-verbal IQ tests adapted for physical disability — such as the Raven's Progressive Matrices (which can be administered with eye gaze technology), the Leiter-3 (non-verbal, requiring only pointing), and augmentative communication-compatible assessments — produce much more accurate estimates of intellectual ability. Research consistently shows that IQ estimates for CP increase substantially when appropriate non-verbal, non-motor-demanding tests are used. Co-occurring intellectual disability in CP is estimated at approximately 30–50% of cases, meaning the majority of people with CP do not have intellectual disability — a fact that is often obscured by inappropriate assessment.",
+    researchFindings:
+      "A landmark study by Sigurdardottir and colleagues found that approximately 50% of children with CP had IQ scores in the average or above-average range when appropriate non-verbal testing was used — significantly higher than estimates from studies using verbal or motor-demanding assessments. Research on augmentative and alternative communication (AAC) technology has documented cases where individuals with CP who were assumed to have profound intellectual disability demonstrated near-average or above-average cognitive ability when given access to eye-gaze or switch-access communication systems. A 2019 study in Developmental Medicine and Child Neurology found that the correlation between CP severity (motor impairment) and IQ was only moderate (r = 0.4), confirming that motor disability and cognitive ability are far from synonymous. The Australian CP Register — one of the world's largest CP databases — found in a 2018 analysis that among individuals with CP who were verbally communicating, IQ distribution approximated the general population, strongly supporting the view that appropriate assessment methods reveal preserved intellectual ability in many CP cases previously classified as intellectually disabled.",
+    faqItems: [
+      {
+        question: "Does cerebral palsy affect intelligence?",
+        answer:
+          "Cerebral palsy primarily affects motor function, not intelligence — they are separate consequences of brain injury that may or may not co-occur. Research using appropriate non-verbal assessments finds that approximately 50% of people with CP have average or above-average IQ. Co-occurring intellectual disability occurs in roughly 30–50% of CP cases, meaning the majority of people with CP do not have intellectual disability. The most important insight is that motor impairment and cognitive impairment are distinct: you cannot infer one from the other.",
+      },
+      {
+        question: "How should IQ be tested in someone with cerebral palsy?",
+        answer:
+          "Standard IQ tests requiring speech and motor responses are inappropriate for most people with moderate-to-severe CP. Non-verbal, motor-reduced tests — including Raven's Progressive Matrices adapted for eye-gaze technology, the Leiter International Performance Scale, and switch-accessible testing formats — provide much more accurate estimates. AAC (augmentative and alternative communication) devices allow many non-speaking individuals with CP to demonstrate their reasoning. The evaluator must adapt the assessment to the individual's motor and communication capabilities, not the other way around.",
+      },
+      {
+        question: "Can people with cerebral palsy have high IQs?",
+        answer:
+          "Yes, and this is far more common than historically recognized. Many people with severe motor CP — including those who use wheelchairs, communication devices, or are completely dependent for physical care — have average or above-average intellectual ability. Research using eye-gaze and switch-access assessment technology has revealed IQ scores across the full normal range in individuals previously assumed to have profound intellectual disability. With appropriate communication and assessment technology, people with CP participate in higher education, professional careers, advocacy, and intellectual life at all levels.",
+      },
+    ],
+  },
+  {
+    name: "Williams Syndrome",
+    slug: "williams-syndrome",
+    headline: "Williams Syndrome and IQ: The Fascinating Cognitive Profile",
+    metaDescription:
+      "Williams Syndrome produces a unique IQ profile: strong language and social cognition with severe visuospatial deficits. Learn what research reveals about this rare genetic condition.",
+    overview:
+      "Williams Syndrome (WS) is a rare genetic condition caused by the deletion of approximately 26–28 genes from chromosome 7q11.23, occurring in approximately 1 in 7,500 live births. It is characterized by distinctive facial features, cardiovascular abnormalities (particularly supravalvular aortic stenosis), and one of the most distinctive cognitive profiles in all of neuropsychology. Williams Syndrome produces a profound dissociation between cognitive domains: individuals with WS typically show remarkable strength in language acquisition, social engagement, and face processing, alongside severe weakness in visuospatial reasoning — the ability to perceive and mentally manipulate spatial relationships. This profile is the inverse of autism in many respects and has been invaluable to cognitive scientists studying the modularity and genetic architecture of intelligence. Full-scale IQ in WS typically falls in the mild intellectual disability range, but this composite score obscures an extraordinary domain-specific profile.",
+    iqImpact:
+      "Full-scale IQ in Williams Syndrome typically falls in the range of 50–75, with a mean of approximately 60, placing most individuals in the mild intellectual disability range. However, full-scale IQ is particularly misleading in WS, as it averages together scores that are dramatically different across domains. Language and verbal abilities — vocabulary, syntax, narrative storytelling, verbal memory — are substantially higher than overall IQ would predict, sometimes approaching or reaching the normal range. Social cognition and face recognition are relative strengths. Visuospatial abilities — including the Block Design and Object Assembly subtests, drawing, and spatial navigation — are profoundly impaired, typically in the severe deficit range, often more than 3 standard deviations below the mean. The visuospatial deficit is so characteristic and severe that it has become central to theories of how spatial cognition is organized in the human brain and what genes contribute to it.",
+    researchFindings:
+      "A landmark study by Bellugi and colleagues at the Salk Institute documented the WS cognitive dissociation comprehensively, showing that children with WS produced rich, grammatically complex language while being unable to copy a simple figure of a bicycle — establishing the clearest example in human neuroscience of a double dissociation between language and visuospatial ability. Neuroimaging research has found that the parietal lobe — critical for spatial processing — shows reduced volume and atypical functional organization in WS, directly accounting for the visuospatial deficit. Research on social cognition in WS has found that individuals show an 'hypersocial' profile — approaching strangers, showing extreme social interest, and processing emotional faces with atypically high accuracy — that is directly linked to the genes deleted in the WS region. A 2019 study in Current Biology found that the neural architecture supporting music processing is unusually preserved in WS, with individuals showing above-expected music perception and emotional response to music — consistent with the disproportionate musicality observed clinically in this population.",
+    faqItems: [
+      {
+        question: "What is the IQ range for Williams Syndrome?",
+        answer:
+          "Full-scale IQ in Williams Syndrome typically ranges from 40 to 90, with a mean of approximately 60 — placing most individuals in the mild intellectual disability range. However, this composite score is deeply misleading: verbal abilities are substantially higher (sometimes approaching average range), while visuospatial abilities are profoundly impaired (often in the severe deficit range). A full-scale IQ of 60 for someone with WS hides this extraordinary variability and should never be used alone to characterize their abilities.",
+      },
+      {
+        question: "Why are people with Williams Syndrome so social and talkative?",
+        answer:
+          "The hypersocial personality of Williams Syndrome has a direct genetic basis: several of the genes deleted in the WS region are involved in the social and affiliative systems of the brain, including oxytocin pathways and amygdala function. Research finds that individuals with WS show reduced amygdala fear response to strangers (while showing normal fear to animals), consistent with their indiscriminate social approach. This is the opposite pattern from autism, where social approach is reduced. Williams Syndrome has therefore been invaluable in understanding the genetic architecture of social behavior.",
+      },
+      {
+        question: "Can people with Williams Syndrome live independently?",
+        answer:
+          "Most adults with Williams Syndrome require some degree of supported living, given the combination of intellectual disability, visuospatial impairment (which affects navigation, driving, and many practical tasks), and sometimes cardiovascular health needs. However, the degree of support needed varies widely. Many individuals with WS hold jobs in social or verbal domains, maintain meaningful relationships, and live semi-independently with appropriate supports. The strong verbal and social abilities of WS are genuine functional assets that support community participation when appropriate opportunities are provided.",
+      },
+    ],
+  },
+  {
+    name: "Fragile X Syndrome",
+    slug: "fragile-x",
+    headline: "Fragile X Syndrome and IQ: The Most Common Inherited Cause of Intellectual Disability",
+    metaDescription:
+      "Fragile X Syndrome is the most common inherited cause of intellectual disability. Learn about its cognitive profile, IQ range, and the latest research on treatment.",
+    overview:
+      "Fragile X Syndrome (FXS) is the most common inherited cause of intellectual disability and the leading single-gene cause of autism spectrum disorder. It is caused by an expansion of a CGG trinucleotide repeat in the FMR1 gene on the X chromosome, which silences the gene and eliminates production of FMRP (Fragile X Mental Retardation Protein) — a protein essential for synaptic development and plasticity. FXS occurs in approximately 1 in 4,000 males and 1 in 8,000 females, with females typically less severely affected due to their second X chromosome providing some FMRP. FXS causes intellectual disability ranging from mild to severe, along with distinctive physical features, social anxiety, hyperactivity, sensory sensitivities, and communication differences. It is the most studied single-gene intellectual disability syndrome, and research on FMRP's role in synaptic function has opened promising avenues for targeted molecular treatment.",
+    iqImpact:
+      "IQ in Fragile X Syndrome follows a characteristic pattern: males with full mutations typically have full-scale IQ in the moderate intellectual disability range (IQ 35–50), with a mean of approximately 40–45, though the range extends from severe disability to borderline intellectual functioning. Females with full mutations show considerably more variability, with approximately 50% having borderline to average IQ (70–85+) and 50% having mild intellectual disability. The cognitive profile in FXS is characterized by relative strengths in simultaneous processing (holistic, gestalt perception), long-term memory, vocabulary, and sociability, alongside significant weaknesses in sequential processing, working memory, mathematics, and sustained attention. Processing speed is significantly impaired. Social anxiety — present in nearly all individuals with FXS — creates additional assessment challenges, as one-on-one testing is a significant anxiety trigger. IQ in males with FXS also shows progressive relative decline during childhood as demands increasingly outpace developmental gains.",
+    researchFindings:
+      "A comprehensive 2019 meta-analysis in American Journal on Intellectual and Developmental Disabilities synthesizing 40 years of FXS research confirmed mean IQ of 41 in fully affected males, with females ranging from approximately 70 to 85 depending on level of FMR1 expression. Research at the MIND Institute (UC Davis) has been pivotal in characterizing the neural consequences of FMRP loss: excessive mGluR5 signaling leads to abnormally increased protein synthesis at synapses, causing the dendritic spine dysgenesis characteristic of FXS. Clinical trials of mGluR5 antagonists (including mavoglurant and basimglurant) showed promising results in animal models and early phase trials, though large Phase III trials have not yet confirmed cognitive benefit — representing an important but not yet fulfilled research direction. A 2021 study in Nature Neuroscience found that early intervention targeting the mTOR signaling pathway in FXS mouse models rescued synaptic function and normalized cognitive performance, raising hope that very early pharmacological intervention in humans might modify intellectual outcome.",
+    faqItems: [
+      {
+        question: "What is the IQ range for Fragile X Syndrome?",
+        answer:
+          "Males with Fragile X Syndrome and full mutations typically have IQ in the range of 25–70, with a mean around 40–45 — placing most in the moderate intellectual disability range. Females with full mutations show considerably more variability: approximately half have IQ in the borderline to average range (70–100), while the other half have mild intellectual disability. The wide range in females reflects variation in how much of their second X chromosome's normal FMR1 gene is expressed.",
+      },
+      {
+        question: "Is Fragile X the same as autism?",
+        answer:
+          "Fragile X is not the same as autism, but there is significant overlap. Approximately 30% of children with Fragile X meet diagnostic criteria for autism spectrum disorder, and FXS is the most common known single-gene cause of autism. Conversely, approximately 2–3% of all autism cases are caused by FXS. The overlap reflects the role of FMRP in synaptic development — the same molecular pathway disrupted in many forms of autism. However, FXS has a distinctive profile including specific physical features, social anxiety, and cognitive profile that distinguishes it from idiopathic autism.",
+      },
+      {
+        question: "Is there any treatment to improve IQ in Fragile X Syndrome?",
+        answer:
+          "No pharmacological treatment has yet successfully improved cognitive outcomes in humans with FXS, despite promising results in animal models. Research targeting the mGluR5 pathway — which is overactive without FMRP — has produced important biological insights but has not yet translated to clinical benefit in large trials. Early behavioral intervention, speech therapy, occupational therapy, and educational support remain the most effective approaches for optimizing functioning. Research is ongoing on newborn screening and early intervention strategies, as animal data suggest that earlier intervention is more effective.",
+      },
+    ],
+  },
+  {
+    name: "Tourette Syndrome",
+    slug: "tourette-syndrome",
+    headline: "Tourette Syndrome and IQ: Tics, Neurodevelopment, and Intelligence",
+    metaDescription:
+      "Tourette Syndrome does not lower IQ. Learn how tic disorders relate to cognitive profiles, the co-occurring conditions that affect testing, and what research shows.",
+    overview:
+      "Tourette Syndrome (TS) is a neurodevelopmental disorder characterized by multiple motor tics and at least one vocal tic, present for more than one year and typically beginning in childhood (mean age of onset 5–7 years). It affects approximately 1% of school-age children and is 3–4 times more common in males than females. TS is frequently mischaracterized by the media as primarily involving coprolalia (involuntary swearing), which actually occurs in fewer than 15% of cases. The vast majority of TS consists of non-disruptive motor tics (eye blinking, head nodding, facial grimacing) and vocal tics (sniffing, throat clearing, humming). Critically, TS is not associated with reduced intelligence — people with TS span the full range of cognitive ability. However, the co-occurring conditions that accompany TS — which are present in the majority of affected individuals — substantially affect cognitive performance and IQ testing.",
+    iqImpact:
+      "Tourette Syndrome alone — without co-occurring conditions — has minimal direct impact on IQ test performance. Research finds that individuals with 'pure TS' (TS without ADHD, OCD, or learning disabilities) have full-scale IQ scores indistinguishable from the general population. However, pure TS is the minority: approximately 50–60% of individuals with TS have co-occurring ADHD, 40–50% have OCD, and 20–30% have a learning disability — each of which carries its own cognitive profile and IQ test impact. When these co-occurring conditions are accounted for, the common finding of lower mean IQ in TS samples largely disappears. The individual impact on IQ testing therefore depends almost entirely on which co-occurring conditions are present. The tics themselves can briefly disrupt performance during assessment when they occur during a critical task, but experienced examiners can accommodate tic-related interruptions by allowing the subtest to pause and resume.",
+    researchFindings:
+      "A landmark meta-analysis by Sukhodolsky and colleagues in 2017 in the Journal of Child Psychology and Psychiatry found that when ADHD comorbidity was statistically controlled, individuals with Tourette Syndrome showed no significant IQ differences from typically developing controls — confirming that the cognitive profile in TS is driven by co-occurring conditions rather than TS itself. Research by the Tourette Association of America has documented that the educational and psychosocial challenges of TS are largely mediated by ADHD and OCD co-occurrence, with pure TS showing minimal academic impact. Neuroimaging research has found differences in cortico-striato-thalamo-cortical (CSTC) circuits in TS, the same circuits implicated in ADHD and OCD — providing a neurobiological explanation for the high co-occurrence rates and shared cognitive profiles. A 2020 study in the Journal of Neurology found that individuals with TS who achieved good tic suppression — either pharmacologically or through behavioral therapy — showed improved performance on processing speed and attention tasks, suggesting that active tic suppression consumes cognitive resources that, when freed, become available for other cognitive work.",
+    faqItems: [
+      {
+        question: "Does Tourette Syndrome lower IQ?",
+        answer:
+          "Tourette Syndrome itself does not lower IQ. Studies find that people with pure TS (without ADHD or OCD) have IQ scores indistinguishable from the general population. The lower average IQ scores sometimes reported in TS research reflect the high rates of co-occurring ADHD and OCD in TS samples, not the tic disorder itself. If a person with TS has lower IQ test scores, the contributing factors are almost certainly the co-occurring conditions, not the tics.",
+      },
+      {
+        question: "Do tics affect IQ test performance?",
+        answer:
+          "Tics can briefly disrupt specific test items if they occur at critical moments, but experienced examiners pause and restart affected items, minimizing the impact. More significant are the suppression demands of tics: many individuals with TS actively suppress their tics during formal assessment (as they often do in public situations), which consumes cognitive resources and can reduce processing speed and working memory performance. This suppression-related cognitive load is modest but real, and examiners familiar with TS should account for it in their interpretation.",
+      },
+      {
+        question: "Can people with Tourette Syndrome be gifted?",
+        answer:
+          "Yes. Tourette Syndrome occurs across the full range of intelligence, and several studies have noted that TS may be somewhat over-represented in high-IQ populations — possibly reflecting the shared genetic architecture between TS and ADHD, which itself shows associations with creativity and divergent thinking. Many highly accomplished individuals have TS, including athletes, musicians, surgeons, and academics. The stereotype of TS as a disabling condition is strongly at odds with the actual functioning of many people with the disorder, particularly when tics are well-managed.",
+      },
+    ],
+  },
+  {
+    name: "Fetal Alcohol Syndrome",
+    slug: "fetal-alcohol-syndrome",
+    headline: "Fetal Alcohol Syndrome and IQ: Prenatal Alcohol Exposure and Brain Development",
+    metaDescription:
+      "Fetal Alcohol Syndrome (FAS) is a leading preventable cause of intellectual disability. Learn how prenatal alcohol exposure affects IQ and cognitive development.",
+    overview:
+      "Fetal Alcohol Syndrome (FAS) is the most severe condition within the Fetal Alcohol Spectrum Disorders (FASDs) — a range of conditions caused by prenatal alcohol exposure. FAS is characterized by a specific pattern of facial features (smooth philtrum, thin upper lip, small palpebral fissures), growth deficiency, and central nervous system abnormalities including intellectual disability, learning difficulties, and behavioral problems. FASDs affect an estimated 1–5% of the population in Western countries, making them among the most common preventable causes of intellectual disability and neurodevelopmental disorder. Alcohol is a teratogen that crosses the placenta freely and disrupts neural migration, synaptogenesis, and myelination at virtually any gestational stage — explaining why no amount of alcohol is confirmed safe during pregnancy. The cognitive consequences of prenatal alcohol exposure range from subtle learning and behavioral difficulties (in partial FASDs) to moderate-to-severe intellectual disability in full FAS.",
+    iqImpact:
+      "Full Fetal Alcohol Syndrome is associated with IQ scores typically in the mild to moderate intellectual disability range, with mean IQ approximately 65–75 across major studies. The cognitive profile of FAS is characterized by difficulties in working memory, processing speed, verbal learning, mathematical reasoning, and executive function — the same domains affected by prenatal alcohol disruption of prefrontal cortical development. Importantly, the cognitive profile of FAS is not one of global uniform deficit but of uneven impairment: some individuals with FAS show adequate performance on rote memory tasks and vocabulary while showing severe deficits in abstract reasoning, adaptive behavior, and executive control. A notable feature of FAS cognitive profiles is that IQ scores often underestimate functional impairment — individuals may have borderline IQ but markedly impaired real-world adaptive functioning due to executive dysfunction and poor judgment that IQ tests do not capture. Partial FASDs (Alcohol-Related Neurodevelopmental Disorder, ARND) can occur with normal or near-normal IQ but substantial executive and behavioral impairment.",
+    researchFindings:
+      "A seminal 2001 study by Streissguth and colleagues found that the long-term outcomes of individuals with FASDs were strongly predicted by early diagnosis, stable and nurturing home environments, and absence of violence exposure — not by IQ alone — highlighting the importance of environmental factors in FASD outcomes. A comprehensive 2017 systematic review in JAMA by Lange et al. estimated FASD prevalence at 77 per 1,000 population in some Western countries, vastly exceeding previous estimates and establishing FASDs as a major public health concern. Research by Jacobson and colleagues found dose-response relationships between prenatal alcohol exposure and cognitive outcomes, with heavier exposure associated with greater IQ reduction and more severe executive dysfunction. A 2020 study in Neuropsychology found that IQ measures significantly underestimated the functional impairment in FASD: individuals with FAS and borderline IQ (70–85) showed adaptive behavior deficits comparable to those of individuals with intellectual disability (IQ < 70), underscoring that cognitive assessment in FASD must include adaptive behavior evaluation.",
+    faqItems: [
+      {
+        question: "What is the average IQ for someone with Fetal Alcohol Syndrome?",
+        answer:
+          "Full Fetal Alcohol Syndrome is associated with mean IQ scores of approximately 65–75 across major research studies, placing most affected individuals in the borderline to mild intellectual disability range. The range extends from severe intellectual disability to low-average intelligence depending on exposure dose, gestational timing, and postnatal environmental factors. Importantly, IQ scores alone underestimate functional impairment in FAS: many individuals with borderline IQ have adaptive behavior deficits equivalent to intellectual disability due to executive dysfunction and poor judgment.",
+      },
+      {
+        question: "Can fetal alcohol exposure cause learning disabilities without intellectual disability?",
+        answer:
+          "Yes. The milder conditions within the Fetal Alcohol Spectrum — particularly Alcohol-Related Neurodevelopmental Disorder (ARND) — can produce significant learning and behavioral difficulties with IQ in the normal or borderline range. These partial FASDs are more common than full FAS and are often under-diagnosed precisely because the absence of intellectual disability and physical features makes them less clinically obvious. Affected children may appear capable on IQ tests while struggling severely with executive function, adaptive behavior, social judgment, and academic performance.",
+      },
+      {
+        question: "Are the cognitive effects of FAS permanent?",
+        answer:
+          "The structural brain changes underlying FAS are permanent, as prenatal alcohol disrupts neurodevelopment during critical periods that cannot be revisited. However, functional outcomes vary considerably based on postnatal environment: research shows that early diagnosis, placement in stable and nurturing families, and targeted intervention for executive function and adaptive behavior significantly improve life outcomes even when cognitive deficits persist. The most consistent predictors of better outcomes in FAS are stable home environment, early diagnosis, and access to appropriate special education and support services.",
+      },
+    ],
+  },
+  {
+    name: "Lead Exposure",
+    slug: "lead-exposure",
+    headline: "Lead Exposure and IQ: How Environmental Lead Reduces Intelligence",
+    metaDescription:
+      "Lead exposure is one of the most well-documented environmental causes of IQ reduction. Learn how lead affects the developing brain and what research shows about the IQ impact.",
+    overview:
+      "Lead (Pb) is a naturally occurring metal that has been used in paint, plumbing, gasoline, and various industrial applications for centuries. It is also one of the most extensively studied and well-established environmental causes of IQ reduction in children. Unlike many conditions in this guide — where cognitive effects are state-dependent and reversible — lead exposure causes structural neurological damage during critical developmental windows that is largely permanent. Children are particularly vulnerable because their developing brains absorb lead at much higher rates than adults, their blood-brain barriers are more permeable, and their nervous systems are undergoing rapid development that can be permanently disrupted. The reduction of lead in gasoline beginning in the 1970s (under the Clean Air Act in the United States) is estimated to have produced one of the largest population-level IQ gains in history — providing powerful evidence of lead's causal role in IQ reduction.",
+    iqImpact:
+      "The relationship between blood lead level and IQ is one of the most precisely quantified environmental dose-response relationships in public health. Meta-analyses consistently find that each 10 µg/dL increase in blood lead level during childhood is associated with a 4–7 IQ point reduction. Crucially, this relationship is non-linear: the dose-response curve is steepest at low blood lead levels (below 10 µg/dL, formerly considered 'safe'), meaning that even small increases in lead exposure in the 'safe' range produce disproportionately large IQ effects. The cognitive domains most affected by lead exposure are those dependent on prefrontal cortical function: executive function, working memory, impulse control, processing speed, and fine motor coordination. These align precisely with the IQ subtests most affected by lead: Working Memory and Processing Speed indices on the Wechsler scales. Verbal reasoning may be less affected in mild lead exposure, though language development is substantially impaired with higher exposures.",
+    researchFindings:
+      "The landmark Needleman studies beginning in the 1970s established the causal relationship between lead exposure and IQ reduction, showing that children with higher dentine lead levels had significantly lower IQ scores, more learning problems, and worse attention — even after controlling for socioeconomic and other confounding factors. A 2005 meta-analysis in Environmental Health Perspectives synthesizing 22 studies found that increases in blood lead from 2.4 to 10 µg/dL were associated with a 3.9 IQ point decrease — and that the effect was larger per unit of lead in the low-dose range, indicating no safe lower threshold. Research by Rick Nevin found that the rise and fall of violent crime rates in the 20th century closely tracked the rise and fall of leaded gasoline use 20–23 years earlier — suggesting that population-level lead exposure (and its effects on impulse control and executive function) contributed to crime trends. A 2019 study in PNAS estimated that current lead exposures in the United States are collectively responsible for approximately 820 million lost IQ points across the population — a staggering public health burden that underscores the importance of continued lead remediation efforts.",
+    faqItems: [
+      {
+        question: "How much does lead exposure reduce IQ?",
+        answer:
+          "Research consistently finds that each 10 µg/dL increase in childhood blood lead level is associated with a 4–7 IQ point reduction. The relationship is strongest at low exposure levels: even increases from 1 to 5 µg/dL produce measurable IQ reductions. There is no confirmed safe threshold below which lead has no cognitive effect. A child who grows up in a lead-contaminated environment may experience total IQ reductions of 5–15 points compared to a lead-free environment — a difference that has meaningful consequences for educational achievement and lifelong outcomes.",
+      },
+      {
+        question: "Is lead-related IQ reduction permanent?",
+        answer:
+          "The structural neurological damage caused by childhood lead exposure is largely permanent and does not reverse with lead removal from the environment. Lead chelation therapy (which removes lead from the blood) has been studied as a treatment for lead poisoning but has not been shown to improve cognitive outcomes when the exposure has already occurred. This is because lead's cognitive harm occurs during critical developmental windows: once those windows close, the structural changes to developing neurons and synapses persist. Prevention — eliminating lead exposure during childhood — is the only effective intervention.",
+      },
+      {
+        question: "Where is lead exposure still a risk today?",
+        answer:
+          "Despite major regulatory progress, lead exposure remains a significant risk in: homes built before 1978 (which often contain lead-based paint), older plumbing infrastructure (which can leach lead into drinking water, as in the Flint, Michigan crisis), industrial and mining communities, imported toys, cosmetics, and food products from countries with weaker lead regulations, and occupational settings. Children in low-income communities and older housing stock face disproportionately high lead exposure risks, contributing to health and cognitive disparities. The CDC currently uses a blood lead reference value of 3.5 µg/dL to identify children requiring public health action.",
+      },
+    ],
+  },
+  {
     name: "High IQ Problems",
     slug: "high-iq-problems",
     headline: "The Dark Side of High IQ: Challenges of Exceptional Intelligence",

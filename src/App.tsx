@@ -33,6 +33,8 @@ import TypesOfIQTests from "./pages/TypesOfIQTests.tsx";
 import IQPercentile from "./pages/IQPercentile.tsx";
 import FamousIQHub from "./pages/FamousIQHub.tsx";
 import CareerIQHub from "./pages/CareerIQHub.tsx";
+import MajorIQ from "./pages/MajorIQ.tsx";
+import MajorIQHub from "./pages/MajorIQHub.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
 import About from "./pages/About.tsx";
@@ -73,6 +75,7 @@ import { famousPersonSlugs } from "./data/famousIQData";
 import { conditionSlugs } from "./data/conditionIQData";
 import { mythSlugs } from "./data/iqMythData";
 import { stateSlugs } from "./data/stateIQData";
+import { majorSlugs } from "./data/majorIQData";
 
 const queryClient = new QueryClient();
 
@@ -123,6 +126,10 @@ export const AppRoutes = () => (
     <Route path="/iq-percentile-chart" element={<IQPercentile />} />
     <Route path="/famous-iq" element={<FamousIQHub />} />
     <Route path="/iq-by-career" element={<CareerIQHub />} />
+    <Route path="/iq-by-major" element={<MajorIQHub />} />
+    {majorSlugs.map((slug) => (
+      <Route key={slug} path={`/iq-by-major/${slug}`} element={<MajorIQ />} />
+    ))}
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/terms-of-service" element={<TermsOfService />} />
     <Route path="/about" element={<About />} />
