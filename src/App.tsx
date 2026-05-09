@@ -22,6 +22,7 @@ import StateIQHub from "./pages/StateIQHub.tsx";
 import HowToImproveIQ from "./pages/HowToImproveIQ.tsx";
 import AgeIQ from "./pages/AgeIQ.tsx";
 import FamousIQ from "./pages/FamousIQ.tsx";
+import ConditionIQ from "./pages/ConditionIQ.tsx";
 import IQMyth from "./pages/IQMyth.tsx";
 import StateIQ from "./pages/StateIQ.tsx";
 import HighestIQEver from "./pages/HighestIQEver.tsx";
@@ -69,6 +70,7 @@ import { countrySlugs } from "./data/countryIQData";
 import { careerSlugs } from "./data/careerIQData";
 import { ageGroupSlugs } from "./data/ageIQData";
 import { famousPersonSlugs } from "./data/famousIQData";
+import { conditionSlugs } from "./data/conditionIQData";
 import { mythSlugs } from "./data/iqMythData";
 import { stateSlugs } from "./data/stateIQData";
 
@@ -103,6 +105,9 @@ export const AppRoutes = () => (
     ))}
     {famousPersonSlugs.map((slug) => (
       <Route key={slug} path={`/famous-iq/${slug}`} element={<FamousIQ />} />
+    ))}
+    {conditionSlugs.map((slug) => (
+      <Route key={slug} path={`/iq-and/${slug}`} element={<ConditionIQ />} />
     ))}
     {mythSlugs.map((slug) => (
       <Route key={slug} path={`/iq-myths/${slug}`} element={<IQMyth />} />
