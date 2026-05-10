@@ -6,6 +6,7 @@ import ComparisonChart from "@/components/ComparisonChart";
 import PercentileBar from "@/components/PercentileBar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getCareerBySlug, careerIQData } from "@/data/careerIQData";
+import { careerExtendedData } from "@/data/careerExtendedData";
 
 const seoTitles: Record<string, string> = {
   "airline-pilot": "IQ Needed to Be a Pilot: Minimum Score & What Airlines Look For",
@@ -49,6 +50,7 @@ const CareerIQ = () => {
   const { pathname } = useLocation();
   const slug = pathname.replace("/iq-needed-for/", "");
   const career = slug ? getCareerBySlug(slug) : undefined;
+  const extended = slug ? (careerExtendedData[slug] ?? null) : null;
 
   if (!career) return <Navigate to="/what-is-iq" replace />;
 
@@ -171,6 +173,22 @@ const CareerIQ = () => {
           ))}
         </tbody>
       </table>
+
+      {extended && (
+        <>
+          <h2>Cognitive Skills That Drive Success in {career.career}</h2>
+          <p>{extended.cognitiveBreakdown}</p>
+
+          <h2>A Day in the Life: How IQ Shows Up at Work</h2>
+          <p>{extended.dayInTheLife}</p>
+
+          <h2>Salary Context and IQ</h2>
+          <p>{extended.salaryContext}</p>
+
+          <h2>Entry Barriers and Cognitive Requirements</h2>
+          <p>{extended.entryBarriers}</p>
+        </>
+      )}
 
       <h2>Frequently Asked Questions</h2>
       {career.faqItems.map((item, i) => (

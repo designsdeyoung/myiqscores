@@ -9,10 +9,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { getFamousPersonBySlug, famousIQData } from "@/data/famousIQData";
 import { careerIQData } from "@/data/careerIQData";
 
-// Public domain / CC images from Wikimedia Commons for historical figures
-// Note: Wikimedia images may not load due to hotlinking restrictions.
-// For production, download these images and serve them from /public/images/famous/
-const wikiImages: Record<string, { src: string; alt: string; caption: string }> = {};
 
 const seoTitles: Record<string, string> = {
   "cristiano-ronaldo": "Cristiano Ronaldo's IQ: How Smart Is the GOAT? | MyIQScores",
@@ -170,11 +166,11 @@ const FamousIQ = () => {
       </h1>
 
       {/* Person visual */}
-      {wikiImages[person.slug] ? (
+      {person.imageUrl ? (
         <WikiImage
-          src={wikiImages[person.slug].src}
-          alt={wikiImages[person.slug].alt}
-          caption={wikiImages[person.slug].caption}
+          src={person.imageUrl}
+          alt={`${person.name} photo`}
+          caption={`${person.name} — estimated IQ: ${person.estimatedIQ}`}
         />
       ) : (
         <FamousPersonIcon name={person.name} />

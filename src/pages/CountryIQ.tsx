@@ -4,11 +4,13 @@ import SEOHead from "@/components/SEOHead";
 import IQMeter from "@/components/IQMeter";
 import ComparisonChart from "@/components/ComparisonChart";
 import { getCountryBySlug, countryIQData } from "@/data/countryIQData";
+import { countryExtendedData } from "@/data/countryExtendedData";
 
 const CountryIQ = () => {
   const { pathname } = useLocation();
   const slug = pathname.replace("/average-iq/", "");
   const country = slug ? getCountryBySlug(slug) : undefined;
+  const extended = slug ? (countryExtendedData[slug] ?? null) : null;
 
   if (!country) return <Navigate to="/average-iq-by-country" replace />;
 
@@ -217,6 +219,19 @@ const CountryIQ = () => {
         education access can significantly impact cognitive test performance at the population level.
         Many developing nations are experiencing rapid improvements in these areas.
       </p>
+
+      {extended && (
+        <>
+          <h2>Historical Context: IQ Trends in {country.name}</h2>
+          <p>{extended.historicalContext}</p>
+
+          <h2>Education System Deep Dive</h2>
+          <p>{extended.educationDeepDive}</p>
+
+          <h2>Cognitive Achievements and Scientific Output</h2>
+          <p>{extended.cognitiveAchievements}</p>
+        </>
+      )}
 
       <h2>Frequently Asked Questions</h2>
       {country.faqItems.map((item, i) => (

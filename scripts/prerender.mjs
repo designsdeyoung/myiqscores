@@ -60,9 +60,18 @@ const staticRoutes = [
   "/iq-percentile-chart",
   "/famous-iq",
   "/iq-by-career",
+  "/iq-compare",
+  "/iq-by-major",
+  "/iq-by-city",
+  "/average-iq-by-state",
+  "/blog/can-you-raise-your-iq",
+  "/blog/history-of-iq-testing",
+  "/blog/iq-and-income",
+  "/blog/gifted-children-iq",
+  "/blog/iq-and-longevity",
 ];
 
-function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs }) {
+function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs }) {
   return [
     ...staticRoutes,
     ...iqScores.map((s) => `/is-${s}-iq-good`),
@@ -73,6 +82,9 @@ function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, a
     ...conditionSlugs.map((s) => `/iq-and/${s}`),
     ...stateSlugs.map((s) => `/average-iq-by-state/${s}`),
     ...mythSlugs.map((s) => `/iq-myths/${s}`),
+    ...(majorSlugs || []).map((s) => `/iq-by-major/${s}`),
+    ...(compareSlugs || []).map((s) => `/iq-compare/${s}`),
+    ...(citySlugs || []).map((s) => `/iq-by-city/${s}`),
   ];
 }
 
@@ -115,9 +127,12 @@ async function prerender() {
     conditionSlugs,
     stateSlugs,
     mythSlugs,
+    majorSlugs,
+    compareSlugs,
+    citySlugs,
   } = serverModule;
 
-  const routes = buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs });
+  const routes = buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs });
 
   console.log(`Building ${routes.length} pages...`);
 

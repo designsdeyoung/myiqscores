@@ -7,6 +7,9 @@ import PercentileBar from "@/components/PercentileBar";
 import ComparisonChart from "@/components/ComparisonChart";
 import Breadcrumb from "@/components/Breadcrumb";
 import { iqScoreData, getAdjacentScores, iqScores } from "@/data/iqScoreData";
+import { iqExtendedData } from "@/data/iqExtendedData";
+import { iqExtendedDataMid } from "@/data/iqExtendedDataMid";
+import { iqExtendedDataHigh } from "@/data/iqExtendedDataHigh";
 import { famousIQData } from "@/data/famousIQData";
 import { careerIQData } from "@/data/careerIQData";
 
@@ -15,6 +18,7 @@ const IsXIQGood = () => {
   const match = pathname.match(/\/is-(\d+)-iq-good/);
   const score = match ? Number(match[1]) : 0;
   const data = iqScoreData[score];
+  const extended = iqExtendedData[score] ?? iqExtendedDataMid[score] ?? iqExtendedDataHigh[score] ?? null;
 
   if (!data) return <Navigate to="/iq-score-ranges" replace />;
 
@@ -84,8 +88,34 @@ const IsXIQGood = () => {
   }
   const seoDesc = `Is ${score} a good IQ? At the ${data.percentile} percentile, you score higher than ${pctNum}% of people. See what this ${data.classification.toLowerCase()} score means for careers and life.`;
 
+  const citations = [
+    {
+      author: "Wechsler, D.",
+      year: 2008,
+      text: "Wechsler Adult Intelligence Scale — Fourth Edition (WAIS-IV): Administration and Scoring Manual. Pearson.",
+    },
+    {
+      author: "Gottfredson, L. S.",
+      year: 1997,
+      text: "Why g matters: The complexity of everyday life. Intelligence, 24(1), 79–132.",
+      url: "https://doi.org/10.1016/S0160-2896(97)90014-3",
+    },
+    {
+      author: "Schmidt, F. L., & Hunter, J. E.",
+      year: 1998,
+      text: "The validity and utility of selection methods in personnel psychology: Practical and theoretical implications of 85 years of research findings. Psychological Bulletin, 124(2), 262–274.",
+      url: "https://doi.org/10.1037/0033-2909.124.2.262",
+    },
+    {
+      author: "Deary, I. J., Strand, S., Smith, P., & Fernandes, C.",
+      year: 2007,
+      text: "Intelligence and educational achievement. Intelligence, 35(1), 13–21.",
+      url: "https://doi.org/10.1016/j.intell.2006.02.001",
+    },
+  ];
+
   return (
-    <ContentPage ctaText="Think you can score higher? Take the free IQ test" relatedPages={relatedPages}>
+    <ContentPage ctaText="Think you can score higher? Take the free IQ test" relatedPages={relatedPages} citations={citations}>
       <SEOHead
         title={seoTitle}
         description={seoDesc}
@@ -158,6 +188,34 @@ const IsXIQGood = () => {
 
       <h2>Career Context for an IQ of {score}</h2>
       <p>{data.careerContext}</p>
+
+      {extended && (
+        <>
+          <h2>Cognitive Profile at IQ {score}</h2>
+          <p>{extended.cognitiveProfile}</p>
+
+          <h2>What Research Says About IQ {score}</h2>
+          <p>{extended.researchContext}</p>
+
+          <h2>Day-to-Day Life with an IQ of {score}</h2>
+          <p>{extended.realWorldScenarios}</p>
+
+          {extended.satEquivalent > 0 && (
+            <div className="grid grid-cols-2 gap-4 my-6">
+              <div className="glass-card p-4 text-center rounded-xl">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">SAT Equivalent</p>
+                <p className="font-heading font-bold text-2xl text-primary">{extended.satEquivalent}</p>
+                <p className="text-xs text-muted-foreground mt-1">old 1600 scale</p>
+              </div>
+              <div className="glass-card p-4 text-center rounded-xl">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">ACT Equivalent</p>
+                <p className="font-heading font-bold text-2xl text-primary">{extended.actEquivalent}</p>
+                <p className="text-xs text-muted-foreground mt-1">composite score</p>
+              </div>
+            </div>
+          )}
+        </>
+      )}
 
       <h2>How Does an IQ of {score} Compare?</h2>
       <p>

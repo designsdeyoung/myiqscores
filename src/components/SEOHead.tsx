@@ -112,18 +112,41 @@ const SEOHead = ({
         }
       : null;
 
-  const pageSchema = {
-    "@context": "https://schema.org",
-    "@type": ogType === "article" ? "Article" : "WebPage",
-    "@id": `${fullCanonicalUrl}#webpage`,
-    url: fullCanonicalUrl,
-    name: title,
-    description,
-    isPartOf: { "@id": `${SITE_URL}/#website` },
-    publisher: { "@id": `${SITE_URL}/#organization` },
-    image: ogImage,
-    inLanguage: "en-US",
-  };
+  const pageSchema =
+    ogType === "article"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "@id": `${fullCanonicalUrl}#webpage`,
+          url: fullCanonicalUrl,
+          name: title,
+          description,
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          publisher: { "@id": `${SITE_URL}/#organization` },
+          image: {
+            "@type": "ImageObject",
+            url: `${SITE_URL}/favicon.svg`,
+          },
+          inLanguage: "en-US",
+          author: {
+            "@type": "Person",
+            name: "MyIQScores Editorial Team",
+          },
+          datePublished: "2024-01-15",
+          dateModified: "2026-05-10",
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": `${fullCanonicalUrl}#webpage`,
+          url: fullCanonicalUrl,
+          name: title,
+          description,
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          publisher: { "@id": `${SITE_URL}/#organization` },
+          image: ogImage,
+          inLanguage: "en-US",
+        };
 
   const pageJsonLd = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
   const structuredData = [

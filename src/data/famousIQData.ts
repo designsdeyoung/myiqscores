@@ -5,6 +5,7 @@ export interface FamousIQInfo {
   knownFor: string;
   description: string;
   iqContext: string;
+  imageUrl?: string;
   faqItems: { question: string; answer: string }[];
 }
 
@@ -14,6 +15,7 @@ export const famousIQData: FamousIQInfo[] = [
     slug: "albert-einstein",
     estimatedIQ: "160",
     knownFor: "Theory of Relativity, Nobel Prize in Physics",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/400px-Albert_Einstein_Head.jpg",
     description: "Albert Einstein is perhaps the most iconic genius in history. His estimated IQ of 160 places him in the exceptionally gifted range, though he never took a modern IQ test. Einstein revolutionized physics with his theories of special and general relativity, fundamentally changing our understanding of space, time, and gravity. Interestingly, Einstein was a late talker as a child and reportedly struggled in some school subjects, which is often cited as evidence that IQ doesn't capture every dimension of intellectual potential.",
     iqContext: "An IQ of 160 is extraordinarily rare — approximately 1 in 31,000 people score this high. At this level, cognitive processing is qualitatively different from the average person. Einstein's ability to conduct thought experiments — visualizing himself riding alongside a beam of light, for example — demonstrates the kind of abstract spatial reasoning that very high IQ enables. However, Einstein himself credited curiosity and persistence over raw intelligence for his breakthroughs.",
     faqItems: [
@@ -25,6 +27,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Stephen Hawking",
     slug: "stephen-hawking",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Stephen_Hawking.StarChild.jpg/400px-Stephen_Hawking.StarChild.jpg",
     estimatedIQ: "160",
     knownFor: "Black hole radiation, A Brief History of Time",
     description: "Stephen Hawking was one of the most brilliant theoretical physicists of the modern era, with an estimated IQ of 160. Despite being diagnosed with ALS at age 21 and gradually losing almost all physical function, Hawking made groundbreaking contributions to cosmology, including his prediction that black holes emit radiation (Hawking radiation). His ability to perform complex mathematical physics entirely in his head — after losing the ability to write — demonstrates extraordinary cognitive capacity.",
@@ -51,6 +54,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Leonardo da Vinci",
     slug: "leonardo-da-vinci",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Leonardo_self_portrait_zoomed.jpg/400px-Leonardo_self_portrait_zoomed.jpg",
     estimatedIQ: "180–200",
     knownFor: "Mona Lisa, inventor, polymath",
     description: "Leonardo da Vinci is widely considered the greatest polymath in human history, with an estimated IQ between 180 and 200. He made groundbreaking contributions to painting, sculpture, architecture, science, mathematics, engineering, anatomy, geology, astronomy, and botany — centuries before specialization became the norm. Da Vinci's notebooks reveal a mind that was simultaneously artistic and scientific, practical and theoretical, observational and imaginative.",
@@ -64,6 +68,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Nikola Tesla",
     slug: "nikola-tesla",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/N.Tesla.JPG/400px-N.Tesla.JPG",
     estimatedIQ: "160–200",
     knownFor: "AC electricity, Tesla coil, inventor",
     description: "Nikola Tesla, the inventor who made alternating current electricity practical, is estimated to have had an IQ between 160 and 200. Tesla possessed an extraordinary ability to visualize complex three-dimensional machines in his mind, mentally testing them before ever building a physical prototype. He claimed to be able to run entire simulated experiments in his imagination, identifying design flaws without physical testing. Tesla held over 300 patents and his inventions form the foundation of modern electrical power systems.",
@@ -90,6 +95,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Marie Curie",
     slug: "marie-curie",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Marie_Curie_c._1920s.jpg/400px-Marie_Curie_c._1920s.jpg",
     estimatedIQ: "180–200",
     knownFor: "Discovery of radium and polonium, two Nobel Prizes",
     description: "Marie Curie, the only person to win Nobel Prizes in two different sciences (physics and chemistry), is estimated to have had an IQ between 180 and 200. Curie's achievements are even more remarkable considering the extreme gender discrimination she faced in early 20th-century academia. She discovered two elements (radium and polonium), pioneered research on radioactivity, and developed mobile X-ray units that saved countless soldiers' lives during World War I.",
@@ -103,6 +109,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Isaac Newton",
     slug: "isaac-newton",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/GodfreyKneller-IsaacNewton-1689.jpg/400px-GodfreyKneller-IsaacNewton-1689.jpg",
     estimatedIQ: "190–200",
     knownFor: "Laws of motion, calculus, gravity",
     description: "Sir Isaac Newton is widely regarded as one of the most influential scientists who ever lived, with an estimated IQ of 190–200. Newton invented calculus (simultaneously with Leibniz), formulated the laws of motion and universal gravitation, built the first reflecting telescope, and made fundamental contributions to optics. He accomplished much of this work during a single extraordinary period in 1665–1666 (his 'annus mirabilis'), when Cambridge closed due to plague and Newton, just 23 years old, retreated to his family farm.",
@@ -207,6 +214,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Richard Feynman",
     slug: "richard-feynman",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/RichardFeynman-PhrysicsTeacher.jpg/400px-RichardFeynman-PhrysicsTeacher.jpg",
     estimatedIQ: "125",
     knownFor: "Nobel Prize physicist, quantum electrodynamics",
     description: "Richard Feynman is one of the most fascinating cases in IQ history — a Nobel Prize-winning physicist whose recorded IQ was 'only' 125. This score, while superior, is unremarkable by theoretical physics standards. Yet Feynman made foundational contributions to quantum electrodynamics, developed the Feynman diagrams used by all particle physicists, and was widely considered one of the most brilliant minds of the 20th century by his peers.",
@@ -272,6 +280,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Benjamin Franklin",
     slug: "benjamin-franklin",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg/400px-Joseph_Siffrein_Duplessis_-_Benjamin_Franklin_-_Google_Art_Project.jpg",
     estimatedIQ: "160",
     knownFor: "Founding Father, inventor, scientist, diplomat",
     description: "Benjamin Franklin is estimated to have had an IQ of approximately 160, making him one of the most intellectually gifted of America's Founding Fathers. Franklin was a true polymath: he was a leading scientist (electricity experiments), inventor (bifocals, lightning rod, Franklin stove), writer (Poor Richard's Almanack), printer, postmaster, diplomat, and political theorist. His ability to excel across science, literature, business, and statecraft reflects extraordinary cognitive versatility.",
@@ -324,6 +333,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Garry Kasparov",
     slug: "garry-kasparov",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Garry_Kasparov_in_2022_%28cropped%29.jpg/400px-Garry_Kasparov_in_2022_%28cropped%29.jpg",
     estimatedIQ: "190",
     knownFor: "Chess world champion, political activist",
     description: "Garry Kasparov has a tested IQ of approximately 190, making him one of the highest verified scores among living people. Kasparov dominated world chess for over 20 years (1985-2005), and his legendary 1997 matches against IBM's Deep Blue were pivotal moments in AI history. His ability to calculate dozens of moves ahead while simultaneously evaluating millions of positions demonstrates extraordinary pattern recognition and working memory.",
@@ -1260,6 +1270,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Charles Darwin",
     slug: "charles-darwin",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Charles_Darwin_seated_crop.jpg/400px-Charles_Darwin_seated_crop.jpg",
     estimatedIQ: "150–165",
     knownFor: "Theory of evolution, On the Origin of Species",
     description: "Charles Darwin's IQ is estimated at 150-165, reflecting his extraordinary ability to observe patterns in nature, synthesize evidence across disciplines, and develop one of the most transformative scientific theories in history. Darwin spent 20 years meticulously gathering evidence before publishing On the Origin of Species — demonstrating both exceptional analytical ability and extraordinary scientific patience.",
@@ -1598,6 +1609,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "John von Neumann",
     slug: "john-von-neumann",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/JohnvonNeumann-LosAlamos.gif/400px-JohnvonNeumann-LosAlamos.gif",
     estimatedIQ: "180–200",
     knownFor: "Mathematician, game theory, quantum mechanics, computing pioneer",
     description: "John von Neumann is widely regarded as the most powerful mathematical intellect of the twentieth century. He made foundational contributions to set theory, quantum mechanics, game theory, functional analysis, and the architecture of modern computers — the von Neumann architecture still underlies virtually every computer built today. Colleagues at the Institute for Advanced Study in Princeton, including Einstein and Gödel, considered him to be in a category of his own, describing his ability to absorb and restructure entire fields of mathematics in a single sitting. His estimated IQ of 180–200 is based on extraordinary documented feats: he could memorize entire phone books on a single pass, perform complex calculations faster than mechanical computers, and master new mathematical disciplines in weeks.",
@@ -1611,6 +1623,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Galileo Galilei",
     slug: "galileo-galilei",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Justus_Sustermans_-_Portrait_of_Galileo_Galilei%2C_1636.jpg/400px-Justus_Sustermans_-_Portrait_of_Galileo_Galilei%2C_1636.jpg",
     estimatedIQ: "180–185",
     knownFor: "Father of observational astronomy, physics, scientific method",
     description: "Galileo Galilei is one of the foundational figures of modern science, credited with transforming natural philosophy into an empirical discipline through systematic observation and mathematical analysis. He improved the telescope and turned it skyward, discovering the moons of Jupiter, the phases of Venus, and sunspots — providing direct observational evidence for the Copernican heliocentric model and bringing him into lasting conflict with the Catholic Church. Beyond astronomy, he formulated the laws of motion and free fall that Newton would later systematize, and he pioneered the use of mathematical language to describe physical phenomena. His estimated IQ of 180–185 reflects the extraordinary cognitive leap required to independently develop the scientific method and apply it productively across multiple fields in an era that lacked the conceptual infrastructure we take for granted.",
@@ -1689,6 +1702,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Alan Turing",
     slug: "alan-turing",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Alan_Turing_Aged_16.jpg/400px-Alan_Turing_Aged_16.jpg",
     estimatedIQ: "170",
     knownFor: "Father of computer science, WWII codebreaker, artificial intelligence",
     description: "Alan Turing is the founder of theoretical computer science and artificial intelligence — his 1936 paper introducing the concept of a universal computing machine (the Turing machine) established the mathematical foundations of computation before any electronic computer existed. During World War II, he led the team at Bletchley Park that cracked the German Enigma cipher, an achievement credited by historians with shortening the war by two to four years and saving millions of lives. His 1950 paper Computing Machinery and Intelligence, which proposed the Turing Test as a criterion for machine intelligence, launched the philosophical foundations of AI research. His estimated IQ of 170 reflects his extraordinary capacity for abstract mathematical reasoning and his ability to work at the frontier of entirely new intellectual territory.",
@@ -2014,6 +2028,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "George Washington",
     slug: "george-washington",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/400px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg",
     estimatedIQ: "140",
     knownFor: "First US President, revolutionary general, Founding Father",
     description: "George Washington was the commander of the Continental Army during the American Revolutionary War and the first President of the United States, serving two terms from 1789 to 1797. He had limited formal education — largely self-taught after his father died when Washington was eleven — but developed exceptional practical intelligence, organizational ability, and political judgment across a career that spanned military command, plantation management, constitutional founding, and presidential leadership. His estimated IQ of 140 reflects the cognitive demands of his achievements: sustaining a revolutionary army against the world's most powerful military for eight years through a combination of tactical ingenuity and political skill, then designing the institutional framework of a new republic with extraordinary durability.",
@@ -2027,6 +2042,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Thomas Jefferson",
     slug: "thomas-jefferson",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29%28cropped%29.jpg/400px-Official_Presidential_portrait_of_Thomas_Jefferson_%28by_Rembrandt_Peale%2C_1800%29%28cropped%29.jpg",
     estimatedIQ: "145–160",
     knownFor: "US Founding Father, Declaration of Independence author, third President",
     description: "Thomas Jefferson was the primary author of the Declaration of Independence, the third President of the United States, and one of the most intellectually extraordinary figures in American political history. He was fluent in multiple languages (including Greek, Latin, French, Italian, and Spanish), an accomplished architect who designed his home Monticello and the University of Virginia, a serious naturalist and inventor, a skilled musician, and a political philosopher whose ideas about natural rights and self-governance profoundly shaped the American republic and political philosophy globally. His estimated IQ of 145–160 reflects the extraordinary breadth of his intellectual accomplishments across domains that would today require multiple careers.",
@@ -2131,6 +2147,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Stephen Fry",
     slug: "stephen-fry",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Stephen_Fry_2012.jpg/400px-Stephen_Fry_2012.jpg",
     estimatedIQ: "145",
     knownFor: "Author, actor, QI host, Cambridge graduate, mental health advocate",
     description: "Stephen Fry is an English author, actor, screenwriter, and broadcaster who read English at Queens' College, Cambridge, and went on to become one of Britain's most versatile intellectual entertainers — writing novels, memoirs, stage plays, and screenplays; acting in films (Wilde, V for Vendetta, Alice in Wonderland) and television (Jeeves and Wooster, Bones); and hosting the long-running BBC panel show QI (Quite Interesting), which he presented as an argument that curiosity and intellectual delight are more valuable than memorized answers. His memoirs Moab Is My Washpot and The Fry Chronicles are among the most literate autobiographical works by any entertainer, and his advocacy for mental health awareness — he has been open about his bipolar disorder since a 2006 documentary — has been substantive and influential. His estimated IQ of 145 reflects his extraordinary verbal intelligence and the breadth of his intellectual engagement.",
@@ -2456,6 +2473,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Abraham Lincoln",
     slug: "abraham-lincoln",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/400px-Abraham_Lincoln_O-77_matte_collodion_print.jpg",
     estimatedIQ: "128–150",
     knownFor: "16th US President, self-educated, preserved the Union, abolished slavery",
     description: "Abraham Lincoln is widely regarded as the greatest American president — the self-educated Illinois lawyer who led the nation through the Civil War, preserved the Union, and issued the Emancipation Proclamation, beginning the end of slavery in America. He had less than a year of formal schooling in total, teaching himself law, mathematics, rhetoric, and literature through voracious self-directed reading — a cognitive achievement that makes his subsequent accomplishments even more remarkable. His estimated IQ of 128–150 reflects the broad range of scholarly opinion on his intelligence, which was demonstrated through his extraordinary prose (the Gettysburg Address, the Second Inaugural), his strategic and political intelligence in managing a fractious cabinet and military command, and his capacity for moral reasoning in unprecedented circumstances.",
@@ -2482,6 +2500,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Winston Churchill",
     slug: "winston-churchill",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Winston_Churchill_1941_photo_by_Yousuf_Karsh.jpg/400px-Winston_Churchill_1941_photo_by_Yousuf_Karsh.jpg",
     estimatedIQ: "145",
     knownFor: "WWII British PM, Nobel Prize in Literature, wartime orator",
     description: "Winston Churchill served as British Prime Minister during World War II (1940–1945), providing the leadership that kept Britain in the war during its darkest period — the months between France's fall and America's entry — through a combination of military strategy, diplomatic skill, and extraordinary oratory. He was also a prolific author who received the Nobel Prize in Literature in 1953 for 'his mastery of historical and biographical description as well as for brilliant oratory in defending exalted human values.' His estimated IQ of 145 reflects the cognitive demands of his extraordinary career: wartime strategic leadership, prolific historical and memoir writing, sustained parliamentary performance, and the crafting of speeches — 'We shall fight on the beaches,' 'Their finest hour,' 'Iron Curtain' — that shaped how the twentieth century understood itself.",
@@ -3678,6 +3697,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Napoleon Bonaparte",
     slug: "napoleon-bonaparte",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/400px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg",
     estimatedIQ: "145",
     knownFor: "Military genius, Emperor of France, Napoleonic Code",
     description: "Napoleon Bonaparte rose from modest Corsican origins to become Emperor of France and conqueror of much of Europe, demonstrating extraordinary cognitive abilities across military strategy, legal reform, and political administration. His campaigns are still studied at military academies worldwide as masterclasses in maneuver warfare, logistics, and the ability to adapt tactics in real time to fluid battlefield conditions. Napoleon reformed French law through the Napoleonic Code, reorganized education and bureaucracy, and maintained detailed oversight of a vast empire — tasks requiring exceptional working memory and executive function. He could reportedly dictate several different letters on different subjects simultaneously to different secretaries, a feat that speaks to remarkable compartmentalization of thought.",
@@ -3691,6 +3711,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Cleopatra",
     slug: "cleopatra",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/400px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg",
     estimatedIQ: "180",
     knownFor: "Last pharaoh of Egypt, polyglot ruler, political strategist",
     description: "Cleopatra VII was the last active ruler of the Ptolemaic Kingdom of Egypt, and one of the most remarkable intellects of the ancient world. Ancient sources report she was the first Ptolemaic ruler in three centuries to learn the Egyptian language — she also spoke nine languages including Ethiopian, Troglodyte, Hebrew, Arabic, Syriac, Median, Parthian, and Latin in addition to her native Greek. This extraordinary linguistic facility suggests exceptional verbal and cognitive flexibility. Beyond languages, Cleopatra was a trained philosopher, mathematician, and studied medicine — she authored books on pharmacology and cosmetics that were referenced for centuries after her death.",
@@ -3704,6 +3725,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "William Shakespeare",
     slug: "william-shakespeare",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/400px-Shakespeare.jpg",
     estimatedIQ: "210",
     knownFor: "Greatest playwright in English literature, poet",
     description: "William Shakespeare is regarded by scholars and linguists as the most important writer in the English language — and possibly in all of world literature. His 37 plays and 154 sonnets demonstrate an unparalleled command of language, psychology, dramatic structure, and human insight. Shakespeare is estimated to have had a working vocabulary of approximately 29,000 distinct words — nearly double that of most educated people — and he invented or popularized over 1,700 words still in common use today. His psychological portraits of characters like Hamlet, Iago, and Falstaff are so accurate that they have been used in modern psychiatric and psychological research.",
@@ -3730,6 +3752,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Socrates",
     slug: "socrates",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Socrate_du_Louvre.jpg/400px-Socrate_du_Louvre.jpg",
     estimatedIQ: "155",
     knownFor: "Socratic method, father of Western philosophy",
     description: "Socrates is considered the founding figure of Western philosophy, developing the method of inquiry — the Socratic method — that still underpins critical thinking, legal cross-examination, and scientific investigation. He left no written works; everything we know about him comes from his students, primarily Plato. Socrates challenged the assumptions of his contemporaries so effectively that he was tried and executed by Athens for 'corrupting the youth' and impiety — a testament to how threatening genuine critical inquiry can be to established authority. His insight that wisdom begins with recognizing one's own ignorance ('I know that I know nothing') remains one of the most profound observations in intellectual history.",
@@ -3743,6 +3766,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Aristotle",
     slug: "aristotle",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/400px-Aristotle_Altemps_Inv8575.jpg",
     estimatedIQ: "190",
     knownFor: "Logic, biology, ethics, politics, metaphysics — the first systematic scientist",
     description: "Aristotle was the first systematic thinker in Western history, creating formal frameworks for logic, biology, physics, ethics, politics, rhetoric, and literary criticism — essentially founding or significantly shaping every intellectual discipline he touched. He was tutored by Plato and later tutored Alexander the Great, positioning him at the intellectual center of two of antiquity's most consequential minds. His system of formal logic (syllogistic reasoning) dominated Western thought for 2,000 years until the development of modern symbolic logic. His biological classifications were so accurate that Charles Darwin expressed amazement at how far Aristotle had progressed without modern equipment.",
@@ -3769,6 +3793,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Michelangelo",
     slug: "michelangelo",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Miguel_Ángel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg/400px-Miguel_Ángel%2C_por_Daniele_da_Volterra_%28detalle%29.jpg",
     estimatedIQ: "180",
     knownFor: "Sistine Chapel ceiling, David, Pieta, architect of St. Peter's Basilica",
     description: "Michelangelo di Lodovico Buonarroti Simoni is widely regarded as the greatest sculptor who ever lived, and perhaps the most accomplished artist in any medium across Western history. His marble sculptures — David, the Pieta, Moses — demonstrate a mastery of three-dimensional form, human anatomy, and surface texture that has never been surpassed. The Sistine Chapel ceiling, painted on scaffolding over four years, represents one of the supreme achievements of human creative effort: 5,000 square feet of complex multi-figure compositions requiring mastery of anatomy, perspective, color, and narrative simultaneously. Michelangelo was also a gifted poet, whose 300+ surviving poems are studied in Italian literature courses today.",
@@ -3782,6 +3807,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Voltaire",
     slug: "voltaire",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Nicolas_de_Largilli%C3%A8re%2C_Voltaire_-_Mus%C3%A9e_Carnavalet_-_1718-1720_%28cropped%29.jpg/400px-Nicolas_de_Largilli%C3%A8re%2C_Voltaire_-_Mus%C3%A9e_Carnavalet_-_1718-1720_%28cropped%29.jpg",
     estimatedIQ: "190",
     knownFor: "Candide, advocate for civil liberties, Enlightenment philosopher",
     description: "Voltaire (Francois-Marie Arouet) was the most prolific and influential writer of the French Enlightenment, producing over 20,000 letters and more than 2,000 books and pamphlets across philosophy, history, drama, poetry, and fiction. His satirical novella Candide is a masterwork of philosophical wit that dismantles optimistic theology through devastating irony. Voltaire was a tireless advocate for civil liberties, freedom of religion, and freedom of speech — fighting for individual cases with such effectiveness that he helped overturn wrongful convictions and shift public opinion across Europe. He was imprisoned twice in the Bastille and exiled from France repeatedly, yet never stopped writing.",
@@ -3795,6 +3821,7 @@ export const famousIQData: FamousIQInfo[] = [
   {
     name: "Immanuel Kant",
     slug: "immanuel-kant",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Immanuel_Kant_%28painted_portrait%29.jpg/400px-Immanuel_Kant_%28painted_portrait%29.jpg",
     estimatedIQ: "175",
     knownFor: "Critique of Pure Reason, categorical imperative, moral philosophy",
     description: "Immanuel Kant is widely considered the most important philosopher of the modern era, whose Critique of Pure Reason fundamentally restructured how Western philosophy thought about knowledge, perception, and the relationship between mind and world. His concept of the categorical imperative — 'Act only according to that maxim by which you can at the same time will that it should become a universal law' — remains the most influential systematic ethical principle in philosophy. Kant synthesized rationalist and empiricist traditions, resolved centuries of philosophical debate, and set the agenda for all subsequent Western philosophy. He lived an extraordinarily regular life in Konigsberg, Prussia, rarely traveling more than 10 miles from his birthplace.",

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Brain, ArrowRight } from "lucide-react";
 import BackgroundEffect from "./BackgroundEffect";
 import AdUnit from "./AdUnit";
+import AuthorBox from "./AuthorBox";
+import CitationBlock, { Citation } from "./CitationBlock";
 import { AD_SLOTS } from "@/config/adsense";
 
 interface ContentPageProps {
@@ -10,6 +12,8 @@ interface ContentPageProps {
   relatedPages?: { title: string; href: string }[];
   showLeaderboard?: boolean;
   showSidebar?: boolean;
+  showAuthor?: boolean;
+  citations?: Citation[];
 }
 
 const ContentPage = ({
@@ -18,6 +22,8 @@ const ContentPage = ({
   relatedPages,
   showLeaderboard = true,
   showSidebar = true,
+  showAuthor = true,
+  citations,
 }: ContentPageProps) => (
   <div className="relative min-h-screen">
     <BackgroundEffect />
@@ -80,6 +86,8 @@ const ContentPage = ({
         {/* Main content */}
         <article className="max-w-3xl w-full prose-content overflow-x-hidden">
           {children}
+          {citations && citations.length > 0 && <CitationBlock citations={citations} />}
+          {showAuthor && <AuthorBox />}
         </article>
 
         {/* Sticky sidebar ad — desktop only */}
