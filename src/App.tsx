@@ -12,6 +12,8 @@ import IQScoreRanges from "./pages/IQScoreRanges.tsx";
 import IsXIQGood from "./pages/IsXIQGood.tsx";
 import CountryIQ from "./pages/CountryIQ.tsx";
 import AverageIQByCountry from "./pages/AverageIQByCountry.tsx";
+import CityIQ from "./pages/CityIQ.tsx";
+import CityIQHub from "./pages/CityIQHub.tsx";
 import CareerIQ from "./pages/CareerIQ.tsx";
 import IQvsEQ from "./pages/IQvsEQ.tsx";
 import SATtoIQ from "./pages/SATtoIQ.tsx";
@@ -22,7 +24,10 @@ import StateIQHub from "./pages/StateIQHub.tsx";
 import HowToImproveIQ from "./pages/HowToImproveIQ.tsx";
 import AgeIQ from "./pages/AgeIQ.tsx";
 import FamousIQ from "./pages/FamousIQ.tsx";
+import ConditionIQ from "./pages/ConditionIQ.tsx";
 import IQMyth from "./pages/IQMyth.tsx";
+import IQCompare from "./pages/IQCompare.tsx";
+import IQCompareHub from "./pages/IQCompareHub.tsx";
 import StateIQ from "./pages/StateIQ.tsx";
 import HighestIQEver from "./pages/HighestIQEver.tsx";
 import GoodIQScore from "./pages/GoodIQScore.tsx";
@@ -32,6 +37,8 @@ import TypesOfIQTests from "./pages/TypesOfIQTests.tsx";
 import IQPercentile from "./pages/IQPercentile.tsx";
 import FamousIQHub from "./pages/FamousIQHub.tsx";
 import CareerIQHub from "./pages/CareerIQHub.tsx";
+import MajorIQ from "./pages/MajorIQ.tsx";
+import MajorIQHub from "./pages/MajorIQHub.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
 import About from "./pages/About.tsx";
@@ -64,13 +71,22 @@ import ExerciseAndIQ from "./pages/blog/ExerciseAndIQ.tsx";
 import MultipleIntelligences from "./pages/blog/MultipleIntelligences.tsx";
 import IQAndCreativity from "./pages/blog/IQAndCreativity.tsx";
 import IQAndLeadership from "./pages/blog/IQAndLeadership.tsx";
+import CanYouRaiseYourIQ from "./pages/blog/CanYouRaiseYourIQ.tsx";
+import HistoryOfIQTesting from "./pages/blog/HistoryOfIQTesting.tsx";
+import IQAndIncome from "./pages/blog/IQAndIncome.tsx";
+import GiftedChildrenIQ from "./pages/blog/GiftedChildrenIQ.tsx";
+import IQAndLongevity from "./pages/blog/IQAndLongevity.tsx";
 import { iqScores } from "./data/iqScoreData";
 import { countrySlugs } from "./data/countryIQData";
 import { careerSlugs } from "./data/careerIQData";
 import { ageGroupSlugs } from "./data/ageIQData";
 import { famousPersonSlugs } from "./data/famousIQData";
+import { conditionSlugs } from "./data/conditionIQData";
 import { mythSlugs } from "./data/iqMythData";
 import { stateSlugs } from "./data/stateIQData";
+import { compareSlugs } from "./data/iqCompareData";
+import { majorSlugs } from "./data/majorIQData";
+import { citySlugs } from "./data/cityIQData";
 
 const queryClient = new QueryClient();
 
@@ -104,6 +120,9 @@ export const AppRoutes = () => (
     {famousPersonSlugs.map((slug) => (
       <Route key={slug} path={`/famous-iq/${slug}`} element={<FamousIQ />} />
     ))}
+    {conditionSlugs.map((slug) => (
+      <Route key={slug} path={`/iq-and/${slug}`} element={<ConditionIQ />} />
+    ))}
     {mythSlugs.map((slug) => (
       <Route key={slug} path={`/iq-myths/${slug}`} element={<IQMyth />} />
     ))}
@@ -118,6 +137,18 @@ export const AppRoutes = () => (
     <Route path="/iq-percentile-chart" element={<IQPercentile />} />
     <Route path="/famous-iq" element={<FamousIQHub />} />
     <Route path="/iq-by-career" element={<CareerIQHub />} />
+    <Route path="/iq-compare" element={<IQCompareHub />} />
+    {compareSlugs.map((slug) => (
+      <Route key={slug} path={`/iq-compare/${slug}`} element={<IQCompare />} />
+    ))}
+    <Route path="/iq-by-major" element={<MajorIQHub />} />
+    {majorSlugs.map((slug) => (
+      <Route key={slug} path={`/iq-by-major/${slug}`} element={<MajorIQ />} />
+    ))}
+    <Route path="/iq-by-city" element={<CityIQHub />} />
+    {citySlugs.map((slug) => (
+      <Route key={slug} path={`/iq-by-city/${slug}`} element={<CityIQ />} />
+    ))}
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/terms-of-service" element={<TermsOfService />} />
     <Route path="/about" element={<About />} />
@@ -150,6 +181,11 @@ export const AppRoutes = () => (
     <Route path="/blog/multiple-intelligences-theory" element={<MultipleIntelligences />} />
     <Route path="/blog/iq-and-creativity" element={<IQAndCreativity />} />
     <Route path="/blog/iq-and-leadership" element={<IQAndLeadership />} />
+    <Route path="/blog/can-you-raise-your-iq" element={<CanYouRaiseYourIQ />} />
+    <Route path="/blog/history-of-iq-testing" element={<HistoryOfIQTesting />} />
+    <Route path="/blog/iq-and-income" element={<IQAndIncome />} />
+    <Route path="/blog/gifted-children-iq" element={<GiftedChildrenIQ />} />
+    <Route path="/blog/iq-and-longevity" element={<IQAndLongevity />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>
