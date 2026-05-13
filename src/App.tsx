@@ -76,6 +76,10 @@ import HistoryOfIQTesting from "./pages/blog/HistoryOfIQTesting.tsx";
 import IQAndIncome from "./pages/blog/IQAndIncome.tsx";
 import GiftedChildrenIQ from "./pages/blog/GiftedChildrenIQ.tsx";
 import IQAndLongevity from "./pages/blog/IQAndLongevity.tsx";
+import DunningKrugerEffect from "./pages/blog/DunningKrugerEffect.tsx";
+import IQAndAge from "./pages/blog/IQAndAge.tsx";
+import TwiceExceptional from "./pages/blog/TwiceExceptional.tsx";
+import PovertyAndIQ from "./pages/blog/PovertyAndIQ.tsx";
 import { iqScores } from "./data/iqScoreData";
 import { countrySlugs } from "./data/countryIQData";
 import { careerSlugs } from "./data/careerIQData";
@@ -186,6 +190,10 @@ export const AppRoutes = () => (
     <Route path="/blog/iq-and-income" element={<IQAndIncome />} />
     <Route path="/blog/gifted-children-iq" element={<GiftedChildrenIQ />} />
     <Route path="/blog/iq-and-longevity" element={<IQAndLongevity />} />
+    <Route path="/blog/dunning-kruger-effect" element={<DunningKrugerEffect />} />
+    <Route path="/blog/iq-and-age" element={<IQAndAge />} />
+    <Route path="/blog/twice-exceptional-adhd-high-iq" element={<TwiceExceptional />} />
+    <Route path="/blog/poverty-and-iq" element={<PovertyAndIQ />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>
