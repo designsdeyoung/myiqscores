@@ -10,7 +10,7 @@ const articleSchema = {
     "The word genius gets thrown around constantly — but what does a genius-level IQ actually mean? History, science, and what being a genius is really like.",
   datePublished: "2026-04-06",
   dateModified: "2026-04-06",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

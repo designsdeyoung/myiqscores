@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import BackgroundEffect from "@/components/BackgroundEffect";
 import SEOHead from "@/components/SEOHead";
@@ -91,6 +92,26 @@ const PrivacyPolicy = () => (
         </section>
 
         <section>
+          <h2 className="text-foreground font-heading text-xl font-semibold mb-3">7a. Advertising &amp; Google AdSense</h2>
+          <p className="mb-2">We use Google AdSense to serve advertisements on our website. Google AdSense uses cookies, including the DART cookie, to serve ads based on your visits to this and other websites.</p>
+          <ul className="list-disc pl-6 space-y-1 mb-3">
+            <li>Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our site and/or other sites on the Internet.</li>
+            <li>We participate in the Google AdSense program. Third-party vendors, including Google, use cookies to serve ads based on prior visits to our website.</li>
+            <li>Advertising cookies may collect data such as your browsing history, interests, and demographic information to show you relevant ads.</li>
+          </ul>
+          <p className="mb-2">
+            You can opt out of personalized advertising at any time by visiting{" "}
+            <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Ad Settings</a>{" "}
+            or{" "}
+            <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">aboutads.info/choices</a>.
+          </p>
+          <p>
+            For more information on how Google uses data when you use our site, visit{" "}
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google's Partner Sites Policy</a>.
+          </p>
+        </section>
+
+        <section>
           <h2 className="text-foreground font-heading text-xl font-semibold mb-3">8. Data Retention</h2>
           <p>We retain your personal data for as long as necessary to provide our services and fulfill the purposes described in this policy. You may request deletion at any time by contacting us.</p>
         </section>
@@ -122,6 +143,17 @@ const PrivacyPolicy = () => (
         </section>
       </div>
     </div>
+
+    {/* Minimal footer */}
+    <footer className="border-t border-[rgba(255,255,255,0.06)] mt-4 py-6 text-center text-xs text-muted-foreground">
+      <div className="flex items-center justify-center gap-4 flex-wrap">
+        <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
+        <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
+        <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
+        <Link to="/editorial-policy" className="hover:text-foreground transition-colors">Editorial Policy</Link>
+      </div>
+      <p className="mt-3">&copy; {new Date().getFullYear()} MyIQScores™. All rights reserved.</p>
+    </footer>
   </div>
 );
 

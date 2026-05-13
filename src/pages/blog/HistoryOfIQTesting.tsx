@@ -10,7 +10,7 @@ const articleSchema = {
     "From Alfred Binet's 1905 scale to the WAIS-IV and Raven's Matrices, explore the full history of IQ testing — including controversies, milestones, and modern directions.",
   datePublished: "2026-05-09",
   dateModified: "2026-05-09",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

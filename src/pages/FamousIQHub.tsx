@@ -166,6 +166,8 @@ const FamousIQHub = () => {
         <li><Link to="/highest-iq-ever">Highest IQ Ever Recorded</Link> — The most extreme IQ scores in history</li>
         <li><Link to="/average-iq-by-country">Average IQ by Country</Link> — How nations compare on cognitive benchmarks</li>
         <li><Link to="/good-iq-score">What Is a Good IQ Score?</Link> — Understanding the full IQ scale</li>
+        <li><Link to="/blog/famous-iq-scores">Famous IQ Scores — Blog</Link> — Deep dive into celebrity IQ estimates and what they mean</li>
+        <li><Link to="/blog/what-is-genius-iq">What Is a Genius IQ?</Link> — The history, science, and reality of genius-level intelligence</li>
       </ul>
     </ContentPage>
   );

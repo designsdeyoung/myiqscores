@@ -10,7 +10,7 @@ const articleSchema = {
     "How much of your IQ is genetic? Research from twin and adoption studies gives us surprisingly clear answers — and reveals why the nature/nurture debate is more nuanced than most people think.",
   datePublished: "2026-04-14",
   dateModified: "2026-04-14",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

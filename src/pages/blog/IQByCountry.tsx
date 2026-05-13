@@ -10,7 +10,7 @@ const articleSchema = {
     "Average IQ varies dramatically by nation. The reasons are more about policy than genetics — a deep look at what drives national IQ differences.",
   datePublished: "2026-04-06",
   dateModified: "2026-04-06",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

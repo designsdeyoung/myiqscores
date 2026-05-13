@@ -29,7 +29,7 @@ const About = () => (
       </div>
       <div className="glass-card p-5 rounded-xl text-center">
         <BookOpen className="w-8 h-8 text-primary mx-auto mb-3" />
-        <p className="font-heading font-bold text-2xl text-foreground">500+</p>
+        <p className="font-heading font-bold text-2xl text-foreground">1,000+</p>
         <p className="text-sm text-muted-foreground">Educational Pages</p>
       </div>
       <div className="glass-card p-5 rounded-xl text-center">
@@ -151,6 +151,30 @@ const About = () => (
         We typically respond within 24-48 hours on business days.
       </p>
     </div>
+
+    <h2>Our Editorial Team</h2>
+    <p>
+      MyIQScores content is produced and reviewed by a team with backgrounds in cognitive psychology,
+      psychometrics, educational research, and science communication. All articles are cross-referenced
+      against peer-reviewed literature before publication, and updated when new research warrants a
+      revision. We do not publish content under invented names or unverifiable credentials.
+    </p>
+    <p>
+      Our editorial process follows a tiered review system: factual claims must be traceable to a
+      primary source (peer-reviewed journal, institutional report, or recognized reference work),
+      statistical claims include the originating study, and any estimates — including IQ estimates
+      for public figures — are clearly labeled as such. Read our full{" "}
+      <Link to="/editorial-policy">Editorial Policy</Link> and{" "}
+      <Link to="/methodology">Test Methodology</Link>.
+    </p>
+
+    <h2>About the Site</h2>
+    <p>
+      MyIQScores is an independent educational platform based in the United States, founded to make
+      IQ concepts, psychometrics, and cognitive science accessible to a general audience. The site
+      has no affiliation with Mensa International, the APA, or any clinical testing organization.
+      Results from our free assessment are educational estimates, not clinical measurements.
+    </p>
 
     <h2>Disclaimer</h2>
     <p>

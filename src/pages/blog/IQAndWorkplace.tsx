@@ -10,7 +10,7 @@ const articleSchema = {
     "IQ is one of the strongest predictors of job performance ever studied. Here's what the research says about cognitive ability, career success, and hiring.",
   datePublished: "2026-04-22",
   dateModified: "2026-04-22",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

@@ -162,10 +162,11 @@ const ContentPage = ({
       logo: "https://www.myiqscores.com/logo.png",
       description:
         "Free IQ estimate and educational guides on intelligence, cognitive testing, and score interpretation.",
-      sameAs: [
-        "https://twitter.com/myiqscores",
-        "https://www.facebook.com/myiqscores",
-      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "support@myiqscores.com",
+        contactType: "customer support",
+      },
     });
     document.head.appendChild(script);
     return () => {
@@ -395,6 +396,7 @@ const ContentPage = ({
                 <li><Link to="/iq-by-career" className="hover:text-foreground transition-colors">IQ by Career</Link></li>
                 <li><Link to="/famous-iq" className="hover:text-foreground transition-colors">Famous People IQs</Link></li>
                 <li><Link to="/iq-percentile-chart" className="hover:text-foreground transition-colors">IQ Percentile Chart</Link></li>
+                <li><Link to="/blog" className="hover:text-foreground transition-colors">IQ Blog</Link></li>
               </ul>
             </div>
             <div>
@@ -406,6 +408,7 @@ const ContentPage = ({
                 <li><Link to="/iq-vs-eq" className="hover:text-foreground transition-colors">IQ vs EQ</Link></li>
                 <li><Link to="/genius-iq" className="hover:text-foreground transition-colors">Genius IQ Guide</Link></li>
                 <li><Link to="/mensa-iq-test" className="hover:text-foreground transition-colors">Mensa IQ Test</Link></li>
+                <li><Link to="/blog" className="hover:text-foreground transition-colors">All Blog Articles</Link></li>
               </ul>
             </div>
           </div>

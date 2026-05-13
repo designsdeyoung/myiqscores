@@ -10,7 +10,7 @@ const articleSchema = {
     "Sleep deprivation measurably reduces IQ performance. Here's exactly how sleep affects intelligence, how much you need, and how to optimize your sleep for peak cognition.",
   datePublished: "2026-04-16",
   dateModified: "2026-04-16",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

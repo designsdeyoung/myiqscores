@@ -87,7 +87,9 @@ const CareerIQHub = () => {
 
       <p className="mt-8">
         Learn more about <Link to="/what-is-iq">what IQ measures</Link>,{" "}
-        <Link to="/iq-score-ranges">IQ score ranges</Link>, or{" "}
+        <Link to="/iq-score-ranges">IQ score ranges</Link>,{" "}
+        <Link to="/iq-by-major">IQ by College Major</Link>,{" "}
+        <Link to="/average-iq-by-country">Average IQ by Country</Link>, or{" "}
         <Link to="/test">take our free IQ test</Link>.
       </p>
     </ContentPage>

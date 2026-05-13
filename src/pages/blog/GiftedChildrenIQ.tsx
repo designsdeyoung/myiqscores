@@ -10,7 +10,7 @@ const articleSchema = {
     "What does it mean for a child to be gifted? Learn about IQ thresholds, signs of giftedness, the WISC-V test, acceleration vs enrichment, and what parents should do.",
   datePublished: "2026-05-09",
   dateModified: "2026-05-09",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

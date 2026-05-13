@@ -10,7 +10,7 @@ const articleSchema = {
     "Global IQ scores rose about 3 points per decade for most of the 20th century. What caused this dramatic rise — and is it still happening?",
   datePublished: "2026-04-12",
   dateModified: "2026-04-12",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

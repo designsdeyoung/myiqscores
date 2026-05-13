@@ -10,7 +10,7 @@ const articleSchema = {
     "When should children be IQ tested? What do the results mean? What are the limitations? A comprehensive guide for parents and educators.",
   datePublished: "2026-04-26",
   dateModified: "2026-04-26",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

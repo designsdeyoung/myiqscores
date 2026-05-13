@@ -10,7 +10,7 @@ const articleSchema = {
     "IQ tests have been praised and criticized for decades. Here's what psychologists actually know about their accuracy, limitations, and what they measure.",
   datePublished: "2026-04-06",
   dateModified: "2026-04-06",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

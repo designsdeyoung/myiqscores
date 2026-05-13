@@ -10,7 +10,7 @@ const articleSchema = {
     "Fluid and crystallized intelligence are two distinct cognitive abilities that work together. Understanding both helps explain why IQ changes with age.",
   datePublished: "2026-04-10",
   dateModified: "2026-04-10",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

@@ -10,7 +10,7 @@ const articleSchema = {
     "EQ vs IQ is one of psychology's great debates. The answer depends on what you're trying to do — a comprehensive look at both intelligences.",
   datePublished: "2026-04-06",
   dateModified: "2026-04-06",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 
