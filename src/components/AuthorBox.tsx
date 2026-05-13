@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, BookOpen } from "lucide-react";
 
 interface AuthorBoxProps {
   lastUpdated?: string;
@@ -17,11 +17,11 @@ const AuthorBox = ({ lastUpdated = "2026-05-10" }: AuthorBoxProps) => {
       <div className="flex items-start gap-4">
         {/* Avatar */}
         <div
-          className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-heading font-bold text-sm text-primary-foreground select-none"
+          className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-primary-foreground select-none"
           style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)))" }}
-          aria-label="Dr. Sarah Chen"
+          aria-label="MyIQScores Editorial Team"
         >
-          SC
+          <BookOpen className="w-5 h-5" />
         </div>
 
         <div className="flex-1 min-w-0">
@@ -32,10 +32,10 @@ const AuthorBox = ({ lastUpdated = "2026-05-10" }: AuthorBoxProps) => {
             </span>
           </div>
           <p className="font-heading font-semibold text-foreground text-base leading-tight">
-            Dr. Sarah Chen
+            MyIQScores Editorial Team
           </p>
           <p className="text-xs text-muted-foreground mt-0.5">
-            PhD in Cognitive Psychology &middot; MyIQScores Editorial Team
+            Researchers in cognitive psychology, psychometrics &amp; educational science
           </p>
         </div>
 

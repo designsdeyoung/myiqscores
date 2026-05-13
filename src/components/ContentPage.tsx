@@ -162,10 +162,11 @@ const ContentPage = ({
       logo: "https://www.myiqscores.com/logo.png",
       description:
         "Free IQ estimate and educational guides on intelligence, cognitive testing, and score interpretation.",
-      sameAs: [
-        "https://twitter.com/myiqscores",
-        "https://www.facebook.com/myiqscores",
-      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "support@myiqscores.com",
+        contactType: "customer support",
+      },
     });
     document.head.appendChild(script);
     return () => {
