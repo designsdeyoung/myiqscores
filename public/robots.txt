@@ -26,4 +26,13 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
 Sitemap: https://www.myiqscores.com/sitemap.xml
