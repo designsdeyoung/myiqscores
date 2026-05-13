@@ -145,6 +145,75 @@
   .prose-content blockquote {
     @apply border-l-2 border-primary/40 pl-4 italic text-muted-foreground my-4;
   }
+
+  /* ── Scroll Reveal ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Card Hover Lift ── */
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 229, 255, 0.12);
+  }
+
+  /* ── Gradient Border ── */
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ── Counter number animation ── */
+  .counter-animate {
+    animation: count-up 0.5s ease forwards;
+  }
+
+  /* ── Pulsing Dot ── */
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(var(--success));
+    flex-shrink: 0;
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  /* ── Score Bar ── */
+  .score-bar {
+    animation: fill-bar 1s ease forwards;
+  }
+
+  /* ── Testimonial Card ── */
+  .testimonial-card {
+    @apply glass-card rounded-2xl p-6 card-hover;
+  }
+
+  /* ── FAQ Item ── */
+  .faq-item {
+    @apply glass-card rounded-xl overflow-hidden;
+  }
 }
 
 @keyframes shimmer {
@@ -165,4 +234,19 @@
 @keyframes grid-move {
   0% { transform: translateY(0); }
   100% { transform: translateY(40px); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.7; }
+}
+
+@keyframes fill-bar {
+  from { width: 0%; }
+  to { width: var(--fill-width); }
 }

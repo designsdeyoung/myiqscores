@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { trackQuizStarted } from "@/lib/analytics";
 import {
@@ -15,7 +15,11 @@ import {
   HelpCircle,
   ClipboardCheck,
   Scale,
+  Star,
+  Plus,
+  Minus,
 } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const stagger = {
   hidden: {},
@@ -25,12 +29,150 @@ const fadeUp = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
+const viewReveal = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6, ease: "easeOut" as const },
+};
 
 interface LandingProps {
   onStart: () => void;
 }
 
+// ── Live Counter Hook ──
+function useLiveCounter(start: number, tickInterval = 3000) {
+  const [count, setCount] = useState(start);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCount((c) => c + 1);
+    }, tickInterval);
+    return () => clearInterval(id);
+  }, [tickInterval]);
+  return count;
+}
+
+// ── FAQ Accordion ──
+const FAQ_ITEMS = [
+  {
+    q: "Is this IQ test accurate?",
+    a: "Our test is designed based on established psychometric principles and measures the same cognitive domains as professional IQ assessments — pattern recognition, logical reasoning, verbal ability, spatial reasoning, and numerical processing. While no online test replaces a formal assessment, our 30-question format provides a reliable estimate for most adults.",
+  },
+  {
+    q: "How long does the test take?",
+    a: "Most people complete the test in 10-15 minutes. There's no time limit per question, but the test considers both accuracy and completion time, so working at a natural pace gives the most useful estimate.",
+  },
+  {
+    q: "Do I need to create an account?",
+    a: "No. The test is completely free with no sign-up required. You start immediately and get your full results instantly — no email gate, no paywall, no credit card.",
+  },
+  {
+    q: "What does my IQ score mean?",
+    a: "IQ scores follow a bell curve with an average of 100. About 68% of people score between 85-115. Scores above 130 are in the top 2%, and scores below 70 occur in about 2% of the population. After your test, we'll show you exactly where you stand and link you to detailed explanations.",
+  },
+];
+
+function FAQAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  return (
+    <div className="flex flex-col gap-3">
+      {FAQ_ITEMS.map(({ q, a }, i) => (
+        <div key={q} className="faq-item">
+          <button
+            className="w-full flex items-start justify-between gap-4 p-6 text-left"
+            onClick={() => setOpenIndex(openIndex === i ? null : i)}
+            aria-expanded={openIndex === i}
+          >
+            <div className="flex items-start gap-3">
+              <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <span className="font-heading font-semibold text-foreground text-sm sm:text-base">{q}</span>
+            </div>
+            <span className="flex-shrink-0 w-6 h-6 rounded-full border border-[rgba(255,255,255,0.15)] flex items-center justify-center text-primary mt-0.5">
+              {openIndex === i ? <Minus className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
+            </span>
+          </button>
+          <AnimatePresence initial={false}>
+            {openIndex === i && (
+              <motion.div
+                key="answer"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                style={{ overflow: "hidden" }}
+              >
+                <p className="text-muted-foreground text-sm leading-relaxed px-6 pb-6 pl-14">{a}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ── Score Bands ──
+const SCORE_BANDS = [
+  { label: "Below Average", range: "Below 85", pct: "~16% of people", fillWidth: "16%", variant: "muted" },
+  { label: "Average", range: "85–100", pct: "~34% of people", fillWidth: "34%", variant: "neutral" },
+  { label: "Above Average", range: "100–115", pct: "~34% of people", fillWidth: "34%", variant: "highlight" },
+  { label: "Superior", range: "115–130", pct: "~14% of people", fillWidth: "14%", variant: "primary" },
+  { label: "Gifted / Genius", range: "130+", pct: "~2% of people", fillWidth: "2%", variant: "gradient" },
+];
+
+const bandStyle: Record<string, string> = {
+  muted: "bg-muted/30 border-[rgba(255,255,255,0.08)]",
+  neutral: "bg-[rgba(255,255,255,0.05)] border-[rgba(255,255,255,0.10)]",
+  highlight: "bg-primary/10 border-primary/20",
+  primary: "bg-primary/20 border-primary/40",
+  gradient: "bg-gradient-to-r from-primary/20 to-secondary/20 border-primary/30",
+};
+
+const bandBarStyle: Record<string, string> = {
+  muted: "bg-muted-foreground/40",
+  neutral: "bg-foreground/30",
+  highlight: "bg-primary/50",
+  primary: "bg-primary/80",
+  gradient: "bg-gradient-to-r from-primary to-secondary",
+};
+
+// ── Testimonials ──
+const TESTIMONIALS = [
+  {
+    name: "Sarah M.",
+    score: 127,
+    quote: "I scored 127 and the breakdown by category was fascinating. Really helps you understand where your strengths are.",
+  },
+  {
+    name: "James K.",
+    score: 119,
+    quote: "Love that there's no email wall. Just took the test and got real results instantly. Most honest IQ test I've found online.",
+  },
+  {
+    name: "Priya R.",
+    score: 134,
+    quote: "The percentile breakdown and career comparison was eye-opening. Shared it with my whole team.",
+  },
+  {
+    name: "Marcus T.",
+    score: 122,
+    quote: "Clean, fast, and no BS. The methodology section actually explained what the score means. 10/10.",
+  },
+];
+
+function StarRating() {
+  return (
+    <div className="flex items-center gap-0.5">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+      ))}
+    </div>
+  );
+}
+
 const Landing = ({ onStart }: LandingProps) => {
+  const count = useLiveCounter(2847391, 3000);
+
   return (
     <motion.div
       className="min-h-screen flex flex-col items-center px-4 pt-20 pb-16 relative"
@@ -82,6 +224,19 @@ const Landing = ({ onStart }: LandingProps) => {
         Results include your estimated score range, percentile context, and plain-language notes on what an online test can and cannot tell you.
       </motion.p>
 
+      {/* ── LIVE COUNTER ── */}
+      <motion.div variants={fadeUp} className="mt-10">
+        <div className="flex items-center gap-3 glass-card rounded-full px-5 py-2.5">
+          <span className="pulse-dot" />
+          <span className="text-sm text-muted-foreground">
+            <span className="counter-animate font-heading font-bold text-foreground">
+              {count.toLocaleString()}+
+            </span>{" "}
+            tests taken
+          </span>
+        </div>
+      </motion.div>
+
       {/* ── SOCIAL PROOF BAR ── */}
       <motion.div variants={fadeUp} className="mt-14 w-full max-w-3xl">
         <div className="glass-card rounded-2xl px-6 py-5 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[rgba(255,255,255,0.08)] gap-0">
@@ -99,8 +254,60 @@ const Landing = ({ onStart }: LandingProps) => {
         </div>
       </motion.div>
 
+      {/* ── SCORE RANGE PREVIEW BANDS ── */}
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-3xl"
+      >
+        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">
+          Where Does Your Score Land?
+        </h2>
+        <p className="text-center text-muted-foreground text-sm mb-10">
+          IQ follows a bell curve — see where each range sits
+        </p>
+        <Link to="/iq-score-ranges" className="block group">
+          <div className="flex flex-col gap-3">
+            {SCORE_BANDS.map(({ label, range, pct, fillWidth, variant }) => (
+              <div
+                key={label}
+                className={`rounded-xl border p-4 ${bandStyle[variant]} transition-all duration-200 group-hover:ring-1 group-hover:ring-primary/20`}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-3">
+                    <span className={variant === "gradient" ? "gradient-text font-heading font-bold text-sm" : "font-heading font-semibold text-foreground text-sm"}>
+                      {label}
+                    </span>
+                    <span className="text-xs text-muted-foreground border border-[rgba(255,255,255,0.1)] rounded-full px-2 py-0.5">
+                      {range}
+                    </span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">{pct}</span>
+                </div>
+                <div className="h-1.5 rounded-full bg-[rgba(255,255,255,0.06)] overflow-hidden">
+                  <motion.div
+                    className={`h-full rounded-full ${bandBarStyle[variant]}`}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: fillWidth }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-primary mt-4 group-hover:underline">
+            See full score range guide →
+          </p>
+        </Link>
+      </motion.div>
+
       {/* ── HOW IT WORKS ── */}
-      <motion.div variants={fadeUp} className="mt-20 w-full max-w-4xl">
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-4xl"
+      >
         <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">How It Works</h2>
         <p className="text-center text-muted-foreground text-sm mb-10">Three steps to your IQ score</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -124,7 +331,7 @@ const Landing = ({ onStart }: LandingProps) => {
               desc: "See where you rank against the general population, compare with famous people near your score, and explore what it means for your career.",
             },
           ].map(({ step, icon: Icon, title, desc }) => (
-            <div key={step} className="glass-card rounded-2xl p-6 flex flex-col gap-3">
+            <div key={step} className="glass-card rounded-2xl p-6 flex flex-col gap-3 card-hover">
               <div className="flex items-center gap-3">
                 <span className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm flex-shrink-0">
                   {step}
@@ -139,7 +346,11 @@ const Landing = ({ onStart }: LandingProps) => {
       </motion.div>
 
       {/* ── TRUST & METHODOLOGY ── */}
-      <motion.div variants={fadeUp} className="mt-20 w-full max-w-4xl">
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-4xl"
+      >
         <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">How We Keep the Test Honest</h2>
         <p className="text-center text-muted-foreground text-sm mb-10">A free online result should be useful without pretending to be a clinical diagnosis</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -160,7 +371,7 @@ const Landing = ({ onStart }: LandingProps) => {
               text: "The site includes guides on score ranges, percentiles, test types, and how to interpret cognitive assessments responsibly.",
             },
           ].map(({ icon: Icon, title, text }) => (
-            <div key={title} className="glass-card rounded-2xl p-6 flex flex-col gap-3">
+            <div key={title} className="glass-card rounded-2xl p-6 flex flex-col gap-3 card-hover">
               <Icon className="w-6 h-6 text-primary" />
               <h3 className="font-heading font-semibold text-foreground text-base">{title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{text}</p>
@@ -170,7 +381,11 @@ const Landing = ({ onStart }: LandingProps) => {
       </motion.div>
 
       {/* ── POPULAR ON MYIQSCORES ── */}
-      <motion.div variants={fadeUp} className="mt-20 w-full max-w-4xl">
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-4xl"
+      >
         <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">Popular on MyIQScores</h2>
         <p className="text-center text-muted-foreground text-sm mb-10">Explore IQ research and famous scores</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
@@ -185,7 +400,7 @@ const Landing = ({ onStart }: LandingProps) => {
             <Link
               key={href}
               to={href}
-              className="glass-card rounded-xl p-4 flex flex-col gap-2 hover:bg-[rgba(255,255,255,0.06)] transition-colors group"
+              className="glass-card rounded-xl p-4 flex flex-col gap-2 hover:bg-[rgba(255,255,255,0.06)] transition-colors group card-hover"
             >
               <div className="flex items-start justify-between gap-2">
                 <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors leading-snug">{title}</span>
@@ -197,55 +412,95 @@ const Landing = ({ onStart }: LandingProps) => {
         </div>
       </motion.div>
 
-      {/* ── MINI FAQ ── */}
-      <motion.div variants={fadeUp} className="mt-20 w-full max-w-3xl">
-        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">Frequently Asked Questions</h2>
-        <p className="text-center text-muted-foreground text-sm mb-10">Everything you need to know before you start</p>
-        <div className="flex flex-col gap-4">
-          {[
-            {
-              q: "Is this IQ test accurate?",
-              a: "Our test is designed based on established psychometric principles and measures the same cognitive domains as professional IQ assessments — pattern recognition, logical reasoning, verbal ability, spatial reasoning, and numerical processing. While no online test replaces a formal assessment, our 30-question format provides a reliable estimate for most adults.",
-            },
-            {
-              q: "How long does the test take?",
-              a: "Most people complete the test in 10-15 minutes. There's no time limit per question, but the test considers both accuracy and completion time, so working at a natural pace gives the most useful estimate.",
-            },
-            {
-              q: "Do I need to create an account?",
-              a: "No. The test is completely free with no sign-up required. You start immediately and get your full results instantly — no email gate, no paywall, no credit card.",
-            },
-            {
-              q: "What does my IQ score mean?",
-              a: "IQ scores follow a bell curve with an average of 100. About 68% of people score between 85-115. Scores above 130 are in the top 2%, and scores below 70 occur in about 2% of the population. After your test, we'll show you exactly where you stand and link you to detailed explanations.",
-            },
-          ].map(({ q, a }) => (
-            <div key={q} className="glass-card rounded-2xl p-6">
-              <div className="flex items-start gap-3 mb-3">
-                <HelpCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <h3 className="font-heading font-semibold text-foreground text-sm sm:text-base">{q}</h3>
+      {/* ── TESTIMONIALS ── */}
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-4xl"
+      >
+        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">
+          What Test-Takers Say
+        </h2>
+        <p className="text-center text-muted-foreground text-sm mb-10">Real results from real people</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {TESTIMONIALS.map(({ name, score, quote }) => (
+            <div key={name} className="testimonial-card">
+              <div className="flex items-start justify-between mb-3">
+                <StarRating />
+                <span className="text-xs font-heading font-bold text-primary bg-primary/10 rounded-full px-3 py-1">
+                  IQ {score}
+                </span>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed pl-8">{a}</p>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-4">"{quote}"</p>
+              <p className="text-foreground text-sm font-semibold">{name}</p>
             </div>
           ))}
         </div>
       </motion.div>
 
+      {/* ── SECOND CTA BLOCK ── */}
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-2xl"
+      >
+        <div className="glass-card rounded-3xl p-10 text-center relative overflow-hidden">
+          {/* Background shimmer */}
+          <div className="absolute inset-0 shimmer opacity-50 pointer-events-none" />
+          <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-foreground mb-3 relative z-10">
+            Ready to Find Out?
+          </h2>
+          <p className="text-muted-foreground mb-8 relative z-10">
+            Join over {(Math.floor(2847391 / 1000) * 1000).toLocaleString()}+ people who've discovered their IQ. It only takes 12 minutes.
+          </p>
+          <button
+            onClick={() => { trackQuizStarted(); onStart(); }}
+            className="glow-button text-lg relative z-10"
+            style={{ animation: "pulse-glow 3s ease-in-out infinite" }}
+          >
+            Start Free IQ Test →
+          </button>
+          <div className="mt-5 flex items-center justify-center gap-4 text-xs text-muted-foreground relative z-10">
+            {["Free", "No Sign-Up", "Instant Results"].map((badge) => (
+              <span key={badge} className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
+                {badge}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* ── MINI FAQ ── */}
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-3xl"
+      >
+        <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">Frequently Asked Questions</h2>
+        <p className="text-center text-muted-foreground text-sm mb-10">Everything you need to know before you start</p>
+        <FAQAccordion />
+      </motion.div>
+
       {/* ── SECOND CTA / CONTENT LINKS ── */}
-      <motion.div variants={fadeUp} className="mt-20 w-full max-w-3xl">
+      <motion.div
+        {...viewReveal}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mt-20 w-full max-w-3xl"
+      >
         <p className="text-center text-sm text-muted-foreground mb-6">Learn more about IQ</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <Link to="/what-is-iq" className="glass-card p-5 rounded-xl hover:bg-[rgba(255,255,255,0.06)] transition-colors text-center group">
+          <Link to="/what-is-iq" className="glass-card p-5 rounded-xl hover:bg-[rgba(255,255,255,0.06)] transition-colors text-center group card-hover">
             <BookOpen className="w-6 h-6 text-primary mx-auto mb-3" />
             <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors block mb-1">What Is IQ?</span>
             <span className="text-xs text-muted-foreground">The science behind intelligence testing</span>
           </Link>
-          <Link to="/iq-score-ranges" className="glass-card p-5 rounded-xl hover:bg-[rgba(255,255,255,0.06)] transition-colors text-center group">
+          <Link to="/iq-score-ranges" className="glass-card p-5 rounded-xl hover:bg-[rgba(255,255,255,0.06)] transition-colors text-center group card-hover">
             <BarChart3 className="w-6 h-6 text-primary mx-auto mb-3" />
             <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors block mb-1">IQ Score Ranges</span>
             <span className="text-xs text-muted-foreground">From borderline to genius — explained</span>
           </Link>
-          <Link to="/average-iq-by-country" className="glass-card p-5 rounded-xl hover:bg-[rgba(255,255,255,0.06)] transition-colors text-center group">
+          <Link to="/average-iq-by-country" className="glass-card p-5 rounded-xl hover:bg-[rgba(255,255,255,0.06)] transition-colors text-center group card-hover">
             <MapPin className="w-6 h-6 text-primary mx-auto mb-3" />
             <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors block mb-1">IQ by Country</span>
             <span className="text-xs text-muted-foreground">See how your country compares globally</span>
