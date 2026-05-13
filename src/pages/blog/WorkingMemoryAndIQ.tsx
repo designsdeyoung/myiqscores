@@ -10,7 +10,7 @@ const articleSchema = {
     "Working memory is one of the strongest predictors of IQ and academic success. Here's how this cognitive system works and how to improve it.",
   datePublished: "2026-04-24",
   dateModified: "2026-04-24",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

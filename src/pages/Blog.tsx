@@ -26,6 +26,11 @@ const posts = [
   { slug: "multiple-intelligences-theory", category: "Science", categoryColor: "hsl(var(--primary))", title: "Multiple Intelligences Theory: What Gardner Said vs. What Science Shows", excerpt: "Howard Gardner's famous theory is widely taught but widely misunderstood. Here's the honest assessment.", readTime: "10 min read", date: "April 29, 2026" },
   { slug: "iq-and-creativity", category: "Research", categoryColor: "#F59E0B", title: "IQ and Creativity: Are More Intelligent People More Creative?", excerpt: "Research reveals a surprising threshold effect in the IQ-creativity relationship — and what drives genius-level creativity.", readTime: "9 min read", date: "April 29, 2026" },
   { slug: "iq-and-leadership", category: "Research", categoryColor: "#F59E0B", title: "IQ and Leadership: Does Intelligence Make a Better Leader?", excerpt: "IQ predicts leadership — but only up to a point. Research reveals what actually distinguishes great leaders.", readTime: "9 min read", date: "April 30, 2026" },
+  { slug: "can-you-raise-your-iq", category: "Brain Training", categoryColor: "#22c55e", title: "Can You Actually Raise Your IQ? The Science Behind Neuroplasticity", excerpt: "Neuroplasticity research suggests targeted training can improve specific cognitive abilities. But does it actually raise your IQ score?", readTime: "9 min read", date: "May 1, 2026" },
+  { slug: "history-of-iq-testing", category: "Science", categoryColor: "hsl(var(--primary))", title: "The History of IQ Testing: From Binet to Modern Assessments", excerpt: "IQ testing began in 1905 as a tool to identify students needing help. How did it become one of the most debated measures in psychology?", readTime: "11 min read", date: "May 3, 2026" },
+  { slug: "iq-and-income", category: "Research", categoryColor: "#F59E0B", title: "IQ and Income: Does Higher Intelligence Mean Higher Earnings?", excerpt: "The IQ-income correlation is real but modest. Understanding the mechanisms — and the exceptions — reveals what intelligence actually predicts.", readTime: "10 min read", date: "May 6, 2026" },
+  { slug: "gifted-children-iq", category: "Science", categoryColor: "hsl(var(--primary))", title: "Gifted Children and IQ: Identification, Development, and What Parents Should Know", excerpt: "What does it actually mean for a child to be cognitively gifted? How should parents and educators respond to high IQ scores?", readTime: "10 min read", date: "May 8, 2026" },
+  { slug: "iq-and-longevity", category: "Research", categoryColor: "#F59E0B", title: "IQ and Longevity: Why Smarter People Tend to Live Longer", excerpt: "Childhood IQ is one of the strongest predictors of mortality in old age. The reasons are surprising — and largely modifiable.", readTime: "9 min read", date: "May 10, 2026" },
 ];
 
 const topicClusters = [
@@ -73,7 +78,7 @@ const blogSchema = {
     url: `https://www.myiqscores.com/blog/${post.slug}`,
     datePublished: "2026-04-06",
     dateModified: "2026-04-30",
-    author: { "@type": "Organization", name: "MyIQScores" },
+    author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   })),
 };
 

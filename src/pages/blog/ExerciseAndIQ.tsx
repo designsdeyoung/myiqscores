@@ -10,7 +10,7 @@ const articleSchema = {
     "Aerobic exercise reliably improves IQ-related cognitive abilities. Research reveals exactly how movement changes the brain and which types of exercise are most effective.",
   datePublished: "2026-04-28",
   dateModified: "2026-04-28",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

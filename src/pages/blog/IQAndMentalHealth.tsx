@@ -10,7 +10,7 @@ const articleSchema = {
     "The relationship between IQ and mental health is more complex than stereotypes suggest. Research reveals surprising links between cognitive ability and psychological wellbeing.",
   datePublished: "2026-04-20",
   dateModified: "2026-04-20",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

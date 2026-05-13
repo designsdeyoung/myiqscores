@@ -10,7 +10,7 @@ const articleSchema = {
     "Is there a link between high IQ and creativity? Research reveals a complex 'threshold theory' — and explains why some of the most creative people aren't necessarily the highest IQ scorers.",
   datePublished: "2026-04-29",
   dateModified: "2026-04-29",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

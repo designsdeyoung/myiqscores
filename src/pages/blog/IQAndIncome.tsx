@@ -10,7 +10,7 @@ const articleSchema = {
     "What does the research actually say about the relationship between IQ and income? NLSY79 data, correlation coefficients, diminishing returns, and what matters more than IQ.",
   datePublished: "2026-05-09",
   dateModified: "2026-05-09",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

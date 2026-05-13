@@ -10,7 +10,7 @@ const articleSchema = {
     "Howard Gardner's theory of multiple intelligences is widely taught but widely misunderstood. Here's what it says, what the science shows, and how it relates to IQ.",
   datePublished: "2026-04-30",
   dateModified: "2026-04-30",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

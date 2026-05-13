@@ -10,7 +10,7 @@ const articleSchema = {
     "Neuroplasticity, working memory training, exercise, sleep, and nutrition all influence IQ. Here's what the research actually shows about raising your intelligence.",
   datePublished: "2026-05-09",
   dateModified: "2026-05-09",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

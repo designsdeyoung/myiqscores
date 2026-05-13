@@ -149,6 +149,14 @@ const StateIQHub = () => (
               Average IQ by Country
             </Link>{" "}
             |{" "}
+            <Link to="/iq-by-city" className="text-primary hover:underline">
+              IQ by City
+            </Link>{" "}
+            |{" "}
+            <Link to="/iq-by-career" className="text-primary hover:underline">
+              IQ by Career
+            </Link>{" "}
+            |{" "}
             <Link to="/what-is-iq" className="text-primary hover:underline">
               What Is IQ?
             </Link>{" "}

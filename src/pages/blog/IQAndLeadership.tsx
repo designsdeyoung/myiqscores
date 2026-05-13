@@ -10,7 +10,7 @@ const articleSchema = {
     "How much does IQ predict leadership effectiveness? Research reveals a surprising ceiling effect — and identifies the traits that actually distinguish the best leaders.",
   datePublished: "2026-04-30",
   dateModified: "2026-04-30",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 

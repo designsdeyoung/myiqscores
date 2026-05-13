@@ -10,7 +10,7 @@ const articleSchema = {
     "What you eat profoundly influences how your brain performs. From omega-3s to iron to iodine, here's what the science says about nutrition and IQ.",
   datePublished: "2026-04-18",
   dateModified: "2026-04-18",
-  author: { "@type": "Organization", name: "MyIQScores" },
+  author: { "@type": "Person", name: "MyIQScores Editorial Team", url: "https://www.myiqscores.com/about" },
   publisher: { "@type": "Organization", name: "MyIQScores", url: "https://www.myiqscores.com" },
 };
 
