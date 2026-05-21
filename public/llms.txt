@@ -22,11 +22,19 @@
 
 ## Data Hubs
 
+- [Average IQ Score](https://www.myiqscores.com/average-iq): Why IQ averages 100, bell curve distribution, and how scores vary by age, country, and education.
 - [Average IQ by Country](https://www.myiqscores.com/average-iq-by-country): Country-level estimates with methodology caveats.
 - [Average IQ by State](https://www.myiqscores.com/average-iq-by-state): US state-level educational data context.
 - [IQ by Career](https://www.myiqscores.com/iq-by-career): Career-related cognitive demand estimates with cautions against using IQ alone.
 - [Famous IQ Scores](https://www.myiqscores.com/famous-iq): Public-figure IQ estimates clearly labeled as estimates unless verified.
 - [IQ Blog](https://www.myiqscores.com/blog): Research explainers on IQ, success, EQ, cognitive training, and testing accuracy.
+
+## Test Guides
+
+- [What Is an IQ Test?](https://www.myiqscores.com/iq-test): How IQ tests work, what they measure, score ranges, and the difference between online estimates and clinical assessments.
+- [Practice IQ Test](https://www.myiqscores.com/practice-iq-test): Worked examples of pattern recognition, analogies, spatial reasoning, and number sequences used in IQ-style tests.
+- [How It Works](https://www.myiqscores.com/how-it-works): Step-by-step explanation of MyIQScores' question design, scoring, and result interpretation.
+- [Disclaimer](https://www.myiqscores.com/disclaimer): Educational purpose statement, accuracy limitations, and guidance for users seeking clinical assessment.
 
 ## High-Intent Converters
 
