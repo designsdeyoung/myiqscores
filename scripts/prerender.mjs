@@ -11,7 +11,7 @@ const serverEntry = path.resolve(distDir, "server/entry-server.js");
 // from the compiled server bundle so new entries flow through automatically.
 const staticRoutes = [
   "/",
-  "/test",
+  // "/test" is the same page as "/" with canonical → "/" — excluded from sitemap
   "/what-is-iq",
   "/iq-score-ranges",
   "/average-iq-by-country",
@@ -28,6 +28,12 @@ const staticRoutes = [
   "/average-iq-us",
   "/iq-of-presidents",
   "/low-iq",
+  // Hub pages
+  "/average-iq",
+  "/iq-test",
+  "/practice-iq-test",
+  "/how-it-works",
+  "/disclaimer",
   "/blog",
   "/blog/what-is-iq-score",
   "/blog/how-to-increase-iq",
@@ -69,6 +75,10 @@ const staticRoutes = [
   "/blog/iq-and-income",
   "/blog/gifted-children-iq",
   "/blog/iq-and-longevity",
+  "/blog/dunning-kruger-effect",
+  "/blog/iq-and-age",
+  "/blog/twice-exceptional-adhd-high-iq",
+  "/blog/poverty-and-iq",
 ];
 
 function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs }) {
@@ -88,16 +98,26 @@ function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, a
   ];
 }
 
+const HIGH_PRIORITY_ROUTES = new Set([
+  "/what-is-iq", "/iq-score-ranges", "/iq-percentile-chart", "/good-iq-score",
+  "/genius-iq", "/how-to-improve-iq", "/average-iq-by-country", "/average-iq-us",
+  "/famous-iq", "/iq-by-career", "/average-iq-by-state", "/average-iq",
+  "/iq-test", "/practice-iq-test", "/types-of-iq-tests", "/iq-compare",
+  "/iq-by-major", "/iq-by-city", "/highest-iq-ever", "/mensa-iq-test",
+  "/low-iq", "/iq-vs-eq", "/iq-of-presidents", "/blog",
+]);
+
 function writeSitemap(routes) {
   const today = new Date().toISOString().slice(0, 10);
   const uniqueRoutes = [...new Set(routes)];
   const urls = uniqueRoutes
     .map((route) => {
       const loc = route === "/" ? "https://www.myiqscores.com" : `https://www.myiqscores.com${route}`;
-      const isHome = route === "/" || route === "/test";
-      const isBlog = route.includes("/blog");
-      const priority = isHome ? "1.0" : isBlog ? "0.8" : "0.7";
-      const changefreq = isHome ? "weekly" : isBlog ? "weekly" : "monthly";
+      const isHome = route === "/";
+      const isBlog = route.startsWith("/blog/");
+      const isHub = HIGH_PRIORITY_ROUTES.has(route);
+      const priority = isHome ? "1.0" : isHub ? "0.9" : isBlog ? "0.8" : "0.7";
+      const changefreq = isHome ? "weekly" : isBlog ? "weekly" : isHub ? "monthly" : "monthly";
       return [
         "  <url>",
         `    <loc>${loc}</loc>`,

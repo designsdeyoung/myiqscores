@@ -148,11 +148,11 @@ const Index = () => {
                 <h3 className="font-heading font-semibold text-foreground mb-3">Tools &amp; Tests</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li><Link to="/" className="hover:text-foreground transition-colors">Free IQ Test</Link></li>
+                  <li><Link to="/iq-test" className="hover:text-foreground transition-colors">What Is an IQ Test?</Link></li>
+                  <li><Link to="/practice-iq-test" className="hover:text-foreground transition-colors">Practice IQ Test</Link></li>
+                  <li><Link to="/average-iq" className="hover:text-foreground transition-colors">Average IQ Score</Link></li>
                   <li><Link to="/sat-to-iq" className="hover:text-foreground transition-colors">SAT to IQ</Link></li>
                   <li><Link to="/iq-percentile-chart" className="hover:text-foreground transition-colors">IQ Percentile Chart</Link></li>
-                  <li><Link to="/average-iq-by-country" className="hover:text-foreground transition-colors">Average IQ by Country</Link></li>
-                  <li><Link to="/average-iq-us" className="hover:text-foreground transition-colors">Average IQ in US</Link></li>
-                  <li><Link to="/iq-of-presidents" className="hover:text-foreground transition-colors">IQ of Presidents</Link></li>
                 </ul>
               </div>
 
@@ -161,11 +161,11 @@ const Index = () => {
                 <h3 className="font-heading font-semibold text-foreground mb-3">Company</h3>
                 <ul className="space-y-2 text-muted-foreground">
                   <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
+                  <li><Link to="/how-it-works" className="hover:text-foreground transition-colors">How It Works</Link></li>
                   <li><Link to="/methodology" className="hover:text-foreground transition-colors">Methodology</Link></li>
-                  <li><Link to="/editorial-policy" className="hover:text-foreground transition-colors">Editorial Policy</Link></li>
                   <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
                   <li><Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-                  <li><Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
+                  <li><Link to="/disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link></li>
                 </ul>
               </div>
             </div>

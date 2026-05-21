@@ -50,6 +50,11 @@ import Unsubscribe from "./pages/Unsubscribe.tsx";
 import AverageIQUS from "./pages/AverageIQUS.tsx";
 import PresidentIQ from "./pages/PresidentIQ.tsx";
 import LowIQ from "./pages/LowIQ.tsx";
+import AverageIQ from "./pages/AverageIQ.tsx";
+import IQTest from "./pages/IQTest.tsx";
+import PracticeIQTest from "./pages/PracticeIQTest.tsx";
+import Disclaimer from "./pages/Disclaimer.tsx";
+import HowItWorks from "./pages/HowItWorks.tsx";
 import Blog from "./pages/Blog.tsx";
 import WhatIsIQScore from "./pages/blog/WhatIsIQScore.tsx";
 import HowToIncreaseIQ from "./pages/blog/HowToIncreaseIQ.tsx";
@@ -164,6 +169,11 @@ export const AppRoutes = () => (
     <Route path="/average-iq-us" element={<AverageIQUS />} />
     <Route path="/iq-of-presidents" element={<PresidentIQ />} />
     <Route path="/low-iq" element={<LowIQ />} />
+    <Route path="/average-iq" element={<AverageIQ />} />
+    <Route path="/iq-test" element={<IQTest />} />
+    <Route path="/practice-iq-test" element={<PracticeIQTest />} />
+    <Route path="/disclaimer" element={<Disclaimer />} />
+    <Route path="/how-it-works" element={<HowItWorks />} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/what-is-iq-score" element={<WhatIsIQScore />} />
     <Route path="/blog/how-to-increase-iq" element={<HowToIncreaseIQ />} />

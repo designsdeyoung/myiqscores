@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { supabase } from "@/integrations/supabase/client";
 
 type Status = "loading" | "valid" | "already" | "invalid" | "success" | "error";
@@ -39,6 +40,11 @@ const Unsubscribe = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex,nofollow" />
+        <title>Unsubscribe | MyIQScores</title>
+      </Helmet>
     <div className="min-h-screen flex items-center justify-center px-4"
       style={{ background: "radial-gradient(ellipse at 50% 30%, #12183B 0%, #0A0E1A 70%)" }}>
       <div className="glass-card p-8 max-w-md w-full text-center">
@@ -67,6 +73,7 @@ const Unsubscribe = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

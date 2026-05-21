@@ -392,6 +392,7 @@ const ContentPage = ({
               <ul className="space-y-2 text-muted-foreground">
                 <li><Link to="/what-is-iq" className="hover:text-foreground transition-colors">What Is IQ?</Link></li>
                 <li><Link to="/iq-score-ranges" className="hover:text-foreground transition-colors">IQ Score Ranges</Link></li>
+                <li><Link to="/average-iq" className="hover:text-foreground transition-colors">Average IQ Score</Link></li>
                 <li><Link to="/average-iq-by-country" className="hover:text-foreground transition-colors">Average IQ by Country</Link></li>
                 <li><Link to="/iq-by-career" className="hover:text-foreground transition-colors">IQ by Career</Link></li>
                 <li><Link to="/famous-iq" className="hover:text-foreground transition-colors">Famous People IQs</Link></li>
@@ -400,15 +401,15 @@ const ContentPage = ({
               </ul>
             </div>
             <div>
-              <h3 className="font-heading font-semibold text-foreground mb-3">Guides</h3>
+              <h3 className="font-heading font-semibold text-foreground mb-3">Tests &amp; Guides</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><Link to="/test" className="hover:text-foreground transition-colors font-medium text-primary">Take the Free IQ Test</Link></li>
+                <li><Link to="/" className="hover:text-foreground transition-colors font-medium text-primary">Take the Free IQ Test</Link></li>
+                <li><Link to="/iq-test" className="hover:text-foreground transition-colors">What Is an IQ Test?</Link></li>
+                <li><Link to="/practice-iq-test" className="hover:text-foreground transition-colors">Practice IQ Test</Link></li>
                 <li><Link to="/how-to-improve-iq" className="hover:text-foreground transition-colors">How to Improve Your IQ</Link></li>
                 <li><Link to="/sat-to-iq" className="hover:text-foreground transition-colors">SAT to IQ Conversion</Link></li>
-                <li><Link to="/iq-vs-eq" className="hover:text-foreground transition-colors">IQ vs EQ</Link></li>
                 <li><Link to="/genius-iq" className="hover:text-foreground transition-colors">Genius IQ Guide</Link></li>
-                <li><Link to="/mensa-iq-test" className="hover:text-foreground transition-colors">Mensa IQ Test</Link></li>
-                <li><Link to="/blog" className="hover:text-foreground transition-colors">All Blog Articles</Link></li>
+                <li><Link to="/how-it-works" className="hover:text-foreground transition-colors">How It Works</Link></li>
               </ul>
             </div>
           </div>
@@ -416,10 +417,11 @@ const ContentPage = ({
             <span>&copy; {new Date().getFullYear()} MyIQScores™. All rights reserved.</span>
             <div className="flex items-center gap-4">
               <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
+              <Link to="/how-it-works" className="hover:text-foreground transition-colors">How It Works</Link>
               <Link to="/methodology" className="hover:text-foreground transition-colors">Methodology</Link>
-              <Link to="/editorial-policy" className="hover:text-foreground transition-colors">Editorial Policy</Link>
               <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
               <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+              <Link to="/disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link>
               <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
             </div>
           </div>
