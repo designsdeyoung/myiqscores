@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
 import { questions } from "@/data/questions";
-import { Check, Zap } from "lucide-react";
+import { Check, Zap, ChevronLeft } from "lucide-react";
 import { trackQuizQuestionAnswered, trackQuizCompleted } from "@/lib/analytics";
 
 interface QuizProps {
@@ -76,6 +76,30 @@ const Quiz = ({ onComplete }: QuizProps) => {
     setAnswers(a);
     trackQuizQuestionAnswered(currentQ + 1);
   };
+
+  const handleBack = () => {
+    if (currentQ === 0) return;
+    setDirection(-1);
+    const prevQ = currentQ - 1;
+    setSelectedOption(answers[prevQ] ?? null);
+    setCurrentQ(prevQ);
+  };
+
+  // Keyboard shortcuts: 1-4 select option, Enter/ArrowRight advances, ArrowLeft goes back
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (showInterstitial) return;
+      if (e.key >= "1" && e.key <= "4") {
+        const idx = parseInt(e.key) - 1;
+        if (idx < questions[currentQ].options.length) {
+          setSelectedOption(idx);
+          setAnswers((prev) => { const a = [...prev]; a[currentQ] = idx; return a; });
+        }
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [currentQ, showInterstitial]);
 
   const handleNext = () => {
     if (currentQ === 9 || currentQ === 19) {
@@ -167,11 +191,19 @@ const Quiz = ({ onComplete }: QuizProps) => {
       <div className="fixed top-16 left-0 right-0 z-40 glass-card border-b border-[rgba(255,255,255,0.06)]">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
           <span className="text-sm text-muted-foreground font-medium">
-            Question <span className="text-foreground">{currentQ + 1}</span> of 30
+            Question <span className="text-foreground font-bold">{currentQ + 1}</span> of 30
+            <span className="hidden sm:inline text-xs ml-2 text-muted-foreground/50">· {q.category}</span>
           </span>
-          <span className="font-mono text-xs text-muted-foreground">
-            ⏱ {formatTime(elapsed)}
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-xs text-muted-foreground">
+              ⏱ {formatTime(elapsed)}
+            </span>
+            {currentQ > 0 && elapsed > 0 && (
+              <span className="hidden sm:inline text-xs text-muted-foreground/50">
+                ~{formatTime(Math.round((elapsed / currentQ) * (30 - currentQ)))} left
+              </span>
+            )}
+          </div>
         </div>
         <div className="h-0.5 bg-[rgba(255,255,255,0.05)]">
           <motion.div
@@ -257,6 +289,11 @@ const Quiz = ({ onComplete }: QuizProps) => {
                 </div>
               </div>
 
+              {/* Keyboard shortcut hint — desktop only */}
+              <p className="hidden sm:block text-xs text-muted-foreground/40 text-right mt-2">
+                Press <kbd className="font-mono bg-[rgba(255,255,255,0.06)] px-1.5 py-0.5 rounded text-[10px]">1</kbd>–<kbd className="font-mono bg-[rgba(255,255,255,0.06)] px-1.5 py-0.5 rounded text-[10px]">4</kbd> to select
+              </p>
+
               {/* Milestone encouragement message */}
               {milestone && (
                 <motion.div
@@ -271,8 +308,16 @@ const Quiz = ({ onComplete }: QuizProps) => {
                 </motion.div>
               )}
 
-              {/* Next button */}
-              <div className="mt-5 flex justify-end">
+              {/* Navigation buttons */}
+              <div className="mt-5 flex items-center justify-between">
+                <button
+                  onClick={handleBack}
+                  disabled={currentQ === 0}
+                  className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors disabled:opacity-30 disabled:cursor-not-allowed px-3 py-2"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  Previous
+                </button>
                 <button
                   onClick={handleNext}
                   disabled={selectedOption === null}

@@ -97,6 +97,16 @@ function formatElapsed(s: number): string {
   return `${m} minute${m !== 1 ? "s" : ""} ${sec} second${sec !== 1 ? "s" : ""}`;
 }
 
+function getScoreContext(iq: number): string {
+  if (iq >= 145) return "Scores in this range represent approximately 1 in 1,000 people.";
+  if (iq >= 130) return "You're in the top 2% — the threshold for Mensa membership.";
+  if (iq >= 120) return "Top 10% of the population. Strongly correlates with advanced academic performance.";
+  if (iq >= 110) return "Above the national average. This range is common among college graduates.";
+  if (iq >= 100) return "Right at the statistical norm — exactly 50th percentile.";
+  if (iq >= 90)  return "Within the broad average range that encompasses most of the population.";
+  return "Everyone has different cognitive strengths — a single test doesn't capture them all.";
+}
+
 function getRecommendations(iq: number): { title: string; href: string }[] {
   if (iq >= 130) {
     return [
@@ -152,6 +162,7 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
   const iq = calculateIQ(correctCount);
   const label = getIQLabel(iq);
   const percentile = getPercentile(iq);
+  const scoreContext = getScoreContext(iq);
   const catScores = getCategoryScores(answers);
   const recommendations = getRecommendations(iq);
 
@@ -220,16 +231,25 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
     supabase.from("referrals").insert({ referrer_email: userEmail, platform }).then(() => {});
   };
 
-  const handleEmailCapture = (e: React.FormEvent) => {
+  const handleEmailCapture = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!captureEmail) return;
-    localStorage.setItem("iq_report_signup", JSON.stringify({
-      email: captureEmail,
-      score: iq,
-      newsletter: newsletterOptIn,
-      savedAt: new Date().toISOString(),
-    }));
     setEmailSubmitted(true);
+    try {
+      await supabase.from("leads").upsert({
+        id: crypto.randomUUID(),
+        email: captureEmail,
+        iq_score: iq,
+        correct_answers: correctCount,
+        newsletter_opt_in: newsletterOptIn,
+      }, { onConflict: "email" });
+    } catch (err) {
+      console.error("Email capture failed:", err);
+    }
+    // Fire-and-forget nurture sequence (non-blocking — never shows errors to user)
+    supabase.functions.invoke("schedule-nurture-emails", {
+      body: { email: captureEmail, name: userName || undefined, iqScore: iq, label, percentile },
+    }).catch(() => {});
   };
 
   const catColors: Record<string, string> = {
@@ -312,9 +332,12 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
           >
             {label}
           </motion.p>
+          <motion.p variants={fadeUp} className="text-sm text-muted-foreground mt-2 max-w-xs mx-auto">
+            {scoreContext}
+          </motion.p>
           {elapsed > 0 && (
-            <p className="text-xs text-muted-foreground/60 mt-2">
-              Completed in {formatElapsed(elapsed)}
+            <p className="text-xs text-muted-foreground/50 mt-3">
+              Completed in {formatElapsed(elapsed)} · {correctCount}/30 correct
             </p>
           )}
         </motion.div>
@@ -379,8 +402,8 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
             animation: "pulse-glow 3s ease-in-out infinite",
           }}
         >
-          <div className="absolute top-3 right-3 bg-success/20 text-success text-xs font-bold px-2 py-1 rounded-full animate-pulse">
-            60% Off — Limited Time
+          <div className="absolute top-3 right-3 bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-full">
+            Most Popular
           </div>
           <div className="flex items-center gap-2 mb-2">
             <Lock className="w-5 h-5 text-primary" />
@@ -532,45 +555,47 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
           </div>
         </motion.div>
 
-        {/* SECTION E: Email Capture */}
-        <motion.div variants={fadeUp} className="glass-card p-6 mb-6">
-          <h3 className="font-heading font-bold text-foreground mb-1">📧 Get Your Detailed IQ Report</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            Enter your email to receive a personalized breakdown of your cognitive strengths, career recommendations based on your score, and tips to improve your IQ.
-          </p>
-          {emailSubmitted ? (
-            <div className="text-center py-3">
-              <p className="text-success font-medium">✓ Check your inbox! Your report is on the way.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleEmailCapture} className="space-y-3">
-              <input
-                type="email"
-                value={captureEmail}
-                onChange={(e) => setCaptureEmail(e.target.value)}
-                placeholder="you@example.com"
-                required
-                className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50"
-              />
-              <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+        {/* SECTION E: Email Capture — only shown if no email was collected upfront */}
+        {!userEmail && (
+          <motion.div variants={fadeUp} className="glass-card p-6 mb-6">
+            <h3 className="font-heading font-bold text-foreground mb-1">📧 Get Your Detailed IQ Report</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Enter your email to receive a personalized breakdown of your cognitive strengths, career recommendations based on your score, and tips to improve your IQ.
+            </p>
+            {emailSubmitted ? (
+              <div className="text-center py-3">
+                <p className="text-success font-medium">✓ Check your inbox! Your report is on the way.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleEmailCapture} className="space-y-3">
                 <input
-                  type="checkbox"
-                  checked={newsletterOptIn}
-                  onChange={(e) => setNewsletterOptIn(e.target.checked)}
-                  className="rounded border-[rgba(255,255,255,0.2)] bg-transparent accent-primary"
+                  type="email"
+                  value={captureEmail}
+                  onChange={(e) => setCaptureEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  required
+                  className="w-full bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50"
                 />
-                Also send me weekly brain teasers
-              </label>
-              <button
-                type="submit"
-                className="w-full py-2.5 rounded-lg font-medium text-sm bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 transition-all"
-              >
-                Send My Report
-              </button>
-              <p className="text-xs text-muted-foreground/50 text-center">No spam, ever. Unsubscribe anytime.</p>
-            </form>
-          )}
-        </motion.div>
+                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={newsletterOptIn}
+                    onChange={(e) => setNewsletterOptIn(e.target.checked)}
+                    className="rounded border-[rgba(255,255,255,0.2)] bg-transparent accent-primary"
+                  />
+                  Also send me weekly brain teasers
+                </label>
+                <button
+                  type="submit"
+                  className="w-full py-2.5 rounded-lg font-medium text-sm bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 transition-all"
+                >
+                  Send My Report
+                </button>
+                <p className="text-xs text-muted-foreground/50 text-center">No spam, ever. Unsubscribe anytime.</p>
+              </form>
+            )}
+          </motion.div>
+        )}
 
         {/* SECTION F: Email Confirmation (if email was collected upfront) */}
         {userEmail && (
@@ -583,6 +608,17 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
             </p>
           </motion.div>
         )}
+
+        {/* Retake + explore CTA */}
+        <motion.div variants={fadeUp} className="text-center mb-6 space-y-3">
+          <Link
+            to="/"
+            className="inline-block border border-[rgba(255,255,255,0.15)] text-muted-foreground hover:text-foreground hover:border-[rgba(255,255,255,0.3)] px-6 py-2.5 rounded-lg text-sm font-medium transition-all hover:scale-[1.02]"
+          >
+            ↩ Retake the Test
+          </Link>
+          <p className="text-xs text-muted-foreground/50">Your previous score will not be saved over</p>
+        </motion.div>
 
         {/* Bottom results ad */}
         <div

@@ -29,7 +29,7 @@ const About = () => (
       </div>
       <div className="glass-card p-5 rounded-xl text-center">
         <BookOpen className="w-8 h-8 text-primary mx-auto mb-3" />
-        <p className="font-heading font-bold text-2xl text-foreground">1,000+</p>
+        <p className="font-heading font-bold text-2xl text-foreground">1,052+</p>
         <p className="text-sm text-muted-foreground">Educational Pages</p>
       </div>
       <div className="glass-card p-5 rounded-xl text-center">
@@ -49,7 +49,7 @@ const About = () => (
       MyIQScores is different. Our test is <strong>completely free</strong> — no credit card, no
       "premium unlock," no bait-and-switch. We provide your score instantly along with a detailed
       breakdown of your cognitive strengths, percentile ranking, and a downloadable certificate.
-      And we back it up with 500+ pages of educational content about IQ, intelligence, and
+      And we back it up with 1,052+ pages of educational content about IQ, intelligence, and
       cognitive science.
     </p>
 

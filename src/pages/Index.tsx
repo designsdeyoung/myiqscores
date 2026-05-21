@@ -34,6 +34,45 @@ const websiteSchema = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is this IQ test accurate?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our test is designed based on established psychometric principles and measures the same cognitive domains as professional IQ assessments — pattern recognition, logical reasoning, verbal ability, spatial reasoning, and numerical processing. While no online test replaces a formal assessment, our 30-question format provides a reliable estimate for most adults.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does the IQ test take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most people complete the test in 10-15 minutes. There's no time limit per question, but the test considers both accuracy and completion time, so working at a natural pace gives the most useful estimate.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need to create an account to take the IQ test?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. The test is completely free with no sign-up required. You start immediately and get your full results instantly — no email gate, no paywall, no credit card.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does my IQ score mean?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "IQ scores follow a bell curve with an average of 100. About 68% of people score between 85-115. Scores above 130 are in the top 2%, and scores below 70 occur in about 2% of the population. After your test, we'll show you exactly where you stand and link you to detailed explanations.",
+      },
+    },
+  ],
+};
+
 const Index = () => {
   const [screen, setScreen] = useState<Screen>("landing");
   const [userData, setUserData] = useState({ name: "", email: "", ageRange: "" });
@@ -76,7 +115,7 @@ const Index = () => {
         title="Free IQ Test — 30 Questions, Instant Score, No Paywall | MyIQScores"
         description="Take a free online IQ-style reasoning test. 30 questions, instant educational results, score ranges, and cognitive learning guides. No sign-up or paywall."
         canonicalUrl="https://www.myiqscores.com"
-        jsonLd={websiteSchema}
+        jsonLd={[websiteSchema, faqSchema]}
       />
       <BackgroundEffect />
       <Navbar />

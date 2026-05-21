@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const Contact = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = () => {
@@ -36,14 +38,34 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "contact-form",
+          recipientEmail: "support@myiqscores.com",
+          idempotencyKey: `contact-${Date.now()}-${formData.email}`,
+          templateData: {
+            senderName: formData.name,
+            senderEmail: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          },
+        },
+      });
+    } catch {
+      // Silently continue — contact details are listed on page as fallback
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -196,8 +218,8 @@ const Contact = () => {
             )}
           </div>
 
-          <button type="submit" className="glow-button w-full sm:w-auto">
-            Send Message →
+          <button type="submit" disabled={submitting} className="glow-button w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed">
+            {submitting ? "Sending…" : "Send Message →"}
           </button>
         </form>
       )}

@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { Brain, ArrowRight, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; // useEffect kept for useActiveSection
 import BackgroundEffect from "./BackgroundEffect";
+import Navbar from "./Navbar";
 import AdUnit from "./AdUnit";
 import AuthorBox from "./AuthorBox";
 import CitationBlock, { Citation } from "./CitationBlock";
 import { AD_SLOTS } from "@/config/adsense";
+import Breadcrumb from "./Breadcrumb";
 
 // ── Scroll Progress Hook ──
 function useScrollProgress() {
@@ -147,34 +149,6 @@ const ContentPage = ({
   const activeId = useActiveSection(tocIds);
   const [tocCollapsed, setTocCollapsed] = useState(true);
 
-  // Organization JSON-LD schema
-  useEffect(() => {
-    const existingScript = document.getElementById("org-schema");
-    if (existingScript) return;
-    const script = document.createElement("script");
-    script.id = "org-schema";
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "MyIQScores",
-      url: "https://www.myiqscores.com",
-      logo: "https://www.myiqscores.com/logo.png",
-      description:
-        "Free IQ estimate and educational guides on intelligence, cognitive testing, and score interpretation.",
-      contactPoint: {
-        "@type": "ContactPoint",
-        email: "support@myiqscores.com",
-        contactType: "customer support",
-      },
-    });
-    document.head.appendChild(script);
-    return () => {
-      const el = document.getElementById("org-schema");
-      if (el) el.remove();
-    };
-  }, []);
-
   return (
     <div className="relative min-h-screen">
       <BackgroundEffect />
@@ -195,7 +169,7 @@ const ContentPage = ({
         />
       </div>
 
-      {/* Sticky Test Banner - appears on scroll */}
+      {/* Sticky Test Banner — mobile only, sits above content */}
       <div className="fixed bottom-0 left-0 right-0 z-40 sm:hidden">
         <Link
           to="/test"
@@ -206,31 +180,10 @@ const ContentPage = ({
         </Link>
       </div>
 
-      {/* Navbar */}
-      <nav className="fixed top-[3px] left-0 right-0 z-50 glass-card border-b border-[rgba(255,255,255,0.06)]">
-        <div className="max-w-6xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-            <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-primary" />
-            <div>
-              <span className="font-heading font-bold text-base sm:text-lg tracking-tight text-foreground">
-                My<span className="text-primary">IQ</span>Scores<sup className="text-[8px] text-muted-foreground/50 ml-0.5">™</sup>
-              </span>
-              <span className="hidden sm:block text-[10px] text-muted-foreground/70 -mt-0.5 tracking-wide">
-                Free IQ Estimate and Learning Guides
-              </span>
-            </div>
-          </Link>
-          <div className="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm text-muted-foreground">
-            <Link to="/what-is-iq" className="hover:text-foreground transition-colors hidden sm:block">What Is IQ?</Link>
-            <Link to="/iq-score-ranges" className="hover:text-foreground transition-colors hidden sm:block">Score Ranges</Link>
-            <Link to="/average-iq-by-country" className="hover:text-foreground transition-colors hidden sm:block">By Country</Link>
-            <Link to="/test" className="glow-button !px-4 !py-2 !text-sm !rounded-lg">Free IQ Test</Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Article Content */}
-      <main className="relative z-10 pt-20 sm:pt-24 pb-16 px-4 sm:pb-16 pb-24">
+      <main className="relative z-10 pt-20 sm:pt-24 pb-24 sm:pb-16 px-4">
         {/* Leaderboard ad — top of content */}
         {showLeaderboard && (
           <div className="max-w-3xl mx-auto mb-6">
@@ -248,6 +201,10 @@ const ContentPage = ({
             />
           </div>
         )}
+
+        <div className="max-w-5xl mx-auto">
+          <Breadcrumb className="mb-4" />
+        </div>
 
         <div className="max-w-5xl mx-auto flex gap-8">
           {/* Main content */}

@@ -15,11 +15,10 @@ import {
   HelpCircle,
   ClipboardCheck,
   Scale,
-  Star,
   Plus,
   Minus,
 } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 const stagger = {
   hidden: {},
@@ -38,18 +37,6 @@ const viewReveal = {
 
 interface LandingProps {
   onStart: () => void;
-}
-
-// ── Live Counter Hook ──
-function useLiveCounter(start: number, tickInterval = 3000) {
-  const [count, setCount] = useState(start);
-  useEffect(() => {
-    const id = setInterval(() => {
-      setCount((c) => c + 1);
-    }, tickInterval);
-    return () => clearInterval(id);
-  }, [tickInterval]);
-  return count;
 }
 
 // ── FAQ Accordion ──
@@ -136,42 +123,41 @@ const bandBarStyle: Record<string, string> = {
   gradient: "bg-gradient-to-r from-primary to-secondary",
 };
 
-// ── Testimonials ──
-const TESTIMONIALS = [
+// ── Sample results preview items ──
+const SAMPLE_RESULTS = [
   {
-    name: "Sarah M.",
-    score: 127,
-    quote: "I scored 127 and the breakdown by category was fascinating. Really helps you understand where your strengths are.",
+    label: "Pattern Recognition",
+    score: "5 / 6",
+    pct: 83,
+    color: "hsl(var(--primary))",
   },
   {
-    name: "James K.",
-    score: 119,
-    quote: "Love that there's no email wall. Just took the test and got real results instantly. Most honest IQ test I've found online.",
+    label: "Logical Reasoning",
+    score: "4 / 6",
+    pct: 67,
+    color: "hsl(var(--secondary))",
   },
   {
-    name: "Priya R.",
-    score: 134,
-    quote: "The percentile breakdown and career comparison was eye-opening. Shared it with my whole team.",
+    label: "Verbal",
+    score: "6 / 6",
+    pct: 100,
+    color: "hsl(var(--success))",
   },
   {
-    name: "Marcus T.",
-    score: 122,
-    quote: "Clean, fast, and no BS. The methodology section actually explained what the score means. 10/10.",
+    label: "Spatial",
+    score: "4 / 6",
+    pct: 67,
+    color: "#F59E0B",
+  },
+  {
+    label: "Numerical",
+    score: "5 / 6",
+    pct: 83,
+    color: "#EC4899",
   },
 ];
 
-function StarRating() {
-  return (
-    <div className="flex items-center gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-      ))}
-    </div>
-  );
-}
-
 const Landing = ({ onStart }: LandingProps) => {
-  const count = useLiveCounter(2847391, 3000);
 
   return (
     <motion.div
@@ -192,13 +178,13 @@ const Landing = ({ onStart }: LandingProps) => {
         variants={fadeUp}
         className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center leading-tight max-w-4xl"
       >
-        <span className="gradient-text">How Smart Are You,</span>
+        <span className="gradient-text">Free IQ Test —</span>
         <br />
-        <span className="gradient-text">Really?</span>
+        <span className="gradient-text">Find Your Score Instantly</span>
       </motion.h1>
 
       <motion.p variants={fadeUp} className="mt-6 text-muted-foreground text-center text-lg sm:text-xl max-w-2xl">
-        Take a free IQ-style reasoning test online. 30 questions. Instant educational results.
+        30 questions across 5 cognitive domains. No sign-up. No paywall. Instant results with a full score breakdown.
       </motion.p>
 
       <motion.div variants={fadeUp} className="mt-10">
@@ -224,15 +210,17 @@ const Landing = ({ onStart }: LandingProps) => {
         Results include your estimated score range, percentile context, and plain-language notes on what an online test can and cannot tell you.
       </motion.p>
 
-      {/* ── LIVE COUNTER ── */}
+      <motion.p variants={fadeUp} className="mt-3 text-xs text-muted-foreground/50 text-center">
+        Basic results always free · Optional detailed report available after
+      </motion.p>
+
+      {/* ── TRUST BADGES ── */}
       <motion.div variants={fadeUp} className="mt-10">
         <div className="flex items-center gap-3 glass-card rounded-full px-5 py-2.5">
           <span className="pulse-dot" />
           <span className="text-sm text-muted-foreground">
-            <span className="counter-animate font-heading font-bold text-foreground">
-              {count.toLocaleString()}+
-            </span>{" "}
-            tests taken
+            <span className="font-heading font-bold text-foreground">Free</span>{" "}
+            · No sign-up · Instant results
           </span>
         </div>
       </motion.div>
@@ -412,29 +400,57 @@ const Landing = ({ onStart }: LandingProps) => {
         </div>
       </motion.div>
 
-      {/* ── TESTIMONIALS ── */}
+      {/* ── SAMPLE RESULTS PREVIEW ── */}
       <motion.div
         {...viewReveal}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mt-20 w-full max-w-4xl"
+        className="mt-20 w-full max-w-3xl"
       >
         <h2 className="font-heading text-2xl sm:text-3xl font-bold text-center text-foreground mb-2">
-          What Test-Takers Say
+          What Your Results Look Like
         </h2>
-        <p className="text-center text-muted-foreground text-sm mb-10">Real results from real people</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {TESTIMONIALS.map(({ name, score, quote }) => (
-            <div key={name} className="testimonial-card">
-              <div className="flex items-start justify-between mb-3">
-                <StarRating />
-                <span className="text-xs font-heading font-bold text-primary bg-primary/10 rounded-full px-3 py-1">
-                  IQ {score}
-                </span>
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">"{quote}"</p>
-              <p className="text-foreground text-sm font-semibold">{name}</p>
+        <p className="text-center text-muted-foreground text-sm mb-10">
+          A sample breakdown — your score varies by performance across 5 cognitive domains
+        </p>
+        <div className="glass-card rounded-2xl p-6 sm:p-8">
+          {/* Sample score header */}
+          <div className="flex items-center justify-between mb-6 pb-5 border-b border-[rgba(255,255,255,0.08)]">
+            <div>
+              <p className="text-xs text-muted-foreground mb-1">Sample IQ Score</p>
+              <p className="text-5xl font-heading font-extrabold gradient-text">118</p>
+              <p className="text-primary text-sm font-semibold mt-1">Above Average</p>
             </div>
-          ))}
+            <div className="text-right">
+              <p className="text-xs text-muted-foreground mb-1">Percentile rank</p>
+              <p className="text-3xl font-heading font-bold text-foreground">88<span className="text-sm text-muted-foreground">th</span></p>
+              <p className="text-xs text-muted-foreground mt-1">Scores higher than 88%</p>
+            </div>
+          </div>
+          {/* Sample category bars */}
+          <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">Category Breakdown</p>
+          <div className="space-y-3">
+            {SAMPLE_RESULTS.map(({ label, score, pct, color }) => (
+              <div key={label}>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-muted-foreground">{label}</span>
+                  <span className="text-foreground font-medium">{score}</span>
+                </div>
+                <div className="h-2 rounded-full bg-[rgba(255,255,255,0.06)] overflow-hidden">
+                  <motion.div
+                    className="h-full rounded-full"
+                    style={{ backgroundColor: color }}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${pct}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground/50 text-center mt-5">
+            Example results for illustration — your actual scores will differ
+          </p>
         </div>
       </motion.div>
 
@@ -451,7 +467,7 @@ const Landing = ({ onStart }: LandingProps) => {
             Ready to Find Out?
           </h2>
           <p className="text-muted-foreground mb-8 relative z-10">
-            Join over {(Math.floor(2847391 / 1000) * 1000).toLocaleString()}+ people who've discovered their IQ. It only takes 12 minutes.
+            A free, no-login IQ-style reasoning test. Takes about 12 minutes. Instant results.
           </p>
           <button
             onClick={() => { trackQuizStarted(); onStart(); }}

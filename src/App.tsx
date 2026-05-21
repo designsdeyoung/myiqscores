@@ -78,6 +78,12 @@ import MultipleIntelligences from "./pages/blog/MultipleIntelligences.tsx";
 import IQAndCreativity from "./pages/blog/IQAndCreativity.tsx";
 import IQAndLeadership from "./pages/blog/IQAndLeadership.tsx";
 import CanYouRaiseYourIQ from "./pages/blog/CanYouRaiseYourIQ.tsx";
+import LogicalReasoning from "./pages/tests/LogicalReasoning.tsx";
+import PatternRecognition from "./pages/tests/PatternRecognition.tsx";
+import VerbalReasoning from "./pages/tests/VerbalReasoning.tsx";
+import SpatialReasoning from "./pages/tests/SpatialReasoning.tsx";
+import NumericalReasoning from "./pages/tests/NumericalReasoning.tsx";
+import MemoryTest from "./pages/tests/MemoryTest.tsx";
 import HistoryOfIQTesting from "./pages/blog/HistoryOfIQTesting.tsx";
 import IQAndIncome from "./pages/blog/IQAndIncome.tsx";
 import GiftedChildrenIQ from "./pages/blog/GiftedChildrenIQ.tsx";
@@ -172,6 +178,12 @@ export const AppRoutes = () => (
     <Route path="/average-iq" element={<AverageIQ />} />
     <Route path="/iq-test" element={<IQTest />} />
     <Route path="/practice-iq-test" element={<PracticeIQTest />} />
+    <Route path="/tests/logical-reasoning" element={<LogicalReasoning />} />
+    <Route path="/tests/pattern-recognition" element={<PatternRecognition />} />
+    <Route path="/tests/verbal-reasoning" element={<VerbalReasoning />} />
+    <Route path="/tests/spatial-reasoning" element={<SpatialReasoning />} />
+    <Route path="/tests/numerical-reasoning" element={<NumericalReasoning />} />
+    <Route path="/tests/memory" element={<MemoryTest />} />
     <Route path="/disclaimer" element={<Disclaimer />} />
     <Route path="/how-it-works" element={<HowItWorks />} />
     <Route path="/blog" element={<Blog />} />

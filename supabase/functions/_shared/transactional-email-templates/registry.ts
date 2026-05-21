@@ -10,7 +10,15 @@ export interface TemplateEntry {
 }
 
 import { template as iqResults } from './iq-results.tsx'
+import { template as careerFit } from './career-fit.tsx'
+import { template as improvementTips } from './improvement-tips.tsx'
+import { template as discountOffer } from './discount-offer.tsx'
+import { template as brainTeaser } from './brain-teaser.tsx'
 
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'iq-results': iqResults,
+  'career-fit': careerFit,
+  'improvement-tips': improvementTips,
+  'discount-offer': discountOffer,
+  'brain-teaser': brainTeaser,
 }

@@ -6,6 +6,7 @@ import IQMeter from "@/components/IQMeter";
 import PercentileBar from "@/components/PercentileBar";
 import ComparisonChart from "@/components/ComparisonChart";
 import Breadcrumb from "@/components/Breadcrumb";
+import FAQSection from "@/components/FAQSection";
 import { iqScoreData, getAdjacentScores, iqScores } from "@/data/iqScoreData";
 import { iqExtendedData } from "@/data/iqExtendedData";
 import { iqExtendedDataMid } from "@/data/iqExtendedDataMid";
@@ -261,13 +262,7 @@ const IsXIQGood = () => {
         </tbody>
       </table>
 
-      <h2>Frequently Asked Questions</h2>
-      {data.faqItems.map((item, i) => (
-        <div key={i}>
-          <h3>{item.question}</h3>
-          <p>{item.answer}</p>
-        </div>
-      ))}
+      <FAQSection items={data.faqItems} withSchema={false} />
 
       {/* Famous People at this IQ */}
       {(() => {

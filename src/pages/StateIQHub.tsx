@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SEOHead from "@/components/SEOHead";
+import ContentPage from "@/components/ContentPage";
 import { stateIQData } from "@/data/stateIQData";
 
 // Sort states by rank ascending
@@ -22,6 +23,15 @@ function iqColor(iq: number): string {
   return "text-orange-400";
 }
 
+const RELATED_PAGES = [
+  { title: "Average IQ in the US", href: "/average-iq-us" },
+  { title: "Average IQ by Country", href: "/average-iq-by-country" },
+  { title: "IQ by City", href: "/iq-by-city" },
+  { title: "IQ by Career", href: "/iq-by-career" },
+  { title: "IQ Score Ranges", href: "/iq-score-ranges" },
+  { title: "What Is IQ?", href: "/what-is-iq" },
+];
+
 const StateIQHub = () => (
   <>
     <SEOHead
@@ -31,144 +41,106 @@ const StateIQHub = () => (
       ogType="article"
     />
 
-    <div className="min-h-screen bg-gradient-to-b from-background to-background/80">
-      <div className="max-w-5xl mx-auto px-4 py-12">
+    <ContentPage
+      showSidebar={false}
+      showLeaderboard={true}
+      ctaText="Curious about your own IQ? Take the free test"
+      relatedPages={RELATED_PAGES}
+      lastUpdated="May 2026"
+      readingTime={4}
+    >
+      <h1>
+        Average IQ by <span className="gradient-text">US State</span>
+      </h1>
+      <p className="text-muted-foreground text-lg">
+        All 50 states ranked by estimated average IQ. Click any state to see details,
+        methodology, and how it compares to neighboring states.
+      </p>
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Average IQ by <span className="gradient-text">US State</span>
-          </h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
-            All 50 states ranked by estimated average IQ — click any state to see details,
-            methodology, and how it compares to neighbors.
-          </p>
-        </motion.div>
-
-        {/* Methodology note */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-          className="glass-card rounded-xl p-5 mb-8 text-sm text-white/70 leading-relaxed"
-        >
-          <strong className="text-white">Methodology:</strong> State IQ estimates are derived from
-          NAEP (National Assessment of Educational Progress) scores, SAT/ACT average results, and
-          published academic research correlating state-level test performance with standardized IQ
-          assessments. These are estimates of cognitive performance, not innate ability — they
-          reflect education quality, socioeconomic factors, and demographic composition. Individual
-          IQs vary enormously within every state.
-        </motion.div>
-
-        {/* Regional Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.25 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
-        >
-          {regions.map((region) => (
-            <div key={region} className="glass-card rounded-xl p-4 text-center">
-              <p className="text-white/60 text-xs uppercase tracking-wider mb-1">{region}</p>
-              <p className="text-2xl font-bold gradient-text">{regionalAvg(region)}</p>
-              <p className="text-white/50 text-xs mt-1">Regional avg IQ</p>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Color Legend */}
-        <div className="flex flex-wrap gap-4 mb-4 text-sm">
-          <span className="text-emerald-400 font-semibold">● 103+ (High)</span>
-          <span className="text-blue-400 font-semibold">● 100–102 (Above avg)</span>
-          <span className="text-yellow-400 font-semibold">● 97–99 (Average)</span>
-          <span className="text-orange-400 font-semibold">● Below 97 (Below avg)</span>
-        </div>
-
-        {/* State Table */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          className="glass-card rounded-xl overflow-hidden"
-        >
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-white/10 bg-white/5">
-                <th className="text-left px-4 py-3 text-white/70 font-semibold w-12">Rank</th>
-                <th className="text-left px-4 py-3 text-white/70 font-semibold">State</th>
-                <th className="text-center px-4 py-3 text-white/70 font-semibold">Avg IQ</th>
-                <th className="text-left px-4 py-3 text-white/70 font-semibold hidden sm:table-cell">Region</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sortedStates.map((state, idx) => (
-                <tr
-                  key={state.slug}
-                  className={`border-b border-white/5 hover:bg-white/5 transition-colors ${
-                    idx % 2 === 0 ? "" : "bg-white/[0.02]"
-                  }`}
-                >
-                  <td className="px-4 py-3 text-white/40 font-mono text-xs">#{state.rank}</td>
-                  <td className="px-4 py-3">
-                    <Link
-                      to={`/average-iq-by-state/${state.slug}`}
-                      className="text-white hover:text-primary transition-colors font-medium"
-                    >
-                      {state.name}
-                    </Link>
-                  </td>
-                  <td className={`px-4 py-3 text-center font-bold tabular-nums ${iqColor(state.avgIQ)}`}>
-                    {state.avgIQ.toFixed(1)}
-                  </td>
-                  <td className="px-4 py-3 text-white/50 hidden sm:table-cell">{state.region}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </motion.div>
-
-        {/* Internal links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.5 }}
-          className="mt-10 text-center text-white/60 text-sm space-y-2"
-        >
-          <p>
-            Also see:{" "}
-            <Link to="/average-iq-us" className="text-primary hover:underline">
-              Average IQ in the US
-            </Link>{" "}
-            |{" "}
-            <Link to="/average-iq-by-country" className="text-primary hover:underline">
-              Average IQ by Country
-            </Link>{" "}
-            |{" "}
-            <Link to="/iq-by-city" className="text-primary hover:underline">
-              IQ by City
-            </Link>{" "}
-            |{" "}
-            <Link to="/iq-by-career" className="text-primary hover:underline">
-              IQ by Career
-            </Link>{" "}
-            |{" "}
-            <Link to="/what-is-iq" className="text-primary hover:underline">
-              What Is IQ?
-            </Link>{" "}
-            |{" "}
-            <Link to="/test" className="text-primary hover:underline">
-              Take the Free IQ Test
-            </Link>
-          </p>
-        </motion.div>
-
+      {/* Methodology note */}
+      <div className="glass-card rounded-xl p-5 my-6 text-sm text-muted-foreground leading-relaxed not-prose">
+        <strong className="text-foreground">Methodology:</strong> State IQ estimates are derived from
+        NAEP (National Assessment of Educational Progress) scores, SAT/ACT average results, and
+        published academic research correlating state-level test performance with standardized IQ
+        assessments. These are estimates of cognitive performance, not innate ability — they
+        reflect education quality, socioeconomic factors, and demographic composition. Individual
+        IQs vary enormously within every state.
       </div>
-    </div>
+
+      {/* Regional Summary */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 not-prose">
+        {regions.map((region) => (
+          <div key={region} className="glass-card rounded-xl p-4 text-center">
+            <p className="text-muted-foreground text-xs uppercase tracking-wider mb-1">{region}</p>
+            <p className="text-2xl font-bold gradient-text">{regionalAvg(region)}</p>
+            <p className="text-muted-foreground/50 text-xs mt-1">Regional avg IQ</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Color Legend */}
+      <div className="flex flex-wrap gap-4 mb-4 text-sm not-prose">
+        <span className="text-emerald-400 font-semibold">● 103+ (High)</span>
+        <span className="text-blue-400 font-semibold">● 100–102 (Above avg)</span>
+        <span className="text-yellow-400 font-semibold">● 97–99 (Average)</span>
+        <span className="text-orange-400 font-semibold">● Below 97 (Below avg)</span>
+      </div>
+
+      {/* State Table */}
+      <div className="glass-card rounded-xl overflow-hidden not-prose">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)]">
+              <th className="text-left px-4 py-3 text-muted-foreground font-semibold w-12">Rank</th>
+              <th className="text-left px-4 py-3 text-muted-foreground font-semibold">State</th>
+              <th className="text-center px-4 py-3 text-muted-foreground font-semibold">Avg IQ</th>
+              <th className="text-left px-4 py-3 text-muted-foreground font-semibold hidden sm:table-cell">Region</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedStates.map((state, idx) => (
+              <motion.tr
+                key={state.slug}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: Math.min(idx * 0.01, 0.5) }}
+                className={`border-b border-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.04)] transition-colors ${
+                  idx % 2 === 0 ? "" : "bg-[rgba(255,255,255,0.02)]"
+                }`}
+              >
+                <td className="px-4 py-3 text-muted-foreground/40 font-mono text-xs">#{state.rank}</td>
+                <td className="px-4 py-3">
+                  <Link
+                    to={`/average-iq-by-state/${state.slug}`}
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                  >
+                    {state.name}
+                  </Link>
+                </td>
+                <td className={`px-4 py-3 text-center font-bold tabular-nums ${iqColor(state.avgIQ)}`}>
+                  {state.avgIQ.toFixed(1)}
+                </td>
+                <td className="px-4 py-3 text-muted-foreground hidden sm:table-cell">{state.region}</td>
+              </motion.tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2>About State IQ Estimates</h2>
+      <p>
+        State-level IQ estimates are calculated from proxy measures including NAEP academic
+        achievement scores, average SAT/ACT performance, and peer-reviewed studies on regional
+        cognitive assessment data. These numbers represent statistical averages and should not
+        be used to make judgments about individuals — IQ varies enormously within any state based
+        on education, environment, socioeconomic conditions, and many other factors.
+      </p>
+      <p>
+        States with higher average scores tend to have higher levels of educational attainment,
+        more public investment in schools, and lower rates of poverty — all factors that
+        significantly influence IQ test performance.
+      </p>
+    </ContentPage>
   </>
 );
 
