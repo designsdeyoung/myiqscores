@@ -100,7 +100,7 @@ const FamousIQHub = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="Famous People IQ Scores: Complete List with Estimates | MyIQScores"
+        title="Famous People IQ Scores: Full List of 300+ Estimates"
         description="See the estimated IQ scores of famous people — scientists, entrepreneurs, athletes, actors, and more. From Einstein (160) to everyday celebrities."
         canonicalUrl="/famous-iq"
         ogType="article"

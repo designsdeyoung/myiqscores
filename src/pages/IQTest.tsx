@@ -101,7 +101,7 @@ const IQTest = () => (
     ]}
   >
     <SEOHead
-      title="Free IQ Test Online: 30 Questions, Instant Results | MyIQScores"
+      title="Free IQ Test Online: 30 Questions, Instant Results"
       description="Take a free online IQ-style reasoning test. 30 questions covering pattern recognition, logic, verbal and spatial reasoning. Get your estimated score instantly — no sign-up needed."
       canonicalUrl="/iq-test"
       ogType="article"

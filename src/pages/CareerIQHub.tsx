@@ -48,7 +48,7 @@ const CareerIQHub = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="IQ Needed for Every Career: Complete Job IQ Chart | MyIQScores"
+        title="IQ Needed for Every Career: Job IQ Chart | MyIQScores"
         description="What IQ do you need for your dream career? See average IQ scores for 50+ professions from doctor to plumber, with detailed breakdowns and education paths."
         canonicalUrl="/iq-by-career"
         ogType="article"

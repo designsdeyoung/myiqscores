@@ -63,7 +63,7 @@ const NutritionAndIQ = () => (
     ]}
   >
     <SEOHead
-      title="Nutrition and IQ: How Diet Affects Brain Power and Cognitive Performance | MyIQScores"
+      title="Nutrition and IQ: How Diet Affects Brain Power | MyIQScores"
       description="What you eat shapes how your brain performs. From iodine deficiency to omega-3s to the MIND diet, here's the science on nutrition and intelligence."
       canonicalUrl="/blog/nutrition-and-iq"
       ogType="article"

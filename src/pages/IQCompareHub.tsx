@@ -108,7 +108,7 @@ const IQCompareHub = () => {
   return (
     <ContentPage relatedPages={relatedPages}>
       <SEOHead
-        title="IQ Comparison Charts: Men vs Women, Countries, Careers | MyIQScores"
+        title="IQ Comparison Charts: Groups, Countries and Careers"
         description="Compare average IQ scores across genders, countries, careers, education levels, and lifestyles. Science-backed IQ comparisons with research citations and balanced verdicts."
         canonicalUrl="/iq-compare"
         ogType="website"

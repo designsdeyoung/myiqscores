@@ -54,7 +54,7 @@ const IQScoreRanges = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="IQ Score Ranges: What Every Score Means (Chart + Percentiles) | MyIQScores"
+        title="IQ Score Ranges: What Every Score Means (Chart) | MyIQScores"
         description="What does your IQ score mean? See the complete IQ scale with score ranges, percentiles, career correlations, and what each level says about your cognitive abilities."
         canonicalUrl="/iq-score-ranges"
         ogType="article"

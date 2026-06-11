@@ -63,7 +63,7 @@ const CanYouRaiseYourIQ = () => (
     ]}
   >
     <SEOHead
-      title="Can You Actually Raise Your IQ? What the Science Says | MyIQScores"
+      title="Can You Raise Your IQ? What the Science Says | MyIQScores"
       description="Neuroplasticity, Dual N-Back training, exercise, sleep, and nutrition all influence IQ scores. Here's what peer-reviewed research actually shows about raising your intelligence."
       canonicalUrl="/blog/can-you-raise-your-iq"
       ogType="article"

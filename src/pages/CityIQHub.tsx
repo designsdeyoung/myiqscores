@@ -105,7 +105,7 @@ const CityIQHub = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="Average IQ by City: World's Smartest Cities Ranked | MyIQScores"
+        title="Average IQ by City: Smartest Cities Ranked"
         description="Compare estimated average IQ scores across 50 world cities. Sortable rankings by continent with analysis of what drives urban cognitive score differences."
         canonicalUrl="/iq-by-city"
         ogType="article"

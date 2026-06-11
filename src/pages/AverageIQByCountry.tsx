@@ -97,7 +97,7 @@ const AverageIQByCountry = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="Average IQ by Country: The Complete Global Ranking | MyIQScores"
+        title="Average IQ by Country: Complete Global Ranking | MyIQScores"
         description="Compare average IQ scores across 50 countries worldwide. Sortable rankings with scores, global position, and analysis of what drives national IQ differences."
         canonicalUrl="/average-iq-by-country"
         ogType="article"

@@ -67,7 +67,7 @@ const DunningKrugerEffect = () => (
     ]}
   >
     <SEOHead
-      title="The Dunning-Kruger Effect Is More Nuanced Than the Meme | MyIQScores"
+      title="Dunning-Kruger Effect: More Nuanced Than the Meme"
       description="The viral meme version of Dunning-Kruger is a distortion of what the original 1999 study actually measured. Here's what the research really says — and why it matters for self-assessment."
       canonicalUrl="/blog/dunning-kruger-effect"
       ogType="article"

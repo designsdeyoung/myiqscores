@@ -20,7 +20,7 @@ const faqSchema = {
 const GoodIQScore = () => (
   <ContentPage>
     <SEOHead
-      title="What Is a Good IQ Score? Ranges, Percentiles & What Yours Means | MyIQScores"
+      title="What Is a Good IQ Score? Ranges & Percentiles | MyIQScores"
       description="What is a good IQ score? A score of 100 is average, 110+ is above average, 120+ is superior, and 130+ is gifted. Find out what your IQ score means and where you stand."
       canonicalUrl="/good-iq-score"
       ogType="article"

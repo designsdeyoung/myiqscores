@@ -63,7 +63,7 @@ const IQAndWorkplace = () => (
     ]}
   >
     <SEOHead
-      title="IQ in the Workplace: What Employers and Employees Need to Know | MyIQScores"
+      title="IQ in the Workplace: What You Need to Know | MyIQScores"
       description="IQ is one of the strongest predictors of job performance ever studied. Learn what the research says about cognitive ability, career success, and modern hiring."
       canonicalUrl="/blog/iq-and-workplace"
       ogType="article"

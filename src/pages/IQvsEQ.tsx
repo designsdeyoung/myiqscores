@@ -44,7 +44,7 @@ const faqSchema = {
 const IQvsEQ = () => (
   <ContentPage>
     <SEOHead
-      title="IQ vs EQ: What's the Difference & Which Matters More? | MyIQScores"
+      title="IQ vs EQ: Differences & Which Matters More | MyIQScores"
       description="IQ vs EQ explained: understand the key differences between intelligence quotient and emotional quotient, which matters more for success, and how to improve both."
       canonicalUrl="/iq-vs-eq"
       ogType="article"

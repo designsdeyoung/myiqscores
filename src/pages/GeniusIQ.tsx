@@ -20,7 +20,7 @@ const faqSchema = {
 const GeniusIQ = () => (
   <ContentPage>
     <SEOHead
-      title="Genius IQ: What Score Makes You a Genius? (Full Guide) | MyIQScores"
+      title="Genius IQ: What Score Makes You a Genius? | MyIQScores"
       description="What IQ makes you a genius? A score of 140+ is the most common threshold. Learn what genius-level IQ means, how rare it is, famous geniuses' scores, and signs of genius."
       canonicalUrl="/genius-iq"
       ogType="article"

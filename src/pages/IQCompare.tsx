@@ -1,6 +1,7 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { fitTitle, preferTitle } from "@/lib/seo";
 import { getCompareBySlug, iqCompareData } from "@/data/iqCompareData";
 
 const IQCompare = () => {
@@ -34,7 +35,7 @@ const IQCompare = () => {
   return (
     <ContentPage relatedPages={relatedPages}>
       <SEOHead
-        title={compare.metaTitle}
+        title={preferTitle(compare.metaTitle, fitTitle(compare.title, [": Who Scores Higher?", ": Full Comparison"]))}
         description={compare.metaDescription}
         canonicalUrl={`/iq-compare/${compare.slug}`}
         ogType="article"

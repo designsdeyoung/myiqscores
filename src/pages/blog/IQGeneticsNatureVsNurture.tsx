@@ -63,7 +63,7 @@ const IQGeneticsNatureVsNurture = () => (
     ]}
   >
     <SEOHead
-      title="IQ and Genetics: Nature vs. Nurture — What Science Actually Says | MyIQScores"
+      title="IQ and Genetics: Nature vs. Nurture Explained | MyIQScores"
       description="How much of your IQ is genetic? Twin studies, adoption research, and GWAS findings reveal the truth about nature vs. nurture in intelligence."
       canonicalUrl="/blog/iq-genetics-nature-vs-nurture"
       ogType="article"

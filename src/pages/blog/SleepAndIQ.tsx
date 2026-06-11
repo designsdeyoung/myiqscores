@@ -63,7 +63,7 @@ const SleepAndIQ = () => (
     ]}
   >
     <SEOHead
-      title="Sleep and IQ: How Rest Affects Your Cognitive Performance | MyIQScores"
+      title="Sleep and IQ: How Rest Affects Cognition | MyIQScores"
       description="Sleep deprivation can temporarily lower IQ by 5–15 points. Learn exactly how sleep affects intelligence, how much you need, and how to optimize rest for peak cognition."
       canonicalUrl="/blog/sleep-and-iq"
       ogType="article"

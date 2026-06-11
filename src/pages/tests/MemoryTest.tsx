@@ -53,7 +53,7 @@ const articleSchema = {
 const MemoryTest = () => (
   <>
     <SEOHead
-      title="Memory Test: Working Memory, IQ, and How to Improve | MyIQScores"
+      title="Memory Test: Working Memory, IQ & Improvement | MyIQScores"
       description="Understand what memory tests in IQ assessments measure, how working memory relates to intelligence, and research-backed ways to improve cognitive capacity and memory span."
       canonicalUrl="/tests/memory"
       ogType="article"

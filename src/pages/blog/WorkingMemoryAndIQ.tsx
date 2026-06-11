@@ -63,7 +63,7 @@ const WorkingMemoryAndIQ = () => (
     ]}
   >
     <SEOHead
-      title="Working Memory and IQ: The Hidden Link Between Memory and Intelligence | MyIQScores"
+      title="Working Memory and IQ: The Hidden Link | MyIQScores"
       description="Working memory is one of the strongest predictors of IQ and academic success. Discover how this critical cognitive system works and how to improve it."
       canonicalUrl="/blog/working-memory-and-iq"
       ogType="article"

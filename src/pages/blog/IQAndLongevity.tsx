@@ -63,7 +63,7 @@ const IQAndLongevity = () => (
     ]}
   >
     <SEOHead
-      title="IQ and Longevity: Do Smarter People Live Longer? | MyIQScores"
+      title="IQ and Longevity: Do Smart People Live Longer? | MyIQScores"
       description="The Scottish Mental Survey and decades of prospective research reveal a robust link between IQ and lifespan. Explore the mechanisms, effect sizes, and what it means for you."
       canonicalUrl="/blog/iq-and-longevity"
       ogType="article"

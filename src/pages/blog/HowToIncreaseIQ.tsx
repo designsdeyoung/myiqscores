@@ -56,7 +56,7 @@ const faqSchema = {
 const HowToIncreaseIQ = () => (
   <ContentPage>
     <SEOHead
-      title="Can You Actually Increase Your IQ? What Science Says | MyIQScores"
+      title="How to Increase IQ: What Science Actually Says | MyIQScores"
       description="The science is more nuanced than most headlines suggest. Here's what the research actually says about raising IQ through exercise, sleep, nutrition, and training."
       canonicalUrl="/blog/how-to-increase-iq"
       ogType="article"

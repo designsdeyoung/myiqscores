@@ -1,6 +1,7 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { fitTitle } from "@/lib/seo";
 import IQMeter from "@/components/IQMeter";
 import ComparisonChart from "@/components/ComparisonChart";
 import { getCountryBySlug, countryIQData } from "@/data/countryIQData";
@@ -70,7 +71,7 @@ const CountryIQ = () => {
   return (
     <ContentPage ctaText="Test your IQ and see how you compare" relatedPages={relatedPages}>
       <SEOHead
-        title={`Average IQ in ${country.name}: ${country.avgIQ}, Ranked #${country.rank} Globally | MyIQScores`}
+        title={fitTitle(`Average IQ in ${country.name}`, [`: ${country.avgIQ}, Ranked #${country.rank} Globally`, `: ${country.avgIQ}, Rank #${country.rank}`, `: ${country.avgIQ}`])}
         description={country.metaDescription}
         canonicalUrl={`/average-iq/${country.slug}`}
         ogType="article"

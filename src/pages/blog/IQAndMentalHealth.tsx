@@ -63,7 +63,7 @@ const IQAndMentalHealth = () => (
     ]}
   >
     <SEOHead
-      title="IQ and Mental Health: What Research Shows About the Connection | MyIQScores"
+      title="IQ and Mental Health: What Research Shows | MyIQScores"
       description="The link between IQ and mental health is complex. Research reveals how depression, anxiety, and ADHD affect cognitive performance — and what treatment can do."
       canonicalUrl="/blog/iq-and-mental-health"
       ogType="article"

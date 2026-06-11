@@ -17,7 +17,7 @@ const articleSchema = {
 const IQvsSuccess = () => (
   <ContentPage>
     <SEOHead
-      title="IQ vs. Success: Does Higher IQ Mean a Better Life? | MyIQScores"
+      title="IQ vs. Success: Does IQ Predict a Better Life? | MyIQScores"
       description="The correlation between IQ and life outcomes is real — but much weaker than most people assume. Income, education, health, and what really matters."
       canonicalUrl="/blog/iq-vs-success"
       ogType="article"

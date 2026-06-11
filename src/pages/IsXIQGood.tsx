@@ -1,6 +1,7 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { rotated, parseIQ } from "@/lib/internalLinks";
 import BellCurve from "@/components/BellCurve";
 import IQMeter from "@/components/IQMeter";
 import PercentileBar from "@/components/PercentileBar";
@@ -81,7 +82,7 @@ const IsXIQGood = () => {
     seoTitle = `Is ${score} IQ Good? Smarter Than ${Math.round(pctNum)}% of People | MyIQScores`;
   } else if (score <= 129) {
     const topPct = Math.round(100 - pctNum);
-    seoTitle = `Is ${score} IQ Good? Top ${topPct}% — Here's What It Means | MyIQScores`;
+    seoTitle = `Is ${score} IQ Good? Top ${topPct}% and What It Means | MyIQScores`;
   } else if (score <= 139) {
     seoTitle = `Is ${score} IQ Good? Gifted Range Explained | MyIQScores`;
   } else {
@@ -266,10 +267,14 @@ const IsXIQGood = () => {
 
       {/* Famous People at this IQ */}
       {(() => {
-        const famous = famousIQData.filter((p) => {
-          const iq = parseInt(p.estimatedIQ);
+        const matches = famousIQData.filter((p) => {
+          const iq = parseIQ(p.estimatedIQ);
           return !isNaN(iq) && Math.abs(iq - score) <= 5;
-        }).slice(0, 5);
+        });
+        // Rotate by score so adjacent score pages feature different people,
+        // spreading celebrity inbound links instead of always picking the
+        // first matches in the data file.
+        const famous = rotated(matches, score).slice(0, 5);
         if (famous.length === 0) return null;
         return (
           <>
@@ -288,7 +293,7 @@ const IsXIQGood = () => {
 
       {/* Careers for this IQ Range */}
       {(() => {
-        const careers = careerIQData.filter((c) => score >= c.minIQ - 5 && score <= c.maxIQ + 5).slice(0, 5);
+        const careers = rotated(careerIQData.filter((c) => score >= c.minIQ - 5 && score <= c.maxIQ + 5), score).slice(0, 5);
         if (careers.length === 0) return null;
         return (
           <>

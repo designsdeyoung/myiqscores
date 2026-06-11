@@ -71,6 +71,13 @@ const StateIQ = () => {
       <h2>About {state.name}'s IQ Ranking</h2>
       <p>{state.description}</p>
 
+      {state.analysis && (
+        <>
+          <h2>What Shapes {state.name}'s Cognitive Profile</h2>
+          <p>{state.analysis}</p>
+        </>
+      )}
+
       <p>
         For global context, see how the US compares in our{" "}
         <Link to="/average-iq/united-states">United States IQ page</Link> and the full{" "}

@@ -63,7 +63,7 @@ const HistoryOfIQTesting = () => (
     ]}
   >
     <SEOHead
-      title="A Complete History of IQ Testing: From Binet to Today | MyIQScores"
+      title="History of IQ Testing: From Binet to Today | MyIQScores"
       description="Explore the complete history of IQ testing — from Alfred Binet's 1905 scale and Army Alpha/Beta tests to the WAIS-IV, Raven's Matrices, and modern controversies."
       canonicalUrl="/blog/history-of-iq-testing"
       ogType="article"

@@ -63,7 +63,7 @@ const ExerciseAndIQ = () => (
     ]}
   >
     <SEOHead
-      title="Exercise and IQ: How Physical Activity Boosts Cognitive Performance | MyIQScores"
+      title="Exercise and IQ: How Activity Boosts Cognition | MyIQScores"
       description="Aerobic exercise reliably improves IQ-related abilities. Research shows exactly how movement changes the brain and which types of exercise are most effective for cognition."
       canonicalUrl="/blog/exercise-and-iq"
       ogType="article"

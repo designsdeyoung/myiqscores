@@ -63,7 +63,7 @@ const IQAndCreativity = () => (
     ]}
   >
     <SEOHead
-      title="IQ and Creativity: Are More Intelligent People More Creative? | MyIQScores"
+      title="IQ and Creativity: Does One Predict the Other? | MyIQScores"
       description="The relationship between IQ and creativity is more complex than you'd expect. Research reveals a threshold effect — and explains what drives the most creative minds."
       canonicalUrl="/blog/iq-and-creativity"
       ogType="article"

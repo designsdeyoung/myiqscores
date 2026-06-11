@@ -53,7 +53,7 @@ const articleSchema = {
 const VerbalReasoning = () => (
   <>
     <SEOHead
-      title="Verbal Reasoning Test: What It Measures & How to Improve | MyIQScores"
+      title="Verbal Reasoning Test: How to Improve | MyIQScores"
       description="Understand what verbal reasoning tests measure in IQ assessments, the difference between vocabulary and verbal reasoning, and how to improve your verbal comprehension score."
       canonicalUrl="/tests/verbal-reasoning"
       ogType="article"

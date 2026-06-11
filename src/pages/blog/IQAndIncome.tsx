@@ -63,7 +63,7 @@ const IQAndIncome = () => (
     ]}
   >
     <SEOHead
-      title="IQ and Income: Does Being Smarter Make You Richer? | MyIQScores"
+      title="IQ and Income: Does Smarter Mean Richer? | MyIQScores"
       description="What does research actually show about IQ and income? Analyzing NLSY79 data, the 0.3–0.4 correlation, diminishing returns above IQ 120, and what matters more than intelligence for wealth."
       canonicalUrl="/blog/iq-and-income"
       ogType="article"

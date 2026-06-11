@@ -44,7 +44,7 @@ const faqSchema = {
 const AverageIQUS = () => (
   <ContentPage>
     <SEOHead
-      title="Average IQ in the United States: What Is America's IQ? | MyIQScores"
+      title="Average IQ in the US: What Is America's IQ? | MyIQScores"
       description="The average IQ in the United States is 98-100. See how American IQ compares by state, education level, age group, and how it's changed over time."
       canonicalUrl="/average-iq-us"
       ogType="article"

@@ -69,7 +69,7 @@ const PracticeIQTest = () => (
     ]}
   >
     <SEOHead
-      title="Practice IQ Test: Sample Questions, Tips & How to Improve | MyIQScores"
+      title="Practice IQ Test: Sample Questions & Tips | MyIQScores"
       description="Practice IQ-style reasoning questions before taking the real test. Covers number sequences, logic problems, verbal analogies, and spatial reasoning with answers and explanations."
       canonicalUrl="/practice-iq-test"
       ogType="article"

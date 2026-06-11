@@ -53,7 +53,7 @@ const articleSchema = {
 const NumericalReasoning = () => (
   <>
     <SEOHead
-      title="Numerical Reasoning Test: What It Measures & How to Prepare | MyIQScores"
+      title="Numerical Reasoning Test: How to Prepare | MyIQScores"
       description="Understand what numerical reasoning tests measure beyond math, how quantitative ability relates to IQ, what to expect in corporate aptitude tests, and how to prepare."
       canonicalUrl="/tests/numerical-reasoning"
       ogType="article"

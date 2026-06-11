@@ -63,7 +63,7 @@ const FluidVsCrystallizedIntelligence = () => (
     ]}
   >
     <SEOHead
-      title="Fluid vs. Crystallized Intelligence: What's the Difference? | MyIQScores"
+      title="Fluid vs. Crystallized Intelligence: What's the Difference?"
       description="Fluid and crystallized intelligence are two distinct cognitive abilities. Understanding both explains why IQ changes across the lifespan and what you can do about it."
       canonicalUrl="/blog/fluid-vs-crystallized-intelligence"
       ogType="article"

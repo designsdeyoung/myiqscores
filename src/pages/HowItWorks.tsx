@@ -57,7 +57,7 @@ const HowItWorks = () => (
     ]}
   >
     <SEOHead
-      title="How It Works: The MyIQScores IQ-Style Test Explained | MyIQScores"
+      title="How It Works: The MyIQScores IQ-Style Test Explained"
       description="Learn how the MyIQScores free IQ-style test works: question categories, scoring methodology, result interpretation, and what your estimated score means."
       canonicalUrl="/how-it-works"
       ogType="article"

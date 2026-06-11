@@ -54,7 +54,7 @@ const articleSchema = {
 const LogicalReasoning = () => (
   <>
     <SEOHead
-      title="Logical Reasoning Test: What It Measures & How to Improve | MyIQScores"
+      title="Logical Reasoning Test: How to Improve | MyIQScores"
       description="Understand what logical reasoning tests measure, how they relate to IQ scores, and what deductive vs. inductive reasoning actually tests. Includes example questions."
       canonicalUrl="/tests/logical-reasoning"
       ogType="article"

@@ -20,7 +20,7 @@ const faqSchema = {
 const HighestIQEver = () => (
   <ContentPage>
     <SEOHead
-      title="Highest IQ Ever Recorded: The Smartest People in History | MyIQScores"
+      title="Highest IQ Ever Recorded: History's Smartest | MyIQScores"
       description="Who has the highest IQ ever? See the complete list of the highest recorded IQ scores in history, from William James Sidis to Terence Tao, with verified scores and estimates."
       canonicalUrl="/highest-iq-ever"
       ogType="article"

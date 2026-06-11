@@ -67,7 +67,7 @@ const TwiceExceptional = () => (
     ]}
   >
     <SEOHead
-      title="Twice-Exceptional: When ADHD and High IQ Coexist | MyIQScores"
+      title="Twice-Exceptional: When ADHD & High IQ Coexist | MyIQScores"
       description="Twice-exceptional (2e) students are both gifted and have ADHD or another learning difference. High IQ masks their ADHD; ADHD masks their giftedness. Here's what the research reveals."
       canonicalUrl="/blog/twice-exceptional-adhd-high-iq"
       ogType="article"

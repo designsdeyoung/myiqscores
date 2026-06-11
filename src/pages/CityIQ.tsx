@@ -1,6 +1,7 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { fitTitle } from "@/lib/seo";
 import IQMeter from "@/components/IQMeter";
 import { getCityBySlug, cityIQData } from "@/data/cityIQData";
 
@@ -65,7 +66,7 @@ const CityIQ = () => {
   return (
     <ContentPage ctaText="Test your IQ and see how you compare" relatedPages={relatedPages}>
       <SEOHead
-        title={`Average IQ in ${city.city} (${city.country}): Estimates & Key Factors | MyIQScores`}
+        title={fitTitle(`Average IQ in ${city.city}`, [`: ${city.estimatedAvgIQ} Estimate and Key Factors`, `: ${city.estimatedAvgIQ} Estimate`, `: ${city.estimatedAvgIQ}`])}
         description={`What is the average IQ in ${city.city}? Estimated average IQ of ${city.estimatedAvgIQ} (range ${city.avgIQRange}). Learn about the key factors shaping cognitive performance in ${city.city}.`}
         canonicalUrl={`/iq-by-city/${city.slug}`}
         ogType="article"

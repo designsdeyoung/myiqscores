@@ -8,6 +8,8 @@ import FamousPersonIcon from "@/components/FamousPersonIcon";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getFamousPersonBySlug, famousIQData } from "@/data/famousIQData";
 import { careerIQData } from "@/data/careerIQData";
+import { ringNeighbors, parseIQ, nearestScore } from "@/lib/internalLinks";
+import { fitTitle, preferTitle } from "@/lib/seo";
 
 
 const seoTitles: Record<string, string> = {
@@ -133,17 +135,21 @@ const FamousIQ = () => {
     url: `https://www.myiqscores.com/famous-iq/${person.slug}`,
   };
 
-  const personIQ = parseInt(person.estimatedIQ);
-  const otherPeople = famousIQData.filter((p) => p.slug !== person.slug);
-  const similarIQPeople = otherPeople
-    .filter((p) => Math.abs(parseInt(p.estimatedIQ) - personIQ) <= 10)
-    .slice(0, 6);
-  const displayComparisons = similarIQPeople.length >= 3 ? similarIQPeople : otherPeople.slice(0, 6);
-  const relatedCareers = careerIQData.filter((c) => personIQ >= c.minIQ - 5 && personIQ <= c.maxIQ + 5).slice(0, 3);
+  const personIQ = parseIQ(person.estimatedIQ);
+  const personIndex = famousIQData.findIndex((p) => p.slug === person.slug);
+  // Ring selection: each page links its data-file neighbors, which spreads
+  // inbound links evenly across all entries instead of concentrating them
+  // on the first few people in the file.
+  const displayComparisons = ringNeighbors(famousIQData, personIndex, 6);
+  const scorePage = nearestScore(personIQ);
+  const careerMatches = careerIQData.filter((c) => personIQ >= c.minIQ - 5 && personIQ <= c.maxIQ + 5);
+  const relatedCareers = careerMatches.length
+    ? [0, 1, 2].map((o) => careerMatches[(personIndex + o) % careerMatches.length]).filter((c, idx, arr) => arr.indexOf(c) === idx)
+    : [];
 
   const relatedPages = [
     { title: "Famous People IQ Scores (Full List)", href: "/famous-iq" },
-    { title: `Is ${personIQ} IQ Good?`, href: `/is-${personIQ}-iq-good` },
+    { title: `Is ${scorePage} IQ Good?`, href: `/is-${scorePage}-iq-good` },
     { title: "Highest IQ Ever Recorded", href: "/highest-iq-ever" },
     ...displayComparisons.slice(0, 2).map((p) => ({ title: `${p.name}'s IQ (${p.estimatedIQ})`, href: `/famous-iq/${p.slug}` })),
     { title: "IQ by Career Chart", href: "/iq-by-career" },
@@ -152,7 +158,15 @@ const FamousIQ = () => {
   return (
     <ContentPage ctaText="How does your IQ compare? Take the free test" relatedPages={relatedPages}>
       <SEOHead
-        title={seoTitles[person.slug] ?? `${person.name}'s IQ: ${person.estimatedIQ} — What It Means | MyIQScores`}
+        title={preferTitle(
+          seoTitles[person.slug],
+          fitTitle(`${person.name} IQ`, [
+            `: ${person.estimatedIQ} Estimate and Percentile`,
+            `: ${person.estimatedIQ} Estimated Score`,
+            `: ${person.estimatedIQ} Estimate`,
+            `: ${person.estimatedIQ}`,
+          ]),
+        )}
         description={seoDescs[person.slug] ?? `${person.name}'s IQ is estimated at ${person.estimatedIQ}. Learn what this means, how it compares, and what made ${person.name} a genius.`}
         canonicalUrl={`/famous-iq/${person.slug}`}
         ogType="article"
@@ -177,7 +191,7 @@ const FamousIQ = () => {
       )}
 
       {/* IQ Meter */}
-      <IQMeter score={parseInt(person.estimatedIQ)} label={person.name} />
+      <IQMeter score={personIQ} label={person.name} />
 
       <div className="grid grid-cols-2 gap-4 my-6">
         <div className="glass-card p-5 text-center rounded-xl">
@@ -200,10 +214,10 @@ const FamousIQ = () => {
       <ComparisonChart
         title={`How ${person.name} Compares`}
         items={[
-          { label: person.name, value: parseInt(person.estimatedIQ), highlight: true },
-          ...otherPeople.slice(0, 5).map((p) => ({
+          { label: person.name, value: personIQ, highlight: true },
+          ...displayComparisons.slice(0, 5).map((p) => ({
             label: p.name,
-            value: parseInt(p.estimatedIQ),
+            value: parseIQ(p.estimatedIQ),
             href: `/famous-iq/${p.slug}`,
           })),
         ]}
@@ -243,7 +257,7 @@ const FamousIQ = () => {
 
       <p className="text-sm text-muted-foreground">
         See the <Link to="/famous-iq">complete famous IQ list</Link> or check{" "}
-        <Link to={`/is-${personIQ}-iq-good`}>what an IQ of {personIQ} means</Link>.
+        <Link to={`/is-${scorePage}-iq-good`}>what an IQ of {scorePage} means</Link>.
       </p>
 
       {relatedCareers.length > 0 && (
@@ -283,7 +297,7 @@ const FamousIQ = () => {
 
       <p className="mt-6">
         <Link to="/test">Take our free IQ test</Link> to discover your own score, or explore{" "}
-        <Link to={`/is-${personIQ}-iq-good`}>what an IQ of {personIQ} means</Link>.
+        <Link to={`/is-${scorePage}-iq-good`}>what an IQ of {scorePage} means</Link>.
       </p>
     </ContentPage>
   );

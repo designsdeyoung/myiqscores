@@ -17,7 +17,7 @@ const articleSchema = {
 const WhatIsGeniusIQ = () => (
   <ContentPage>
     <SEOHead
-      title="What Is a Genius IQ? History, Science & Reality | MyIQScores"
+      title="What Is a Genius IQ? History & Science | MyIQScores"
       description="The word genius gets thrown around constantly — but what does a genius-level IQ actually mean? History, science, and what being a genius is really like."
       canonicalUrl="/blog/what-is-genius-iq"
       ogType="article"

@@ -53,7 +53,7 @@ const faqSchema = {
 const WhatIsIQ = () => (
   <ContentPage>
     <SEOHead
-      title="What Is IQ? The Complete Guide to Intelligence Quotient | MyIQScores"
+      title="What Is IQ? A Guide to Intelligence Quotient | MyIQScores"
       description="What does IQ actually mean? Learn how IQ is measured, what your score means, the IQ bell curve, score ranges, and how to test your intelligence — all explained simply."
       canonicalUrl="/what-is-iq"
       ogType="article"

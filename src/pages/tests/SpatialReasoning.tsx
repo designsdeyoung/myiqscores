@@ -53,7 +53,7 @@ const articleSchema = {
 const SpatialReasoning = () => (
   <>
     <SEOHead
-      title="Spatial Reasoning Test: What It Measures & Which Careers Need It | MyIQScores"
+      title="Spatial Reasoning Test: Careers That Need It | MyIQScores"
       description="Learn what spatial reasoning tests measure, how visual-spatial intelligence works, which professions require high spatial IQ, and evidence-based ways to improve it."
       canonicalUrl="/tests/spatial-reasoning"
       ogType="article"

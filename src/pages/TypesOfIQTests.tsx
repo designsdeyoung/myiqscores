@@ -18,7 +18,7 @@ const faqSchema = {
 const TypesOfIQTests = () => (
   <ContentPage>
     <SEOHead
-      title="Types of IQ Tests: WAIS, Stanford-Binet, Raven's & More Explained | MyIQScores"
+      title="Types of IQ Tests: WAIS, Stanford-Binet, Raven's & More"
       description="Compare the main types of IQ tests: WAIS, Stanford-Binet, Raven's Progressive Matrices, and more. Learn which test is most accurate and what each measures."
       canonicalUrl="/types-of-iq-tests"
       ogType="article"

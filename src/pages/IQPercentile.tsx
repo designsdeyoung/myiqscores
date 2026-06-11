@@ -18,7 +18,7 @@ const faqSchema = {
 const IQPercentile = () => (
   <ContentPage>
     <SEOHead
-      title="IQ Percentile Chart: Find Your Exact Percentile Ranking | MyIQScores"
+      title="IQ Percentile Chart: Find Your Exact Ranking | MyIQScores"
       description="What percentile is your IQ score? Use our complete IQ percentile chart to find exactly where you rank. IQ 100 = 50th percentile, 115 = 84th, 130 = 98th."
       canonicalUrl="/iq-percentile-chart"
       ogType="article"

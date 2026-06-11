@@ -36,7 +36,7 @@ const faqSchema = {
 const HowToImproveIQ = () => (
   <ContentPage>
     <SEOHead
-      title="How to Improve Your IQ: 12 Science-Backed Methods | MyIQScores"
+      title="How to Improve IQ: 12 Science-Backed Methods | MyIQScores"
       description="Can you actually increase your IQ? Yes — here are 12 evidence-based strategies to boost cognitive function, from exercise to learning new skills."
       canonicalUrl="/how-to-improve-iq"
       ogType="article"

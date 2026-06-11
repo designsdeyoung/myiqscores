@@ -17,7 +17,7 @@ const articleSchema = {
 const EmotionalIntelligenceVsIQ = () => (
   <ContentPage>
     <SEOHead
-      title="Emotional Intelligence vs IQ: Which Matters More? | MyIQScores"
+      title="Emotional Intelligence vs IQ: Which Matters More?"
       description="EQ vs IQ is one of psychology's great debates. The answer depends on what you're trying to do — a data-driven look at both intelligences across life domains."
       canonicalUrl="/blog/emotional-intelligence-vs-iq"
       ogType="article"

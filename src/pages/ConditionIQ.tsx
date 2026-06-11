@@ -1,6 +1,8 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { fitTitle, preferTitle } from "@/lib/seo";
+import { ringNeighbors } from "@/lib/internalLinks";
 import { getConditionBySlug, conditionIQData } from "@/data/conditionIQData";
 
 const ConditionIQ = () => {
@@ -20,7 +22,9 @@ const ConditionIQ = () => {
     })),
   };
 
-  const otherConditions = conditionIQData.filter((c) => c.slug !== condition.slug);
+  const conditionIndex = conditionIQData.findIndex((c) => c.slug === condition.slug);
+  // Ring neighbors spread sibling links evenly so no condition page orphans.
+  const otherConditions = ringNeighbors(conditionIQData, conditionIndex, 6);
 
   const relatedPages = [
     { title: "What Is IQ? Complete Guide", href: "/what-is-iq" },
@@ -40,7 +44,7 @@ const ConditionIQ = () => {
   return (
     <ContentPage ctaText="Discover your own IQ — take the free test" relatedPages={relatedPages}>
       <SEOHead
-        title={`${condition.headline} | MyIQScores`}
+        title={preferTitle(`${condition.headline} | MyIQScores`, fitTitle(`${condition.name} and IQ`, [": What the Research Shows", ": Research Findings"]))}
         description={condition.metaDescription}
         canonicalUrl={`/iq-and/${condition.slug}`}
         ogType="article"

@@ -44,7 +44,7 @@ const faqSchema = {
 const LowIQ = () => (
   <ContentPage>
     <SEOHead
-      title="What Is a Low IQ? Ranges, Signs & What It Means for Your Life | MyIQScores"
+      title="What Is a Low IQ? Ranges, Signs & What It Means | MyIQScores"
       description="A low IQ score is typically below 85. Learn what low IQ means, the ranges from borderline to extremely low, and what it means for daily life, careers, and support."
       canonicalUrl="/low-iq"
       ogType="article"

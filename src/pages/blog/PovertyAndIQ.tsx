@@ -67,7 +67,7 @@ const PovertyAndIQ = () => (
     ]}
   >
     <SEOHead
-      title="Poverty Doesn't Just Correlate With Low IQ — It Causes It | MyIQScores"
+      title="Poverty and IQ: Why Poverty Causes Low IQ | MyIQScores"
       description="Financial stress consumes working memory equivalent to 13 IQ points. Early childhood poverty reshapes the brain. The Mullainathan & Shafir scarcity research is among the most important findings in cognitive science."
       canonicalUrl="/blog/poverty-and-iq"
       ogType="article"

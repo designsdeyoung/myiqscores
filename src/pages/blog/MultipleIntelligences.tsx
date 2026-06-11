@@ -63,7 +63,7 @@ const MultipleIntelligences = () => (
     ]}
   >
     <SEOHead
-      title="Multiple Intelligences Theory: What Howard Gardner Said vs. What Science Shows | MyIQScores"
+      title="Multiple Intelligences Theory: Gardner vs. Science"
       description="Howard Gardner's theory of multiple intelligences is widely taught but widely misunderstood. Here's what it actually says and what empirical research shows about it."
       canonicalUrl="/blog/multiple-intelligences-theory"
       ogType="article"

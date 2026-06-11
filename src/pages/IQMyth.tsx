@@ -1,6 +1,7 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { fitTitle } from "@/lib/seo";
 import { getMythBySlug, iqMythData } from "@/data/iqMythData";
 
 const IQMyth = () => {
@@ -33,7 +34,7 @@ const IQMyth = () => {
   return (
     <ContentPage relatedPages={relatedPages}>
       <SEOHead
-        title={`${myth.title} | IQ Myths Debunked | MyIQScores`}
+        title={fitTitle(myth.title, [" | IQ Myths Debunked", " | IQ Myths"])}
         description={`${myth.myth} Find out what science actually says about this common IQ myth.`}
         canonicalUrl={`/iq-myths/${myth.slug}`}
         ogType="article"

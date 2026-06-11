@@ -112,7 +112,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <SEOHead
-        title="Free IQ Test — 30 Questions, Instant Score, No Paywall | MyIQScores"
+        title="Free IQ Test: 30 Questions, Instant Score, No Paywall"
         description="Take a free online IQ-style reasoning test. 30 questions, instant educational results, score ranges, and cognitive learning guides. No sign-up or paywall."
         canonicalUrl="https://www.myiqscores.com"
         jsonLd={[websiteSchema, faqSchema]}

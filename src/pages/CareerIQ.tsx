@@ -1,6 +1,7 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
+import { fitTitle, preferTitle } from "@/lib/seo";
 import IQMeter from "@/components/IQMeter";
 import ComparisonChart from "@/components/ComparisonChart";
 import PercentileBar from "@/components/PercentileBar";
@@ -93,7 +94,7 @@ const CareerIQ = () => {
   return (
     <ContentPage ctaText={`Think you have what it takes? Test your IQ now`} relatedPages={relatedPages}>
       <SEOHead
-        title={seoTitles[career.slug] ?? `IQ Needed to Be a ${career.career}: Average Score & Requirements | MyIQScores`}
+        title={preferTitle(seoTitles[career.slug], fitTitle(`IQ Needed to Be a ${career.career}`, [": Average Score and Range", ": Average Score"]))}
         description={seoDescs[career.slug] ?? `What IQ do you need to be a ${career.career.toLowerCase()}? The average IQ for ${career.career.toLowerCase()}s is ${career.avgIQRange}. Learn the cognitive requirements and how to qualify.`}
         canonicalUrl={`/iq-needed-for/${career.slug}`}
         ogType="article"
@@ -136,6 +137,13 @@ const CareerIQ = () => {
 
       <h2>Education Path</h2>
       <p>{career.educationPath}</p>
+
+      {career.cognitiveDemands && (
+        <>
+          <h2>Cognitive Demands of the Job</h2>
+          <p>{career.cognitiveDemands}</p>
+        </>
+      )}
 
       <h2>How Does This Compare to Other Careers?</h2>
 

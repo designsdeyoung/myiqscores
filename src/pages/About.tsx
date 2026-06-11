@@ -6,7 +6,7 @@ import { Brain, Mail, Shield, BookOpen, Users, Award } from "lucide-react";
 const About = () => (
   <ContentPage showLeaderboard={false} showSidebar={false}>
     <SEOHead
-      title="About MyIQScores™ — Our Mission, Team & Contact | MyIQScores"
+      title="About MyIQScores™: Our Mission, Team & Contact"
       description="Learn about MyIQScores.com, our free IQ-style reasoning test, editorial standards, methodology, privacy practices, and contact options."
       canonicalUrl="/about"
     />

@@ -67,7 +67,7 @@ const IQAndAge = () => (
     ]}
   >
     <SEOHead
-      title="What Actually Happens to Your IQ Between Age 20 and 70 | MyIQScores"
+      title="IQ and Age: What Happens Between 20 and 70 | MyIQScores"
       description="Most people assume IQ simply declines with age. The reality is more interesting: fluid and crystallized intelligence follow completely different trajectories. Here's what the data show."
       canonicalUrl="/blog/iq-and-age"
       ogType="article"

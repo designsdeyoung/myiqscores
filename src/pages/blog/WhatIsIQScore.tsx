@@ -56,7 +56,7 @@ const faqSchema = {
 const WhatIsIQScore = () => (
   <ContentPage>
     <SEOHead
-      title="What Is an IQ Score? The Complete Scientific Explanation | MyIQScores"
+      title="What Is an IQ Score? A Scientific Explanation | MyIQScores"
       description="IQ scores measure specific cognitive abilities — but what exactly are they measuring, and how accurate are they? A complete scientific breakdown."
       canonicalUrl="/blog/what-is-iq-score"
       ogType="article"

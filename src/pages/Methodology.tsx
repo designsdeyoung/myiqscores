@@ -5,7 +5,7 @@ import SEOHead from "@/components/SEOHead";
 const Methodology = () => (
   <ContentPage showLeaderboard={false} showSidebar={false}>
     <SEOHead
-      title="IQ Test Methodology — How MyIQScores Estimates Results"
+      title="IQ Test Methodology: How MyIQScores Estimates Results"
       description="Learn how the MyIQScores free IQ-style test is structured, what it measures, how results are estimated, and where online testing has limits."
       canonicalUrl="/methodology"
     />
@@ -57,6 +57,35 @@ const Methodology = () => (
       validated test battery under controlled conditions. If you need an official result, start with
       our guide to <Link to="/types-of-iq-tests">types of IQ tests</Link> and then contact a local
       licensed clinician or school psychologist.
+    </p>
+
+    <h2>How We Compile Celebrity and Public Figure IQ Estimates</h2>
+    <p>
+      None of the public figures featured on our <Link to="/famous-iq">famous IQ pages</Link> have
+      released verified, professionally administered test results, with very rare exceptions noted on
+      the individual page. Every figure we publish is an estimate, and we present it that way. Each
+      estimate is compiled from publicly available signals: documented academic records and admission
+      test scores where they exist, historiometric studies such as the Cox (1926) analysis of
+      historical geniuses, statements the person or their biographers have made, and the cognitive
+      demands of their documented achievements. Where credible sources disagree, we publish a range
+      rather than a single number, and we widen the range when the underlying evidence is thin.
+    </p>
+    <p>
+      These estimates are for education and entertainment. They should never be read as measured
+      scores, and a disclaimer to that effect appears on every celebrity page.
+    </p>
+
+    <h2>How We Build Data Pages</h2>
+    <p>
+      Pages covering average IQ by <Link to="/average-iq-by-country">country</Link>,{" "}
+      <Link to="/average-iq-by-state">US state</Link>, <Link to="/iq-by-career">career</Link>, and{" "}
+      <Link to="/iq-by-major">college major</Link> draw on published research: international cognitive
+      assessment datasets, NAEP and standardized testing patterns, and occupational studies that
+      report group averages. Group averages describe distributions, not individuals, and sampling
+      methods vary between studies, so we present these figures as estimates with context rather than
+      precise measurements. Percentile and rarity figures on score pages are calculated directly from
+      the normal distribution with a mean of 100 and a standard deviation of 15, which is the
+      convention used by major modern IQ tests.
     </p>
 
     <h2>How We Improve the Test</h2>

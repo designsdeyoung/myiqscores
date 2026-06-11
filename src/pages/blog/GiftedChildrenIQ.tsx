@@ -63,7 +63,7 @@ const GiftedChildrenIQ = () => (
     ]}
   >
     <SEOHead
-      title="Gifted Children and IQ: Signs, Testing, and What It Means | MyIQScores"
+      title="Gifted Children and IQ: Signs & Testing | MyIQScores"
       description="What makes a child gifted? Explore IQ thresholds (130+, 145+), early signs of giftedness, the WISC-V test, acceleration vs enrichment research, and guidance for parents."
       canonicalUrl="/blog/gifted-children-iq"
       ogType="article"

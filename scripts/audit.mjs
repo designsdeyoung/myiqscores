@@ -46,8 +46,20 @@ function routeFromFile(file) {
   return rel === "" ? "/" : "/" + rel.split(path.sep).join("/");
 }
 
+// Decode HTML entities so lengths reflect rendered characters, which is what
+// search engines measure.
+function decodeEntities(s) {
+  return s
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
+
 function extract(html) {
-  const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1]?.trim() ?? "";
+  const title = decodeEntities((html.match(/<title[^>]*>([\s\S]*?)<\/title>/) || [])[1]?.trim() ?? "");
   const desc =
     (html.match(/<meta\s+name="description"\s+content="([^"]*)"/) ||
       html.match(/<meta\s+content="([^"]*)"\s+name="description"/) ||
@@ -103,8 +115,10 @@ const rows = [...pages.entries()]
   }))
   .sort((a, b) => a.route.localeCompare(b.route));
 
-const orphans = rows.filter((r) => r.inbound < 3 && r.route !== "/");
-const thin = rows.filter((r) => r.wordCount < 600);
+// Utility pages are not content pages; the 600-word rule does not apply.
+const UTILITY_ROUTES = new Set(["/contact", "/privacy-policy", "/terms-of-service", "/unsubscribe", "/disclaimer"]);
+const orphans = rows.filter((r) => r.inbound < 3 && r.route !== "/" && !UTILITY_ROUTES.has(r.route));
+const thin = rows.filter((r) => r.wordCount < 600 && !UTILITY_ROUTES.has(r.route));
 const longTitles = rows.filter((r) => r.title.length > 60);
 const longDescs = rows.filter((r) => r.desc.length > 155);
 const missingCanonical = rows.filter((r) => !r.canonical);

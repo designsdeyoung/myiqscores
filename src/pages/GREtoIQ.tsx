@@ -64,7 +64,7 @@ const GREtoIQ = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="GRE Score to IQ Score: Conversion Chart & Calculator | MyIQScores"
+        title="GRE to IQ Conversion Chart & Calculator | MyIQScores"
         description="Convert your GRE score to an estimated IQ. A perfect 340 GRE roughly corresponds to an IQ of 145+. See the full GRE to IQ conversion chart."
         canonicalUrl="/gre-to-iq"
         ogType="article"

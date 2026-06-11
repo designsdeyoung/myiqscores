@@ -53,7 +53,7 @@ const ACTtoIQ = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="ACT Score to IQ Score: Conversion Chart & Calculator | MyIQScores"
+        title="ACT to IQ Conversion Chart & Calculator | MyIQScores"
         description="Convert your ACT score to an estimated IQ. A 36 ACT correlates to approximately IQ 145. See the full ACT to IQ conversion table."
         canonicalUrl="/act-to-iq"
         ogType="article"

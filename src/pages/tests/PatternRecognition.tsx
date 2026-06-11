@@ -53,7 +53,7 @@ const articleSchema = {
 const PatternRecognition = () => (
   <>
     <SEOHead
-      title="Pattern Recognition Test: What It Measures & How to Score Higher | MyIQScores"
+      title="Pattern Recognition Test: How to Score Higher | MyIQScores"
       description="Understand how pattern recognition tests measure fluid intelligence, what Raven's Progressive Matrices tests, and how to improve your visual pattern ability."
       canonicalUrl="/tests/pattern-recognition"
       ogType="article"

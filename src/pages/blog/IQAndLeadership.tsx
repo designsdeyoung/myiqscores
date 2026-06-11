@@ -63,7 +63,7 @@ const IQAndLeadership = () => (
     ]}
   >
     <SEOHead
-      title="IQ and Leadership: Does Intelligence Make a Better Leader? | MyIQScores"
+      title="IQ and Leadership: Does It Make Better Leaders? | MyIQScores"
       description="IQ predicts leadership — but only up to a point. Research reveals surprising findings about the intelligence of effective leaders and what traits matter most."
       canonicalUrl="/blog/iq-and-leadership"
       ogType="article"

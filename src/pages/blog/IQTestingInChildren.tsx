@@ -63,7 +63,7 @@ const IQTestingInChildren = () => (
     ]}
   >
     <SEOHead
-      title="IQ Testing in Children: What Parents and Educators Need to Know | MyIQScores"
+      title="IQ Testing in Children: Parent & Educator Guide | MyIQScores"
       description="When should children be IQ tested? What do the results mean? A comprehensive guide covering child IQ testing, giftedness, learning disabilities, and what scores actually tell us."
       canonicalUrl="/blog/iq-testing-in-children"
       ogType="article"

@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Brain, ArrowRight, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react"; // useEffect kept for useActiveSection
+import { getAutoRelatedLinks } from "@/lib/internalLinks";
 import BackgroundEffect from "./BackgroundEffect";
 import Navbar from "./Navbar";
 import AdUnit from "./AdUnit";
@@ -148,6 +149,18 @@ const ContentPage = ({
   const tocIds = toc ? toc.map((t) => t.id) : [];
   const activeId = useActiveSection(tocIds);
   const [tocCollapsed, setTocCollapsed] = useState(true);
+  const { pathname } = useLocation();
+
+  // Merge template-provided links with the sitewide linking engine, dedupe
+  // by href, drop self-links, cap at 10.
+  const seen = new Set<string>([pathname]);
+  const mergedRelated = [...(relatedPages ?? []), ...getAutoRelatedLinks(pathname)]
+    .filter((l) => {
+      if (seen.has(l.href)) return false;
+      seen.add(l.href);
+      return true;
+    })
+    .slice(0, 10);
 
   return (
     <div className="relative min-h-screen">
@@ -260,11 +273,11 @@ const ContentPage = ({
         </div>
 
         {/* Related Pages Section */}
-        {relatedPages && relatedPages.length > 0 && (
+        {mergedRelated.length > 0 && (
           <div className="max-w-3xl mx-auto mt-12">
             <h2 className="font-heading text-xl font-bold text-foreground mb-4">You Might Also Like</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {relatedPages.map((page) => (
+              {mergedRelated.map((page) => (
                 <Link
                   key={page.href}
                   to={page.href}

@@ -44,7 +44,7 @@ const faqSchema = {
 const PresidentIQ = () => (
   <ContentPage>
     <SEOHead
-      title="IQ Scores of US Presidents: Who Was the Smartest? | MyIQScores"
+      title="IQ of US Presidents: Who Was the Smartest? | MyIQScores"
       description="Estimated IQ scores of US presidents from Washington to Biden. Who had the highest IQ? See how Trump, Obama, Clinton, and others rank intellectually."
       canonicalUrl="/iq-of-presidents"
       ogType="article"

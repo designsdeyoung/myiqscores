@@ -63,7 +63,7 @@ const FlynnEffect = () => (
     ]}
   >
     <SEOHead
-      title="The Flynn Effect: Why Average IQ Scores Have Been Rising for Decades | MyIQScores"
+      title="Flynn Effect: Why Average IQ Scores Keep Rising | MyIQScores"
       description="Global IQ scores rose ~3 points per decade through most of the 20th century. Learn what caused this dramatic rise, why it may be reversing, and what it means for how we understand intelligence."
       canonicalUrl="/blog/flynn-effect"
       ogType="article"

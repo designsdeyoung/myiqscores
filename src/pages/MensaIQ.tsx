@@ -20,7 +20,7 @@ const faqSchema = {
 const MensaIQ = () => (
   <ContentPage>
     <SEOHead
-      title="Mensa IQ Test: Score Required, How to Join & What to Expect | MyIQScores"
+      title="Mensa IQ Test: Score Required & How to Join | MyIQScores"
       description="What IQ do you need for Mensa? You need a score in the top 2% (IQ 130+). Learn about the Mensa test, how to qualify, accepted tests, and what membership offers."
       canonicalUrl="/mensa-iq-test"
       ogType="article"
