@@ -39,6 +39,11 @@ const staticRoutes = [
   "/tests/spatial-reasoning",
   "/tests/numerical-reasoning",
   "/tests/memory",
+  "/tools",
+  "/tools/iq-percentile-calculator",
+  "/tools/sat-to-iq-converter",
+  "/tools/iq-rarity",
+  "/tools/celebrity-iq-match",
   "/how-it-works",
   "/disclaimer",
   "/blog",
@@ -175,6 +180,11 @@ const SEGMENTS = [
     sources: ["src/data/ageIQData.ts", "src/data/conditionIQData.ts", "src/data/iqMythData.ts", "src/data/iqCompareData.ts"],
   },
   {
+    file: "sitemap-tools.xml",
+    match: (r) => r === "/tools" || r.startsWith("/tools/"),
+    sources: [],
+  },
+  {
     file: "sitemap-blog.xml",
     match: (r) => r === "/blog" || r.startsWith("/blog/"),
     sources: [],
@@ -238,6 +248,7 @@ async function prerender() {
   const serverModule = await import(serverEntry);
   const {
     render,
+    preloadAllPages,
     iqScores,
     countrySlugs,
     careerSlugs,
@@ -252,6 +263,10 @@ async function prerender() {
   } = serverModule;
 
   const routes = buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs });
+
+  // Resolve all lazy route modules so renderToString never hits an
+  // unresolved Suspense boundary (which would prerender empty pages).
+  await preloadAllPages();
 
   console.log(`Building ${routes.length} pages...`);
 

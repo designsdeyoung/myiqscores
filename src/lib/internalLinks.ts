@@ -12,17 +12,23 @@
 // ContentPage merges these auto links into its "You Might Also Like" grid on
 // every page, so adding an entry to any data file automatically wires it
 // into the link graph.
-import { famousIQData } from "@/data/famousIQData";
-import { careerIQData } from "@/data/careerIQData";
-import { majorIQData } from "@/data/majorIQData";
-import { cityIQData } from "@/data/cityIQData";
-import { countryIQData } from "@/data/countryIQData";
-import { stateIQData } from "@/data/stateIQData";
-import { conditionIQData } from "@/data/conditionIQData";
-import { iqMythData } from "@/data/iqMythData";
-import { iqCompareData } from "@/data/iqCompareData";
-import { ageIQData } from "@/data/ageIQData";
-import { iqScores } from "@/data/iqScoreData";
+//
+// Data comes from the generated compact link index (scripts/gen-link-index),
+// NOT the full data files: this module is in every page's JS graph, and the
+// full data files total ~2MB while the index is ~57KB.
+import {
+  famousIndex,
+  careerIndex,
+  majorIndex,
+  cityIndex,
+  countryIndex,
+  stateIndex,
+  conditionIndex,
+  mythIndex,
+  compareIndex,
+  ageIndex,
+  scoreIndex,
+} from "@/generated/linkIndex";
 import { blogPosts } from "@/data/blogPosts";
 
 export interface LinkItem {
@@ -68,13 +74,14 @@ const CORE_RESOURCES: LinkItem[] = [
   { title: "ASVAB to IQ Conversion", href: "/asvab-to-iq" },
 ];
 
-const coreResource = (seed: number): LinkItem => CORE_RESOURCES[((seed % CORE_RESOURCES.length) + CORE_RESOURCES.length) % CORE_RESOURCES.length];
+const coreResource = (seed: number): LinkItem =>
+  CORE_RESOURCES[((seed % CORE_RESOURCES.length) + CORE_RESOURCES.length) % CORE_RESOURCES.length];
 
 // Nearest integer score that actually has a /is-X-iq-good page (estimates
 // like 225+ exceed the 40-200 page range).
 export const nearestScore = (iq: number): number => {
-  let nearest = iqScores[0];
-  for (const s of iqScores) if (Math.abs(s - iq) < Math.abs(nearest - iq)) nearest = s;
+  let nearest = scoreIndex[0];
+  for (const s of scoreIndex) if (Math.abs(s - iq) < Math.abs(nearest - iq)) nearest = s;
   return nearest;
 };
 
@@ -99,13 +106,13 @@ const families: Family[] = [
   {
     prefix: "/famous-iq/",
     resolve: (slug) => {
-      const i = famousIQData.findIndex((p) => p.slug === slug);
+      const i = famousIndex.findIndex((p) => p.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(famousIQData, i, 4).map((p) => ({
-        title: `${p.name}'s IQ (${p.estimatedIQ})`,
+      const links = ringNeighbors(famousIndex, i, 4).map((p) => ({
+        title: `${p.name}'s IQ (${p.iq})`,
         href: `/famous-iq/${p.slug}`,
       }));
-      const score = nearestScorePage(parseIQ(famousIQData[i].estimatedIQ));
+      const score = nearestScorePage(famousIndex[i].mid);
       if (score) links.push(score);
       links.push({ title: "Famous People IQ Scores (Full List)", href: "/famous-iq" });
       links.push(coreResource(i));
@@ -115,13 +122,13 @@ const families: Family[] = [
   {
     prefix: "/iq-needed-for/",
     resolve: (slug) => {
-      const i = careerIQData.findIndex((c) => c.slug === slug);
+      const i = careerIndex.findIndex((c) => c.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(careerIQData, i, 4).map((c) => ({
-        title: `IQ Needed to Be a ${c.career}`,
+      const links = ringNeighbors(careerIndex, i, 4).map((c) => ({
+        title: `IQ Needed to Be a ${c.name}`,
         href: `/iq-needed-for/${c.slug}`,
       }));
-      const mid = Math.round((careerIQData[i].minIQ + careerIQData[i].maxIQ) / 2);
+      const mid = Math.round((careerIndex[i].minIQ + careerIndex[i].maxIQ) / 2);
       const score = nearestScorePage(mid);
       if (score) links.push(score);
       links.push({ title: "IQ by Career Chart", href: "/iq-by-career" });
@@ -132,14 +139,14 @@ const families: Family[] = [
   {
     prefix: "/iq-by-major/",
     resolve: (slug) => {
-      const i = majorIQData.findIndex((m) => m.slug === slug);
+      const i = majorIndex.findIndex((m) => m.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(majorIQData, i, 4).map((m) => ({
-        title: `Average IQ for ${m.major} Majors`,
+      const links = ringNeighbors(majorIndex, i, 4).map((m) => ({
+        title: `Average IQ for ${m.name} Majors`,
         href: `/iq-by-major/${m.slug}`,
       }));
-      const career = careerIQData[i % careerIQData.length];
-      links.push({ title: `IQ Needed to Be a ${career.career}`, href: `/iq-needed-for/${career.slug}` });
+      const career = careerIndex[i % careerIndex.length];
+      links.push({ title: `IQ Needed to Be a ${career.name}`, href: `/iq-needed-for/${career.slug}` });
       links.push({ title: "Average IQ by College Major", href: "/iq-by-major" });
       links.push(coreResource(i));
       return links;
@@ -148,10 +155,10 @@ const families: Family[] = [
   {
     prefix: "/iq-by-city/",
     resolve: (slug) => {
-      const i = cityIQData.findIndex((c) => c.slug === slug);
+      const i = cityIndex.findIndex((c) => c.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(cityIQData, i, 4).map((c) => ({
-        title: `Average IQ in ${c.city}`,
+      const links = ringNeighbors(cityIndex, i, 4).map((c) => ({
+        title: `Average IQ in ${c.name}`,
         href: `/iq-by-city/${c.slug}`,
       }));
       links.push({ title: "Average IQ by City", href: "/iq-by-city" });
@@ -163,9 +170,9 @@ const families: Family[] = [
   {
     prefix: "/average-iq-by-state/",
     resolve: (slug) => {
-      const i = stateIQData.findIndex((s) => s.slug === slug);
+      const i = stateIndex.findIndex((s) => s.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(stateIQData, i, 4).map((s) => ({
+      const links = ringNeighbors(stateIndex, i, 4).map((s) => ({
         title: `Average IQ in ${s.name}`,
         href: `/average-iq-by-state/${s.slug}`,
       }));
@@ -178,15 +185,15 @@ const families: Family[] = [
   {
     prefix: "/average-iq/",
     resolve: (slug) => {
-      const i = countryIQData.findIndex((c) => c.slug === slug);
+      const i = countryIndex.findIndex((c) => c.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(countryIQData, i, 4).map((c) => ({
+      const links = ringNeighbors(countryIndex, i, 4).map((c) => ({
         title: `Average IQ in ${c.name}`,
         href: `/average-iq/${c.slug}`,
       }));
       links.push({ title: "Average IQ by Country (Full Ranking)", href: "/average-iq-by-country" });
-      const city = cityIQData[i % cityIQData.length];
-      links.push({ title: `Average IQ in ${city.city}`, href: `/iq-by-city/${city.slug}` });
+      const city = cityIndex[i % cityIndex.length];
+      links.push({ title: `Average IQ in ${city.name}`, href: `/iq-by-city/${city.slug}` });
       links.push(coreResource(i));
       return links;
     },
@@ -194,9 +201,9 @@ const families: Family[] = [
   {
     prefix: "/iq-and/",
     resolve: (slug) => {
-      const i = conditionIQData.findIndex((c) => c.slug === slug);
+      const i = conditionIndex.findIndex((c) => c.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(conditionIQData, i, 4).map((c) => ({
+      const links = ringNeighbors(conditionIndex, i, 4).map((c) => ({
         title: `${c.name} and IQ`,
         href: `/iq-and/${c.slug}`,
       }));
@@ -210,10 +217,10 @@ const families: Family[] = [
   {
     prefix: "/iq-myths/",
     resolve: (slug) => {
-      const i = iqMythData.findIndex((m) => m.slug === slug);
+      const i = mythIndex.findIndex((m) => m.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(iqMythData, i, 4).map((m) => ({
-        title: m.title,
+      const links = ringNeighbors(mythIndex, i, 4).map((m) => ({
+        title: m.name,
         href: `/iq-myths/${m.slug}`,
       }));
       links.push({ title: "Are IQ Tests Actually Accurate?", href: "/blog/iq-tests-accurate" });
@@ -224,10 +231,10 @@ const families: Family[] = [
   {
     prefix: "/iq-compare/",
     resolve: (slug) => {
-      const i = iqCompareData.findIndex((c) => c.slug === slug);
+      const i = compareIndex.findIndex((c) => c.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(iqCompareData, i, 4).map((c) => ({
-        title: c.title,
+      const links = ringNeighbors(compareIndex, i, 4).map((c) => ({
+        title: c.name,
         href: `/iq-compare/${c.slug}`,
       }));
       links.push({ title: "IQ Comparisons (Full List)", href: "/iq-compare" });
@@ -238,10 +245,10 @@ const families: Family[] = [
   {
     prefix: "/iq-by-age/",
     resolve: (slug) => {
-      const i = ageIQData.findIndex((a) => a.slug === slug);
+      const i = ageIndex.findIndex((a) => a.slug === slug);
       if (i < 0) return [];
-      const links = ringNeighbors(ageIQData, i, 4).map((a) => ({
-        title: `Average IQ for ${a.ageGroup}`,
+      const links = ringNeighbors(ageIndex, i, 4).map((a) => ({
+        title: `Average IQ for ${a.name}`,
         href: `/iq-by-age/${a.slug}`,
       }));
       links.push({ title: "What Happens to IQ With Age", href: "/blog/iq-and-age" });
@@ -265,6 +272,15 @@ const families: Family[] = [
   },
 ];
 
+// Tool pages cross-link each other plus the quiz-adjacent core pages.
+const TOOL_LINKS: LinkItem[] = [
+  { title: "IQ Percentile Calculator", href: "/tools/iq-percentile-calculator" },
+  { title: "How Rare Is Your IQ?", href: "/tools/iq-rarity" },
+  { title: "SAT, ACT and GRE to IQ Converter", href: "/tools/sat-to-iq-converter" },
+  { title: "Celebrity IQ Match", href: "/tools/celebrity-iq-match" },
+  { title: "All Free IQ Tools", href: "/tools" },
+];
+
 // Conversion pages cross-link each other so none of them orphan.
 const CONVERTER_LINKS: Record<string, LinkItem[]> = {};
 const converters: LinkItem[] = [
@@ -282,9 +298,9 @@ export function getAutoRelatedLinks(pathname: string): LinkItem[] {
   const scoreMatch = pathname.match(/^\/is-(\d+)-iq-good$/);
   if (scoreMatch) {
     const score = Number(scoreMatch[1]);
-    const i = iqScores.indexOf(score);
+    const i = scoreIndex.indexOf(score);
     if (i < 0) return [];
-    const links = ringNeighbors(iqScores, i, 4).map((s) => ({
+    const links = ringNeighbors(scoreIndex, i, 4).map((s) => ({
       title: `Is ${s} IQ Good?`,
       href: `/is-${s}-iq-good`,
     }));
@@ -293,7 +309,20 @@ export function getAutoRelatedLinks(pathname: string): LinkItem[] {
     return links;
   }
 
-  if (CONVERTER_LINKS[pathname]) return CONVERTER_LINKS[pathname];
+  if (pathname === "/tools" || pathname.startsWith("/tools/")) {
+    return [
+      ...TOOL_LINKS.filter((t) => t.href !== pathname),
+      { title: "IQ Percentile Chart", href: "/iq-percentile-chart" },
+      { title: "IQ Score Ranges Chart", href: "/iq-score-ranges" },
+    ];
+  }
+
+  if (CONVERTER_LINKS[pathname]) {
+    return [
+      ...CONVERTER_LINKS[pathname],
+      { title: "Interactive Test Score to IQ Converter", href: "/tools/sat-to-iq-converter" },
+    ];
+  }
 
   for (const family of families) {
     if (pathname.startsWith(family.prefix)) {

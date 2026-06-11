@@ -250,3 +250,24 @@
   from { width: 0%; }
   to { width: var(--fill-width); }
 }
+
+/* ── SSR-safe hero entrance ──
+   The hero must paint immediately from prerendered HTML; framer-motion
+   variants render inline opacity:0 until hydration, which pushed mobile
+   LCP past 12s. CSS animations run on first paint with no JS. */
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-fade { animation: hero-fade-up 0.6s ease-out both; }
+.hero-d1 { animation-delay: 0.08s; }
+.hero-d2 { animation-delay: 0.16s; }
+.hero-d3 { animation-delay: 0.24s; }
+.hero-d4 { animation-delay: 0.32s; }
+.hero-d5 { animation-delay: 0.4s; }
+.hero-d6 { animation-delay: 0.48s; }
+.hero-d7 { animation-delay: 0.56s; }
+.hero-d8 { animation-delay: 0.64s; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade { animation: none; }
+}

@@ -8,7 +8,7 @@ import FamousPersonIcon from "@/components/FamousPersonIcon";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getFamousPersonBySlug, famousIQData } from "@/data/famousIQData";
 import { careerIQData } from "@/data/careerIQData";
-import { ringNeighbors, parseIQ, nearestScore } from "@/lib/internalLinks";
+import { ringNeighbors, rotated, nearestScore } from "@/lib/internalLinks";
 import { fitTitle, preferTitle } from "@/lib/seo";
 
 
@@ -135,13 +135,16 @@ const FamousIQ = () => {
     url: `https://www.myiqscores.com/famous-iq/${person.slug}`,
   };
 
-  const personIQ = parseIQ(person.estimatedIQ);
+  const personIQ = person.estimatedIQMid;
   const personIndex = famousIQData.findIndex((p) => p.slug === person.slug);
   // Ring selection: each page links its data-file neighbors, which spreads
   // inbound links evenly across all entries instead of concentrating them
   // on the first few people in the file.
   const displayComparisons = ringNeighbors(famousIQData, personIndex, 6);
   const scorePage = nearestScore(personIQ);
+  const fieldPeers = famousIQData.filter((p) => p.field === person.field && p.slug !== person.slug);
+  // Rotate by index so same-field links spread across the whole group.
+  const sameField = rotated(fieldPeers, personIndex).slice(0, 6);
   const careerMatches = careerIQData.filter((c) => personIQ >= c.minIQ - 5 && personIQ <= c.maxIQ + 5);
   const relatedCareers = careerMatches.length
     ? [0, 1, 2].map((o) => careerMatches[(personIndex + o) % careerMatches.length]).filter((c, idx, arr) => arr.indexOf(c) === idx)
@@ -169,6 +172,8 @@ const FamousIQ = () => {
         )}
         description={seoDescs[person.slug] ?? `${person.name}'s IQ is estimated at ${person.estimatedIQ}. Learn what this means, how it compares, and what made ${person.name} a genius.`}
         canonicalUrl={`/famous-iq/${person.slug}`}
+        preloadImage={person.imageUrl}
+        ogImage={`https://www.myiqscores.com/api/og?type=celebrity&name=${encodeURIComponent(person.name)}&iq=${encodeURIComponent(person.estimatedIQ)}&score=${person.estimatedIQMid}`}
         ogType="article"
         jsonLd={[faqSchema, breadcrumbSchema, personSchema]}
       />
@@ -217,7 +222,7 @@ const FamousIQ = () => {
           { label: person.name, value: personIQ, highlight: true },
           ...displayComparisons.slice(0, 5).map((p) => ({
             label: p.name,
-            value: parseIQ(p.estimatedIQ),
+            value: p.estimatedIQMid,
             href: `/famous-iq/${p.slug}`,
           })),
         ]}
@@ -274,6 +279,20 @@ const FamousIQ = () => {
         </>
       )}
 
+      <h2>Where This Estimate Comes From</h2>
+      <ul>
+        {person.sources.map((src, i) => (
+          <li key={i}>{src}</li>
+        ))}
+      </ul>
+      <div className="glass-card p-4 rounded-xl my-6 border border-[rgba(255,200,0,0.25)]">
+        <p className="text-sm text-muted-foreground mb-0">
+          <strong className="text-foreground">Estimate disclaimer:</strong> {person.name}&apos;s IQ
+          figure is a speculative estimate compiled from public sources, not a verified test result.
+          See <Link to="/methodology">how we compile these estimates</Link>.
+        </p>
+      </div>
+
       <h2>Frequently Asked Questions</h2>
       {person.faqItems.map((item, i) => (
         <div key={i}>
@@ -281,6 +300,23 @@ const FamousIQ = () => {
           <p>{item.answer}</p>
         </div>
       ))}
+
+      {sameField.length > 0 && (
+        <>
+          <h2>More {person.field} Figures</h2>
+          <div className="flex flex-wrap gap-3 my-4">
+            {sameField.map((p) => (
+              <Link
+                key={p.slug}
+                to={`/famous-iq/${p.slug}`}
+                className="glass-card px-4 py-2 rounded-lg text-sm font-medium text-foreground hover:bg-[rgba(255,255,255,0.08)] transition-colors no-underline"
+              >
+                {p.name} ({p.estimatedIQ})
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
 
       <h2>Explore More Famous IQs</h2>
       <div className="flex flex-wrap gap-3 my-4">

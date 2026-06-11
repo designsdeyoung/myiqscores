@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { trackResultViewed, trackResultShared } from "@/lib/analytics";
-import { Shield, Twitter, Facebook, Linkedin, Copy, Check, Lock, Award } from "lucide-react";
+import { Shield, Twitter, Facebook, Linkedin, Copy, Check, Lock, Award, Download } from "lucide-react";
 import AdUnit from "./AdUnit";
 import { AD_SLOTS } from "@/config/adsense";
 import IQCertificate from "./IQCertificate";
@@ -166,7 +166,8 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
   const catScores = getCategoryScores(answers);
   const recommendations = getRecommendations(iq);
 
-  const shareUrl = "https://myiqscores.com";
+  const shareUrl = `https://www.myiqscores.com/share?s=${iq}&p=${percentile}`;
+  const ogImageUrl = `https://www.myiqscores.com/api/og?type=result&score=${iq}&percentile=${percentile}`;
   const shareText = `I just scored ${iq} on a free IQ test — that's the ${percentile}th percentile! 🧠 Think you can beat me? → myiqscores.com`;
 
   // Fire result_viewed on mount
@@ -219,7 +220,9 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
   const handleChallenge = () => {
     const code = Math.random().toString(36).slice(2, 8).toUpperCase();
     localStorage.setItem(`iq_challenge_${code}`, JSON.stringify({ score: iq, percentile }));
-    const challengeUrl = `https://myiqscores.com/test?ref=${code}`;
+    // Score travels in the URL so the challenge works across devices; the
+    // /share endpoint adds score-specific OG tags for link previews.
+    const challengeUrl = `https://www.myiqscores.com/share?s=${iq}&p=${percentile}&ref=${code}`;
     navigator.clipboard.writeText(`I just scored ${iq} on this IQ test 🧠 Think you can beat me? Try it free: ${challengeUrl}`);
     toast.success("Challenge link copied! Send it to a friend");
     trackResultShared("challenge");
@@ -524,6 +527,17 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
             >
               {copied ? <Check className="w-5 h-5 text-success" /> : <Copy className="w-5 h-5 text-muted-foreground" />}
             </button>
+            <a
+              href={ogImageUrl}
+              download={`my-iq-score-${iq}.png`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card p-3 hover:bg-[rgba(255,255,255,0.08)] transition-all hover:scale-105 rounded-lg"
+              onClick={() => trackResultShared("copy")}
+              title="Download score image"
+            >
+              <Download className="w-5 h-5 text-muted-foreground" />
+            </a>
           </div>
         </motion.div>
 

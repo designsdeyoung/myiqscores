@@ -1,7 +1,7 @@
 import { useLocation, Link, Navigate } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
-import { rotated, parseIQ } from "@/lib/internalLinks";
+import { rotated } from "@/lib/internalLinks";
 import BellCurve from "@/components/BellCurve";
 import IQMeter from "@/components/IQMeter";
 import PercentileBar from "@/components/PercentileBar";
@@ -122,6 +122,7 @@ const IsXIQGood = () => {
         title={seoTitle}
         description={seoDesc}
         canonicalUrl={`/is-${score}-iq-good`}
+        ogImage={`https://www.myiqscores.com/api/og?type=score&score=${score}`}
         ogType="article"
         jsonLd={[faqSchema, articleSchema, breadcrumbSchema]}
       />
@@ -267,10 +268,7 @@ const IsXIQGood = () => {
 
       {/* Famous People at this IQ */}
       {(() => {
-        const matches = famousIQData.filter((p) => {
-          const iq = parseIQ(p.estimatedIQ);
-          return !isNaN(iq) && Math.abs(iq - score) <= 5;
-        });
+        const matches = famousIQData.filter((p) => Math.abs(p.estimatedIQMid - score) <= 5);
         // Rotate by score so adjacent score pages feature different people,
         // spreading celebrity inbound links instead of always picking the
         // first matches in the data file.

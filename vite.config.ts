@@ -25,44 +25,14 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: isSSR ? undefined : {
-          // Core React + Router
+          // Core React + Router (shared by every route chunk)
           "vendor-react": ["react", "react-dom", "react-router-dom", "react-helmet-async"],
-          // UI framework
+          // UI framework shared across pages
           "vendor-ui": ["framer-motion", "@tanstack/react-query", "lucide-react"],
-          // Data files
-          "data-scores": ["./src/data/iqScoreData.ts"],
-          "data-countries": ["./src/data/countryIQData.ts"],
-          "data-careers": ["./src/data/careerIQData.ts"],
-          "data-famous": ["./src/data/famousIQData.ts"],
-          "data-myths": ["./src/data/iqMythData.ts"],
-          "data-states": ["./src/data/stateIQData.ts"],
-          "data-age": ["./src/data/ageIQData.ts"],
-          // SEO content pages (separate from core test flow)
-          "pages-content": [
-            "./src/pages/WhatIsIQ.tsx",
-            "./src/pages/IQScoreRanges.tsx",
-            "./src/pages/HighestIQEver.tsx",
-            "./src/pages/GoodIQScore.tsx",
-            "./src/pages/GeniusIQ.tsx",
-            "./src/pages/MensaIQ.tsx",
-            "./src/pages/TypesOfIQTests.tsx",
-            "./src/pages/IQPercentile.tsx",
-            "./src/pages/IQvsEQ.tsx",
-            "./src/pages/SATtoIQ.tsx",
-            "./src/pages/HowToImproveIQ.tsx",
-          ],
-          "pages-templates": [
-            "./src/pages/IsXIQGood.tsx",
-            "./src/pages/CountryIQ.tsx",
-            "./src/pages/CareerIQ.tsx",
-            "./src/pages/FamousIQ.tsx",
-            "./src/pages/IQMyth.tsx",
-            "./src/pages/AgeIQ.tsx",
-            "./src/pages/StateIQ.tsx",
-            "./src/pages/FamousIQHub.tsx",
-            "./src/pages/CareerIQHub.tsx",
-            "./src/pages/AverageIQByCountry.tsx",
-          ],
+          // NOTE: data files and page templates are intentionally NOT listed
+          // here anymore. Routes are code-split via React.lazy (see
+          // src/lib/asyncPage.tsx), so each page chunk pulls only the data
+          // file(s) it imports instead of every page shipping all ~2MB.
         },
       },
     },

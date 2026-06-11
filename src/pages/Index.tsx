@@ -1,14 +1,17 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, lazy, Suspense } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Brain } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import BackgroundEffect from "@/components/BackgroundEffect";
 import Landing from "@/components/Landing";
-import Quiz from "@/components/Quiz";
-import Processing from "@/components/Processing";
-import Results from "@/components/Results";
-import EmailNurture from "@/components/EmailNurture";
+
+// Quiz-flow screens only render after user interaction; splitting them keeps
+// the homepage entry chunk (the LCP-critical path) small.
+const Quiz = lazy(() => import("@/components/Quiz"));
+const Processing = lazy(() => import("@/components/Processing"));
+const Results = lazy(() => import("@/components/Results"));
+const EmailNurture = lazy(() => import("@/components/EmailNurture"));
 import SEOHead from "@/components/SEOHead";
 
 type Screen = "landing" | "quiz" | "processing" | "results";
@@ -85,7 +88,13 @@ const Index = () => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const ref = params.get("ref");
-    if (ref) {
+    // Challenge scores travel in the URL (cs/cp) so links work on any
+    // device; localStorage only covers legacy links from the same browser.
+    const cs = Number(params.get("cs"));
+    const cp = Number(params.get("cp"));
+    if (cs >= 40 && cs <= 210) {
+      setChallengerScore({ score: cs, percentile: cp >= 1 && cp <= 99 ? cp : 50 });
+    } else if (ref) {
       const stored = localStorage.getItem(`iq_challenge_${ref}`);
       if (stored) {
         try {
@@ -109,18 +118,38 @@ const Index = () => {
     setTimeout(() => setShowNurture(true), 10000);
   }, []);
 
+  const quizSchema = {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    name: "Free Online IQ Test",
+    url: "https://www.myiqscores.com/",
+    description: "30-question IQ-style reasoning test covering pattern recognition, logic, spatial, numerical, and memory skills. Instant educational results.",
+    educationalAlignment: {
+      "@type": "AlignmentObject",
+      alignmentType: "educationalSubject",
+      targetName: "Cognitive reasoning",
+    },
+    numberOfQuestions: 30,
+    timeRequired: "PT15M",
+    isAccessibleForFree: true,
+    provider: { "@id": "https://www.myiqscores.com/#organization" },
+  };
+
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <SEOHead
         title="Free IQ Test: 30 Questions, Instant Score, No Paywall"
         description="Take a free online IQ-style reasoning test. 30 questions, instant educational results, score ranges, and cognitive learning guides. No sign-up or paywall."
         canonicalUrl="https://www.myiqscores.com"
-        jsonLd={[websiteSchema, faqSchema]}
+        jsonLd={[websiteSchema, faqSchema, quizSchema]}
       />
       <BackgroundEffect />
       <Navbar />
 
-      <AnimatePresence mode="wait">
+      {/* initial={false}: the SSR/prerendered landing must paint visible;
+          screen-to-screen transitions still animate after hydration. */}
+      <Suspense fallback={null}>
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div key={screen} {...pageTransition}>
           {screen === "landing" && <Landing onStart={() => setScreen("quiz")} />}
           {screen === "quiz" && <Quiz onComplete={handleQuizComplete} />}
@@ -137,6 +166,7 @@ const Index = () => {
           )}
         </motion.div>
       </AnimatePresence>
+      </Suspense>
 
       <AnimatePresence>
         {showNurture && screen === "results" && (

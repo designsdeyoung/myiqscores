@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { Brain, ArrowRight, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react"; // useEffect kept for useActiveSection
 import { getAutoRelatedLinks } from "@/lib/internalLinks";
+import { contentDateFor, formatContentDate } from "@/generated/contentDates";
+import { trackHubNavigation } from "@/lib/analytics";
 import BackgroundEffect from "./BackgroundEffect";
 import Navbar from "./Navbar";
 import AdUnit from "./AdUnit";
@@ -150,6 +152,10 @@ const ContentPage = ({
   const activeId = useActiveSection(tocIds);
   const [tocCollapsed, setTocCollapsed] = useState(true);
   const { pathname } = useLocation();
+  // Visible freshness badge: derived from real git history of the content
+  // source (data file or page component) unless the page passes its own.
+  const autoDate = contentDateFor(pathname);
+  const updatedLabel = lastUpdated ?? (autoDate ? formatContentDate(autoDate) : undefined);
 
   // Merge template-provided links with the sitewide linking engine, dedupe
   // by href, drop self-links, cap at 10.
@@ -223,7 +229,7 @@ const ContentPage = ({
           {/* Main content */}
           <article className="max-w-3xl w-full prose-content overflow-x-hidden">
             {/* Reading time + last updated badge */}
-            {(readingTime || lastUpdated) && (
+            {(readingTime || updatedLabel) && (
               <div className="flex items-center gap-3 mb-6 flex-wrap">
                 {readingTime && (
                   <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground glass-card rounded-full px-3 py-1.5 border border-[rgba(255,255,255,0.08)]">
@@ -231,9 +237,9 @@ const ContentPage = ({
                     <span>{readingTime} min read</span>
                   </span>
                 )}
-                {lastUpdated && (
+                {updatedLabel && (
                   <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground glass-card rounded-full px-3 py-1.5 border border-[rgba(255,255,255,0.08)]">
-                    <span>Updated {lastUpdated}</span>
+                    <span>Updated {updatedLabel}</span>
                   </span>
                 )}
               </div>
@@ -281,6 +287,7 @@ const ContentPage = ({
                 <Link
                   key={page.href}
                   to={page.href}
+                  onClick={() => trackHubNavigation(page.href)}
                   className="glass-card p-4 rounded-xl border-t-2 transition-all duration-200 group card-hover flex items-start gap-3"
                   style={{ borderTopColor: "hsl(var(--primary) / 0.5)" }}
                 >
@@ -378,6 +385,7 @@ const ContentPage = ({
                 <li><Link to="/practice-iq-test" className="hover:text-foreground transition-colors">Practice IQ Test</Link></li>
                 <li><Link to="/how-to-improve-iq" className="hover:text-foreground transition-colors">How to Improve Your IQ</Link></li>
                 <li><Link to="/sat-to-iq" className="hover:text-foreground transition-colors">SAT to IQ Conversion</Link></li>
+                <li><Link to="/tools" className="hover:text-foreground transition-colors">Free IQ Tools</Link></li>
                 <li><Link to="/genius-iq" className="hover:text-foreground transition-colors">Genius IQ Guide</Link></li>
                 <li><Link to="/how-it-works" className="hover:text-foreground transition-colors">How It Works</Link></li>
               </ul>

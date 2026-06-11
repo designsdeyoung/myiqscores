@@ -53,3 +53,11 @@ export function trackResultShared(method: "copy" | "twitter" | "facebook" | "lin
     quiz_type: "iq_test",
   });
 }
+
+export function trackToolUsed(tool: string, params: Record<string, string | number> = {}) {
+  trackEvent("tool_used", { tool, ...params });
+}
+
+export function trackHubNavigation(hub: string) {
+  trackEvent("hub_navigation", { hub });
+}

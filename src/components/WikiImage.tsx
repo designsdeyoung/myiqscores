@@ -11,7 +11,8 @@ const WikiImage = ({ src, alt, caption, className = "" }: WikiImageProps) => (
       <img
         src={src}
         alt={alt}
-        loading="lazy"
+        loading="eager"
+        {...{ fetchpriority: "high" }}
         decoding="async"
         width={640}
         height={300}

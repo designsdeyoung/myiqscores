@@ -4,46 +4,20 @@ import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
 import { famousIQData } from "@/data/famousIQData";
 
-const CATEGORIES = ["All", "Scientists", "Business", "Athletes", "Politicians", "Musicians"] as const;
+const CATEGORIES = [
+  "All",
+  "Science",
+  "Technology",
+  "Business",
+  "Politics",
+  "Music",
+  "Acting & Entertainment",
+  "Sports",
+  "Internet & Media",
+  "Literature & Arts",
+  "Historical Figures",
+] as const;
 type Category = typeof CATEGORIES[number];
-
-const categoryMap: Record<string, Category> = {
-  "albert-einstein": "Scientists",
-  "stephen-hawking": "Scientists",
-  "nikola-tesla": "Scientists",
-  "elon-musk": "Business",
-  "mark-zuckerberg": "Business",
-  "bill-gates": "Business",
-  "jeff-bezos": "Business",
-  "sam-altman": "Business",
-  "jensen-huang": "Business",
-  "ryan-reynolds": "Business",
-  "rihanna": "Business",
-  "kim-kardashian": "Business",
-  "cristiano-ronaldo": "Athletes",
-  "lionel-messi": "Athletes",
-  "lebron-james": "Athletes",
-  "michael-jordan": "Athletes",
-  "tiger-woods": "Athletes",
-  "donald-trump": "Politicians",
-  "vladimir-putin": "Politicians",
-  "joe-biden": "Politicians",
-  "kamala-harris": "Politicians",
-  "xi-jinping": "Politicians",
-  "barron-trump": "Politicians",
-  "taylor-swift": "Musicians",
-  "kanye-west": "Musicians",
-  "beyonce": "Musicians",
-  "michael-jackson": "Musicians",
-  "drake": "Musicians",
-  "the-weeknd": "Musicians",
-  "dua-lipa": "Musicians",
-  "sabrina-carpenter": "Musicians",
-  "harry-styles": "Musicians",
-  "chappell-roan": "Musicians",
-  "peso-pluma": "Musicians",
-  "jungkook-bts": "Musicians",
-};
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -87,15 +61,11 @@ const faqSchema = {
 const FamousIQHub = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
 
-  const sorted = [...famousIQData].sort((a, b) => {
-    const aIQ = parseInt(a.estimatedIQ);
-    const bIQ = parseInt(b.estimatedIQ);
-    return bIQ - aIQ;
-  });
+  const sorted = [...famousIQData].sort((a, b) => b.estimatedIQMid - a.estimatedIQMid);
 
   const filtered = activeCategory === "All"
     ? sorted
-    : sorted.filter((p) => categoryMap[p.slug] === activeCategory);
+    : sorted.filter((p) => p.field === activeCategory);
 
   return (
     <ContentPage>

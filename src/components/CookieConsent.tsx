@@ -7,6 +7,9 @@ const STORAGE_KEY = "myiq_cookie_consent";
 
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
+  // Collapsed by default: the full disclosure paragraph was large enough to
+  // become the page's LCP element when the banner appears post-hydration.
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -49,24 +52,32 @@ const CookieConsent = () => {
                   We use cookies
                 </p>
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  We and our partners (including Google) use cookies to serve personalized ads,
-                  analyze traffic, and improve your experience. Google AdSense uses the DART cookie
-                  to serve ads based on your visits to this and other sites. You can opt out of
-                  personalized ads at{" "}
-                  <a
-                    href="https://www.google.com/settings/ads"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    google.com/settings/ads
-                  </a>
-                  . See our{" "}
-                  <Link to="/privacy-policy" className="text-primary hover:underline">
-                    Privacy Policy
-                  </Link>{" "}
-                  for details.
+                  We and our partners (including Google) use cookies for ads and analytics.{" "}
+                  {!expanded && (
+                    <button onClick={() => setExpanded(true)} className="text-primary hover:underline">
+                      Learn more
+                    </button>
+                  )}
                 </p>
+                {expanded && (
+                  <p className="text-xs text-muted-foreground leading-relaxed mt-1">
+                    Google AdSense uses the DART cookie to serve ads based on your visits to this
+                    and other sites. You can opt out of personalized ads at{" "}
+                    <a
+                      href="https://www.google.com/settings/ads"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline"
+                    >
+                      google.com/settings/ads
+                    </a>
+                    . See our{" "}
+                    <Link to="/privacy-policy" className="text-primary hover:underline">
+                      Privacy Policy
+                    </Link>{" "}
+                    for details.
+                  </p>
+                )}
               </div>
               <button
                 onClick={decline}

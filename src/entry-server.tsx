@@ -2,6 +2,7 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider, type HelmetServerState } from "react-helmet-async";
 import { AppContent } from "./App";
+export { preloadAllPages } from "@/lib/asyncPage";
 
 export { famousPersonSlugs } from "@/data/famousIQData";
 export { conditionSlugs } from "@/data/conditionIQData";

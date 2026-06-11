@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { contentDateFor } from "@/generated/contentDates";
 
 interface SEOHeadProps {
   title?: string;
@@ -8,6 +9,8 @@ interface SEOHeadProps {
   ogType?: string;
   twitterCard?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Above-the-fold LCP image to preload at high priority. */
+  preloadImage?: string;
 }
 
 const SITE_URL = "https://www.myiqscores.com";
@@ -28,13 +31,14 @@ const labelFromSlug = (slug: string) =>
     .replace(/\bAsvab\b/g, "ASVAB");
 
 const SEOHead = ({
-  title = "Free IQ Test — Get Your Score Instantly | MyIQScores",
+  title = "Free IQ Test: Get Your Score Instantly | MyIQScores",
   description = "Take a free online IQ-style reasoning test. 30 questions, instant educational results, score ranges, and cognitive learning guides. No sign-up or paywall.",
   canonicalUrl = SITE_URL,
   ogImage = DEFAULT_IMAGE,
   ogType = "website",
   twitterCard = "summary_large_image",
   jsonLd,
+  preloadImage,
 }: SEOHeadProps) => {
   const fullCanonicalUrl = canonicalUrl.startsWith("http")
     ? canonicalUrl
@@ -141,7 +145,7 @@ const SEOHead = ({
             name: "MyIQScores Editorial Team",
           },
           datePublished: "2024-01-15",
-          dateModified: "2026-05-10",
+          dateModified: contentDateFor(canonicalPath) ?? "2026-05-10",
         }
       : {
           "@context": "https://schema.org",
@@ -174,6 +178,7 @@ const SEOHead = ({
         content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
       />
       <link rel="canonical" href={fullCanonicalUrl} />
+      {preloadImage && <link rel="preload" as="image" href={preloadImage} {...{ fetchpriority: "high" }} />}
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

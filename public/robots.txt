@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Allow: /api/og
+Allow: /api/share
 Disallow: /admin/
 Disallow: /auth/
 # Parameterized duplicates (challenge referral links, tracking params)

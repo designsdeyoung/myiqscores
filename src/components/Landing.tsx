@@ -160,40 +160,32 @@ const SAMPLE_RESULTS = [
 const Landing = ({ onStart }: LandingProps) => {
 
   return (
-    <motion.div
-      className="min-h-screen flex flex-col items-center px-4 pt-20 pb-16 relative"
-      variants={stagger}
-      initial="hidden"
-      animate="show"
-    >
+    <div className="min-h-screen flex flex-col items-center px-4 pt-20 pb-16 relative">
       {/* ── HERO SECTION ── */}
-      <motion.div variants={fadeUp} className="mb-8">
+      <div className="hero-fade mb-8">
         <div className="relative">
           <Brain className="w-20 h-20 text-primary opacity-80" />
           <div className="absolute inset-0 w-20 h-20 rounded-full" style={{ animation: "pulse-glow 3s ease-in-out infinite" }} />
         </div>
-      </motion.div>
+      </div>
 
-      <motion.h1
-        variants={fadeUp}
-        className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center leading-tight max-w-4xl"
-      >
-        <span className="gradient-text">Free IQ Test —</span>
+      <h1 className="hero-fade hero-d1 font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center leading-tight max-w-4xl">
+        <span className="gradient-text">Free IQ Test:</span>
         <br />
         <span className="gradient-text">Find Your Score Instantly</span>
-      </motion.h1>
+      </h1>
 
-      <motion.p variants={fadeUp} className="mt-6 text-muted-foreground text-center text-lg sm:text-xl max-w-2xl">
+      <p className="hero-fade hero-d2 mt-6 text-muted-foreground text-center text-lg sm:text-xl max-w-2xl">
         30 questions across 5 cognitive domains. No sign-up. No paywall. Instant results with a full score breakdown.
-      </motion.p>
+      </p>
 
-      <motion.div variants={fadeUp} className="mt-10">
+      <div className="hero-fade hero-d3 mt-10">
         <button onClick={() => { trackQuizStarted(); onStart(); }} className="glow-button text-lg">
           Start Free IQ Test →
         </button>
-      </motion.div>
+      </div>
 
-      <motion.div variants={fadeUp} className="mt-12 flex flex-wrap justify-center gap-6 sm:gap-10">
+      <div className="hero-fade hero-d4 mt-12 flex flex-wrap justify-center gap-6 sm:gap-10">
         {[
           { icon: FlaskConical, text: "Reasoning-Based Questions" },
           { icon: Timer, text: "Takes ~12 Minutes" },
@@ -204,18 +196,18 @@ const Landing = ({ onStart }: LandingProps) => {
             <span>{text}</span>
           </div>
         ))}
-      </motion.div>
+      </div>
 
-      <motion.p variants={fadeUp} className="mt-8 text-muted-foreground text-sm text-center max-w-xl">
+      <p className="hero-fade hero-d5 mt-8 text-muted-foreground text-sm text-center max-w-xl">
         Results include your estimated score range, percentile context, and plain-language notes on what an online test can and cannot tell you.
-      </motion.p>
+      </p>
 
-      <motion.p variants={fadeUp} className="mt-3 text-xs text-muted-foreground/50 text-center">
+      <p className="hero-fade hero-d6 mt-3 text-xs text-muted-foreground/50 text-center">
         Basic results always free · Optional detailed report available after
-      </motion.p>
+      </p>
 
       {/* ── TRUST BADGES ── */}
-      <motion.div variants={fadeUp} className="mt-10">
+      <div className="hero-fade hero-d7 mt-10">
         <div className="flex items-center gap-3 glass-card rounded-full px-5 py-2.5">
           <span className="pulse-dot" />
           <span className="text-sm text-muted-foreground">
@@ -223,10 +215,10 @@ const Landing = ({ onStart }: LandingProps) => {
             · No sign-up · Instant results
           </span>
         </div>
-      </motion.div>
+      </div>
 
       {/* ── SOCIAL PROOF BAR ── */}
-      <motion.div variants={fadeUp} className="mt-14 w-full max-w-3xl">
+      <div className="hero-fade hero-d8 mt-14 w-full max-w-3xl">
         <div className="glass-card rounded-2xl px-6 py-5 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[rgba(255,255,255,0.08)] gap-0">
           {[
             { emoji: "📋", label: "Transparent methodology", sub: "Clear limits and scoring notes" },
@@ -240,7 +232,7 @@ const Landing = ({ onStart }: LandingProps) => {
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       {/* ── SCORE RANGE PREVIEW BANDS ── */}
       <motion.div
@@ -525,14 +517,13 @@ const Landing = ({ onStart }: LandingProps) => {
       </motion.div>
 
       <motion.div
-        variants={fadeUp}
         className="mt-12"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
       >
         <ChevronDown className="w-6 h-6 text-muted-foreground" />
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 
