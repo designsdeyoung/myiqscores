@@ -12,7 +12,10 @@ const WikiImage = ({ src, alt, caption, className = "" }: WikiImageProps) => (
         src={src}
         alt={alt}
         loading="lazy"
-        className="w-full h-auto max-h-[300px] object-cover"
+        decoding="async"
+        width={640}
+        height={300}
+        className="w-full h-[300px] object-cover"
       />
     </div>
     {caption && (

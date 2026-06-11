@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { execSync } from "node:child_process";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
@@ -104,40 +105,132 @@ function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, a
   ];
 }
 
-const HIGH_PRIORITY_ROUTES = new Set([
-  "/what-is-iq", "/iq-score-ranges", "/iq-percentile-chart", "/good-iq-score",
-  "/genius-iq", "/how-to-improve-iq", "/average-iq-by-country", "/average-iq-us",
-  "/famous-iq", "/iq-by-career", "/average-iq-by-state", "/average-iq",
-  "/iq-test", "/practice-iq-test", "/types-of-iq-tests", "/iq-compare",
-  "/iq-by-major", "/iq-by-city", "/highest-iq-ever", "/mensa-iq-test",
-  "/low-iq", "/iq-vs-eq", "/iq-of-presidents", "/blog",
-]);
+const SITE_URL = "https://www.myiqscores.com";
+const repoRoot = path.resolve(__dirname, "..");
 
-function writeSitemap(routes) {
-  const today = new Date().toISOString().slice(0, 10);
+// Last git commit date (YYYY-MM-DD) across one or more files; falls back to today.
+const gitDateCache = new Map();
+function gitDate(...files) {
+  let max = "";
+  for (const file of files) {
+    if (!gitDateCache.has(file)) {
+      try {
+        const out = execSync(`git log -1 --format=%cs -- "${file}"`, {
+          cwd: repoRoot,
+          encoding: "utf-8",
+        }).trim();
+        gitDateCache.set(file, out);
+      } catch {
+        gitDateCache.set(file, "");
+      }
+    }
+    const d = gitDateCache.get(file);
+    if (d > max) max = d;
+  }
+  return max || new Date().toISOString().slice(0, 10);
+}
+
+// Map static routes to their page component file by parsing App.tsx, so
+// each route's <lastmod> reflects the component's last real content change.
+function buildStaticRouteSources() {
+  const appSrc = fs.readFileSync(path.resolve(repoRoot, "src/App.tsx"), "utf-8");
+  const imports = new Map();
+  for (const m of appSrc.matchAll(/import\s+(\w+)\s+from\s+"\.\/((?:pages|components)\/[^"]+)"/g)) {
+    imports.set(m[1], `src/${m[2]}`);
+  }
+  const routeToFile = new Map();
+  for (const m of appSrc.matchAll(/<Route\s+path="(\/[^"]*)"\s+element={<(\w+)\s*\/>}/g)) {
+    const file = imports.get(m[2]);
+    if (file) routeToFile.set(m[1], file);
+  }
+  return routeToFile;
+}
+
+// Segmented sitemaps. Each route lands in exactly the first segment whose
+// matcher hits; lastmod comes from the data files powering that template.
+const SEGMENTS = [
+  {
+    file: "sitemap-scores.xml",
+    match: (r) => /^\/is-\d+-iq-good$/.test(r),
+    sources: ["src/data/iqScoreData.ts", "src/data/iqExtendedData.ts", "src/data/iqExtendedDataMid.ts", "src/data/iqExtendedDataHigh.ts"],
+  },
+  {
+    file: "sitemap-celebrities.xml",
+    match: (r) => r.startsWith("/famous-iq/"),
+    sources: ["src/data/famousIQData.ts"],
+  },
+  {
+    file: "sitemap-countries.xml",
+    match: (r) => r.startsWith("/average-iq/") || r.startsWith("/average-iq-by-state/") || r.startsWith("/iq-by-city/"),
+    sources: ["src/data/countryIQData.ts", "src/data/countryExtendedData.ts", "src/data/stateIQData.ts", "src/data/cityIQData.ts"],
+  },
+  {
+    file: "sitemap-careers.xml",
+    match: (r) => r.startsWith("/iq-needed-for/") || r.startsWith("/iq-by-major/"),
+    sources: ["src/data/careerIQData.ts", "src/data/careerExtendedData.ts", "src/data/majorIQData.ts"],
+  },
+  {
+    file: "sitemap-topics.xml",
+    match: (r) => r.startsWith("/iq-by-age/") || r.startsWith("/iq-and/") || r.startsWith("/iq-myths/") || r.startsWith("/iq-compare/"),
+    sources: ["src/data/ageIQData.ts", "src/data/conditionIQData.ts", "src/data/iqMythData.ts", "src/data/iqCompareData.ts"],
+  },
+  {
+    file: "sitemap-blog.xml",
+    match: (r) => r === "/blog" || r.startsWith("/blog/"),
+    sources: [],
+  },
+  {
+    file: "sitemap-core.xml",
+    match: () => true,
+    sources: [],
+  },
+];
+
+function writeFileBoth(name, content) {
+  fs.writeFileSync(path.resolve(distDir, name), content);
+  fs.writeFileSync(path.resolve(repoRoot, "public", name), content);
+}
+
+function urlEntry(route, lastmod) {
+  const loc = route === "/" ? SITE_URL : `${SITE_URL}${route}`;
+  return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n  </url>`;
+}
+
+function writeSitemaps(routes) {
   const uniqueRoutes = [...new Set(routes)];
-  const urls = uniqueRoutes
-    .map((route) => {
-      const loc = route === "/" ? "https://www.myiqscores.com" : `https://www.myiqscores.com${route}`;
-      const isHome = route === "/";
-      const isBlog = route.startsWith("/blog/");
-      const isHub = HIGH_PRIORITY_ROUTES.has(route);
-      const priority = isHome ? "1.0" : isHub ? "0.9" : isBlog ? "0.8" : "0.7";
-      const changefreq = isHome ? "weekly" : isBlog ? "weekly" : isHub ? "monthly" : "monthly";
-      return [
-        "  <url>",
-        `    <loc>${loc}</loc>`,
-        `    <lastmod>${today}</lastmod>`,
-        `    <changefreq>${changefreq}</changefreq>`,
-        `    <priority>${priority}</priority>`,
-        "  </url>",
-      ].join("\n");
-    })
-    .join("\n");
+  const staticSources = buildStaticRouteSources();
+  const indexEntries = [];
 
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
-  fs.writeFileSync(path.resolve(distDir, "sitemap.xml"), sitemap);
-  fs.writeFileSync(path.resolve(__dirname, "../public/sitemap.xml"), sitemap);
+  for (const segment of SEGMENTS) {
+    const segmentRoutes = uniqueRoutes.filter((r) => segment.match(r));
+    if (segmentRoutes.length === 0) continue;
+    uniqueRoutes.splice(0, uniqueRoutes.length, ...uniqueRoutes.filter((r) => !segment.match(r)));
+
+    const segmentDate = segment.sources.length ? gitDate(...segment.sources) : null;
+    let maxDate = segmentDate || "0000";
+    const urls = segmentRoutes
+      .map((route) => {
+        const lastmod = segmentDate || (staticSources.has(route) ? gitDate(staticSources.get(route)) : gitDate("src/App.tsx"));
+        if (lastmod > maxDate) maxDate = lastmod;
+        return urlEntry(route, lastmod);
+      })
+      .join("\n");
+
+    writeFileBoth(
+      segment.file,
+      `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
+    );
+    indexEntries.push({ file: segment.file, lastmod: maxDate, count: segmentRoutes.length });
+  }
+
+  const index = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexEntries
+    .map((e) => `  <sitemap>\n    <loc>${SITE_URL}/${e.file}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n  </sitemap>`)
+    .join("\n")}\n</sitemapindex>\n`;
+  writeFileBoth("sitemap.xml", index);
+
+  console.log(
+    `Sitemaps: ${indexEntries.map((e) => `${e.file.replace("sitemap-", "").replace(".xml", "")}=${e.count}`).join(", ")}`,
+  );
 }
 
 async function prerender() {
@@ -200,7 +293,7 @@ async function prerender() {
 
   // Clean up server build
   fs.rmSync(path.resolve(distDir, "server"), { recursive: true, force: true });
-  writeSitemap(routes);
+  writeSitemaps(routes);
 
   console.log("Pre-rendering complete!");
 }

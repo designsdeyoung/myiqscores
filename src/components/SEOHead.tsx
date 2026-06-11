@@ -51,7 +51,7 @@ const SEOHead = ({
     email: "support@myiqscores.com",
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/favicon.svg`,
+      url: `${SITE_URL}/favicon.ico`,
       width: 512,
       height: 512,
     },
@@ -133,7 +133,7 @@ const SEOHead = ({
           publisher: { "@id": `${SITE_URL}/#organization` },
           image: {
             "@type": "ImageObject",
-            url: `${SITE_URL}/favicon.svg`,
+            url: ogImage,
           },
           inLanguage: "en-US",
           author: {

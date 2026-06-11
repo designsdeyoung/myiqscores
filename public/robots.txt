@@ -3,6 +3,9 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /auth/
+# Parameterized duplicates (challenge referral links, tracking params)
+Disallow: /*?ref=
+Disallow: /*?utm_
 
 # AI search and answer-engine discovery
 User-agent: OAI-SearchBot

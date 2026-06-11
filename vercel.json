@@ -22,6 +22,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/((?!assets|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)", "destination": "/index.html" }
+    { "source": "/((?!assets|favicon\\.ico|robots\\.txt|ads\\.txt|llms\\.txt|sitemap[^/]*\\.xml|[0-9a-f]{32}\\.txt).*)", "destination": "/index.html" }
   ]
 }
