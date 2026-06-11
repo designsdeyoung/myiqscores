@@ -18,7 +18,7 @@ const CityIQHub = () => {
   );
 
   const sortedData = useMemo(() => {
-    let filtered =
+    const filtered =
       filterContinent === "all"
         ? [...cityIQData]
         : cityIQData.filter((c) => c.continent === filterContinent);

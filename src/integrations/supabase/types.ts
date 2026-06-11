@@ -110,6 +110,7 @@ export type Database = {
           id: string
           iq_score: number | null
           name: string
+          newsletter_opt_in: boolean | null
           paid_status: string | null
           stripe_session_id: string | null
         }
@@ -121,6 +122,7 @@ export type Database = {
           id?: string
           iq_score?: number | null
           name: string
+          newsletter_opt_in?: boolean | null
           paid_status?: string | null
           stripe_session_id?: string | null
         }
@@ -132,6 +134,7 @@ export type Database = {
           id?: string
           iq_score?: number | null
           name?: string
+          newsletter_opt_in?: boolean | null
           paid_status?: string | null
           stripe_session_id?: string | null
         }

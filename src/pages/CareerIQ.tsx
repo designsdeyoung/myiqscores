@@ -89,7 +89,7 @@ const CareerIQ = () => {
 
   const relatedCareers = career.relatedCareers
     .map((s) => careerIQData.find((c) => c.slug === s))
-    .filter(Boolean);
+    .filter((c): c is (typeof careerIQData)[number] => Boolean(c));
 
   return (
     <ContentPage ctaText={`Think you have what it takes? Test your IQ now`} relatedPages={relatedPages}>
@@ -152,10 +152,10 @@ const CareerIQ = () => {
         title="Career IQ Comparison"
         items={[
           { label: career.career, value: Math.round((career.minIQ + career.maxIQ) / 2), highlight: true },
-          ...relatedCareers.filter(Boolean).map((c) => ({
-            label: (c as any).career,
-            value: Math.round(((c as any).minIQ + (c as any).maxIQ) / 2),
-            href: `/iq-needed-for/${(c as any).slug}`,
+          ...relatedCareers.map((c) => ({
+            label: c.career,
+            value: Math.round((c.minIQ + c.maxIQ) / 2),
+            href: `/iq-needed-for/${c.slug}`,
           })),
         ]}
         maxValue={150}
@@ -173,7 +173,7 @@ const CareerIQ = () => {
             <td><strong>{career.career}</strong></td>
             <td><strong>{career.avgIQRange}</strong></td>
           </tr>
-          {relatedCareers.map((c) => c && (
+          {relatedCareers.map((c) => (
             <tr key={c.slug}>
               <td><Link to={`/iq-needed-for/${c.slug}`}>{c.career}</Link></td>
               <td>{c.avgIQRange}</td>

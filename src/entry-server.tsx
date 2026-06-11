@@ -1,6 +1,6 @@
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
-import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider, type HelmetServerState } from "react-helmet-async";
 import { AppContent } from "./App";
 
 export { famousPersonSlugs } from "@/data/famousIQData";
@@ -16,7 +16,7 @@ export { compareSlugs } from "@/data/iqCompareData";
 export { citySlugs } from "@/data/cityIQData";
 
 export function render(url: string) {
-  const helmetContext = {} as any;
+  const helmetContext: { helmet?: HelmetServerState } = {};
 
   const html = renderToString(
     <HelmetProvider context={helmetContext}>

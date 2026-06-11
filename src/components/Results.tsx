@@ -239,6 +239,7 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
       await supabase.from("leads").upsert({
         id: crypto.randomUUID(),
         email: captureEmail,
+        name: userName || "Subscriber",
         iq_score: iq,
         correct_answers: correctCount,
         newsletter_opt_in: newsletterOptIn,

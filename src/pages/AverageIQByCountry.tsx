@@ -18,7 +18,7 @@ const AverageIQByCountry = () => {
   );
 
   const sortedData = useMemo(() => {
-    let filtered =
+    const filtered =
       filterContinent === "all"
         ? [...countryIQData]
         : countryIQData.filter((c) => c.continent === filterContinent);
