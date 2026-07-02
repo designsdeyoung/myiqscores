@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Shield, Lock, Mail } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { trackEmailCaptured } from "@/lib/analytics";
 
 const stagger = {
   hidden: {},
@@ -94,7 +95,8 @@ const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
               <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                 Privacy Policy
               </a>
-              . I consent to receiving my IQ test results and score report via email.
+              . I consent to receiving my IQ test results, score report, and occasional
+              follow-up emails via email. Unsubscribe anytime.
             </span>
           </label>
         </motion.div>
@@ -103,7 +105,10 @@ const LeadCapture = ({ onSubmit }: LeadCaptureProps) => {
           <button
             onClick={() => {
               if (isValid) {
-                supabase.from("leads").insert({ name, email, age_range: ageRange }).then(() => {});
+                trackEmailCaptured("pre_test");
+                supabase.from("leads").insert({ name, email, age_range: ageRange }).then(({ error }) => {
+                  if (error) console.error("Lead insert failed:", error);
+                });
                 onSubmit({ name, email, ageRange });
               }
             }}

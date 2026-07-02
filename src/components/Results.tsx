@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { trackResultViewed, trackResultShared } from "@/lib/analytics";
+import { trackResultViewed, trackResultShared, trackEmailCaptured, trackPremiumClick } from "@/lib/analytics";
 import { Shield, Twitter, Facebook, Linkedin, Copy, Check, Lock, Award, Download } from "lucide-react";
 import AdUnit from "./AdUnit";
 import { AD_SLOTS } from "@/config/adsense";
@@ -177,16 +177,19 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
 
   // Save score to database and send results email
   useEffect(() => {
+    // No email collected upfront — the inline capture form (Section E) handles it
+    if (!userEmail) return;
     const saveAndEmail = async () => {
       try {
         const id = crypto.randomUUID();
-        await supabase.from("leads").insert({
+        const { error } = await supabase.from("leads").insert({
           id,
           name: userName,
           email: userEmail,
           iq_score: iq,
           correct_answers: correctCount,
         });
+        if (error) throw error;
 
         await supabase.functions.invoke("send-transactional-email", {
           body: {
@@ -206,6 +209,12 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
       } catch (e) {
         console.error("Failed to save score or send email:", e);
       }
+      // Enroll upfront-capture users in the nurture sequence too (the inline
+      // results form has its own invoke). Suppression/unsubscribe is handled
+      // server-side, so a duplicate invoke for the same email is safe.
+      supabase.functions.invoke("schedule-nurture-emails", {
+        body: { email: userEmail, name: userName || undefined, iqScore: iq, label, percentile },
+      }).catch(() => {});
     };
     saveAndEmail();
   }, []);
@@ -238,18 +247,21 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
     e.preventDefault();
     if (!captureEmail) return;
     setEmailSubmitted(true);
-    try {
-      await supabase.from("leads").upsert({
-        id: crypto.randomUUID(),
-        email: captureEmail,
-        name: userName || "Subscriber",
-        iq_score: iq,
-        correct_answers: correctCount,
-        newsletter_opt_in: newsletterOptIn,
-      }, { onConflict: "email" });
-    } catch (err) {
-      console.error("Email capture failed:", err);
+    // Plain insert: leads has no unique constraint on email (each test run is a
+    // row), so upsert-on-email always failed at the DB level. RLS only allows
+    // INSERT for anon users anyway.
+    const { error } = await supabase.from("leads").insert({
+      id: crypto.randomUUID(),
+      email: captureEmail,
+      name: userName || "Subscriber",
+      iq_score: iq,
+      correct_answers: correctCount,
+      newsletter_opt_in: newsletterOptIn,
+    });
+    if (error) {
+      console.error("Email capture failed:", error);
     }
+    trackEmailCaptured("results_inline", newsletterOptIn);
     // Fire-and-forget nurture sequence (non-blocking — never shows errors to user)
     supabase.functions.invoke("schedule-nurture-emails", {
       body: { email: captureEmail, name: userName || undefined, iqScore: iq, label, percentile },
@@ -438,6 +450,7 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
           </div>
           <button
             onClick={() => {
+              trackPremiumClick("premium_report", 7.99);
               const url = `${PREMIUM_REPORT_LINK}?prefilled_email=${encodeURIComponent(userEmail)}`;
               window.open(url, "_blank");
             }}
@@ -455,6 +468,7 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
         <motion.div variants={fadeUp} className="text-center mb-8">
           <button
             onClick={() => {
+              trackPremiumClick("certificate", 3.99);
               const url = `${CERTIFICATE_LINK}?prefilled_email=${encodeURIComponent(userEmail)}`;
               window.open(url, "_blank");
             }}

@@ -54,6 +54,29 @@ export function trackResultShared(method: "copy" | "twitter" | "facebook" | "lin
   });
 }
 
+// ── Conversions (mark these as Key Events in GA4 Admin) ────────────────────
+
+export function trackEmailCaptured(source: "pre_test" | "results_inline" | "nurture_bar", newsletterOptIn = false) {
+  trackEvent("email_captured", {
+    source,
+    newsletter_opt_in: newsletterOptIn ? 1 : 0,
+  });
+}
+
+export function trackNewsletterSubscribed(source: string) {
+  trackEvent("newsletter_subscribed", { source });
+}
+
+// Fires when a user clicks through to Stripe checkout. GA4 "value" +
+// "currency" params make revenue show up in conversion reports.
+export function trackPremiumClick(product: "premium_report" | "certificate", value: number) {
+  trackEvent("premium_click", {
+    product,
+    value,
+    currency: "USD",
+  });
+}
+
 export function trackToolUsed(tool: string, params: Record<string, string | number> = {}) {
   trackEvent("tool_used", { tool, ...params });
 }

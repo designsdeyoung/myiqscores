@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { X, Brain } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { trackNewsletterSubscribed } from "@/lib/analytics";
 
 interface EmailNurtureProps {
   email: string;
@@ -9,6 +11,19 @@ interface EmailNurtureProps {
 
 const EmailNurture = ({ email, onClose }: EmailNurtureProps) => {
   const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = async () => {
+    setSubscribed(true);
+    trackNewsletterSubscribed("nurture_bar");
+    const { error } = await supabase.from("leads").insert({
+      email,
+      name: "Subscriber",
+      newsletter_opt_in: true,
+    });
+    if (error) {
+      console.error("Newsletter subscribe failed:", error);
+    }
+  };
 
   return (
     <motion.div
@@ -43,7 +58,7 @@ const EmailNurture = ({ email, onClose }: EmailNurtureProps) => {
                 className="flex-1 bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.08)] rounded-lg px-3 py-2 text-foreground text-sm"
               />
               <button
-                onClick={() => setSubscribed(true)}
+                onClick={handleSubscribe}
                 className="glow-button text-xs px-4 py-2"
               >
                 Subscribe

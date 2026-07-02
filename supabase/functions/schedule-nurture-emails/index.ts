@@ -15,9 +15,11 @@ const corsHeaders = {
 // Nurture sequence: templateName → delay in hours from now
 const NURTURE_SEQUENCE: Array<{ template: string; delayHours: number }> = [
   { template: 'career-fit',        delayHours: 24  },  // Day 1
+  { template: 'challenge-share',   delayHours: 48  },  // Day 2 — share loop
   { template: 'improvement-tips',  delayHours: 72  },  // Day 3
   { template: 'discount-offer',    delayHours: 120 },  // Day 5
   { template: 'brain-teaser',      delayHours: 168 },  // Day 7
+  { template: 'retest-reminder',   delayHours: 336 },  // Day 14 — come back & retest
 ]
 
 function hoursFromNow(hours: number): string {

@@ -9,7 +9,7 @@ export const familyDates: { prefix: string; date: string }[] = [
   },
   {
     "prefix": "/famous-iq/",
-    "date": "2026-05-10"
+    "date": "2026-06-11"
   },
   {
     "prefix": "/average-iq/",
