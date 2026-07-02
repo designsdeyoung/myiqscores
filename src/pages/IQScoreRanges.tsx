@@ -79,7 +79,8 @@ const IQScoreRanges = () => {
         in detail — including what each classification means, how rare it is, and what career
         paths are commonly associated with each level. If you want a deeper understanding of
         what IQ measures and how it is assessed, see our{" "}
-        <Link to="/what-is-iq">complete guide to IQ</Link>.
+        <Link to="/what-is-iq">complete guide to IQ</Link> and our breakdown of{" "}
+        <Link to="/average-iq">what the average IQ score actually is</Link>.
       </p>
 
       {/* Complete IQ Score Range Chart */}

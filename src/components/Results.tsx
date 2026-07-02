@@ -140,6 +140,7 @@ function getRecommendations(iq: number): { title: string; href: string }[] {
     { title: "What Is IQ? Complete Guide", href: "/what-is-iq" },
     { title: "IQ Score Ranges Explained", href: "/iq-score-ranges" },
     { title: "How to Improve Your IQ", href: "/how-to-improve-iq" },
+    { title: "Practice IQ Test — Sharpen Your Score", href: "/practice-iq-test" },
   ];
 }
 

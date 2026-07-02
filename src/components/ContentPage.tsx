@@ -374,6 +374,8 @@ const ContentPage = ({
                 <li><Link to="/iq-by-career" className="hover:text-foreground transition-colors">IQ by Career</Link></li>
                 <li><Link to="/famous-iq" className="hover:text-foreground transition-colors">Famous People IQs</Link></li>
                 <li><Link to="/iq-percentile-chart" className="hover:text-foreground transition-colors">IQ Percentile Chart</Link></li>
+                <li><Link to="/what-is-intelligence" className="hover:text-foreground transition-colors">What Is Intelligence?</Link></li>
+                <li><Link to="/questions" className="hover:text-foreground transition-colors">IQ Questions Answered</Link></li>
                 <li><Link to="/blog" className="hover:text-foreground transition-colors">IQ Blog</Link></li>
               </ul>
             </div>

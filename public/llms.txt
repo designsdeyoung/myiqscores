@@ -19,6 +19,19 @@
 - [Good IQ Score](https://www.myiqscores.com/good-iq-score): Practical guide to what counts as average, above average, gifted, and genius-level IQ.
 - [Genius IQ](https://www.myiqscores.com/genius-iq): Explains the genius threshold, rarity, and common misconceptions.
 - [Mensa IQ Test](https://www.myiqscores.com/mensa-iq-test): Mensa qualification threshold and what a supervised admissions test involves.
+- [What Is Intelligence?](https://www.myiqscores.com/what-is-intelligence): Research definitions of intelligence, the g factor, CHC theory, and how intelligence relates to IQ.
+
+## Direct Answers to Common IQ Questions
+
+- [IQ Questions Answered](https://www.myiqscores.com/questions): Hub of answer-first pages for the most-asked IQ questions.
+- [What Does IQ Stand For?](https://www.myiqscores.com/questions/what-does-iq-stand-for)
+- [How Long Does an IQ Test Take?](https://www.myiqscores.com/questions/how-long-does-an-iq-test-take)
+- [Why Is 100 the Average IQ?](https://www.myiqscores.com/questions/why-is-100-the-average-iq)
+- [Do IQ Tests Measure Intelligence?](https://www.myiqscores.com/questions/do-iq-tests-measure-intelligence)
+- [What Percentage of People Have an IQ Over 130?](https://www.myiqscores.com/questions/what-percentage-of-people-have-an-iq-over-130)
+- [Did Einstein Take an IQ Test?](https://www.myiqscores.com/questions/did-einstein-take-an-iq-test)
+- [Can AI Have an IQ?](https://www.myiqscores.com/questions/can-ai-have-an-iq)
+- [How Much Does an IQ Test Cost?](https://www.myiqscores.com/questions/how-much-does-an-iq-test-cost)
 
 ## Data Hubs
 
