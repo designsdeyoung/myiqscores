@@ -15,6 +15,7 @@ export { mythSlugs } from "@/data/iqMythData";
 export { majorSlugs } from "@/data/majorIQData";
 export { compareSlugs } from "@/data/iqCompareData";
 export { citySlugs } from "@/data/cityIQData";
+export { questionSlugs } from "@/data/questionsData";
 
 export function render(url: string) {
   const helmetContext: { helmet?: HelmetServerState } = {};

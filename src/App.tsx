@@ -25,6 +25,7 @@ import {
   compareIndex,
   ageIndex,
   scoreIndex,
+  questionIndex,
 } from "@/generated/linkIndex";
 
 // Every other page is its own lazy chunk (SSR preloads them; see asyncPage).
@@ -113,11 +114,23 @@ const VerbalReasoning = asyncPage(() => import("./pages/tests/VerbalReasoning.ts
 const SpatialReasoning = asyncPage(() => import("./pages/tests/SpatialReasoning.tsx"));
 const NumericalReasoning = asyncPage(() => import("./pages/tests/NumericalReasoning.tsx"));
 const MemoryTest = asyncPage(() => import("./pages/tests/MemoryTest.tsx"));
+const AbstractReasoning = asyncPage(() => import("./pages/tests/AbstractReasoning.tsx"));
+const QuestionPage = asyncPage(() => import("./pages/QuestionPage.tsx"));
+const QuestionsHub = asyncPage(() => import("./pages/QuestionsHub.tsx"));
+const WhatIsIntelligence = asyncPage(() => import("./pages/WhatIsIntelligence.tsx"));
 const ToolsHub = asyncPage(() => import("./pages/tools/ToolsHub.tsx"));
 const PercentileCalculator = asyncPage(() => import("./pages/tools/PercentileCalculator.tsx"));
 const SatToIQConverter = asyncPage(() => import("./pages/tools/SatToIQConverter.tsx"));
 const IQRarity = asyncPage(() => import("./pages/tools/IQRarity.tsx"));
 const CelebrityIQMatch = asyncPage(() => import("./pages/tools/CelebrityIQMatch.tsx"));
+const ReactionTimeTest = asyncPage(() => import("./pages/tools/ReactionTimeTest.tsx"));
+const NumberMemoryTest = asyncPage(() => import("./pages/tools/NumberMemoryTest.tsx"));
+const SequenceMemoryTest = asyncPage(() => import("./pages/tools/SequenceMemoryTest.tsx"));
+const VisualMemoryTest = asyncPage(() => import("./pages/tools/VisualMemoryTest.tsx"));
+const VerbalMemoryTest = asyncPage(() => import("./pages/tools/VerbalMemoryTest.tsx"));
+const DigitSpanTest = asyncPage(() => import("./pages/tools/DigitSpanTest.tsx"));
+const IQTestForKids = asyncPage(() => import("./pages/IQTestForKids.tsx"));
+const IQTestForTeens = asyncPage(() => import("./pages/IQTestForTeens.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -132,6 +145,7 @@ const stateSlugs = stateIndex.map((s) => s.slug);
 const compareSlugs = compareIndex.map((c) => c.slug);
 const majorSlugs = majorIndex.map((m) => m.slug);
 const citySlugs = cityIndex.map((c) => c.slug);
+const questionSlugs = questionIndex.map((q) => q.slug);
 
 // Extracted routes for reuse with StaticRouter during pre-rendering
 export const AppRoutes = () => (
@@ -212,6 +226,20 @@ export const AppRoutes = () => (
       <Route path="/tests/spatial-reasoning" element={<SpatialReasoning />} />
       <Route path="/tests/numerical-reasoning" element={<NumericalReasoning />} />
       <Route path="/tests/memory" element={<MemoryTest />} />
+      <Route path="/tests/abstract-reasoning" element={<AbstractReasoning />} />
+      <Route path="/what-is-intelligence" element={<WhatIsIntelligence />} />
+      <Route path="/tools/reaction-time-test" element={<ReactionTimeTest />} />
+      <Route path="/tools/number-memory-test" element={<NumberMemoryTest />} />
+      <Route path="/tools/sequence-memory-test" element={<SequenceMemoryTest />} />
+      <Route path="/tools/visual-memory-test" element={<VisualMemoryTest />} />
+      <Route path="/tools/verbal-memory-test" element={<VerbalMemoryTest />} />
+      <Route path="/tools/digit-span-test" element={<DigitSpanTest />} />
+      <Route path="/iq-test-for-kids" element={<IQTestForKids />} />
+      <Route path="/iq-test-for-teens" element={<IQTestForTeens />} />
+      <Route path="/questions" element={<QuestionsHub />} />
+      {questionSlugs.map((slug) => (
+        <Route key={slug} path={`/questions/${slug}`} element={<QuestionPage />} />
+      ))}
       <Route path="/tools" element={<ToolsHub />} />
       <Route path="/tools/iq-percentile-calculator" element={<PercentileCalculator />} />
       <Route path="/tools/sat-to-iq-converter" element={<SatToIQConverter />} />

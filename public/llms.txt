@@ -19,6 +19,19 @@
 - [Good IQ Score](https://www.myiqscores.com/good-iq-score): Practical guide to what counts as average, above average, gifted, and genius-level IQ.
 - [Genius IQ](https://www.myiqscores.com/genius-iq): Explains the genius threshold, rarity, and common misconceptions.
 - [Mensa IQ Test](https://www.myiqscores.com/mensa-iq-test): Mensa qualification threshold and what a supervised admissions test involves.
+- [What Is Intelligence?](https://www.myiqscores.com/what-is-intelligence): Research definitions of intelligence, the g factor, CHC theory, and how intelligence relates to IQ.
+
+## Direct Answers to Common IQ Questions
+
+- [IQ Questions Answered](https://www.myiqscores.com/questions): Hub of answer-first pages for the most-asked IQ questions.
+- [What Does IQ Stand For?](https://www.myiqscores.com/questions/what-does-iq-stand-for)
+- [How Long Does an IQ Test Take?](https://www.myiqscores.com/questions/how-long-does-an-iq-test-take)
+- [Why Is 100 the Average IQ?](https://www.myiqscores.com/questions/why-is-100-the-average-iq)
+- [Do IQ Tests Measure Intelligence?](https://www.myiqscores.com/questions/do-iq-tests-measure-intelligence)
+- [What Percentage of People Have an IQ Over 130?](https://www.myiqscores.com/questions/what-percentage-of-people-have-an-iq-over-130)
+- [Did Einstein Take an IQ Test?](https://www.myiqscores.com/questions/did-einstein-take-an-iq-test)
+- [Can AI Have an IQ?](https://www.myiqscores.com/questions/can-ai-have-an-iq)
+- [How Much Does an IQ Test Cost?](https://www.myiqscores.com/questions/how-much-does-an-iq-test-cost)
 
 ## Data Hubs
 
@@ -35,6 +48,21 @@
 - [Practice IQ Test](https://www.myiqscores.com/practice-iq-test): Worked examples of pattern recognition, analogies, spatial reasoning, and number sequences used in IQ-style tests.
 - [How It Works](https://www.myiqscores.com/how-it-works): Step-by-step explanation of MyIQScores' question design, scoring, and result interpretation.
 - [Disclaimer](https://www.myiqscores.com/disclaimer): Educational purpose statement, accuracy limitations, and guidance for users seeking clinical assessment.
+
+## Interactive Cognitive Tools
+
+- [Reaction Time Test](https://www.myiqscores.com/tools/reaction-time-test): Free click-speed test with percentile rating; median online reaction is ~270-280ms.
+- [Number Memory Test](https://www.myiqscores.com/tools/number-memory-test): Digit-span test of working memory; the adult average is 7 ± 2 digits.
+- [Sequence Memory Test](https://www.myiqscores.com/tools/sequence-memory-test): Repeat growing tile patterns; most people plateau at 8-12 steps.
+- [Visual Memory Test](https://www.myiqscores.com/tools/visual-memory-test): Recall flashed tile positions on growing grids; average is level 7-9.
+- [Verbal Memory Test](https://www.myiqscores.com/tools/verbal-memory-test): Seen-or-new word recognition; typical scores are 25-40 words.
+- [Digit Span Test](https://www.myiqscores.com/tools/digit-span-test): Clinical WAIS-style format — digits one at a time, forward (avg 7) and backward (avg 5).
+- [All Free Tools](https://www.myiqscores.com/tools): Percentile calculator, rarity checker, score converters, and cognitive mini-tests.
+
+## Audience Guides
+
+- [IQ Test for Kids](https://www.myiqscores.com/iq-test-for-kids): Parent guide to children's IQ testing — WISC-V, WPPSI, gifted cutoffs, free school evaluations.
+- [IQ Test for Teens](https://www.myiqscores.com/iq-test-for-teens): Testing at 13-19 — WISC vs WAIS, SAT/ACT conversions, Mensa eligibility, score stability.
 
 ## High-Intent Converters
 

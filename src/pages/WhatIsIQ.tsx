@@ -116,8 +116,10 @@ const WhatIsIQ = () => (
     </p>
     <p>
       Online IQ tests, including <Link to="/test">ours</Link>, provide estimates based on similar
-      principles but should not be considered clinical-grade assessments. For a formal IQ evaluation,
-      consult a licensed psychologist who can administer a standardized test in a controlled setting.
+      principles but should not be considered clinical-grade assessments. Read our guide to{" "}
+      <Link to="/iq-test">how IQ tests work</Link> for a full breakdown of formats and scoring. For a
+      formal IQ evaluation, consult a licensed psychologist who can administer a standardized test in
+      a controlled setting.
     </p>
 
     <h2>The IQ Scale: What Your Score Means</h2>

@@ -2,9 +2,45 @@ import { Link } from "react-router-dom";
 import ContentPage from "@/components/ContentPage";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Calculator, BarChart3, Sparkles, Users } from "lucide-react";
+import { Calculator, BarChart3, Sparkles, Users, Zap, Brain, Grid3X3, Eye, BookOpen, ListOrdered } from "lucide-react";
 
 const tools = [
+  {
+    href: "/tools/reaction-time-test",
+    title: "Reaction Time Test",
+    desc: "Click when the box turns green. Five rounds, instant average, percentile rating.",
+    Icon: Zap,
+  },
+  {
+    href: "/tools/number-memory-test",
+    title: "Number Memory Test",
+    desc: "How many digits can you hold? Test your digit span against the famous 7 ± 2.",
+    Icon: Brain,
+  },
+  {
+    href: "/tools/sequence-memory-test",
+    title: "Sequence Memory Test",
+    desc: "Watch the tiles light up, repeat the pattern. One step longer every level.",
+    Icon: Grid3X3,
+  },
+  {
+    href: "/tools/visual-memory-test",
+    title: "Visual Memory Test",
+    desc: "Tiles flash and vanish — click where they were. Grids grow until you miss.",
+    Icon: Eye,
+  },
+  {
+    href: "/tools/verbal-memory-test",
+    title: "Verbal Memory Test",
+    desc: "Seen or new? Track a growing word list until three strikes end the run.",
+    Icon: BookOpen,
+  },
+  {
+    href: "/tools/digit-span-test",
+    title: "Digit Span Test (Clinical Format)",
+    desc: "Digits one at a time, forward and backward — the same format the WAIS uses.",
+    Icon: ListOrdered,
+  },
   {
     href: "/tools/iq-percentile-calculator",
     title: "IQ Percentile Calculator",
@@ -34,8 +70,8 @@ const tools = [
 const ToolsHub = () => (
   <ContentPage ctaText="Start with the source: take the free IQ test">
     <SEOHead
-      title="Free IQ Tools: Percentile, Rarity and Conversion"
-      description="Four free interactive IQ tools: percentile calculator, rarity checker, SAT/ACT/GRE converter, and celebrity IQ matcher. No sign-up."
+      title="Free Brain Tests & IQ Tools: Reaction Time, Memory, Percentile"
+      description="Ten free interactive tools: reaction time, number/visual/verbal/sequence memory, clinical digit span, IQ percentile calculator, rarity checker, and converters."
       canonicalUrl="/tools"
     />
 
@@ -45,9 +81,10 @@ const ToolsHub = () => (
       <span className="gradient-text">Free IQ Tools</span>
     </h1>
     <p>
-      Four fast, free, no-sign-up tools built on the same statistics that power professional IQ
-      scoring: a normal distribution with mean 100 and standard deviation 15. Each tool runs
-      instantly in your browser.
+      Ten fast, free, no-sign-up tools. The cognitive tests measure your reaction speed and
+      working memory (verbal, visual, and sequential) directly in the browser; the calculators
+      are built on the same statistics that power professional IQ scoring — a normal
+      distribution with mean 100 and standard deviation 15.
     </p>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">

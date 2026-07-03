@@ -14,6 +14,8 @@ import { template as careerFit } from './career-fit.tsx'
 import { template as improvementTips } from './improvement-tips.tsx'
 import { template as discountOffer } from './discount-offer.tsx'
 import { template as brainTeaser } from './brain-teaser.tsx'
+import { template as challengeShare } from './challenge-share.tsx'
+import { template as retestReminder } from './retest-reminder.tsx'
 
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'iq-results': iqResults,
@@ -21,4 +23,6 @@ export const TEMPLATES: Record<string, TemplateEntry> = {
   'improvement-tips': improvementTips,
   'discount-offer': discountOffer,
   'brain-teaser': brainTeaser,
+  'challenge-share': challengeShare,
+  'retest-reminder': retestReminder,
 }

@@ -222,6 +222,7 @@ const Index = () => {
                   <li><Link to="/average-iq" className="hover:text-foreground transition-colors">Average IQ Score</Link></li>
                   <li><Link to="/sat-to-iq" className="hover:text-foreground transition-colors">SAT to IQ</Link></li>
                   <li><Link to="/iq-percentile-chart" className="hover:text-foreground transition-colors">IQ Percentile Chart</Link></li>
+                  <li><Link to="/questions" className="hover:text-foreground transition-colors">IQ Questions Answered</Link></li>
                 </ul>
               </div>
 

@@ -5,6 +5,18 @@ import { Cookie, X } from "lucide-react";
 
 const STORAGE_KEY = "myiq_cookie_consent";
 
+// Consent Mode v2 update — gtag stub is defined inline in index.html, so this
+// works even before gtag.js finishes loading (commands queue in dataLayer).
+function updateConsent(granted: boolean) {
+  const value = granted ? "granted" : "denied";
+  window.gtag?.("consent", "update", {
+    ad_storage: value,
+    ad_user_data: value,
+    ad_personalization: value,
+    analytics_storage: value,
+  });
+}
+
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
   // Collapsed by default: the full disclosure paragraph was large enough to
@@ -22,11 +34,13 @@ const CookieConsent = () => {
 
   const accept = () => {
     localStorage.setItem(STORAGE_KEY, "accepted");
+    updateConsent(true);
     setVisible(false);
   };
 
   const decline = () => {
     localStorage.setItem(STORAGE_KEY, "declined");
+    updateConsent(false);
     setVisible(false);
   };
 

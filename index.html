@@ -22,6 +22,45 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=optional" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=optional" rel="stylesheet" /></noscript>
 
+    <!-- Google Consent Mode v2 — defaults MUST be set before gtag.js/AdSense load.
+         Personalization is denied by default in EEA/UK/CH (Google EU user consent
+         policy) and granted elsewhere; a stored banner choice overrides both. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      (function() {
+        var GRANTED = {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+          analytics_storage: 'granted'
+        };
+        var DENIED = {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied'
+        };
+        var stored = null;
+        try { stored = localStorage.getItem('myiq_cookie_consent'); } catch (e) {}
+        if (stored === 'accepted') {
+          gtag('consent', 'default', GRANTED);
+        } else if (stored === 'declined') {
+          gtag('consent', 'default', DENIED);
+        } else {
+          // No choice yet: denied in EEA + UK + CH, granted elsewhere
+          var eea = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU',
+                     'IE','IS','IT','LI','LT','LU','LV','MT','NL','NO','PL','PT','RO',
+                     'SE','SI','SK','ES','GB','CH'];
+          gtag('consent', 'default', Object.assign({ region: eea }, DENIED));
+          gtag('consent', 'default', GRANTED);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-57H1Q82XZ4');
+      })();
+    </script>
+
     <!-- Defer AdSense until after page load -->
     <script>
       // Load AdSense after page is interactive
@@ -34,19 +73,14 @@
       });
     </script>
 
-    <!-- Defer Google Analytics until after page load -->
+    <!-- Defer Google Analytics until after page load (commands queued in
+         dataLayer above are processed when gtag.js arrives) -->
     <script>
       window.addEventListener('load', function() {
         var g = document.createElement('script');
         g.src = 'https://www.googletagmanager.com/gtag/js?id=G-57H1Q82XZ4';
         g.async = true;
         document.head.appendChild(g);
-        g.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-57H1Q82XZ4');
-        };
       });
     </script>
 

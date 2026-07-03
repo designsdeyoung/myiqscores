@@ -39,11 +39,22 @@ const staticRoutes = [
   "/tests/spatial-reasoning",
   "/tests/numerical-reasoning",
   "/tests/memory",
+  "/tests/abstract-reasoning",
+  "/what-is-intelligence",
+  "/questions",
   "/tools",
   "/tools/iq-percentile-calculator",
   "/tools/sat-to-iq-converter",
   "/tools/iq-rarity",
   "/tools/celebrity-iq-match",
+  "/tools/reaction-time-test",
+  "/tools/number-memory-test",
+  "/tools/sequence-memory-test",
+  "/tools/visual-memory-test",
+  "/tools/verbal-memory-test",
+  "/tools/digit-span-test",
+  "/iq-test-for-kids",
+  "/iq-test-for-teens",
   "/how-it-works",
   "/disclaimer",
   "/blog",
@@ -93,9 +104,10 @@ const staticRoutes = [
   "/blog/poverty-and-iq",
 ];
 
-function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs }) {
+function buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs, questionSlugs }) {
   return [
     ...staticRoutes,
+    ...(questionSlugs || []).map((s) => `/questions/${s}`),
     ...iqScores.map((s) => `/is-${s}-iq-good`),
     ...countrySlugs.map((s) => `/average-iq/${s}`),
     ...careerSlugs.map((s) => `/iq-needed-for/${s}`),
@@ -176,8 +188,8 @@ const SEGMENTS = [
   },
   {
     file: "sitemap-topics.xml",
-    match: (r) => r.startsWith("/iq-by-age/") || r.startsWith("/iq-and/") || r.startsWith("/iq-myths/") || r.startsWith("/iq-compare/"),
-    sources: ["src/data/ageIQData.ts", "src/data/conditionIQData.ts", "src/data/iqMythData.ts", "src/data/iqCompareData.ts"],
+    match: (r) => r.startsWith("/iq-by-age/") || r.startsWith("/iq-and/") || r.startsWith("/iq-myths/") || r.startsWith("/iq-compare/") || r === "/questions" || r.startsWith("/questions/"),
+    sources: ["src/data/ageIQData.ts", "src/data/conditionIQData.ts", "src/data/iqMythData.ts", "src/data/iqCompareData.ts", "src/data/questionsData.ts"],
   },
   {
     file: "sitemap-tools.xml",
@@ -260,9 +272,10 @@ async function prerender() {
     majorSlugs,
     compareSlugs,
     citySlugs,
+    questionSlugs,
   } = serverModule;
 
-  const routes = buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs });
+  const routes = buildRoutes({ iqScores, countrySlugs, careerSlugs, famousPersonSlugs, ageGroupSlugs, conditionSlugs, stateSlugs, mythSlugs, majorSlugs, compareSlugs, citySlugs, questionSlugs });
 
   // Resolve all lazy route modules so renderToString never hits an
   // unresolved Suspense boundary (which would prerender empty pages).

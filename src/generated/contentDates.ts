@@ -9,7 +9,7 @@ export const familyDates: { prefix: string; date: string }[] = [
   },
   {
     "prefix": "/famous-iq/",
-    "date": "2026-05-10"
+    "date": "2026-06-11"
   },
   {
     "prefix": "/average-iq/",
@@ -50,8 +50,8 @@ export const familyDates: { prefix: string; date: string }[] = [
 ];
 
 export const routeDates: Record<string, string> = {
-  "/": "2026-06-11",
-  "/test": "2026-06-11"
+  "/": "2026-07-02",
+  "/test": "2026-07-02"
 };
 
 export function contentDateFor(pathname: string): string | null {
