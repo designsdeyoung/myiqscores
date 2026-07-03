@@ -123,6 +123,10 @@ const PercentileCalculator = asyncPage(() => import("./pages/tools/PercentileCal
 const SatToIQConverter = asyncPage(() => import("./pages/tools/SatToIQConverter.tsx"));
 const IQRarity = asyncPage(() => import("./pages/tools/IQRarity.tsx"));
 const CelebrityIQMatch = asyncPage(() => import("./pages/tools/CelebrityIQMatch.tsx"));
+const ReactionTimeTest = asyncPage(() => import("./pages/tools/ReactionTimeTest.tsx"));
+const NumberMemoryTest = asyncPage(() => import("./pages/tools/NumberMemoryTest.tsx"));
+const IQTestForKids = asyncPage(() => import("./pages/IQTestForKids.tsx"));
+const IQTestForTeens = asyncPage(() => import("./pages/IQTestForTeens.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -220,6 +224,10 @@ export const AppRoutes = () => (
       <Route path="/tests/memory" element={<MemoryTest />} />
       <Route path="/tests/abstract-reasoning" element={<AbstractReasoning />} />
       <Route path="/what-is-intelligence" element={<WhatIsIntelligence />} />
+      <Route path="/tools/reaction-time-test" element={<ReactionTimeTest />} />
+      <Route path="/tools/number-memory-test" element={<NumberMemoryTest />} />
+      <Route path="/iq-test-for-kids" element={<IQTestForKids />} />
+      <Route path="/iq-test-for-teens" element={<IQTestForTeens />} />
       <Route path="/questions" element={<QuestionsHub />} />
       {questionSlugs.map((slug) => (
         <Route key={slug} path={`/questions/${slug}`} element={<QuestionPage />} />

@@ -49,6 +49,17 @@
 - [How It Works](https://www.myiqscores.com/how-it-works): Step-by-step explanation of MyIQScores' question design, scoring, and result interpretation.
 - [Disclaimer](https://www.myiqscores.com/disclaimer): Educational purpose statement, accuracy limitations, and guidance for users seeking clinical assessment.
 
+## Interactive Cognitive Tools
+
+- [Reaction Time Test](https://www.myiqscores.com/tools/reaction-time-test): Free click-speed test with percentile rating; median online reaction is ~270-280ms.
+- [Number Memory Test](https://www.myiqscores.com/tools/number-memory-test): Digit-span test of working memory; the adult average is 7 ± 2 digits.
+- [All Free Tools](https://www.myiqscores.com/tools): Percentile calculator, rarity checker, score converters, and cognitive mini-tests.
+
+## Audience Guides
+
+- [IQ Test for Kids](https://www.myiqscores.com/iq-test-for-kids): Parent guide to children's IQ testing — WISC-V, WPPSI, gifted cutoffs, free school evaluations.
+- [IQ Test for Teens](https://www.myiqscores.com/iq-test-for-teens): Testing at 13-19 — WISC vs WAIS, SAT/ACT conversions, Mensa eligibility, score stability.
+
 ## High-Intent Converters
 
 - [SAT to IQ](https://www.myiqscores.com/sat-to-iq)
