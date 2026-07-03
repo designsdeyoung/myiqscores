@@ -396,6 +396,230 @@ export const questionsData: QuestionInfo[] = [
       { title: "Are IQ Tests Accurate?", href: "/blog/iq-tests-accurate" },
     ],
   },
+  {
+    slug: "what-is-mental-age",
+    question: "What Is Mental Age and How Does It Relate to IQ?",
+    metaDescription: "Mental age is the age level at which a person performs cognitively. Learn how it created the original IQ formula and why modern tests abandoned it.",
+    shortAnswer: "Mental age is the age level at which a person performs on cognitive tasks — a child solving problems typical of 12-year-olds has a mental age of 12 regardless of birth age. It powered the original IQ formula (mental age ÷ chronological age × 100) but was abandoned for adults because mental age plateaus after adolescence.",
+    sections: [
+      {
+        heading: "Where Mental Age Came From",
+        paragraphs: [
+          "Alfred Binet introduced mental age in 1905 to identify French schoolchildren needing extra help. His test items were age-graded: if a child passed the items most 9-year-olds pass but failed the 10-year-old items, their mental age was 9. William Stern then turned this into the intelligence quotient by dividing mental age by chronological age.",
+          "The concept works reasonably for children, whose abilities climb steeply year over year. It collapses for adults: raw reasoning ability doesn't keep rising past the early twenties, so a 40-year-old and a 25-year-old with identical performance would get absurdly different ratio IQs.",
+        ],
+      },
+      {
+        heading: "What Replaced It",
+        paragraphs: [
+          "Modern tests use deviation scoring: your performance is compared to a norming sample of your own age group and placed on a bell curve with mean 100 and standard deviation 15. No mental age is computed at any point.",
+          "The idea survives informally — 'mental age' quizzes online are entertainment, and clinicians sometimes describe severe developmental conditions in age-equivalent terms to help families understand daily functioning. But no reputable modern IQ score is derived from mental age.",
+        ],
+      },
+    ],
+    faqItems: [
+      { question: "How do I calculate my mental age?", answer: "You can't, meaningfully — modern IQ tests don't measure one. The historical formula was mental age = (IQ ÷ 100) × chronological age, but it only ever made sense for children on early 20th-century tests." },
+      { question: "Are online mental age quizzes accurate?", answer: "No — they're entertainment. They typically measure pop-culture familiarity and attitudes, not cognition, and 'mental age' hasn't been part of real IQ scoring since the 1930s." },
+      { question: "Why was mental age abandoned?", answer: "Because cognitive ability plateaus after adolescence, dividing by chronological age made adult scores fall every year despite unchanged ability. David Wechsler's deviation IQ (1939) fixed this by comparing people to their own age group." },
+    ],
+    related: [
+      { title: "What Does IQ Stand For?", href: "/questions/what-does-iq-stand-for" },
+      { title: "IQ by Age Group", href: "/iq-by-age/adults" },
+      { title: "History of IQ Testing", href: "/blog/history-of-iq-testing" },
+    ],
+  },
+  {
+    slug: "can-you-study-for-an-iq-test",
+    question: "Can You Study for an IQ Test?",
+    metaDescription: "You can't cram intelligence, but preparation measurably raises IQ scores — format familiarity alone is worth several points. Here's what works and what doesn't.",
+    shortAnswer: "You can't study your way to a higher underlying ability, but you can absolutely prepare for the test itself — and it matters. Familiarity with question formats, timing strategy, and practice with matrix puzzles reliably adds points by removing novelty and anxiety, which is why professional testing assumes an unpracticed examinee.",
+    sections: [
+      {
+        heading: "What Preparation Actually Changes",
+        paragraphs: [
+          "Research on practice effects finds retaking the same test typically raises scores by 5–8 points, and coaching studies on abstract-reasoning formats show meaningful gains from even a few hours of format practice. What's improving isn't intelligence — it's the gap between your ability and what an unfamiliar, timed format lets you show.",
+          "The highest-yield preparation: work through each question type until none are novel (matrices, analogies, series, odd-one-out), practice under time pressure, and learn to skip-and-return rather than stalling. Sleep matters more than a final hour of drilling — sleep deprivation measurably depresses fluid reasoning.",
+        ],
+      },
+      {
+        heading: "Why Test Publishers Care",
+        paragraphs: [
+          "Because scores assume an unpracticed examinee, publishers guard item security and recommend 1–2 years between administrations of the same instrument. Heavy pre-exposure inflates a score without changing ability — fine for a personal best, a problem when the score feeds a diagnosis or placement decision.",
+          "If you're preparing for an employer assessment, format practice is expected and fair game; publishers like SHL even provide official practice tests for exactly this reason.",
+        ],
+      },
+    ],
+    faqItems: [
+      { question: "How many points can practice add to an IQ score?", answer: "Retest gains on the same instrument average 5–8 points. Format familiarity on a new test is worth less but still meaningful — typically a few points, more if you'd otherwise waste time decoding unfamiliar instructions." },
+      { question: "What should I do the night before an IQ test?", answer: "Sleep. Sleep deprivation impairs working memory and processing speed — both directly scored. Beyond that: eat normally, arrive early, and skim the question formats one final time rather than drilling new material." },
+      { question: "Is preparing for an IQ test cheating?", answer: "For personal or employer testing, no — reasonable practice is expected. For clinical or diagnostic testing it distorts the result, which is why psychologists ask about prior testing and publishers enforce retest intervals." },
+    ],
+    related: [
+      { title: "Practice IQ Test", href: "/practice-iq-test" },
+      { title: "Can You Fail an IQ Test?", href: "/questions/can-you-fail-an-iq-test" },
+      { title: "How to Improve Your IQ", href: "/how-to-improve-iq" },
+    ],
+  },
+  {
+    slug: "why-do-iq-scores-differ-between-tests",
+    question: "Why Do IQ Scores Differ Between Tests?",
+    metaDescription: "Scoring 115 on one IQ test and 128 on another is normal. Different norms, scales, content, and measurement error all move scores — here's how to read the spread.",
+    shortAnswer: "Different IQ tests measure overlapping but not identical abilities, use different norming samples and scales, and every score carries measurement error of several points. A 10–15 point spread between two legitimate tests is common — and online tests add further variance from uncontrolled conditions and looser norms.",
+    sections: [
+      {
+        heading: "Four Sources of the Spread",
+        paragraphs: [
+          "Content: a vocabulary-heavy test and a pure matrix test tap different mixes of crystallized and fluid ability, so the same person ranks differently on each. Norms: your score depends on who the test was normed against and when — older norms inflate scores via the Flynn effect. Scale: most tests use standard deviation 15, but the Cattell scale uses 24, so the same percentile reads as a much higher number. Error: even a single test's true confidence interval is about ±5 points.",
+          "Online tests widen everything: small unrepresentative norming samples, no supervision, variable devices and distractions. Treat any single online number as a ballpark with a ±10-point haze.",
+        ],
+      },
+      {
+        heading: "How to Interpret Multiple Scores",
+        paragraphs: [
+          "Psychologists look at the pattern, not the peak: cluster your scores and the middle of the cluster is your best estimate. A dramatic outlier usually reflects test conditions — fatigue, unfamiliar format, a generous online test — rather than a change in you.",
+          "If two professionally administered tests disagree by more than ~15 points, that itself is diagnostic information, often pointing to a specific cognitive profile (say, strong verbal with weaker processing speed) that a single full-scale number obscures. The subtest breakdown matters more than reconciling the headline figures.",
+        ],
+      },
+    ],
+    faqItems: [
+      { question: "Which IQ test is most accurate?", answer: "The professionally administered Wechsler scales (WAIS for adults, WISC for children) are the clinical gold standard, with reliability around 0.95–0.98 for the full-scale score. Stanford-Binet 5 is comparably strong." },
+      { question: "Why is my Mensa-scale score so high?", answer: "Check the scale. Cattell-format scores use a standard deviation of 24, so the 98th percentile is 148 on Cattell but 131 on a Wechsler-style scale. Same rarity, bigger-looking number." },
+      { question: "Should I average my IQ test scores?", answer: "Roughly, yes — the center of several scores from comparable tests is a better estimate than any single result. Weight professional supervised tests far above online ones, and discard results where conditions were poor." },
+    ],
+    related: [
+      { title: "Are IQ Tests Accurate?", href: "/blog/iq-tests-accurate" },
+      { title: "Types of IQ Tests", href: "/types-of-iq-tests" },
+      { title: "How Many Questions Are on an IQ Test?", href: "/questions/how-many-questions-are-on-an-iq-test" },
+    ],
+  },
+  {
+    slug: "what-iq-do-you-need-for-the-military",
+    question: "What IQ Do You Need to Join the Military?",
+    metaDescription: "The US military screens with the AFQT, not IQ — but the floor equates to roughly IQ 92 (31st percentile). Here's how ASVAB scores map to IQ and why the floor exists.",
+    shortAnswer: "The US military doesn't use IQ tests — it uses the ASVAB, whose AFQT percentile score serves the same screening role. Most branches require roughly the 31st percentile (about IQ 92 equivalent) for high-school graduates, and federal law bars enlistment below the 10th percentile (roughly IQ 80).",
+    sections: [
+      {
+        heading: "How the ASVAB Maps to IQ",
+        paragraphs: [
+          "The AFQT (Armed Forces Qualification Test) combines the ASVAB's math and verbal sections into a percentile score against a national youth sample. Because it measures similar cognitive ground, AFQT percentiles convert approximately to IQ: the 31st percentile floor sits near IQ 92, the 50th at 100, and the 65th (typical for officer-track programs) around 106. Technical specialties like nuclear and cryptologic fields require line scores that correspond to well-above-average IQ.",
+          "Each branch sets its own minimum, historically ranging from about 31 (Army, Marines) to 36–40 (Navy, Air Force, Coast Guard), with lower thresholds sometimes allowed for applicants holding college credit and higher effective bars during low-recruitment years.",
+        ],
+      },
+      {
+        heading: "Why the Floor Exists: McNamara's Folly",
+        paragraphs: [
+          "The 10th-percentile legal floor is written in blood. From 1966–1971, 'Project 100,000' inducted over 300,000 men who scored below normal standards to meet Vietnam-era manpower goals. They died at higher rates, struggled with training, and fared worse after service — a policy failure documented in Hamilton Gregory's 'McNamara's Folly' that cemented cognitive floors in enlistment law.",
+          "The modern lesson generalizes: complex, dangerous work has a real cognitive floor, and the military is one of the few institutions transparent about where it draws the line.",
+        ],
+      },
+    ],
+    faqItems: [
+      { question: "What ASVAB score equals what IQ?", answer: "As rough equivalents: AFQT 10th percentile ≈ IQ 80, 31st ≈ 92, 50th ≈ 100, 65th ≈ 106, 93rd ≈ 122. The tests differ in content and norming, so treat conversions as approximations within about ±5 points." },
+      { question: "Can you join the military with a low IQ?", answer: "Federal law prohibits enlistment below the AFQT 10th percentile (roughly IQ 80), and branches set practical floors around the 31st percentile. Waivers exist for near-miss scores but are limited by statute to a small percentage of recruits." },
+      { question: "What military jobs require the highest scores?", answer: "Nuclear field (Navy), cryptologic and signals intelligence, cyber operations, and air traffic control demand the highest line scores — territory equivalent to roughly IQ 110–120+. Special operations selection adds physical and psychological screens on top." },
+    ],
+    related: [
+      { title: "ASVAB to IQ Conversion", href: "/asvab-to-iq" },
+      { title: "IQ Needed by Career", href: "/iq-by-career" },
+      { title: "Is 92 IQ Good?", href: "/is-92-iq-good" },
+    ],
+  },
+  {
+    slug: "what-is-savant-syndrome",
+    question: "What Is Savant Syndrome?",
+    metaDescription: "Savant syndrome pairs extraordinary ability in one domain with developmental differences — often alongside average or below-average IQ. Here's the science.",
+    shortAnswer: "Savant syndrome is a rare condition in which someone shows extraordinary ability in a specific domain — calendar calculation, music, art, memory — alongside developmental differences, most often autism. Roughly half of savants are autistic, and their measured IQ is frequently average or below, which is exactly why the syndrome fascinates intelligence researchers.",
+    sections: [
+      {
+        heading: "What Savant Abilities Look Like",
+        paragraphs: [
+          "Documented savant skills cluster in five areas: calendar calculation (naming the weekday of any date), music (perfect pitch, playing pieces after one hearing), art, lightning mental arithmetic, and mechanical or spatial skill. Prodigious savants — those whose ability would be remarkable even without disability — number only a few hundred worldwide. Kim Peek, the inspiration for Rain Man, memorized the contents of over 9,000 books while scoring 87 on standard IQ tests.",
+          "About one in ten autistic people show some savant skill, versus fewer than 1% in other developmental conditions. Acquired savant syndrome — abilities emerging after brain injury or dementia — is rarer still but documented, suggesting latent capacities that typical brain function somehow filters.",
+        ],
+      },
+      {
+        heading: "Why It Matters for Understanding IQ",
+        paragraphs: [
+          "Savant syndrome is the sharpest counterexample to reading a single IQ number as the whole of a mind. A full-scale score summarizes broad abilities; savants show that a specific ability can decouple almost completely from that summary. Researchers study savants precisely to understand how memory, perception, and reasoning can develop independently.",
+          "It cuts the other way too: savant skills don't imply high general intelligence, and most people with autism are not savants — a stereotype worth retiring. Intelligence research needs both the bell curve and its exceptions to describe human cognition honestly.",
+        ],
+      },
+    ],
+    faqItems: [
+      { question: "Do savants have high IQs?", answer: "Usually not. Measured full-scale IQ in savant syndrome is most often below 70–90, though some savants score in the average or above-average range. The defining feature is the gap between one extraordinary skill and overall measured ability." },
+      { question: "Is everyone with autism a savant?", answer: "No. Roughly 10% of autistic individuals show savant skills, and prodigious savants are far rarer. Equating autism with savant ability is a media stereotype that misrepresents both." },
+      { question: "Can savant abilities be learned?", answer: "The underlying phenomenon can't be chosen, but some component skills — calendar math, memory techniques — can be trained by anyone to a modest degree. Acquired savant cases after brain injury suggest latent capacities exist more broadly, an active research area." },
+    ],
+    related: [
+      { title: "IQ and Autism", href: "/iq-and/autism" },
+      { title: "What Is Intelligence?", href: "/what-is-intelligence" },
+      { title: "Memory Test Guide", href: "/tests/memory" },
+    ],
+  },
+  {
+    slug: "is-photographic-memory-real",
+    question: "Is Photographic Memory Real?",
+    metaDescription: "True photographic memory has never been scientifically verified. Eidetic imagery exists in some children, and trained mnemonists explain the rest. The evidence, explained.",
+    shortAnswer: "No verified case of true photographic memory — recalling scenes with photo-perfect fidelity long after viewing — has ever passed controlled testing. What exists: eidetic imagery in 2–10% of children (brief, detailed afterimages that fade), exceptional trained memory using mnemonic techniques, and rare prodigious memory in savant syndrome.",
+    sections: [
+      {
+        heading: "What the Evidence Shows",
+        paragraphs: [
+          "Eidetic imagery — the closest real phenomenon — occurs in a minority of children, who can describe a picture in detail for a short time after it's removed. It's brief, error-prone, and nearly vanishes by adulthood, unlike the popular notion of a permanent mental camera. The most cited adult case, 'Elizabeth' in a 1970 study, was never successfully retested, and no claimant since has passed rigorous verification.",
+          "Memory championship performers routinely memorize decks of cards and thousands of digits — using trained techniques like the method of loci, not photographic recall. Their memory for untrained material is ordinary, which is exactly what the technique explanation predicts.",
+        ],
+      },
+      {
+        heading: "Exceptional Memory and IQ",
+        paragraphs: [
+          "Working memory — holding and manipulating information over seconds — correlates strongly with fluid reasoning and is directly scored on IQ tests. Long-term memory feats correlate much less. Highly superior autobiographical memory (HSAM), where people recall daily events from decades past, comes with unremarkable performance on standard memory tests and typical IQ ranges — another dissociation between a striking ability and general intelligence.",
+          "Practical upshot: anyone can dramatically improve functional memory through spaced repetition, chunking, and mnemonic imagery. The mental camera, as far as science can verify, remains fiction.",
+        ],
+      },
+    ],
+    faqItems: [
+      { question: "Has anyone ever had a photographic memory?", answer: "No claim has survived controlled testing. Documented exceptional memories — mnemonists, savants, HSAM cases — all show error patterns and limits inconsistent with photo-like storage." },
+      { question: "What is eidetic memory?", answer: "The ability, found in roughly 2–10% of children, to retain a detailed visual afterimage of a scene for seconds to minutes. It fades quickly, contains errors, and almost never persists into adulthood." },
+      { question: "Does good memory mean high IQ?", answer: "Working memory does — it's one of the strongest correlates of fluid intelligence and a core IQ subtest. Exceptional long-term or autobiographical memory, by contrast, shows little relationship to overall IQ." },
+    ],
+    related: [
+      { title: "Memory Test Guide", href: "/tests/memory" },
+      { title: "Working Memory and IQ", href: "/blog/working-memory-and-iq" },
+      { title: "What Is Savant Syndrome?", href: "/questions/what-is-savant-syndrome" },
+    ],
+  },
+  {
+    slug: "who-invented-the-iq-test",
+    question: "Who Invented the IQ Test?",
+    metaDescription: "Alfred Binet created the first practical intelligence test in 1905. Stern coined 'IQ,' Terman standardized it, and Wechsler built the modern scale. The full lineage.",
+    shortAnswer: "Alfred Binet, with Théodore Simon, created the first practical intelligence test in Paris in 1905 — built to identify schoolchildren needing educational support, not to rank the general population. William Stern coined the term IQ in 1912, Lewis Terman's 1916 Stanford-Binet standardized it in America, and David Wechsler's 1939 scales established the modern scoring system.",
+    sections: [
+      {
+        heading: "The Four Founders",
+        paragraphs: [
+          "Binet's 1905 test introduced age-graded tasks and the concept of mental age. He was emphatic that his instrument measured current performance, not fixed capacity — a warning history mostly ignored. Stern contributed the quotient formula (mental age ÷ chronological age × 100), giving the score its name.",
+          "Terman adapted and standardized the test at Stanford, launching mass testing — including the US Army's WWI screening of 1.7 million recruits, which normalized cognitive testing at scale. Wechsler, dissatisfied with the Binet's adult validity, built the Wechsler-Bellevue in 1939 and introduced deviation scoring against age-group norms, the system every major test still uses.",
+        ],
+      },
+      {
+        heading: "The Complicated Legacy",
+        paragraphs: [
+          "The same instruments that expanded educational opportunity were also enlisted, particularly in the 1910s–30s, to justify eugenic policies and discriminatory immigration quotas — applications Binet himself would have rejected and that modern psychology explicitly repudiates. Understanding that history is part of using these tools responsibly.",
+          "Modern tests bear little surface resemblance to Binet's: they're normed on stratified national samples, screened item-by-item for bias, and interpreted with confidence intervals and subtest profiles rather than a single verdict. But the core insight — that reasoning ability can be sampled and compared systematically — remains Binet's.",
+        ],
+      },
+    ],
+    faqItems: [
+      { question: "When was the first IQ test created?", answer: "1905 — the Binet-Simon scale, developed by Alfred Binet and Théodore Simon for the French education ministry to identify children needing additional support." },
+      { question: "What was the original purpose of IQ testing?", answer: "Educational triage, not ranking: Binet designed his test to find struggling schoolchildren so they could receive help. He explicitly warned against treating scores as a measure of fixed, innate intelligence." },
+      { question: "How is the modern IQ test different from Binet's?", answer: "Modern tests use deviation scoring against age-group norms (not mental age), sample multiple ability domains, are normed on representative national samples, and undergo statistical bias screening — plus they're revised roughly every decade to stay current." },
+    ],
+    related: [
+      { title: "History of IQ Testing", href: "/blog/history-of-iq-testing" },
+      { title: "What Is Mental Age?", href: "/questions/what-is-mental-age" },
+      { title: "Types of IQ Tests", href: "/types-of-iq-tests" },
+    ],
+  },
 ];
 
 export const questionSlugs = questionsData.map((q) => q.slug);

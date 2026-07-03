@@ -163,5 +163,11 @@ export default function handler(req: Request) {
 
   // ImageResponse accepts a React-element-like object tree.
   type SatoriElement = ConstructorParameters<typeof ImageResponse>[0];
-  return new ImageResponse(tree as unknown as SatoriElement, { width: 1200, height: 630 });
+  return new ImageResponse(tree as unknown as SatoriElement, {
+    width: 1200,
+    height: 630,
+    // Cards are pure functions of the query string — cache at the edge for a
+    // day so repeat crawler/share hits skip the satori render entirely.
+    headers: { "cache-control": "public, max-age=86400, s-maxage=86400, immutable" },
+  });
 }
