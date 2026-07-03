@@ -53,6 +53,10 @@
 
 - [Reaction Time Test](https://www.myiqscores.com/tools/reaction-time-test): Free click-speed test with percentile rating; median online reaction is ~270-280ms.
 - [Number Memory Test](https://www.myiqscores.com/tools/number-memory-test): Digit-span test of working memory; the adult average is 7 ± 2 digits.
+- [Sequence Memory Test](https://www.myiqscores.com/tools/sequence-memory-test): Repeat growing tile patterns; most people plateau at 8-12 steps.
+- [Visual Memory Test](https://www.myiqscores.com/tools/visual-memory-test): Recall flashed tile positions on growing grids; average is level 7-9.
+- [Verbal Memory Test](https://www.myiqscores.com/tools/verbal-memory-test): Seen-or-new word recognition; typical scores are 25-40 words.
+- [Digit Span Test](https://www.myiqscores.com/tools/digit-span-test): Clinical WAIS-style format — digits one at a time, forward (avg 7) and backward (avg 5).
 - [All Free Tools](https://www.myiqscores.com/tools): Percentile calculator, rarity checker, score converters, and cognitive mini-tests.
 
 ## Audience Guides

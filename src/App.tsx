@@ -125,6 +125,10 @@ const IQRarity = asyncPage(() => import("./pages/tools/IQRarity.tsx"));
 const CelebrityIQMatch = asyncPage(() => import("./pages/tools/CelebrityIQMatch.tsx"));
 const ReactionTimeTest = asyncPage(() => import("./pages/tools/ReactionTimeTest.tsx"));
 const NumberMemoryTest = asyncPage(() => import("./pages/tools/NumberMemoryTest.tsx"));
+const SequenceMemoryTest = asyncPage(() => import("./pages/tools/SequenceMemoryTest.tsx"));
+const VisualMemoryTest = asyncPage(() => import("./pages/tools/VisualMemoryTest.tsx"));
+const VerbalMemoryTest = asyncPage(() => import("./pages/tools/VerbalMemoryTest.tsx"));
+const DigitSpanTest = asyncPage(() => import("./pages/tools/DigitSpanTest.tsx"));
 const IQTestForKids = asyncPage(() => import("./pages/IQTestForKids.tsx"));
 const IQTestForTeens = asyncPage(() => import("./pages/IQTestForTeens.tsx"));
 
@@ -226,6 +230,10 @@ export const AppRoutes = () => (
       <Route path="/what-is-intelligence" element={<WhatIsIntelligence />} />
       <Route path="/tools/reaction-time-test" element={<ReactionTimeTest />} />
       <Route path="/tools/number-memory-test" element={<NumberMemoryTest />} />
+      <Route path="/tools/sequence-memory-test" element={<SequenceMemoryTest />} />
+      <Route path="/tools/visual-memory-test" element={<VisualMemoryTest />} />
+      <Route path="/tools/verbal-memory-test" element={<VerbalMemoryTest />} />
+      <Route path="/tools/digit-span-test" element={<DigitSpanTest />} />
       <Route path="/iq-test-for-kids" element={<IQTestForKids />} />
       <Route path="/iq-test-for-teens" element={<IQTestForTeens />} />
       <Route path="/questions" element={<QuestionsHub />} />
