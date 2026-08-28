@@ -383,9 +383,6 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
             animation: "pulse-glow 3s ease-in-out infinite",
           }}
         >
-          <div className="absolute top-3 right-3 bg-success/20 text-success text-xs font-bold px-2 py-1 rounded-full">
-            60% Off
-          </div>
           <div className="flex items-center gap-2 mb-2">
             <Lock className="w-5 h-5 text-primary" />
             <h3 className="font-heading font-bold text-foreground text-lg">Unlock Your Full Cognitive Report</h3>
@@ -410,8 +407,8 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
             ))}
           </div>
           <div className="flex items-baseline gap-2 mb-4">
-            <span className="text-muted-foreground line-through text-sm">$19.99</span>
             <span className="text-2xl font-heading font-bold text-success">$7.99</span>
+            <span className="text-sm text-muted-foreground">one-time purchase</span>
           </div>
           <button
             onClick={() => {
@@ -583,7 +580,7 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
               📧 We've sent your results summary to <span className="text-foreground">{userEmail}</span>
             </p>
             <p className="text-xs text-muted-foreground/60 mt-1">
-              Check your inbox for your score breakdown and a special 24-hour discount on the full report.
+              Check your inbox for your full score breakdown.
             </p>
           </motion.div>
         )}

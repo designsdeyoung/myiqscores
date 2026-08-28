@@ -1,13 +1,54 @@
 # AdSense Readiness — MyIQScores.com
 
-Branch: `adsense-production-hardening` · Prepared: 2026-08-28
+Branch: `adsense-production-hardening` · Prepared: 2026-08-28 (updated same day, v2)
 
 This document records the production-hardening work done to prepare MyIQScores.com
 for a Google AdSense application, and the manual steps that remain for the account owner.
 
 ---
 
-## 1. Completed Work
+## 0. Round-2 hardening (content quality, claims, technical)
+
+Done after the initial hardening pass; full detail in `CONTENT_AUDIT.md`:
+
+- **Route manifest + 35-URL SEO repair.** Prerender routes and the sitemap now
+  derive from `src/routeManifest.ts` (single source of truth shared with the
+  app's data files), with a build-failing guard if any route renders the 404
+  page. This fixed 35 live URLs — including 13 blog articles — that previously
+  served the prerendered *homepage* HTML (wrong title/canonical) and crashed
+  hydration. Sitemap: 555 URLs, zero legitimate URLs removed.
+- **Hydration errors resolved.** Root-caused with a development React build:
+  the mismatches were exactly those missing prerender routes. All page families
+  now hydrate clean; the only remaining #418 occurs on `vite preview` for
+  slashless URLs (local preview artifact — Vercel serves prerendered files
+  filesystem-first in production).
+- **Score pages**: added measurement-error (±5), "what this score does not
+  establish", and career-caveat sections to all 110 pages.
+- **Career pages**: removed IQ-as-requirement framing on all 108 pages
+  (question-form H1, "IQ is not a job requirement" notice, evidence-base
+  section naming Harrell & Harrell 1945 and admission-test correlations).
+- **Country pages**: added a named-dataset controversy section (Lynn &
+  Vanhanen vs PISA/TIMSS-based estimates), replaced false rank precision
+  ("#N of ~199") with "#N of 50 covered", hedged titles/descriptions.
+- **Famous-IQ factual corrections**: Kasparov "190 tested/verified" myth
+  corrected to the documented ~123 Der Spiegel result (all cross-references
+  fixed), Carlsen 186 marked unverified, Tao 220-230 marked childhood ratio
+  estimate, Epstein 2008 conviction described accurately, Sharon Stone Mensa
+  claim noted as retracted.
+- **Pricing honesty**: "$19.99 → $7.99 / 60% Off" could not be verified as a
+  real price history (`git log -S` shows it was born already-discounted), so
+  all percentage-off and struck-through pricing was removed from the results
+  page and the transactional email template. Plain price: $7.99.
+  ⚠️ Redeploy the `send-transactional-email` Supabase function to apply the
+  email-template change in production.
+- **Lint**: 14 errors → 0 (typed fixes, no rules silenced; 12 pre-existing
+  warnings remain in generated shadcn files).
+- **Accessibility**: axe-core WCAG 2.0 A/AA scans across six representative
+  pages: 0 violations (fixed a nested-interactive issue in ComparisonChart).
+- `/unsubscribe` prerendered + noindexed; `/test` (canonicalizes to `/`)
+  removed from the sitemap.
+
+## 1. Completed Work (round 1)
 
 ### Quiz ad architecture (compliance rework)
 - **Removed the per-question ad refresh.** Previously every quiz question remounted
@@ -122,8 +163,10 @@ numeric-looking slot IDs, but keep the flag authoritative.
    branch is deployed to production.
 4. Confirm `https://www.myiqscores.com/ads.txt` serves correctly after deploy
    (AdSense may take a few days to recognize it).
-5. Consider whether the paid report's "60% Off / $19.99 → $7.99" framing
-   reflects real pricing history; adjust if not (see Unresolved Risks).
+5. ~~Consider whether the paid report's "60% Off / $19.99 → $7.99" framing
+   reflects real pricing history~~ — resolved in v2: the discount framing was
+   unverifiable and has been removed everywhere; redeploy the
+   `send-transactional-email` Supabase function to update the live email.
 6. After approval: create ad units, fill `AD_SLOTS`, enable the flag (Section 2).
 
 ## 4. Deployment
@@ -143,27 +186,30 @@ numeric-looking slot IDs, but keep the flag authoritative.
 - The AdSense loader script is present site-wide (required for verification),
   but no ad units render until activation.
 
-## 6. Unresolved Risks
+## 6. Unresolved Risks (updated, v2)
 
-1. **Large volume of templated pages.** ~110 `is-X-iq-good` pages, ~100 career
-   pages, 127 famous-IQ pages, 50 country pages. Each has unique, reasonably
-   substantial copy, but reviewers may still read near-adjacent score pages
-   (is-101 vs is-102) as programmatic/thin. This is the single biggest
-   approval risk. Mitigation if rejected for "low value content": noindex or
-   consolidate the least-trafficked score pages.
-2. **Country IQ data.** "Average IQ by country" rankings derive from contested
-   research (Lynn-style datasets). Pages should keep (and where thin, expand)
-   methodological caveats.
-3. **Paid-report pricing framing.** "60% Off" with a struck-through $19.99 is
-   only defensible if $19.99 was ever the real price. "30-day money-back
-   guarantee" must be honored in practice.
-4. **Pre-existing React hydration warnings** (#418/#423/#425) on prerendered
-   pages: React recovers by client-rendering, users and crawlers are unaffected,
-   but it costs some runtime performance. Worth fixing eventually (likely
-   framer-motion SSR mismatches); not an AdSense blocker.
-5. **Email capture flows** store leads in Supabase and send a results email when
-   an email is present; ensure the transactional-email templates include an
-   unsubscribe link (an `/unsubscribe` page exists).
-6. **`.env` is committed** containing the Supabase URL and anon (publishable)
-   key. These are public-by-design client values, but committing `.env` is bad
-   hygiene; consider moving to `.env.example` + Vercel env vars.
+1. **Volume of templated pages** (~430 across score/career/country/state/famous
+   families). Every page now has unique copy plus honest framing sections, but
+   a reviewer can still pattern-match the volume as programmatic. Fallback if
+   rejected for "low value content": noindex the least-trafficked adjacent
+   score pages and the state family first (both identified in
+   `CONTENT_AUDIT.md`), then request re-review.
+2. **Country-IQ subject matter** is inherently contested. Pages now name the
+   datasets and the academic criticism explicitly; residual risk is topical,
+   not fixable by copy. Per-country FAQ text retains some mild "ranking #N"
+   phrasing — a future data pass could hedge those individually.
+3. **State pages are the thinnest family** (~500 words); improve next if
+   content depth is ever challenged.
+4. **`/famous-iq/jeffrey-epstein`** is factual and non-glorifying but concerns
+   a notorious criminal; keep on a sensitivity watchlist.
+5. **"30-day money-back guarantee"** on the paid report must be honored in
+   practice — it remains claimed on the results page and in the email template.
+6. **Supabase email function redeploy needed** for the honest-pricing email
+   template to go live (`supabase functions deploy send-transactional-email`).
+7. **`.env` is committed** containing the Supabase URL and anon (publishable)
+   key. Public-by-design values, but poor hygiene; consider `.env.example` +
+   Vercel env vars.
+8. **Local preview quirk**: `vite preview` serves slashless URLs via the SPA
+   fallback, producing a hydration warning locally that does not occur on
+   Vercel (filesystem-first serving). Automated QA should use trailing-slash
+   URLs against `vite preview`.

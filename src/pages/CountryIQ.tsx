@@ -39,8 +39,8 @@ const CountryIQ = () => {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `Average IQ in ${country.name}: Score, Ranking & Analysis`,
-    description: country.metaDescription,
+    headline: `Average IQ in ${country.name}: Estimates & Context`,
+    description: `${country.name}'s average IQ is estimated at ~${country.avgIQ} in compiled cross-national datasets, with important caveats about sampling and methodology.`,
     publisher: {
       "@type": "Organization",
       name: "MyIQScores",
@@ -68,15 +68,15 @@ const CountryIQ = () => {
   return (
     <ContentPage ctaText="Test your IQ and see how you compare" relatedPages={relatedPages}>
       <SEOHead
-        title={`Average IQ in ${country.name}: ${country.avgIQ}, Ranked #${country.rank} Globally | MyIQScores`}
-        description={country.metaDescription}
+        title={`Average IQ in ${country.name}: ~${country.avgIQ} — Estimates & Context | MyIQScores`}
+        description={`${country.name}'s average IQ is estimated at ~${country.avgIQ} in compiled cross-national datasets. See where that figure comes from, why such estimates are debated, and how ${country.name} compares.`}
         canonicalUrl={`/average-iq/${country.slug}`}
         ogType="article"
         jsonLd={[faqSchema, articleSchema]}
       />
 
       <h1>
-        Average IQ in <span className="gradient-text">{country.name}</span>: Score, Ranking &amp; Analysis
+        Average IQ in <span className="gradient-text">{country.name}</span>: Estimates &amp; Context
       </h1>
 
       {/* IQ Meter */}
@@ -85,13 +85,13 @@ const CountryIQ = () => {
       {/* Prominent Score Display */}
       <div className="grid grid-cols-3 gap-4 my-8">
         <div className="glass-card p-6 text-center rounded-xl">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Average IQ</p>
-          <p className="font-heading font-bold text-4xl gradient-text">{country.avgIQ}</p>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Estimated Avg IQ</p>
+          <p className="font-heading font-bold text-4xl gradient-text">~{country.avgIQ}</p>
         </div>
         <div className="glass-card p-6 text-center rounded-xl">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Global Ranking</p>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Rank in This Dataset</p>
           <p className="font-heading font-bold text-4xl text-foreground">#{country.rank}</p>
-          <p className="text-xs text-muted-foreground mt-1">out of ~199 countries</p>
+          <p className="text-xs text-muted-foreground mt-1">of {countryIQData.length} countries covered</p>
         </div>
         <div className="glass-card p-6 text-center rounded-xl">
           <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Region</p>
@@ -110,6 +110,26 @@ const CountryIQ = () => {
           interpreted within their proper scientific context.
         </p>
       </div>
+
+      <h2>Where These Numbers Come From — and Why They're Debated</h2>
+      <p>
+        There is no official global IQ census. National IQ figures like the one above come from
+        compiled cross-national datasets — most famously the compilations begun by Richard Lynn and
+        Tatu Vanhanen (<em>IQ and the Wealth of Nations</em>, 2002) and successor datasets, alongside
+        alternative estimates derived from international student assessments such as PISA and TIMSS.
+        These compilations are <strong>heavily debated in the academic literature</strong>: critics have
+        documented small and unrepresentative samples for many countries, scores extrapolated from
+        neighboring nations, mixing of different tests and decades, and translation and cultural-fit
+        problems. Different datasets can shift a country's estimate — and its rank — by several points.
+      </p>
+      <p>
+        For these reasons, the figure for {country.name} should be read as a{" "}
+        <strong>rough estimate of average performance on Western-style cognitive tests</strong> under
+        the conditions in which the underlying samples were collected — not as a measure of the innate
+        ability or potential of {country.name}'s people. Population-level test averages track education
+        access, childhood nutrition, health, and economic development, and they change as those
+        conditions change (see the Flynn Effect below).
+      </p>
 
       <h2>Education System in {country.name}</h2>
       <p>{country.educationOverview}</p>

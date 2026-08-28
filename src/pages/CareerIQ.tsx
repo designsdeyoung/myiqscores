@@ -5,10 +5,10 @@ import IQMeter from "@/components/IQMeter";
 import ComparisonChart from "@/components/ComparisonChart";
 import PercentileBar from "@/components/PercentileBar";
 import Breadcrumb from "@/components/Breadcrumb";
-import { getCareerBySlug, careerIQData } from "@/data/careerIQData";
+import { getCareerBySlug, careerIQData, type CareerIQInfo } from "@/data/careerIQData";
 
 const seoTitles: Record<string, string> = {
-  "airline-pilot": "IQ Needed to Be a Pilot: Minimum Score & What Airlines Look For",
+  "airline-pilot": "IQ Needed to Be a Pilot? Typical Range & What Airlines Look For",
   "doctor": "IQ Needed to Be a Doctor: Average Physician IQ Revealed",
   "lawyer": "IQ Needed to Be a Lawyer: What the Data Shows",
   "engineer": "Average Engineer IQ: How Smart Do You Need to Be?",
@@ -23,7 +23,7 @@ const seoTitles: Record<string, string> = {
   "pharmacist": "Average Pharmacist IQ: Intelligence Requirements",
   "psychologist": "Average Psychologist IQ: What the Research Shows",
   "ceo": "Average CEO IQ: How Smart Are Business Leaders?",
-  "astronaut": "IQ Needed to Be an Astronaut: NASA Requirements",
+  "astronaut": "IQ Needed to Be an Astronaut? What NASA Actually Requires",
 };
 
 const seoDescs: Record<string, string> = {
@@ -86,13 +86,13 @@ const CareerIQ = () => {
 
   const relatedCareers = career.relatedCareers
     .map((s) => careerIQData.find((c) => c.slug === s))
-    .filter(Boolean);
+    .filter((c): c is CareerIQInfo => Boolean(c));
 
   return (
     <ContentPage ctaText={`Think you have what it takes? Test your IQ now`} relatedPages={relatedPages}>
       <SEOHead
-        title={seoTitles[career.slug] ?? `IQ Needed to Be a ${career.career}: Average Score & Requirements | MyIQScores`}
-        description={seoDescs[career.slug] ?? `What IQ do you need to be a ${career.career.toLowerCase()}? The average IQ for ${career.career.toLowerCase()}s is ${career.avgIQRange}. Learn the cognitive requirements and how to qualify.`}
+        title={seoTitles[career.slug] ?? `IQ Needed to Be a ${career.career}? Typical Range & What Matters | MyIQScores`}
+        description={seoDescs[career.slug] ?? `Do you need a high IQ to be a ${career.career.toLowerCase()}? Studies suggest a typical range of ${career.avgIQRange} — but IQ is not a job requirement. See what actually matters.`}
         canonicalUrl={`/iq-needed-for/${career.slug}`}
         ogType="article"
         jsonLd={[faqSchema, breadcrumbSchema]}
@@ -101,7 +101,7 @@ const CareerIQ = () => {
       <Breadcrumb crumbs={[{ label: "Home", href: "/" }, { label: "IQ by Career", href: "/iq-by-career" }, { label: `${career.career} IQ` }]} />
 
       <h1>
-        IQ Needed to Be a <span className="gradient-text">{career.career}</span>
+        What IQ Do You Need to Be a <span className="gradient-text">{career.career}</span>?
       </h1>
 
       {/* IQ Meter for career midpoint */}
@@ -110,7 +110,7 @@ const CareerIQ = () => {
       {/* Quick Stats */}
       <div className="grid grid-cols-2 gap-4 my-6">
         <div className="glass-card p-5 text-center rounded-xl">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Average IQ Range</p>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-2">Typical IQ Range (Estimate)</p>
           <p className="font-heading font-bold text-3xl gradient-text">{career.avgIQRange}</p>
         </div>
         <div className="glass-card p-5 text-center rounded-xl">
@@ -121,8 +121,30 @@ const CareerIQ = () => {
         </div>
       </div>
 
-      <h2>Cognitive Requirements</h2>
+      {/* Honest-framing note — shown on every career page */}
+      <div className="glass-card p-5 rounded-xl border-l-4 border-primary/40 my-6">
+        <p className="text-sm text-muted-foreground leading-relaxed m-0">
+          <strong className="text-foreground">IQ is not a job requirement.</strong> The range above is a
+          rough estimate of the <em>group average</em> observed in studies of people already working in
+          this field — it is not a minimum score, and employers do not screen candidates with IQ tests
+          (narrow exceptions like military aptitude batteries test job-relevant skills, not IQ per se).
+          People succeed in every career across a wide range of scores; training, experience, interest,
+          and persistence matter far more than any test number.
+        </p>
+      </div>
+
+      <h2>Typical Cognitive Demands</h2>
       <p>{career.description}</p>
+
+      <h2>Where These Numbers Come From</h2>
+      <p>
+        Occupational IQ estimates trace back to studies that measured cognitive test scores across
+        professions — most famously mid-20th-century military induction data (such as Harrell &amp;
+        Harrell's 1945 occupational tables) and later research linking standardized admission tests
+        (MCAT, LSAT, GRE, ASVAB) to general cognitive ability. These sources are dated, based on group
+        averages, and vary between studies, so treat the range above as an approximation of central
+        tendency — not a measured fact about today's workforce, and never a cutoff for any individual.
+      </p>
 
       <p>
         To understand what these IQ ranges mean, see our{" "}
@@ -142,10 +164,10 @@ const CareerIQ = () => {
         title="Career IQ Comparison"
         items={[
           { label: career.career, value: Math.round((career.minIQ + career.maxIQ) / 2), highlight: true },
-          ...relatedCareers.filter(Boolean).map((c) => ({
-            label: (c as any).career,
-            value: Math.round(((c as any).minIQ + (c as any).maxIQ) / 2),
-            href: `/iq-needed-for/${(c as any).slug}`,
+          ...relatedCareers.map((c) => ({
+            label: c.career,
+            value: Math.round((c.minIQ + c.maxIQ) / 2),
+            href: `/iq-needed-for/${c.slug}`,
           })),
         ]}
         maxValue={150}

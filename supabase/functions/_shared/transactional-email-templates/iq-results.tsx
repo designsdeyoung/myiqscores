@@ -74,11 +74,7 @@ const IQResultsEmail = ({
             Get a detailed 12-page analysis of your cognitive strengths,
             weaknesses, and a personalized improvement plan.
           </Text>
-          <Text style={discountText}>
-            🎁 24-Hour Exclusive Discount — 60% Off
-          </Text>
           <Text style={priceRow}>
-            <span style={oldPrice}>$19.99</span>{' '}
             <span style={newPrice}>$7.99</span>
           </Text>
           <Button style={ctaButton} href={PREMIUM_REPORT_LINK}>
@@ -107,7 +103,7 @@ const IQResultsEmail = ({
 
 export const template = {
   component: IQResultsEmail,
-  subject: (data: Record<string, any>) =>
+  subject: (data: { name?: string; iqScore?: number }) =>
     data.name
       ? `${data.name}, your IQ score is ${data.iqScore ?? 'ready'}!`
       : `Your IQ score is ${data.iqScore ?? 'ready'}!`,
