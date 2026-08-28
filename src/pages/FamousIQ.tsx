@@ -162,6 +162,19 @@ const FamousIQ = () => {
         <span className="gradient-text">{person.name}'s IQ</span>: {person.estimatedIQ}
       </h1>
 
+      {/* Estimate disclosure — shown on every famous-IQ page */}
+      <div className="glass-card p-4 rounded-xl border border-[rgba(255,255,255,0.08)] my-4 not-prose">
+        <p className="text-xs text-muted-foreground leading-relaxed m-0">
+          <strong className="text-foreground">Note:</strong> The figure above is an{" "}
+          <strong className="text-foreground">unverified estimate</strong> based on publicly circulated
+          reports and biographical analysis — not a confirmed result from an authenticated IQ test. Most
+          public figures have never released an official score.{" "}
+          <Link to="/disclaimer" className="text-primary hover:underline">
+            How we handle IQ estimates →
+          </Link>
+        </p>
+      </div>
+
       {/* Person visual */}
       {wikiImages[person.slug] ? (
         <WikiImage

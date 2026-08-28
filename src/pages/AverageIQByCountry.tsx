@@ -18,7 +18,7 @@ const AverageIQByCountry = () => {
   );
 
   const sortedData = useMemo(() => {
-    let filtered =
+    const filtered =
       filterContinent === "all"
         ? [...countryIQData]
         : countryIQData.filter((c) => c.continent === filterContinent);
@@ -97,15 +97,15 @@ const AverageIQByCountry = () => {
   return (
     <ContentPage>
       <SEOHead
-        title="Average IQ by Country: The Complete Global Ranking | MyIQScores"
-        description="Compare average IQ scores across 50 countries worldwide. Sortable rankings with scores, global position, and analysis of what drives national IQ differences."
+        title="Average IQ by Country: Estimated Rankings & Key Caveats | MyIQScores"
+        description="Compare estimated average IQ scores across 50 countries. Sortable rankings plus an honest look at where national IQ data comes from and why it's debated."
         canonicalUrl="/average-iq-by-country"
         ogType="article"
         jsonLd={faqSchema}
       />
 
       <h1>
-        Average IQ by Country: <span className="gradient-text">The Complete Global Ranking</span>
+        Average IQ by Country: <span className="gradient-text">Estimated Rankings &amp; Caveats</span>
       </h1>
 
       <p>
@@ -117,11 +117,15 @@ const AverageIQByCountry = () => {
       <div className="glass-card p-5 rounded-xl border-l-4 border-primary/40 my-8">
         <p className="text-sm text-muted-foreground leading-relaxed">
           <strong className="text-foreground">Methodology note:</strong> National IQ estimates are derived
-          from meta-analyses of cognitive ability studies conducted across different time periods,
-          populations, and testing conditions. These figures are influenced by access to education,
-          healthcare, nutrition, socioeconomic development, and sample representativeness. They reflect
-          population-level trends and do <strong>not</strong> predict or reflect the intelligence of any
-          individual. For more on how IQ is measured, see our{" "}
+          from compiled cross-national datasets — principally the compilations begun by Lynn and
+          Vanhanen and later successors, plus estimates based on international assessments like PISA and
+          TIMSS. These compilations are <strong>contested in the academic literature</strong>: many
+          country figures rest on small or unrepresentative samples, mixed tests and eras, or
+          extrapolation from neighboring countries, and different datasets can shift scores and ranks by
+          several points. The figures are also heavily influenced by access to education, healthcare,
+          nutrition, and socioeconomic development. They reflect measured test performance under specific
+          conditions — <strong>not</strong> the innate ability of any population, and never the
+          intelligence of any individual. For more on how IQ is measured, see our{" "}
           <Link to="/what-is-iq">complete guide to IQ</Link>.
         </p>
       </div>

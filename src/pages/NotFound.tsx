@@ -14,6 +14,7 @@ const NotFound = () => {
       <SEOHead
         title="Page Not Found | MyIQScores"
         description="The page you're looking for doesn't exist. Take the free IQ test at MyIQScores."
+        noindex
       />
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>

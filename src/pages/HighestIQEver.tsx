@@ -9,7 +9,7 @@ const faqSchema = {
     { "@type": "Question", name: "What is the highest IQ ever recorded?",
       acceptedAnswer: { "@type": "Answer", text: "The highest recorded IQ is debated. William James Sidis is estimated at 250-300 (disputed). Terence Tao tested at 220-230 as a child. Marilyn vos Savant was listed at 228 in the Guinness Book before the category was removed. Most psychologists consider scores above 160 to be unreliable measurements." }},
     { "@type": "Question", name: "Who has the highest IQ in the world right now?",
-      acceptedAnswer: { "@type": "Answer", text: "Terence Tao, an Australian-American mathematician, is often cited with the highest verified IQ among living people, estimated at 220-230 based on childhood testing. Christopher Hirata (225) and Kim Ung-Yong (210) are also frequently mentioned. However, adult IQ scores at these extremes are very difficult to verify." }},
+      acceptedAnswer: { "@type": "Answer", text: "Terence Tao, an Australian-American mathematician, is often cited with the highest IQ estimate among living people — around 220-230 from childhood ratio-based testing. Christopher Hirata (225) and Kim Ung-Yong (210) are also frequently mentioned. However, scores at these extremes are estimates: adult IQ at that level is beyond what standardized tests can reliably verify." }},
     { "@type": "Question", name: "Is an IQ of 200 possible?",
       acceptedAnswer: { "@type": "Answer", text: "Theoretically yes, but practically unmeasurable. Standard IQ tests cannot validate scores above 150-160. Claims of 200+ IQs are controversial among psychologists because the statistical basis becomes unreliable at such extremes. A few individuals clearly demonstrate extraordinary cognitive abilities, but assigning a precise number is scientifically questionable." }},
     { "@type": "Question", name: "What was Einstein's IQ?",
@@ -49,7 +49,7 @@ const HighestIQEver = () => (
         <tr><td>5</td><td>Kim Ung-Yong</td><td>210</td><td>Child prodigy, NASA</td><td>Childhood test</td></tr>
         <tr><td>6</td><td><Link to="/famous-iq/isaac-newton">Isaac Newton</Link></td><td>190–200</td><td>Laws of motion, calculus</td><td>Estimate</td></tr>
         <tr><td>7</td><td><Link to="/famous-iq/leonardo-da-vinci">Leonardo da Vinci</Link></td><td>180–200</td><td>Polymath, artist, inventor</td><td>Estimate</td></tr>
-        <tr><td>8</td><td>Garry Kasparov</td><td>190</td><td>Chess world champion</td><td>Tested</td></tr>
+        <tr><td>8</td><td><Link to="/famous-iq/garry-kasparov">Garry Kasparov</Link></td><td>190 (myth)</td><td>Chess world champion</td><td>No — documented test ≈123</td></tr>
         <tr><td>9</td><td><Link to="/famous-iq/marie-curie">Marie Curie</Link></td><td>180–200</td><td>Two Nobel Prizes</td><td>Estimate</td></tr>
         <tr><td>10</td><td>Johann Wolfgang von Goethe</td><td>180–195</td><td>Writer, polymath</td><td>Estimate</td></tr>
         <tr><td>11</td><td><Link to="/famous-iq/nikola-tesla">Nikola Tesla</Link></td><td>160–200</td><td>AC electricity inventor</td><td>Estimate</td></tr>

@@ -41,8 +41,8 @@ const FamousIQScores = () => (
       <tbody>
         <tr><td><Link to="/famous-iq/albert-einstein">Albert Einstein</Link></td><td>~160</td><td>Theoretical physics</td><td>Estimate (never tested)</td></tr>
         <tr><td>Stephen Hawking</td><td>~160</td><td>Theoretical physics / cosmology</td><td>Self-reported ("I have no idea")</td></tr>
-        <tr><td>Garry Kasparov</td><td>~190</td><td>World chess champion</td><td>Documented test (Hamburg, 1987)</td></tr>
-        <tr><td>Sharon Stone</td><td>~154</td><td>Actress (Basic Instinct)</td><td>Documented / Mensa member</td></tr>
+        <tr><td><Link to="/famous-iq/garry-kasparov">Garry Kasparov</Link></td><td>190 (myth)</td><td>World chess champion</td><td>Unsourced — his documented 1987 magazine test reportedly yielded ~123</td></tr>
+        <tr><td>Sharon Stone</td><td>~154</td><td>Actress (Basic Instinct)</td><td>Claimed; reported Mensa membership was later retracted</td></tr>
         <tr><td>Dolph Lundgren</td><td>~160</td><td>Actor / chemical engineer</td><td>Estimated; Fulbright scholar</td></tr>
         <tr><td>Bill Gates</td><td>~150–160</td><td>Microsoft / philanthropy</td><td>Estimate based on SAT/academic record</td></tr>
         <tr><td><Link to="/famous-iq/elon-musk">Elon Musk</Link></td><td>~150–155</td><td>Tesla, SpaceX, X</td><td>Estimated</td></tr>
@@ -78,11 +78,14 @@ const FamousIQScores = () => (
       same thing.
     </p>
 
-    <h3>Garry Kasparov (190)</h3>
+    <h3>Garry Kasparov (the 190 myth)</h3>
     <p>
-      The former world chess champion's documented IQ of ~190 places him among the highest
-      ever formally recorded. Chess mastery at the grandmaster level requires extraordinary
-      pattern recognition, working memory, and long-horizon planning — all core IQ domains. For
+      The former world chess champion is a perfect case study in how celebrity IQ myths spread.
+      The "190" repeated across the internet has no documented source. The one documented data
+      point — an extensive test battery administered by the German magazine Der Spiegel in the
+      late 1980s — reportedly produced an overall score around 123, alongside exceptional memory
+      results. Chess mastery at the grandmaster level draws on extraordinary trained pattern
+      recognition and working memory, which overlap with but are not the same as general IQ. For
       more on the upper extremes of intelligence, see our{" "}
       <Link to="/highest-iq-ever">highest IQ ever recorded page</Link>.
     </p>

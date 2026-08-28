@@ -6,320 +6,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, "../dist");
 const serverEntry = path.resolve(distDir, "server/entry-server.js");
 
-// IQ score pages
-const iqScores = [40, 42, 44, 45, 48, 50, 52, 55, 57, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 77, 79, 81, 75, 76, 78, 80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 152, 155, 158, 160, 165, 170, 175, 180, 190, 200];
-
-// Country pages
-const countrySlugs = [
-  "japan", "south-korea", "china", "taiwan", "singapore", "hong-kong",
-  "netherlands", "switzerland", "finland", "germany", "united-kingdom",
-  "ireland", "austria", "belgium", "sweden", "norway", "poland", "france",
-  "czech-republic", "hungary", "italy", "spain", "russia", "portugal", "greece",
-  "canada", "united-states", "mexico", "australia", "new-zealand",
-  "argentina", "colombia", "brazil", "israel", "turkey", "uae", "iran",
-  "saudi-arabia", "vietnam", "thailand", "philippines", "indonesia", "pakistan",
-  "india", "egypt", "kenya", "south-africa", "nigeria", "ghana", "ethiopia",
-];
-
-// Career pages
-const careerSlugs = [
-  "doctor", "lawyer", "engineer", "software-developer", "teacher",
-  "nurse", "accountant", "police-officer", "electrician", "plumber",
-  "data-scientist", "architect", "pharmacist", "dentist", "firefighter",
-  "military-officer", "professor", "social-worker", "pilot", "judge",
-  "psychologist", "veterinarian", "surgeon", "scientist", "graphic-designer",
-  "chef", "real-estate-agent", "paramedic", "truck-driver", "journalist",
-  "mathematician", "professional-athlete", "welder", "ceo", "mechanic",
-  "physical-therapist", "pharmacy-technician", "carpenter",
-  "investment-banker", "airline-pilot", "marketing-manager",
-  "registered-dietitian", "cybersecurity-analyst", "dental-hygienist",
-  "project-manager", "occupational-therapist", "master-electrician",
-  "physician-assistant", "ux-designer", "financial-analyst", "radiologist",
-  "clinical-pharmacist", "actuary", "economist", "nurse-practitioner",
-  "speech-language-pathologist", "personal-trainer", "anesthesiologist",
-  "content-creator", "retail-pharmacist", "veterinary-technician",
-  "blockchain-developer", "pharmacologist", "air-traffic-controller",
-  "optometrist", "hvac-technician",
-  "forensic-scientist", "librarian", "mechanical-engineer",
-  "insurance-actuary", "social-media-manager", "dermatologist",
-  "athletic-trainer", "clinical-psychologist", "film-director",
-  "psychiatric-nurse", "dental-assistant", "emt", "orthodontist",
-  "epidemiologist", "landscape-architect", "management-consultant",
-  "audiologist", "art-director", "genetic-counselor",
-  "interpreter-translator", "nuclear-engineer",
-  "clinical-research-coordinator", "urban-planner",
-  "veterinary-surgeon", "ethical-hacker", "nurse-anesthetist", "statistician",
-  "speech-writer", "robotics-engineer", "marriage-family-therapist",
-  "neurosurgeon",
-  "patent-attorney", "database-administrator",
-  "physical-education-teacher", "cloud-architect", "chiropractor", "biomedical-engineer",
-  "real-estate-appraiser", "primary-care-physician", "video-game-developer",
-];
-
-// Routes to pre-render
-const routes = [
-  "/",
-  "/test",
-  "/what-is-iq",
-  "/iq-score-ranges",
-  "/average-iq-by-country",
-  ...iqScores.map((s) => `/is-${s}-iq-good`),
-  ...countrySlugs.map((s) => `/average-iq/${s}`),
-  ...careerSlugs.map((s) => `/iq-needed-for/${s}`),
-  "/iq-vs-eq",
-  "/sat-to-iq",
-  "/act-to-iq",
-  "/gre-to-iq",
-  "/asvab-to-iq",
-  "/how-to-improve-iq",
-  "/iq-by-age/children",
-  "/iq-by-age/teenagers",
-  "/iq-by-age/young-adults",
-  "/iq-by-age/adults",
-  "/iq-by-age/older-adults",
-  "/iq-by-age/seniors",
-  "/famous-iq/albert-einstein",
-  "/famous-iq/stephen-hawking",
-  "/famous-iq/elon-musk",
-  "/famous-iq/leonardo-da-vinci",
-  "/famous-iq/nikola-tesla",
-  "/famous-iq/bill-gates",
-  "/famous-iq/marie-curie",
-  "/famous-iq/isaac-newton",
-  "/famous-iq/steve-jobs",
-  "/famous-iq/mark-zuckerberg",
-  "/famous-iq/barack-obama",
-  "/famous-iq/kim-kardashian",
-  "/famous-iq/cristiano-ronaldo",
-  "/famous-iq/jeff-bezos",
-  "/famous-iq/oprah-winfrey",
-  "/famous-iq/richard-feynman",
-  "/famous-iq/taylor-swift",
-  "/famous-iq/warren-buffett",
-  "/famous-iq/kanye-west",
-  "/famous-iq/shakira",
-  "/famous-iq/benjamin-franklin",
-  "/famous-iq/marilyn-monroe",
-  "/famous-iq/lebron-james",
-  "/famous-iq/donald-trump",
-  "/famous-iq/garry-kasparov",
-  "/famous-iq/beyonce",
-  "/famous-iq/snoop-dogg",
-  "/famous-iq/jodie-foster",
-  "/famous-iq/dolph-lundgren",
-  "/famous-iq/james-woods",
-  "/famous-iq/natalie-portman",
-  "/famous-iq/stephen-curry",
-  "/famous-iq/keanu-reeves",
-  "/famous-iq/lady-gaga",
-  "/famous-iq/neil-degrasse-tyson",
-  "/famous-iq/lionel-messi",
-  "/famous-iq/ashton-kutcher",
-  "/famous-iq/quentin-tarantino",
-  "/famous-iq/serena-williams",
-  "/famous-iq/rihanna",
-  "/famous-iq/jay-z",
-  "/famous-iq/tom-brady",
-  "/famous-iq/mayim-bialik",
-  "/famous-iq/travis-kelce",
-  "/famous-iq/emma-watson",
-  "/famous-iq/michael-jordan",
-  "/famous-iq/nikola-jokic",
-  "/famous-iq/kendrick-lamar",
-  "/famous-iq/michio-kaku",
-  "/famous-iq/magnus-carlsen",
-  "/famous-iq/gordon-ramsay",
-  "/famous-iq/alexandria-ocasio-cortez",
-  "/famous-iq/pablo-picasso",
-  "/famous-iq/elon-musk-children-iq",
-  "/famous-iq/andrew-tate",
-  "/famous-iq/cardi-b",
-  "/famous-iq/joe-rogan",
-  "/famous-iq/mrbeast",
-  "/famous-iq/greta-thunberg",
-  "/famous-iq/patrick-mahomes",
-  "/famous-iq/wolfgang-mozart",
-  "/famous-iq/mark-cuban",
-  "/famous-iq/eminem",
-  "/famous-iq/simone-biles",
-  "/famous-iq/tim-cook",
-  "/famous-iq/terence-tao",
-  "/famous-iq/kobe-bryant",
-  "/famous-iq/sundar-pichai",
-  "/famous-iq/kylie-jenner",
-  "/famous-iq/einstein-iq-detailed",
-  "/famous-iq/billie-eilish",
-  "/famous-iq/lionel-richie",
-  "/famous-iq/ruth-bader-ginsburg",
-  "/famous-iq/dwayne-johnson",
-  "/famous-iq/malala-yousafzai",
-  "/famous-iq/jeff-goldblum",
-  "/famous-iq/viswanathan-anand",
-  "/famous-iq/nicki-minaj",
-  "/famous-iq/ariana-grande",
-  "/famous-iq/satya-nadella",
-  "/famous-iq/post-malone",
-  "/famous-iq/michelle-obama",
-  "/famous-iq/novak-djokovic",
-  "/famous-iq/travis-scott",
-  "/famous-iq/zendaya",
-  "/famous-iq/roger-federer",
-  "/famous-iq/ronda-rousey",
-  "/famous-iq/neil-armstrong",
-  "/famous-iq/adele",
-  "/famous-iq/usain-bolt",
-  "/famous-iq/sam-altman",
-  "/famous-iq/dolly-parton",
-  "/famous-iq/lewis-hamilton",
-  "/famous-iq/drake",
-  "/famous-iq/jensen-huang",
-  "/famous-iq/rihanna-detailed",
-  "/famous-iq/will-smith",
-  "/famous-iq/aoc-detailed",
-  "/famous-iq/selena-gomez",
-  "/famous-iq/charles-darwin",
-  "/famous-iq/ada-lovelace",
-  "/famous-iq/tyler-perry",
-  "/famous-iq/bad-bunny",
-  "/famous-iq/yo-yo-ma",
-  "/famous-iq/giannis-antetokounmpo",
-  "/famous-iq/jk-rowling",
-  "/famous-iq/sachin-tendulkar",
-  "/iq-myths/do-video-games-make-you-smarter",
-  "/iq-myths/mozart-effect-iq",
-  "/iq-myths/birth-order-and-iq",
-  "/iq-myths/does-iq-determine-success",
-  "/iq-myths/iq-gender-differences",
-  "/iq-myths/brain-size-and-iq",
-  "/iq-myths/does-reading-make-you-smarter",
-  "/iq-myths/is-iq-fixed-at-birth",
-  "/iq-myths/bilingual-iq",
-  "/iq-myths/only-child-iq",
-  "/iq-myths/does-iq-decrease-with-age",
-  "/iq-myths/does-alcohol-kill-brain-cells",
-  "/iq-myths/is-iq-the-same-as-intelligence",
-  "/iq-myths/does-marijuana-lower-iq",
-  "/iq-myths/are-left-handed-people-smarter",
-  "/iq-myths/does-coffee-make-you-smarter",
-  "/iq-myths/height-and-iq",
-  "/iq-myths/does-tv-lower-iq",
-  "/iq-myths/iq-and-race",
-  "/iq-myths/does-sleep-affect-iq",
-  "/iq-myths/does-meditation-increase-iq",
-  "/iq-myths/iq-and-mental-health",
-  "/iq-myths/iq-supplements-nootropics",
-  "/iq-myths/class-size-and-iq",
-  "/iq-myths/does-exercise-increase-iq",
-  "/iq-myths/multiple-types-of-intelligence",
-  "/iq-myths/breastfeeding-and-iq",
-  "/iq-myths/poverty-and-iq",
-  "/iq-myths/iq-genetics",
-  "/iq-myths/sugar-hyperactivity-iq",
-  "/iq-myths/music-training-and-iq",
-  "/iq-myths/iq-test-cultural-bias",
-  "/iq-myths/internet-and-iq",
-  "/iq-myths/trauma-and-iq",
-  "/iq-myths/iq-and-creativity",
-  "/iq-myths/cold-weather-and-iq",
-  "/iq-myths/ideal-iq-score",
-  "/iq-myths/dyslexia-and-iq",
-  "/iq-myths/wealth-and-intelligence",
-  "/iq-myths/iq-changes-throughout-day",
-  "/iq-myths/introverts-vs-extroverts-iq",
-  "/iq-myths/screen-time-children-iq",
-  "/iq-myths/twins-and-iq",
-  "/iq-myths/fasting-and-iq",
-  "/iq-myths/does-money-increase-iq",
-  "/iq-myths/vegan-diet-and-iq",
-  "/iq-myths/handwriting-and-intelligence",
-  "/iq-myths/multilingualism-increases-iq",
-  "/iq-myths/is-iq-testing-outdated",
-  "/iq-myths/does-chess-increase-iq",
-  "/iq-myths/night-owls-smarter",
-  "/iq-myths/podcasts-and-iq",
-  "/iq-myths/vocabulary-and-iq",
-  "/iq-myths/animal-intelligence-iq",
-  "/average-iq-by-state/massachusetts",
-  "/average-iq-by-state/new-hampshire",
-  "/average-iq-by-state/vermont",
-  "/average-iq-by-state/connecticut",
-  "/average-iq-by-state/minnesota",
-  "/average-iq-by-state/oregon",
-  "/average-iq-by-state/washington",
-  "/average-iq-by-state/new-jersey",
-  "/average-iq-by-state/virginia",
-  "/average-iq-by-state/wisconsin",
-  "/average-iq-by-state/colorado",
-  "/average-iq-by-state/california",
-  "/average-iq-by-state/new-york",
-  "/average-iq-by-state/illinois",
-  "/average-iq-by-state/pennsylvania",
-  "/average-iq-by-state/ohio",
-  "/average-iq-by-state/texas",
-  "/average-iq-by-state/florida",
-  "/average-iq-by-state/georgia",
-  "/average-iq-by-state/alabama",
-  "/average-iq-by-state/louisiana",
-  "/average-iq-by-state/mississippi",
-  "/average-iq-by-state/north-carolina",
-  "/average-iq-by-state/michigan",
-  "/average-iq-by-state/arizona",
-  "/average-iq-by-state/iowa",
-  "/average-iq-by-state/maryland",
-  "/average-iq-by-state/montana",
-  "/average-iq-by-state/indiana",
-  "/average-iq-by-state/south-carolina",
-  "/average-iq-by-state/tennessee",
-  "/average-iq-by-state/kentucky",
-  "/average-iq-by-state/west-virginia",
-  "/average-iq-by-state/nevada",
-  "/average-iq-by-state/hawaii",
-  "/average-iq-by-state/kansas",
-  "/average-iq-by-state/utah",
-  "/average-iq-by-state/nebraska",
-  "/average-iq-by-state/missouri",
-  "/average-iq-by-state/south-dakota",
-  "/average-iq-by-state/maine",
-  "/average-iq-by-state/north-dakota",
-  "/average-iq-by-state/idaho",
-  "/average-iq-by-state/delaware",
-  "/average-iq-by-state/rhode-island",
-  "/average-iq-by-state/wyoming",
-  "/average-iq-by-state/alaska",
-  "/average-iq-by-state/oklahoma",
-  "/average-iq-by-state/arkansas",
-  "/average-iq-by-state/new-mexico",
-  "/highest-iq-ever",
-  "/good-iq-score",
-  "/genius-iq",
-  "/mensa-iq-test",
-  "/average-iq-us",
-  "/iq-of-presidents",
-  "/low-iq",
-  "/blog",
-  "/blog/what-is-iq-score",
-  "/blog/how-to-increase-iq",
-  "/blog/iq-vs-success",
-  "/blog/famous-iq-scores",
-  "/blog/iq-by-country",
-  "/blog/what-is-genius-iq",
-  "/blog/iq-tests-accurate",
-  "/blog/emotional-intelligence-vs-iq",
-  "/privacy-policy",
-  "/terms-of-service",
-  "/about",
-  "/methodology",
-  "/editorial-policy",
-  "/contact",
-  "/types-of-iq-tests",
-  "/iq-percentile-chart",
-  "/famous-iq",
-  "/iq-by-career",
-];
-
-function writeSitemap() {
+function writeSitemap(routes, noSitemapRoutes) {
   const today = new Date().toISOString().slice(0, 10);
-  const uniqueRoutes = [...new Set(routes)];
+  const excluded = new Set(noSitemapRoutes);
+  const uniqueRoutes = [...new Set(routes)].filter((r) => !excluded.has(r));
   const urls = uniqueRoutes
     .map((route) => {
       const loc = route === "/" ? "https://www.myiqscores.com" : `https://www.myiqscores.com${route}`;
@@ -338,14 +28,28 @@ function writeSitemap() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
   fs.writeFileSync(path.resolve(distDir, "sitemap.xml"), sitemap);
   fs.writeFileSync(path.resolve(__dirname, "../public/sitemap.xml"), sitemap);
+  console.log(`Sitemap written: ${uniqueRoutes.length} URLs`);
 }
 
 async function prerender() {
   const template = fs.readFileSync(path.resolve(distDir, "index.html"), "utf-8");
-  const { render } = await import(serverEntry);
+  // Routes come from src/routeManifest.ts via the SSR bundle — the single
+  // source of truth shared with the app's data files.
+  const { render, prerenderRoutes, noSitemapRoutes } = await import(serverEntry);
+  const routes = [...new Set(prerenderRoutes)];
+
+  const notFoundRoutes = [];
 
   for (const route of routes) {
     const { html: appHtml, head } = render(route);
+
+    // Guard: a manifest route that renders the 404 page means the manifest
+    // and App.tsx routes have drifted apart. Fail loudly instead of shipping
+    // a broken page.
+    if (appHtml.includes("Page not found") || appHtml.includes("Page Not Found")) {
+      notFoundRoutes.push(route);
+      continue;
+    }
 
     let finalHtml = template;
 
@@ -355,19 +59,13 @@ async function prerender() {
       `<div id="root">${appHtml}</div>`
     );
 
-    // Inject helmet head tags before </head>
-    // Remove the static meta tags that Helmet now manages dynamically
-    // (title, description, canonical, og:*, twitter:*)
-    finalHtml = finalHtml.replace(
-      /<title>.*?<\/title>/,
-      "" // Helmet will provide the title
-    );
-
+    // Remove any static title (Helmet provides one per page), then inject
+    // helmet head tags before </head>
+    finalHtml = finalHtml.replace(/<title>.*?<\/title>/, "");
     if (head) {
       finalHtml = finalHtml.replace("</head>", `    ${head}\n  </head>`);
     }
 
-    // Determine output path
     const filePath =
       route === "/"
         ? path.resolve(distDir, "index.html")
@@ -379,12 +77,21 @@ async function prerender() {
     }
 
     fs.writeFileSync(filePath, finalHtml);
-    console.log(`Pre-rendered: ${route} → ${path.relative(distDir, filePath)}`);
+  }
+
+  console.log(`Pre-rendered ${routes.length - notFoundRoutes.length} routes`);
+
+  if (notFoundRoutes.length > 0) {
+    console.error(
+      `ERROR: ${notFoundRoutes.length} manifest route(s) rendered the 404 page — src/routeManifest.ts and App.tsx are out of sync:\n` +
+        notFoundRoutes.map((r) => `  ${r}`).join("\n")
+    );
+    process.exit(1);
   }
 
   // Clean up server build
   fs.rmSync(path.resolve(distDir, "server"), { recursive: true, force: true });
-  writeSitemap();
+  writeSitemap(routes, noSitemapRoutes);
 
   console.log("Pre-rendering complete!");
 }

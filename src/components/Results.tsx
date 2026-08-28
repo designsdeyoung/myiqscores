@@ -20,19 +20,6 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
-const adStyle: React.CSSProperties = {
-  border: "1px dashed rgba(255,255,255,0.12)",
-  backgroundColor: "rgba(255,255,255,0.02)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "8px",
-  color: "rgba(255,255,255,0.25)",
-  fontSize: "11px",
-  letterSpacing: "0.05em",
-  textTransform: "uppercase" as const,
-};
-
 function AnimatedNumber({ target }: { target: number }) {
   const [val, setVal] = useState(0);
   useEffect(() => {
@@ -250,12 +237,8 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
       <div className="max-w-2xl mx-auto">
 
         {/* Top leaderboard ad — desktop only */}
-        <div
-          id="ad-results-top"
-          className="ad-placeholder hidden sm:flex justify-center items-center mx-auto mb-6"
-          style={{ ...adStyle, width: "728px", height: "90px" }}
-        >
-          Advertisement (728×90 — Desktop Only)
+        <div className="hidden sm:flex justify-center mb-6">
+          <AdUnit slotId={AD_SLOTS.resultsTop} format="display" size="728x90" />
         </div>
 
         {/* Challenger comparison — shown when arriving via ?ref= */}
@@ -292,7 +275,7 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
         {/* SECTION A: Free Results */}
         <motion.div variants={fadeUp} className="text-center mb-10">
           <p className="text-muted-foreground text-sm mb-4">
-            {userName ? `${userName}, your` : "Your"} IQ Score
+            {userName ? `${userName}, your` : "Your"} Estimated IQ Score
           </p>
           <div className="relative inline-block">
             <div className="text-7xl sm:text-8xl font-heading font-extrabold gradient-text">
@@ -361,13 +344,34 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
           </div>
         </motion.div>
 
-        {/* Mid-page ad (after category breakdown) */}
-        <div
-          id="ad-results-mid"
-          className="ad-placeholder flex justify-center items-center mx-auto mb-4"
-          style={{ ...adStyle, width: "336px", height: "280px" }}
-        >
-          Advertisement (336×280)
+        {/* Understanding your score — limitations, honestly stated */}
+        <motion.div variants={fadeUp} className="glass-card p-6 mb-4">
+          <h3 className="font-heading font-bold text-foreground mb-2">What This Score Means — and What It Doesn't</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+            Your result of <span className="text-foreground font-medium">{iq}</span> is an{" "}
+            <span className="text-foreground font-medium">estimated IQ-style score</span> based on your
+            performance across 30 reasoning questions in five cognitive domains. It places you at
+            approximately the {percentile}th percentile relative to a normal distribution with a mean of
+            100 and a standard deviation of 15.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+            This is an educational estimate, not a clinical measurement. Professionally administered
+            tests such as the WAIS or Stanford-Binet are conducted one-on-one by licensed psychologists,
+            take over an hour, and are normed on large representative samples. A short online test cannot
+            match that precision — factors like fatigue, distraction, device, and familiarity with
+            question formats can all shift your result by several points.
+          </p>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            This score is not a psychological diagnosis and should not be used for medical, employment,
+            or educational placement decisions. Read more in our{" "}
+            <Link to="/methodology" className="text-primary hover:underline">methodology</Link> and{" "}
+            <Link to="/disclaimer" className="text-primary hover:underline">disclaimer</Link>.
+          </p>
+        </motion.div>
+
+        {/* Mid-page ad (after limitations section) */}
+        <div className="flex justify-center mb-4">
+          <AdUnit slotId={AD_SLOTS.resultsMid} format="display" size="300x250" />
         </div>
 
         {/* SECTION B: Premium Report Upsell */}
@@ -379,9 +383,6 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
             animation: "pulse-glow 3s ease-in-out infinite",
           }}
         >
-          <div className="absolute top-3 right-3 bg-success/20 text-success text-xs font-bold px-2 py-1 rounded-full animate-pulse">
-            60% Off — Limited Time
-          </div>
           <div className="flex items-center gap-2 mb-2">
             <Lock className="w-5 h-5 text-primary" />
             <h3 className="font-heading font-bold text-foreground text-lg">Unlock Your Full Cognitive Report</h3>
@@ -406,8 +407,8 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
             ))}
           </div>
           <div className="flex items-baseline gap-2 mb-4">
-            <span className="text-muted-foreground line-through text-sm">$19.99</span>
             <span className="text-2xl font-heading font-bold text-success">$7.99</span>
+            <span className="text-sm text-muted-foreground">one-time purchase</span>
           </div>
           <button
             onClick={() => {
@@ -579,22 +580,25 @@ const Results = ({ answers, userName, userEmail, elapsed, challengerScore, onSho
               📧 We've sent your results summary to <span className="text-foreground">{userEmail}</span>
             </p>
             <p className="text-xs text-muted-foreground/60 mt-1">
-              Check your inbox for your score breakdown and a special 24-hour discount on the full report.
+              Check your inbox for your full score breakdown.
             </p>
           </motion.div>
         )}
 
-        {/* Bottom results ad */}
-        <div
-          id="ad-results-bottom"
-          className="ad-placeholder flex justify-center items-center mx-auto mt-6"
-          style={{ ...adStyle, width: "336px", height: "280px" }}
-        >
-          Advertisement (336×280)
-        </div>
+        {/* Retake */}
+        <motion.div variants={fadeUp} className="text-center mb-2">
+          <button
+            onClick={() => window.location.assign("/test")}
+            className="border border-[rgba(255,255,255,0.15)] text-muted-foreground hover:text-foreground hover:border-[rgba(255,255,255,0.3)] px-6 py-2.5 rounded-lg text-sm font-medium transition-all"
+          >
+            ↻ Retake the Test
+          </button>
+        </motion.div>
 
-        {/* Keep existing AdUnit for when real AdSense slots are activated */}
-        <AdUnit slotId={AD_SLOTS.resultsBottom} format="display" size="responsive" className="mt-4" />
+        {/* Bottom results ad */}
+        <div className="flex justify-center mt-6">
+          <AdUnit slotId={AD_SLOTS.resultsBottom} format="display" size="responsive" className="w-full" />
+        </div>
       </div>
     </motion.div>
   );

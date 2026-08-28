@@ -154,8 +154,37 @@ const IsXIQGood = () => {
         <Link to="/iq-score-ranges">IQ score ranges page</Link>.
       </p>
 
+      <h2>How Precise Is a Score of {score}?</h2>
+      <p>
+        Less precise than a single number suggests. Professionally administered IQ tests carry a
+        standard error of measurement of roughly 3–5 points, which means a measured score of {score}
+        is best read as a range of about <strong>{score - 5} to {score + 5}</strong> — and scores from
+        short online tests vary even more. Test-retest studies show the same person's score can shift
+        by several points between sessions due to sleep, stress, motivation, practice effects, and
+        simple chance. Different tests (WAIS, Stanford-Binet, Raven's) can also yield somewhat
+        different numbers for the same person. Treat any single figure — including this one — as an
+        estimate with a margin of error, not a fixed property. Our{" "}
+        <Link to="/methodology">methodology page</Link> explains how our own estimate is calculated.
+      </p>
+
+      <h2>What an IQ of {score} Does Not Establish</h2>
+      <p>
+        An IQ score summarizes performance on abstract reasoning tasks at one point in time. It is not
+        a medical or psychological diagnosis, and a score of {score} on its own does not determine your
+        career ceiling, academic future, creativity, emotional intelligence, judgment, or character.
+        Research links IQ to average outcomes across large groups, but individual outcomes vary
+        enormously at every score level. If you need a clinically valid assessment — for educational
+        placement, a disability evaluation, or gifted-program admission — only a licensed psychologist
+        can provide one. See our <Link to="/disclaimer">disclaimer</Link> for the full limitations.
+      </p>
+
       <h2>Career Context for an IQ of {score}</h2>
       <p>{data.careerContext}</p>
+      <p>
+        A note on career framing: occupational IQ averages describe broad group tendencies from
+        research samples — they are not entry requirements, and employers do not screen candidates by
+        IQ. Interest, training, persistence, and opportunity shape careers far more than a test score.
+      </p>
 
       <h2>How Does an IQ of {score} Compare?</h2>
       <p>

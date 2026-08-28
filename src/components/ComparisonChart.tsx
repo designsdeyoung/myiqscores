@@ -26,7 +26,7 @@ const ComparisonChart = ({ items, maxValue, className = "", title }: ComparisonC
   };
 
   return (
-    <div className={`my-8 ${className}`} role="img" aria-label={title || "IQ comparison chart"}>
+    <div className={`my-8 ${className}`} role="group" aria-label={title || "IQ comparison chart"}>
       {title && <p className="text-sm font-heading font-semibold text-foreground mb-4">{title}</p>}
       <div className="space-y-3">
         {items.map((item, idx) => {

@@ -781,11 +781,11 @@ export const iqScoreData: Record<number, IQScoreInfo> = {
     classification: "Unmeasurable",
     percentile: "~100th",
     rarity: "1 in 1 billion",
-    detailedExplanation: "An IQ of 190 is among the highest ever attributed to any human. Isaac Newton and Garry Kasparov are estimated near this level. At approximately 1 in 1 billion, perhaps 8 people alive today have this cognitive ability. Standard IQ tests are completely incapable of measuring at this height.",
+    detailedExplanation: "An IQ of 190 is among the highest ever attributed to any human. Historical figures like Isaac Newton are sometimes estimated near this level, though such retroactive estimates are speculative. At approximately 1 in 1 billion, perhaps 8 people alive today would have this cognitive ability. Standard IQ tests are completely incapable of measuring at this height.",
     careerContext: "Historical figures estimated at this level — Newton, possibly Leibniz — fundamentally reshaped human knowledge. At this extreme, the individual's thinking is so far from the norm that traditional categorization fails.",
     faqItems: [
-      { question: "Is 190 IQ possible?", answer: "A few individuals in history likely possessed cognitive abilities consistent with this estimate (Newton, Kasparov). But precise measurement at this extreme is impossible — the number is more symbolic than literal." },
-      { question: "Who has a 190 IQ?", answer: "Garry Kasparov (~190, tested) and Isaac Newton (~190-200, estimated) are most commonly cited. Among living people, Kasparov has the most credible claim to a verified score near this level." },
+      { question: "Is 190 IQ possible?", answer: "A few individuals in history may have possessed cognitive abilities consistent with this estimate (Newton is often cited). But precise measurement at this extreme is impossible — the number is more symbolic than literal." },
+      { question: "Who has a 190 IQ?", answer: "No one has a verified score of 190 — standardized tests cannot reliably measure that high. Figures like Isaac Newton (~190-200) are retroactive estimates, and popular claims like Garry Kasparov's '190' are internet myths (his one documented test battery reportedly yielded around 123)." },
       { question: "What would 190 IQ be like?", answer: "Cognitive processing fundamentally different from virtually all humans. The gap between 190 and average (100) equals the gap between average and an IQ of 10. Most people simply cannot comprehend what thinking at this level entails." },
     ],
   },
@@ -1383,7 +1383,7 @@ export const iqScoreData: Record<number, IQScoreInfo> = {
     careerContext: "Individuals at the 160 level are historically represented among the most transformative thinkers in human history. Many make contributions that fundamentally change their fields or create entirely new ones. Traditional career paths are often too limiting, and many forge unique intellectual journeys.",
     faqItems: [
       { question: "Is 160 a good IQ score?", answer: "A 160 is among the highest IQ scores attributed to any human. It is the estimated IQ of Einstein and Hawking. At the 99.997th percentile, only about 1 in 31,000 people reach this level. It represents cognitive ability at the extreme end of the human spectrum." },
-      { question: "Who has an IQ of 160?", answer: "Albert Einstein and Stephen Hawking are most commonly cited at ~160. Other estimated 160+ individuals include mathematician Terence Tao (estimated higher, at 225+), chess champion Garry Kasparov (~190), and various Nobel laureates. All such estimates for historical figures are approximate." },
+      { question: "Who has an IQ of 160?", answer: "Albert Einstein and Stephen Hawking are most commonly cited at ~160, though neither ever took a modern IQ test. Mathematician Terence Tao's childhood estimate runs far higher (220+). All such figures are estimates, not verified scores." },
       { question: "What is it like to have a 160 IQ?", answer: "People at this level describe thinking in complex systems, making intuitive leaps that others find difficult to follow, frequently feeling intellectually isolated, and having an insatiable drive to understand. The cognitive distance from the average person is enormous — equivalent to the gap between average and an IQ of 40." },
     ],
   },
