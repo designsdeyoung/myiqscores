@@ -134,9 +134,7 @@ const statLine = { fontSize: '14px', color: '#333', margin: '6px 0', lineHeight:
 const upsellSection = { textAlign: 'center' as const, padding: '0' }
 const upsellHeading = { fontSize: '18px', fontWeight: 'bold', color: '#0A0E1A', margin: '0 0 10px' }
 const upsellText = { fontSize: '14px', color: '#55575d', lineHeight: '1.5', margin: '0 0 15px' }
-const discountText = { fontSize: '15px', fontWeight: 'bold', color: '#22c55e', margin: '0 0 10px' }
 const priceRow = { fontSize: '14px', margin: '0 0 15px' }
-const oldPrice = { textDecoration: 'line-through', color: '#999' }
 const newPrice = { fontSize: '22px', fontWeight: 'bold', color: '#22c55e' }
 const ctaButton = {
   backgroundColor: '#22c55e',

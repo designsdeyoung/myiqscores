@@ -32,19 +32,37 @@ sensitive subject matter. Within those constraints the site is now honestly
 framed, factually corrected, technically clean, and better-documented than the
 large majority of sites in this niche.
 
-## Verdict
+## Verdict (v3 — post-merge, post-live-verification, 2026-08-28)
 
-### GO — production merge
-All builds, checks, and E2E pass; the branch fixes crawler-facing defects
-(wrong HTML on 35 URLs) that argue for deploying sooner rather than later.
+**The 85/100 above scores THIS REPOSITORY's build.** Post-merge verification
+established that www.myiqscores.com is deployed from a different,
+more-evolved codebase (see `ADSENSE_READINESS.md` §0a) — so the score that
+matters for an AdSense application is the **live site's**, assessed at
+**~80/100**: it independently carries most of the same hardening (correct
+ads.txt, Consent Mode v2 + real consent banner, fail-safe ad units, deep
+prerendered content across even more page families) but retains a
+deceptive-pricing element (struck-through $19.99), a visible ad-placeholder
+box on the results page (overflowing on mobile), auto-advancing quiz
+interstitials, missing estimated-score/limitations framing, and indexable
+soft-404s — each already solved in this repo and enumerated with fixes in
+`ADSENSE_READINESS.md` §0b.
 
-### GO — AdSense (re)application, after two preconditions
-1. Deploy this branch to production and spot-check `/blog/flynn-effect`,
-   `/ads.txt`, and `/sitemap.xml` on the live domain.
-2. Enable Google's certified GDPR consent message in AdSense → Privacy &
-   messaging (the site's Consent Mode v2 wiring is ready for it).
+### Production merge: DONE (`main` @ 307c7ce) — but NOT deployed
+Merging preserved the work; deployment is not possible from this environment
+(the domain's Vercel project and the live Supabase project are outside the
+accessible accounts), and force-replacing a newer live site would have
+destroyed content. No deployment was attempted.
 
-Then submit for review. This remains a judgment that applying is reasonable —
-not a guarantee of approval. Most likely rejection vector if any: "low value
-content" triggered by templated-page volume; the fallback plan is in
-`ADSENSE_READINESS.md` §6.
+### AdSense (re)application: GO, conditional
+Reasonable to submit **after** the owner:
+1. Ports the §0b fixes (minimally: remove the $19.99 strikethrough and the
+   visible results-page ad placeholder) into the live/Lovable codebase and
+   republishes;
+2. Enables Google's certified GDPR consent message in AdSense → Privacy &
+   messaging;
+3. Verifies the site in AdSense and requests review.
+
+Applying before fix #1 risks a "deceptive practices"/low-value reading of the
+results page — the page every reviewer will see after taking the quiz. As
+always: no approval is guaranteed; likeliest rejection vector remains "low
+value content" from templated-page volume.

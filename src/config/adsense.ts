@@ -1,6 +1,7 @@
 // ─── AdSense configuration ───────────────────────────────────────────────
 // ADSENSE_PUB_ID is the site's real publisher ID. It must match:
-//   - public/ads.txt          (google.com, ca-pub-…, DIRECT, f08c47fec0942fa0)
+//   - public/ads.txt          (google.com, pub-… — ads.txt uses the "pub-"
+//                              form WITHOUT the "ca-" prefix, per Google docs)
 //   - index.html              (adsbygoogle.js ?client= parameter)
 //
 // ACTIVATION (after AdSense approval):

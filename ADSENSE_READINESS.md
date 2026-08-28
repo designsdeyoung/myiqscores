@@ -1,9 +1,84 @@
 # AdSense Readiness — MyIQScores.com
 
-Branch: `adsense-production-hardening` · Prepared: 2026-08-28 (updated same day, v2)
+Branch: `adsense-production-hardening` (merged to `main` in 307c7ce) ·
+Prepared: 2026-08-28 (v3 — post-merge, post-live-verification)
 
 This document records the production-hardening work done to prepare MyIQScores.com
 for a Google AdSense application, and the manual steps that remain for the account owner.
+
+---
+
+## ⚠️ 0a. CRITICAL FINDING: this repo does not deploy www.myiqscores.com
+
+Verified 2026-08-28 during post-merge production checks:
+
+- The live site at www.myiqscores.com is served by Vercel, but from a
+  **different, more-evolved codebase** than this GitHub repo. Evidence: live
+  page titles ("Garry Kasparov IQ: 190 Estimate and Percentile", "Flynn
+  Effect: Why Average IQ Scores Keep Rising") exist in **no commit on any
+  branch** of this repo; the live sitemap is a sitemap-index with child
+  sitemaps (this repo has a single flat sitemap); live has entire page
+  families this repo lacks (CityIQ, ConditionIQ, CelebrityIQMatch,
+  AbstractReasoning…); live asset hashes match no local build. Pushing `main`
+  produced no change in production (~30 min observation).
+- The Vercel project in `.vercel/project.json` (`prj_UW2xlUoxPy7t…`) returns
+  404 under the accessible team (`vertex-data`), whose project list does not
+  include myiqscores. The local Vercel CLI is not authenticated.
+- The Supabase project in `.env` (`pzvbazyandlatabewppj`) **no longer
+  resolves** (DNS NXDOMAIN). The live site uses a different Supabase project
+  (`ckmckhjqqkcrnpfeaxcr`), which is also not in the authenticated Supabase
+  CLI account.
+- The live tree is almost certainly the **Lovable-managed project** (this
+  repo is Lovable-origin); the two trees share the same GA4 property
+  (G-57H1Q82XZ4) and AdSense publisher ID (pub-5051305701488211) but have
+  diverged in content and code.
+
+**Consequence:** merging this repo to `main` preserves the hardening work but
+does not ship it. No deployment was forced — overwriting a newer production
+site from a stale fork would have destroyed months of live content and SEO.
+
+**Owner decision required — pick one source of truth:**
+1. *Live/Lovable tree is canonical (likely):* port the small set of
+   outstanding fixes (see §0b) into the Lovable project and republish; treat
+   this repo as an archive/reference of the hardening patterns.
+2. *This repo is canonical:* re-link the domain's Vercel project to this
+   GitHub repo — knowingly replacing the live site and its extra content.
+   Not recommended without a content diff/merge first.
+
+## 0b. Live-site verification results (what AdSense will actually review)
+
+Verified live 2026-08-28 (quiz run with all Google ad/analytics domains and
+Supabase blocked — zero ad impressions, zero production writes):
+
+Healthy on live:
+- ads.txt: `google.com, pub-5051305701488211, DIRECT, f08c47fec0942fa0` —
+  correct format, HTTP 200
+- Consent Mode v2 with EEA/UK/CH denied defaults **plus a real cookie-consent
+  banner** (Accept all / Decline non-essential)
+- GA4 G-57H1Q82XZ4 loading once; AdSense loader present; ad units fail safe
+  (placeholder slot IDs, no adsbygoogle pushes)
+- All representative pages (score/career/country/state/famous/myth/blog/legal)
+  return 200 with correct self-canonicals, indexable robots, and substantive
+  prerendered HTML (1,100–2,200 words) — including the route classes that were
+  broken in this repo before the manifest fix
+- Full 30-question quiz completes on mobile with no JS errors; retake works;
+  no "60% Off" / "Limited Time" language
+
+**Outstanding issues on the LIVE site** (all already fixed in this repo —
+port these to the Lovable tree):
+1. Results page shows a struck-through **$19.99 → $7.99** fake reference
+   price, and the emailed-results section references a "special 24-hour
+   discount" (deceptive-pricing risk).
+2. A dashed **"ADVERTISEMENT (728×90)" placeholder box renders visibly** on
+   the results page — and overflows the viewport on mobile.
+3. Quiz interstitials **auto-advance on a countdown** next to the ad zone.
+4. Results headline says "Your IQ Score" with no estimated/limitations
+   framing (it does include one softening line).
+5. Unknown routes soft-404: they serve indexable homepage HTML with the
+   homepage canonical (no noindexed 404 page). `/privacy` is such a route —
+   the real page is `/privacy-policy`.
+6. Live famous-IQ pages still present the Kasparov "190" estimate without the
+   documented-test correction (labeled "Estimate", so lower severity).
 
 ---
 
@@ -204,8 +279,13 @@ numeric-looking slot IDs, but keep the flag authoritative.
    a notorious criminal; keep on a sensitivity watchlist.
 5. **"30-day money-back guarantee"** on the paid report must be honored in
    practice — it remains claimed on the results page and in the email template.
-6. **Supabase email function redeploy needed** for the honest-pricing email
-   template to go live (`supabase functions deploy send-transactional-email`).
+6. **Supabase email function** — the corrected template is committed here, but
+   this repo's Supabase project (`pzvbazyandlatabewppj`) no longer exists; the
+   live site uses project `ckmckhjqqkcrnpfeaxcr`, not accessible from this
+   environment. Owner action: fix the pricing language in the live project's
+   copy of `send-transactional-email` (function name confirmed) and deploy with
+   `supabase functions deploy send-transactional-email --project-ref ckmckhjqqkcrnpfeaxcr`
+   after `supabase login` under the account that owns that project.
 7. **`.env` is committed** containing the Supabase URL and anon (publishable)
    key. Public-by-design values, but poor hygiene; consider `.env.example` +
    Vercel env vars.
