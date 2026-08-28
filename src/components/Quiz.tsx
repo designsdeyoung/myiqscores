@@ -3,6 +3,8 @@ import { useState, useEffect, useCallback } from "react";
 import { questions } from "@/data/questions";
 import { Check, Zap } from "lucide-react";
 import { trackQuizQuestionAnswered, trackQuizCompleted } from "@/lib/analytics";
+import AdUnit from "./AdUnit";
+import { AD_SLOTS } from "@/config/adsense";
 
 interface QuizProps {
   onComplete: (answers: (number | null)[], elapsed: number) => void;
@@ -18,18 +20,12 @@ const MILESTONES: Record<number, string> = {
   24: "Final stretch — 5 questions left!",
 };
 
-const adStyle: React.CSSProperties = {
-  border: "1px dashed rgba(255,255,255,0.12)",
-  backgroundColor: "rgba(255,255,255,0.02)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "8px",
-  color: "rgba(255,255,255,0.25)",
-  fontSize: "11px",
-  letterSpacing: "0.05em",
-  textTransform: "uppercase" as const,
-};
+// Ad cadence: one ad opportunity per 5-question block (6 per completed quiz,
+// plus the two section-break screens). The ad slot is keyed by block — NOT by
+// question — so moving through questions within a block never forces a new ad
+// request. This keeps request volume reasonable and viewability high, per
+// Google Publisher Policies on ad refresh and accidental-click avoidance.
+const QUESTIONS_PER_AD_BLOCK = 5;
 
 const Quiz = ({ onComplete }: QuizProps) => {
   const [currentQ, setCurrentQ] = useState(0);
@@ -39,7 +35,6 @@ const Quiz = ({ onComplete }: QuizProps) => {
   const [direction, setDirection] = useState(1);
   const [showInterstitial, setShowInterstitial] = useState(false);
   const [interstitialSection, setInterstitialSection] = useState(1);
-  const [countdown, setCountdown] = useState(5);
 
   // Elapsed timer — counts UP (not a countdown)
   useEffect(() => {
@@ -61,14 +56,6 @@ const Quiz = ({ onComplete }: QuizProps) => {
     setCurrentQ(nextQ);
   }, [interstitialSection, answers]);
 
-  // Interstitial auto-advance countdown
-  useEffect(() => {
-    if (!showInterstitial) return;
-    if (countdown <= 0) { continueAfterInterstitial(); return; }
-    const t = setTimeout(() => setCountdown(c => c - 1), 1000);
-    return () => clearTimeout(t);
-  }, [showInterstitial, countdown, continueAfterInterstitial]);
-
   const handleSelect = (i: number) => {
     setSelectedOption(i);
     const a = [...answers];
@@ -80,7 +67,6 @@ const Quiz = ({ onComplete }: QuizProps) => {
   const handleNext = () => {
     if (currentQ === 9 || currentQ === 19) {
       setInterstitialSection(currentQ === 9 ? 1 : 2);
-      setCountdown(5);
       setShowInterstitial(true);
       return;
     }
@@ -100,6 +86,7 @@ const Quiz = ({ onComplete }: QuizProps) => {
   const q = questions[currentQ];
   const difficulty = DIFFICULTIES[currentQ];
   const milestone = MILESTONES[currentQ];
+  const adBlock = Math.floor(currentQ / QUESTIONS_PER_AD_BLOCK);
 
   // ── INTERSTITIAL SCREEN ──────────────────────────────────────────────
   if (showInterstitial) {
@@ -124,22 +111,8 @@ const Quiz = ({ onComplete }: QuizProps) => {
             Fun fact: The average person takes 12 minutes to complete this test.
           </p>
 
-          {/* Interstitial ad placeholder */}
-          <div
-            id="ad-quiz-interstitial"
-            className="ad-placeholder mx-auto mb-6"
-            style={{ ...adStyle, width: "336px", height: "280px" }}
-          >
-            Advertisement (336×280)
-          </div>
-
-          <p className="text-sm text-muted-foreground mb-4">
-            Auto-continue in{" "}
-            <span className="text-foreground font-semibold">{countdown}</span>{" "}
-            second{countdown !== 1 ? "s" : ""}…
-          </p>
           <button onClick={continueAfterInterstitial} className="glow-button px-8 py-3">
-            Continue Now →
+            Continue →
           </button>
 
           {/* Progress bar */}
@@ -155,6 +128,15 @@ const Quiz = ({ onComplete }: QuizProps) => {
               />
             </div>
           </div>
+        </div>
+
+        {/* Section-break ad — below the card, well clear of the Continue button */}
+        <div className="w-full max-w-lg mt-8 flex justify-center">
+          <AdUnit
+            slotId={AD_SLOTS.quizInterstitial}
+            format="display"
+            size="300x250"
+          />
         </div>
       </div>
     );
@@ -183,10 +165,21 @@ const Quiz = ({ onComplete }: QuizProps) => {
         </div>
       </div>
 
-      {/* Main content — everything inside AnimatePresence so all content
-          (including ad placeholders) remounts on each question, refreshing impressions */}
+      {/* Main content. Ad units live OUTSIDE the per-question animation and are
+          keyed by 5-question block, so a new ad request only happens once per
+          block — never on every question. */}
       <div className="flex-1 flex items-center justify-center px-4 pt-16 pb-8">
         <div className="w-full max-w-2xl">
+          {/* Desktop leaderboard ad — hidden on mobile, refreshes per 5-question block */}
+          <div className="hidden sm:flex justify-center mb-4">
+            <AdUnit
+              key={`quiz-top-${adBlock}`}
+              slotId={AD_SLOTS.quizTop}
+              format="display"
+              size="728x90"
+            />
+          </div>
+
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={currentQ}
@@ -196,15 +189,6 @@ const Quiz = ({ onComplete }: QuizProps) => {
               exit={{ opacity: 0, x: -direction * 50 }}
               transition={{ duration: 0.18, ease: "easeInOut" }}
             >
-              {/* Desktop leaderboard ad — hidden on mobile */}
-              <div
-                id="ad-quiz-top"
-                className="ad-placeholder hidden sm:flex justify-center items-center mx-auto mb-4"
-                style={{ ...adStyle, width: "728px", height: "90px" }}
-              >
-                Advertisement (728×90 — Desktop Only)
-              </div>
-
               {/* Question card */}
               <div className="glass-card p-6 sm:p-8">
                 <div className="flex items-center justify-between mb-4">
@@ -282,32 +266,6 @@ const Quiz = ({ onComplete }: QuizProps) => {
                 </button>
               </div>
 
-              {/* Mobile bottom ad (300×250) — hidden on desktop */}
-              <div
-                id="ad-quiz-mobile"
-                className="sm:hidden mt-5 flex justify-center"
-              >
-                <div
-                  className="ad-placeholder"
-                  style={{ ...adStyle, width: "300px", height: "250px" }}
-                >
-                  Advertisement (300×250)
-                </div>
-              </div>
-
-              {/* Desktop bottom rectangle ad (336×280) — hidden on mobile */}
-              <div
-                id="ad-quiz-bottom"
-                className="hidden sm:flex justify-center mt-5"
-              >
-                <div
-                  className="ad-placeholder"
-                  style={{ ...adStyle, width: "336px", height: "280px" }}
-                >
-                  Advertisement (336×280)
-                </div>
-              </div>
-
               {/* Bottom progress strip */}
               <div className="mt-5">
                 <div className="flex justify-between text-xs text-muted-foreground mb-1.5">
@@ -325,6 +283,17 @@ const Quiz = ({ onComplete }: QuizProps) => {
               </div>
             </motion.div>
           </AnimatePresence>
+
+          {/* Bottom rectangle ad — below the progress strip, well clear of the
+              Next button, refreshes once per 5-question block */}
+          <div className="mt-8 flex justify-center">
+            <AdUnit
+              key={`quiz-bottom-${adBlock}`}
+              slotId={AD_SLOTS.quizBottom}
+              format="display"
+              size="300x250"
+            />
+          </div>
         </div>
       </div>
     </div>

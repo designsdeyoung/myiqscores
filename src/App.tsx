@@ -34,6 +34,10 @@ import FamousIQHub from "./pages/FamousIQHub.tsx";
 import CareerIQHub from "./pages/CareerIQHub.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import TermsOfService from "./pages/TermsOfService.tsx";
+import Disclaimer from "./pages/Disclaimer.tsx";
+import CookiePolicy from "./pages/CookiePolicy.tsx";
+import AdvertisingPolicy from "./pages/AdvertisingPolicy.tsx";
+import CorrectionsPolicy from "./pages/CorrectionsPolicy.tsx";
 import About from "./pages/About.tsx";
 import Methodology from "./pages/Methodology.tsx";
 import EditorialPolicy from "./pages/EditorialPolicy.tsx";
@@ -120,6 +124,10 @@ export const AppRoutes = () => (
     <Route path="/iq-by-career" element={<CareerIQHub />} />
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/terms-of-service" element={<TermsOfService />} />
+    <Route path="/disclaimer" element={<Disclaimer />} />
+    <Route path="/cookie-policy" element={<CookiePolicy />} />
+    <Route path="/advertising-policy" element={<AdvertisingPolicy />} />
+    <Route path="/corrections-policy" element={<CorrectionsPolicy />} />
     <Route path="/about" element={<About />} />
     <Route path="/methodology" element={<Methodology />} />
     <Route path="/editorial-policy" element={<EditorialPolicy />} />

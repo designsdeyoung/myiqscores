@@ -8,6 +8,7 @@ interface SEOHeadProps {
   ogType?: string;
   twitterCard?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
 }
 
 const SITE_URL = "https://www.myiqscores.com";
@@ -35,6 +36,7 @@ const SEOHead = ({
   ogType = "website",
   twitterCard = "summary_large_image",
   jsonLd,
+  noindex = false,
 }: SEOHeadProps) => {
   const fullCanonicalUrl = canonicalUrl.startsWith("http")
     ? canonicalUrl
@@ -130,7 +132,11 @@ const SEOHead = ({
       <meta name="description" content={description} />
       <meta
         name="robots"
-        content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+        content={
+          noindex
+            ? "noindex,nofollow"
+            : "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+        }
       />
       <link rel="canonical" href={fullCanonicalUrl} />
 

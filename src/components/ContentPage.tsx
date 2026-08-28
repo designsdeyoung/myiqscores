@@ -177,13 +177,17 @@ const ContentPage = ({
         </div>
         <div className="mt-8 pt-6 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <span>&copy; {new Date().getFullYear()} MyIQScores™. All rights reserved.</span>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             <Link to="/about" className="hover:text-foreground transition-colors">About</Link>
             <Link to="/methodology" className="hover:text-foreground transition-colors">Methodology</Link>
             <Link to="/editorial-policy" className="hover:text-foreground transition-colors">Editorial Policy</Link>
+            <Link to="/corrections-policy" className="hover:text-foreground transition-colors">Corrections</Link>
             <Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link>
             <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+            <Link to="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</Link>
             <Link to="/terms-of-service" className="hover:text-foreground transition-colors">Terms of Service</Link>
+            <Link to="/disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link>
+            <Link to="/advertising-policy" className="hover:text-foreground transition-colors">Advertising</Link>
           </div>
         </div>
       </div>

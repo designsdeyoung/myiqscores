@@ -13,7 +13,7 @@ const PrivacyPolicy = () => (
     <Navbar />
     <div className="max-w-3xl mx-auto px-4 pt-28 pb-20 text-foreground">
       <h1 className="font-heading text-3xl sm:text-4xl font-bold mb-8">Privacy Policy</h1>
-      <p className="text-muted-foreground text-sm mb-6">Last updated: March 27, 2026</p>
+      <p className="text-muted-foreground text-sm mb-6">Last updated: August 28, 2026</p>
 
       <div className="space-y-8 text-sm leading-relaxed text-muted-foreground">
         <section>
@@ -67,8 +67,38 @@ const PrivacyPolicy = () => (
           <ul className="list-disc pl-6 space-y-1">
             <li><strong className="text-foreground">Stripe</strong> — for secure payment processing (<a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Stripe Privacy Policy</a>)</li>
             <li><strong className="text-foreground">Google Analytics</strong> — for anonymized website usage analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Privacy Policy</a>)</li>
+            <li><strong className="text-foreground">Google AdSense</strong> — for serving advertising (see the Advertising section below)</li>
             <li><strong className="text-foreground">Infrastructure providers</strong> — for hosting and data storage, with appropriate safeguards</li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="text-foreground font-heading text-xl font-semibold mb-3">5a. Advertising (Google AdSense)</h2>
+          <p className="mb-2">
+            We use, or plan to use, Google AdSense to display ads that keep this site free. When ads are
+            served:
+          </p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>Google and its certified ad partners may use cookies and device identifiers to serve and measure ads</li>
+            <li>Where you have consented, ads may be personalized based on your visits to this and other websites</li>
+            <li>Without consent (or where you refuse it), only non-personalized ads may be shown, which still use cookies for frequency capping and fraud prevention</li>
+          </ul>
+          <p className="mt-3">
+            You can opt out of personalized advertising at{" "}
+            <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Ads Settings</a>{" "}
+            or via <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">aboutads.info</a>.
+            For details on how Google processes data, see{" "}
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+              How Google uses information from sites that use its services
+            </a>.
+          </p>
+          <p className="mt-3">
+            <strong className="text-foreground">Consent (EEA, UK, Switzerland).</strong> If you visit from the
+            European Economic Area, the UK, or Switzerland, advertising and analytics storage defaults to
+            denied until you make a choice through the Google-certified consent message shown on the site
+            (Google Consent Mode). You can change or withdraw your consent at any time via the consent options
+            on the site.
+          </p>
         </section>
 
         <section>
@@ -87,7 +117,7 @@ const PrivacyPolicy = () => (
 
         <section>
           <h2 className="text-foreground font-heading text-xl font-semibold mb-3">7. Cookies</h2>
-          <p>We use cookies and similar technologies for analytics (Google Analytics). You can manage cookie preferences through your browser settings. Disabling cookies may affect some site functionality.</p>
+          <p>We use cookies and similar technologies for analytics (Google Analytics) and advertising (Google AdSense), plus browser local storage for small site features. Our <a href="/cookie-policy" className="text-primary hover:underline">Cookie Policy</a> describes each category and how to control them. You can also manage cookies through your browser settings; disabling them may affect some site functionality.</p>
         </section>
 
         <section>

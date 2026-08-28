@@ -170,6 +170,16 @@ const Index = () => {
               </div>
             </div>
 
+            {/* Legal row */}
+            <div className="pt-6 border-t border-[rgba(255,255,255,0.06)] mb-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+              <Link to="/disclaimer" className="hover:text-foreground transition-colors">Disclaimer</Link>
+              <Link to="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</Link>
+              <Link to="/advertising-policy" className="hover:text-foreground transition-colors">Advertising Policy</Link>
+              <Link to="/corrections-policy" className="hover:text-foreground transition-colors">Corrections</Link>
+              <Link to="/editorial-policy" className="hover:text-foreground transition-colors">Editorial Policy</Link>
+              <Link to="/methodology" className="hover:text-foreground transition-colors">Methodology</Link>
+            </div>
+
             {/* Brand row */}
             <div className="pt-6 border-t border-[rgba(255,255,255,0.06)] flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2">

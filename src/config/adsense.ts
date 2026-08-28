@@ -1,4 +1,13 @@
-// AdSense configuration — replace with real values after approval
+// ─── AdSense configuration ───────────────────────────────────────────────
+// ADSENSE_PUB_ID is the site's real publisher ID. It must match:
+//   - public/ads.txt          (google.com, ca-pub-…, DIRECT, f08c47fec0942fa0)
+//   - index.html              (adsbygoogle.js ?client= parameter)
+//
+// ACTIVATION (after AdSense approval):
+//   1. Create ad units in the AdSense dashboard and copy each numeric slot ID.
+//   2. Replace the "slot-XXXXXXXXX…" placeholders below with the numeric IDs.
+//   3. Flip ADSENSE_ENABLED to true.
+// Until then, every AdUnit renders nothing (no empty boxes, no fake requests).
 export const ADSENSE_PUB_ID = "ca-pub-5051305701488211";
 export const ADSENSE_ENABLED = false;
 
