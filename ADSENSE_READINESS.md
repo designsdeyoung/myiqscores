@@ -45,6 +45,39 @@ site from a stale fork would have destroyed months of live content and SEO.
    GitHub repo — knowingly replacing the live site and its extra content.
    Not recommended without a content diff/merge first.
 
+### 0a.1 Re-verification (2026-08-28, later session — repo relocated)
+
+Repo now lives at `/Volumes/FG SSD/Projects/MyIQScores/production` (same repo,
+`designsdeyoung/myiqscores` @ `main`, local == origin). Re-verified from scratch:
+
+- **Still not the production source.** Live `index-DguCuE5o.js` lazy-loads
+  `CityIQ`/`CityIQHub`/`ConditionIQ`/`CelebrityIQMatch` chunks that exist in no
+  commit on any branch here. Last Lovable-authored commit in this repo:
+  **2026-03-29** — the Lovable↔GitHub sync has been dead since then, while the
+  live Lovable project kept evolving (live sitemap lastmods through 2026-07-03).
+- **Vercel:** the connected Vercel account (team `vertex-data` / Vertex Data
+  LLC) contains no myiqscores project. The live site serves `server: Vercel`
+  from a project not visible to this account.
+- **Supabase:** authenticated CLI org (`ldmthxadtuyrndwtymze`) does not contain
+  `ckmckhjqqkcrnpfeaxcr`. The corrected `send-transactional-email` template is
+  committed here but cannot be deployed from this environment.
+- **Live issues from §0b re-confirmed today** by auditing the live chunks:
+  `Results-6GyKwpA1.js` still contains `$19.99`, visible
+  "Advertisement (728×90 — Desktop Only)" / "(336×280)" placeholder boxes, and
+  "Your IQ Score" (no "Estimated"); `Quiz-DOpMYtgS.js` still has the
+  "Auto-continue in" countdown beside an ad placeholder; `/privacy` still
+  serves homepage-canonical HTML with HTTP 200 (soft 404). Live `ads.txt` is
+  correct (`google.com, pub-5051305701488211, DIRECT, f08c47fec0942fa0`).
+- **This repo's QA re-run green** after fresh `npm ci`: vitest pass, eslint
+  0 errors (12 pre-existing shadcn warnings), `tsc --noEmit` clean, full build
+  prerendered 557 routes / 555-URL sitemap with no 404-guard failures.
+
+**Path to ship the fixes (owner):** in Lovable ("MindMetric IQ Journey") →
+GitHub settings, reconnect/re-sync so the live project's current code lands in
+a GitHub repo; then port §0b's six fixes from this repo into that tree and
+Publish from Lovable. Do not point the domain at this repo — it would delete
+the newer page families.
+
 ## 0b. Live-site verification results (what AdSense will actually review)
 
 Verified live 2026-08-28 (quiz run with all Google ad/analytics domains and
